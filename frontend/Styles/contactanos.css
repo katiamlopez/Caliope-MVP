@@ -1,0 +1,519 @@
+/* =========================================
+   IMPORTAR TIPOGRAFIA DESDE GOOGLE FONTS
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =========================================
+   VARIABLES GLOBALES
+   Aquí guardamos colores reutilizables
+========================================= */
+
+:root {
+  /* Color principal oscuro */
+  --primary-dark: #17072b;
+
+  /* Color secundario */
+  --primary-medium: #2c124d;
+
+  /* Morado claro */
+  --primary-light: #7d6aa5;
+
+  /* Fondo general de la página */
+  --background-color: white;
+
+  /* Fondo de las cards */
+  --card-background: #ffffff;
+
+  /* Color de bordes */
+  --border-color: #d8cfee;
+
+  /* Texto principal */
+  --text-dark: #18072d;
+
+  /* Texto secundario */
+  --text-light: #7b6f96;
+}
+
+/* =========================================
+   RESET
+   Elimina estilos automáticos del navegador
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Hace que los tamaños funcionen correctamente */
+  box-sizing: border-box;
+}
+
+/* =========================================
+   BODY
+   Configuración general de toda la página
+========================================= */
+
+body {
+  /* Tipografía principal */
+  font-family: "Poppins", sans-serif;
+
+  /* Color de fondo */
+  background-color: var(--background-color);
+
+  /* Color de texto general */
+  color: var(--text-dark);
+
+  /* Evita scroll horizontal */
+  overflow-x: hidden;
+}
+
+/* =========================================
+   IMÁGENES RESPONSIVAS
+========================================= */
+
+img {
+  /* La imagen nunca será más grande que su contenedor */
+  max-width: 100%;
+
+  /* Mantiene proporción */
+  height: auto;
+}
+
+/* =========================================
+   SECCIÓN PRINCIPAL
+========================================= */
+
+.contact-section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* =========================================
+   TÍTULO PRINCIPAL
+========================================= */
+
+.main-title {
+  font-size: 4rem;
+
+  font-weight: 700;
+
+  color: var(--primary-dark);
+
+  margin-bottom: 10px;
+
+  line-height: 1.1;
+}
+
+/* =========================================
+   SUBTÍTULO
+========================================= */
+
+.main-subtitle {
+  font-size: 1.1rem;
+
+  color: var(--text-light);
+
+  max-width: 700px;
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   CARDS PRINCIPALES
+   Cuadros blancos de cada sección
+========================================= */
+
+.contact-card {
+  /* Fondo blanco */
+  background-color: var(--card-background);
+
+  /* Contorno */
+  border: 2px solid var(--border-color);
+
+  /* Bordes redondeados */
+  border-radius: 24px;
+
+  /* Espaciado interno */
+  padding: 35px;
+
+  /* Sombra */
+  box-shadow: 0 4px 20px rgba(23, 7, 43, 0.05);
+
+  /* Transición suave */
+  transition: 0.3s ease;
+}
+
+/* =========================================
+   EFECTO HOVER EN LAS CARDS
+   Cuando el mouse pasa encima
+========================================= */
+
+.contact-card:hover {
+  /* Cambia ligeramente el borde */
+  border-color: #bca7e4;
+
+  /* Sombra más fuerte */
+  box-shadow: 0 10px 30px rgba(44, 18, 77, 0.08);
+}
+
+/* =========================================
+   SUBTÍTULOS DE SECCIÓN
+========================================= */
+
+.section-title {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   LABELS DEL FORMULARIO
+========================================= */
+
+.form-label {
+  font-size: 0.95rem;
+
+  font-weight: 500;
+
+  margin-bottom: 10px;
+
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   INPUT GROUP
+   Contenedor que une icono + input
+========================================= */
+
+.input-group {
+  /* Bordes redondeados */
+  border-radius: 18px;
+
+  /* Recorta elementos internos */
+  overflow: hidden;
+}
+
+/* =========================================
+   ICONOS DEL INPUT
+========================================= */
+
+.input-group-text {
+  background-color: white;
+
+  border: 2px solid var(--border-color);
+
+  /* Elimina línea entre icono e input */
+  border-right: none;
+
+  color: var(--primary-light);
+
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* =========================================
+   INPUTS Y SELECTS
+========================================= */
+
+.form-control,
+.form-select {
+  /* Contorno */
+  border: 2px solid var(--border-color);
+
+  /* Espaciado interno */
+  padding: 14px 16px;
+
+  /* Tamaño de texto */
+  font-size: 1rem;
+
+  /* Color del texto */
+  color: var(--text-dark);
+
+  /* Fondo blanco */
+  background-color: white;
+
+  /* Transición suave */
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   ELIMINAR DOBLE BORDE
+========================================= */
+
+.form-control {
+  border-left: none;
+}
+
+/* =========================================
+   PLACEHOLDER
+   Texto gris dentro de inputs
+========================================= */
+
+.form-control::placeholder {
+  color: #a295bd;
+}
+
+/* =========================================
+   HOVER EN INPUTS
+========================================= */
+
+.form-control:hover,
+.form-select:hover {
+  border-color: #9f89c9;
+}
+
+/* =========================================
+   FOCUS
+   Cuando el usuario selecciona el input
+========================================= */
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #8e6cc7;
+
+  box-shadow: 0 0 0 5px rgba(142, 108, 199, 0.15);
+}
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+textarea {
+  /* Evita que el usuario cambie tamaño */
+  resize: none;
+}
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.send-btn {
+  /* Fondo degradado */
+  background: linear-gradient(135deg, #17072b, #2d1450);
+
+  color: white;
+
+  border: none;
+
+  padding: 15px;
+
+  border-radius: 18px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   HOVER DEL BOTÓN
+========================================= */
+
+.send-btn:hover {
+  background: linear-gradient(135deg, #2d1450, #43206f);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(44, 18, 77, 0.18);
+
+  color: white;
+}
+
+/* =========================================
+   INFORMACIÓN DE CONTACTO
+========================================= */
+
+.info-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+/* =========================================
+   ICONOS DE INFORMACIÓN
+========================================= */
+
+.info-icon {
+  min-width: 50px;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 14px;
+
+  background-color: #f3effa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--primary-dark);
+
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   TEXTO PEQUEÑO DE INFO
+========================================= */
+
+.info-label {
+  display: block;
+
+  font-size: 0.9rem;
+
+  color: var(--text-light);
+
+  margin-bottom: 4px;
+}
+
+/* =========================================
+   TEXTO PRINCIPAL DE INFO
+========================================= */
+
+.info-text {
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  color: var(--text-dark);
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq-item {
+  margin-bottom: 30px;
+}
+
+/* El último elemento no tendrá margen */
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   TITULOS FAQ
+========================================= */
+
+.faq-item h5 {
+  font-size: 1.05rem;
+
+  font-weight: 600;
+
+  color: var(--primary-dark);
+
+  margin-bottom: 10px;
+}
+
+/* =========================================
+   TEXTO FAQ
+========================================= */
+
+.faq-item p {
+  color: var(--text-light);
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .contact-card {
+    padding: 28px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .main-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 22px;
+
+    border-radius: 20px;
+  }
+
+  .send-btn {
+    padding: 13px;
+  }
+
+  .info-item {
+    gap: 14px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .main-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .info-item {
+    /* Apila elementos verticalmente */
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .form-control,
+  .form-select {
+    padding: 12px 14px;
+  }
+}

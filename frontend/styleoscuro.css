@@ -1,0 +1,210 @@
+/* ==========================================
+   1. REINICIO GENERAL Y VARIABLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #130F26; /* Fondo general */
+    color: #C3BCDB;            /* Texto cuerpo */
+    line-height: 1.6;
+    padding: 0;
+}
+
+main.aboutContent {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ==========================================
+   2. CABECERA (HEADER)
+   ========================================== */
+.acercaDe {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1D183A; /* Superficie */
+    border-bottom: 1px solid #2F2958; /* Separadores */
+}
+
+.header-icon-container {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #7A52E1; /* Morado primario */
+}
+
+.acercaDe .title {
+    color: #F4F2FA; /* Texto principal */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.acercaDe .subtitle {
+    color: #7E7599; /* Subtítulos */
+    font-size: 1.2rem;
+}
+
+/* ==========================================
+   3. SECCIÓN: NUESTRA HISTORIA
+   ========================================== */
+.story-section {
+    margin-bottom: 50px;
+}
+
+.cardHistoria {
+    background-color: #1D183A; /* Superficie */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #2F2958;
+}
+
+.nuestraHistoria {
+    color: #F4F2FA;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.historiaTexto p {
+    margin-bottom: 15px;
+    color: #C3BCDB;
+}
+
+.historiaTexto p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   4. SECCIÓN: MISIÓN / VISIÓN & VALORES (GRIDS)
+   ========================================== */
+.goals-section, .seccionValores {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: #F4F2FA;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Rejillas responsivas */
+.goals-grid, .values-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.goals-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Tarjetas individuales de Misión, Visión y Valores */
+.goal-card, .value-card {
+    background-color: #1D183A; /* Superficie */
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2F2958;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.goal-card:hover, .value-card:hover {
+    transform: translateY(-5px);
+    border-color: #7A52E1; /* Resalta con morado al pasar el cursor */
+}
+
+.card-icon-container {
+    font-size: 24px;
+    color: #A29BFE; /* Lila claro */
+    margin-bottom: 15px;
+}
+
+.card-title {
+    color: #F4F2FA;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: #7E7599; /* Subtítulos / Texto secundario */
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   5. SECCIÓN: ÚNETE (CALL TO ACTION)
+   ========================================== */
+.cta-section {
+    margin-top: 60px;
+}
+
+.cta-card {
+    background-color: #1D183A;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border: 1px solid #2F2958;
+    text-align: center;
+}
+
+.cta-title {
+    color: #F4F2FA;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-subtitle {
+    color: #C3BCDB;
+    margin-bottom: 25px;
+}
+
+/* Contenedor y botones */
+.cta-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Botón Primario (Morado) */
+.btn-primary {
+    background-color: #7A52E1;
+    color: #F4F2FA;
+}
+
+.btn-primary:hover {
+    background-color: #633ec7;
+}
+
+/* Botón Secundario (Tags fondo oscuro / Bordes lilas) */
+.btn-secondary {
+    background-color: #2D2354; /* Tags fondo */
+    color: #BDB2FF;            /* Lila claro */
+    border: 1px solid #7A52E1;
+}
+
+.btn-secondary:hover {
+    background-color: #3b2e6e;
+    color: #F4F2FA;
+}
