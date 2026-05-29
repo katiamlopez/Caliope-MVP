@@ -22,12 +22,15 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/frontend/Styles/contactanos.css" />
+    
+    <!-- Aquí se vincula la hoja de estilos modo oscuro -->
+    <link rel="stylesheet" href="/frontend/Styles/styleoscuro.css">
   </head>
 
   <body>
     <!-- =========================
        SECCIÓN DEL CONTACTO
-  ========================== -->
+      ========================== -->
 
     <section class="contact-section container">
       <!-- TITULO -->
@@ -46,7 +49,7 @@
           <div class="contact-card">
             <h2 class="section-title mb-4">Envíanos un mensaje</h2>
 
-            <form>
+            <form action="" id="Cntc"><!--?  SIRR 26/05/2026 22:46 hrs  --> 
               <!-- ESPACIO DE NOMBRE -->
 
               <div class="row g-3 mb-4">
@@ -63,7 +66,8 @@
                       type="text"
                       class="form-control"
                       placeholder="Tu nombre"
-                    />
+                      name="CommentaryName" 
+                    /><!--?  SIRR 26/05/2026 22:46 hrs  --> 
                   </div>
                 </div>
 
@@ -81,7 +85,8 @@
                       type="email"
                       class="form-control"
                       placeholder="tu@email.com"
-                    />
+                      name="CommentaryEMil" 
+                    /><!--?  SIRR 26/05/2026 22:46 hrs  --> 
                   </div>
                 </div>
               </div>
@@ -91,7 +96,8 @@
               <div class="mb-4">
                 <label class="form-label"> Asunto </label>
 
-                <select class="form-select">
+                <select class="form-select" 
+                name="CommentaryTpic"> <!--?  SIRR 26/05/2026 22:46 hrs  --> 
                   <option selected>Selecciona un asunto</option>
 
                   <option>Soporte técnico</option>
@@ -117,13 +123,14 @@
                   <textarea
                     class="form-control"
                     rows="7"
-                    placeholder="Escribe tu mensaje aquí..."
+                    placeholder="Escribe tu mensaje aquí..." 
+                    name="Commentary"
                   ></textarea>
                 </div>
               </div>
 
-              <!-- BOTON DE ENVIAR MENSAJE -->
-              <button class="btn send-btn w-100">
+              <!-- BOTON DE ENVIAR MENSAJE --> <!--? link to forms.js | SIRR 26/05/2026 22:46 hrs  --> 
+              <button class="btn send-btn w-100" type="submit" >
                 <i class="bi bi-send me-2"></i>
 
                 Enviar mensaje
@@ -194,5 +201,13 @@
         </div>
       </div>
     </section>
+
+
+<<<<<<< HEAD
+    <!-- Aquí se vincula la hoja de estilos modo oscuro -->
+    <link rel="stylesheet" href="/frontend/styleoscuro.css">
+    <script type="module" src="../js/componentes/forms.js"></script>
+=======
+>>>>>>> Cristina
   </body>
 </html>

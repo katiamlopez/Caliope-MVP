@@ -1,0 +1,325 @@
+
+:root {
+    /* Paleta de colores */
+    --bg-app: #130F26;
+    --bg-surface: #1D183A;
+    --bg-inputs: #252048;
+    --primary-purple: #7A52E1;
+    --bg-tags: #2D2354;
+    --text-tags: #BDB2FF;
+    --text-main: #F4F2FA;
+    --text-base: #C3BCDB;
+    --text-muted: #7E7599;
+    --borders: #2F2958;
+    
+    /* Fuentes */
+    --font-ui: 'Plus Jakarta Sans', sans-serif;
+    --font-editorial: 'Lora', Georgia, serif;
+    
+    /* Configuración */
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* ==========================================
+   2. CONFIGURACIÓN GENERAL
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-base);
+    font-family: var(--font-ui);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* 
+   3. HEADER (ACERCA DE)
+    */
+.acercaDe {
+    text-align: center;
+    padding: 6rem 1.5rem 4rem;
+    background: radial-gradient(circle at top, #2d2354 0%, var(--bg-app) 70%);
+    border-bottom: 1px solid var(--borders);
+}
+
+.header-icon-container {
+    font-size: 3rem;
+    color: var(--primary-purple);
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-family: var(--font-editorial);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+/* Contenedor del logotipo */
+.header-logo-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Control exacto del tamaño y comportamiento del logo */
+.main-logo {
+    max-width: 70px; /* Ajusta el ancho para tu logo */
+    height: auto;     /* Mantiene la proporción original sin deformar */
+    display: block;
+    transition: var(--transition);
+}
+/* Efecto visual sutil cuando el usuario pasa el mouse */
+.main-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(122, 82, 225, 0.5)); /* Brillo morado  */
+}
+
+/* 
+   4. CONTENIDO PRINCIPAL Y CUADRÍCULAS
+    */
+.aboutContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+section {
+    margin-bottom: 6rem;
+}
+
+/* Nuestra Historia */
+.cardHistoria {
+    background-color: var(--bg-surface);
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--borders);
+    border-left: 6px solid var(--primary-purple);
+}
+
+.nuestraHistoria {
+    font-family: var(--font-editorial);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.historiaTexto p {
+    font-family: var(--font-editorial);
+    font-size: 1.15rem;
+    color: var(--text-base);
+    margin-bottom: 1.25rem;
+}
+
+.historiaTexto p:last-child {
+    margin-bottom: 0;
+}
+
+/* Misión y Visión 2 columnas */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Valores 4 columnas */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-editorial);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+/* Estilo Base para Tarjetas (Objetivos y Valores) */
+.goal-card, .value-card {
+    background-color: var(--bg-surface);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--borders);
+    transition: var(--transition);
+}
+
+.goal-card:hover, .value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-purple);
+}
+
+.card-icon-container {
+    font-size: 2rem;
+    color: var(--text-tags);
+    margin-bottom: 1.25rem;
+}
+
+.card-title {
+    font-family: var(--font-ui);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.card-description {
+    font-family: var(--font-ui);
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Modificación sutil para valores */
+.value-card .card-title {
+    color: var(--text-tags);
+}
+
+/* 
+   5. SECCIÓN LLAMADO A LA ACCIÓN 
+    */
+.cta-section {
+    text-align: center;
+}
+
+.cta-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--borders);
+    padding: 4rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración de fondo */
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(122,82,225,0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-title {
+    font-family: var(--font-editorial);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.cta-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/*
+   6. BOTONES (ESPECIFICACIONES DEL SISTEMA)
+   */
+.btn {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 700; 
+    padding: 1rem 2.25rem;
+    border-radius: 10px; 
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón Primario */
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #936bf5; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 82, 225, 0.4);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+    background-color: var(--bg-tags);
+    color: var(--primary-purple);
+    border: 1px solid var(--borders);
+}
+
+.btn-secondary:hover {
+    background-color: #382c66; 
+    color: #936bf5;
+    transform: translateY(-2px);
+}
+
+/* Animación sutil para el corazón */
+.heart-icon {
+    display: inline-block;
+    animation: heartbeat 2.5s infinite;
+}
+
+.header-logo2-container {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Control tamaño y comportamiento del logo de abajo !NOSOTROS! */
+.main-logo2 {
+    max-width: 150px; /* ancho logo */
+    height: auto;   
+    display: block;
+    transition: var(--transition);
+}
+/* Efecto pasa el mouse */
+.main-logo2:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 16px rgba(122, 82, 225, 0.5)); /* Brillo a UI */
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+}
