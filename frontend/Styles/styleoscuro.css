@@ -323,3 +323,80 @@ section {
     20% { transform: scale(1.1); }
     40% { transform: scale(1); }
 }
+
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS PARA LA VISTA CONTACTO
+   ========================================== */
+
+/* Tarjeta principal de contacto */
+.contact-card {
+    background-color: #1D183A;
+    border: 1px solid #2F2958;
+    color: #C3BCDB;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* Título y subtítulo */
+.main-title {
+    color: #F4F2FA;
+}
+
+.main-subtitle {
+    color: #7E7599;
+}
+
+/* Campos de texto */
+.contact-card .form-control,
+.contact-card .form-select,
+.contact-card .input-group-text {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #2F2958;
+    color: #F4F2FA;
+}
+
+/* Placeholder de inputs */
+.contact-card .form-control::placeholder {
+    color: #5A5278;
+}
+
+/* Etiquetas de formulario */
+.form-label {
+    color: #F4F2FA;
+}
+
+
+/* Íconos circulares */
+.info-item .info-icon {
+    background-color: #231B4D;
+    color: #A29BFE;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Etiquetas laterales */
+.info-item .info-label {
+    color: #7E7599;
+    font-size: 0.85rem;
+}
+
+/* Texto lateral */
+.info-item .info-text {
+    color: #F4F2FA;
+    margin-bottom: 0;
+}
+
+/* Preguntas frecuentes */
+.faq-item h5 {
+    color: #F4F2FA;
+}
+
+.faq-item p {
+    color: #C3BCDB;
+}
