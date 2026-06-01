@@ -1,6 +1,11 @@
-body{
-    margin:0;
+.navbar{
+    margin-left: 50px;
 }
+
+.form-control{
+ 
+}
+
 
 .layout{
     display:flex;
@@ -11,9 +16,9 @@ body{
     margin-left:250px;
     flex:1;
     transition:0.3s;
+    background-color: #f3e7f3;
 }
 
 .contenido.expand{
     margin-left:0;
 }
-

@@ -22,16 +22,21 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/frontend/Styles/contactanos.css" />
+    <link rel="stylesheet" href="../Styles/menu.css">
     
     <!-- Aquí se vincula la hoja de estilos modo oscuro -->
     <link rel="stylesheet" href="/frontend/Styles/styleoscuro.css">
   </head>
 
   <body>
+<div>
+
+  <button id="toggle-btn">☰</button>
+        <div id="menu-container"></div><!--?El nagevador menu -->
     <!-- =========================
        SECCIÓN DEL CONTACTO
       ========================== -->
-
+<div class="contenido">
     <section class="contact-section container">
       <!-- TITULO -->
       <div class="text-center mb-5">
@@ -201,9 +206,12 @@
         </div>
       </div>
     </section>
-
+    </div>
+</div>
     <!-- Aquí se vincula la hoja de estilos modo oscuro -->
+     <script src="../js/menu.js"></script>
     <link rel="stylesheet" href="/frontend/styleoscuro.css">
     <script type="module" src="../js/componentes/forms.js"></script>
+
   </body>
 </html>
