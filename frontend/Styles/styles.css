@@ -1,19 +1,19 @@
 body{
-    margin: 0;
+    margin:0;
 }
 
 .layout{
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
+    display:flex;
+    min-height:100vh;
 }
 
 .contenido{
-    margin-left: 250px;
-    flex: 1;
+    margin-left:250px;
+    flex:1;
+    transition:0.3s;
 }
 
-.navbar{
-    width: 100%;
-    height: 60px;
+.contenido.expand{
+    margin-left:0;
 }
+
