@@ -1,0 +1,47 @@
+{
+  "historias": [
+    {
+      "idHistoria": null,
+      "titulo": "",
+      "descripcion": "",
+      "generos": [],
+      "portada": {
+        "nombreArchivo": "",
+        "rutaArchivo": "",
+        "tipoArchivo": ""
+      },
+      "documentoHistoria": {
+        "nombreArchivo": "",
+        "rutaArchivo": "",
+        "tipoArchivo": "application/pdf"
+      },
+      "autor": {
+        "idUsuario": null,
+        "nombreUsuario": "",
+        "nombreVisible": "",
+        "fotoPerfil": ""
+      },
+      "estado": "borrador",
+      "estadisticas": {
+        "meGusta": 0,
+        "comentarios": 0,
+        "compartidos": 0,
+        "guardados": 0,
+        "lecturas": 0,
+        "calificacionPromedio": 0,
+        "totalResenas": 0
+      },
+      "lectura": {
+        "capituloActual": 1,
+        "totalCapitulos": 1,
+        "progresoPorcentaje": 0,
+        "contenidoActual": ""
+      },
+      "fechas": {
+        "fechaCreacion": "",
+        "fechaActualizacion": "",
+        "fechaPublicacion": null
+      }
+    }
+  ]
+}

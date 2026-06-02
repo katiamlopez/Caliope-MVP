@@ -1,0 +1,34 @@
+{
+  "resenas": [
+    {
+      "idResena": null,
+      "idHistoria": null,
+      "historia": {
+        "titulo": "",
+        "portada": "",
+        "autor": ""
+      },
+      "usuario": {
+        "idUsuario": null,
+        "nombreUsuario": "",
+        "nombreVisible": "",
+        "fotoPerfil": ""
+      },
+      "calificacion": null,
+      "titulo": "",
+      "opinion": "",
+      "estado": "borrador",
+      "estadisticas": {
+        "meGusta": 0,
+        "comentarios": 0,
+        "compartidos": 0,
+        "guardados": 0
+      },
+      "fechas": {
+        "fechaCreacion": "",
+        "fechaActualizacion": "",
+        "fechaPublicacion": null
+      }
+    }
+  ]
+}
