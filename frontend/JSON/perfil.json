@@ -1,0 +1,30 @@
+{
+  "pagina": "mi_perfil",
+  "usuario": {
+    "id": "u001",
+    "nombre": "Valeria Morales",
+    "pseudonimo": "Valeria M.",
+    "usuario": "valeria_m",
+    "correo": "valeria@caliope.com",
+    "avatar": "/assets/avatars/valeria.png",
+    "banner": "/assets/banners/valeria-banner.png",
+    "bio": "Escritora apasionada del género romántico.",
+    "fecha_nacimiento": "1995-04-12",
+    "fecha_registro": "2024-01-15",
+    "seguidores": 128,
+    "siguiendo": 45,
+    "obras_publicadas": ["o001"],
+    "configuracion": {
+      "idioma": "es",
+      "tema_preferido": "oscuro",
+      "notificaciones_email": true,
+      "perfil_publico": true,
+      "mostrar_correo": false
+    },
+    "campos_editables": [
+      "nombre", "pseudonimo", "usuario", "correo",
+      "avatar", "banner", "bio", "fecha_nacimiento",
+      "configuracion"
+    ]
+  }
+}
