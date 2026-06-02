@@ -1,325 +1,320 @@
 body {
-    margin: 0;
-    background-color: #f3e7f3;
-    color: #1b144f;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f3e7f3;
+  color: #1b144f;
+  font-family: Arial, sans-serif;
 }
 
 /* Acerca de y Nuestra historia */
 .acercaDe {
-    text-align: center;
-    padding: 80px 20px 100px;
+  text-align: center;
+  padding: 80px 20px 100px;
 }
 
 .header-icon-container {
-    width: 80px;
-    height: 80px;
-    background: white;
-    margin: 0 auto 25px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  width: 80px;
+  height: 80px;
+  background: white;
+  margin: 0 auto 25px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 }
 
 .logo-caliope {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .title {
-    font-family: Georgia, serif;
-    font-size: 48px;
-    margin: 0;
-    color: #3b0f4f;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  margin: 0;
+  color: #3b0f4f;
 }
 
 .subtitle {
-    font-size: 22px;
-    margin-top: 15px;
-    color: #2b174f;
+  font-size: 22px;
+  margin-top: 15px;
+  color: #2b174f;
 }
 
 .aboutContent {
-    padding: 0 45px 80px;
+  padding: 0 45px 80px;
 }
 
 .cardHistoria {
-    background: white;
-    max-width: 1000px;
-    margin: 0 auto 60px auto;
-    padding: 45px 50px;
-    border-radius: 16px;
+  background: white;
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  padding: 45px 50px;
+  border-radius: 16px;
 }
 
 .nuestraHistoria {
-    text-align: center;
-    font-family: Georgia, serif;
-    font-size: 32px;
-    color: #08002e;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: #08002e;
 }
 
 .historiaTexto p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #1b144f;
-    text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1b144f;
+  text-align: center;
 }
 /* Acerca de y Nuestra historia */
 /**Diseño Responsivo*/
 @media (max-width: 768px) {
-    .acercaDe {
-        padding: 50px 20px 70px;
-    }
+  .acercaDe {
+    padding: 50px 20px 70px;
+  }
 
-    .title {
-        font-size: 36px;
-    }
+  .title {
+    font-size: 36px;
+  }
 
-    .subtitle {
-        font-size: 18px;
-    }
+  .subtitle {
+    font-size: 18px;
+  }
 
-    .aboutContent {
-        padding: 0 20px 60px;
-    }
+  .aboutContent {
+    padding: 0 20px 60px;
+  }
 
-    .cardHistoria {
-        padding: 30px 25px;
-    }
+  .cardHistoria {
+    padding: 30px 25px;
+  }
 
-    .nuestraHistoria {
-        font-size: 28px;
-    }
+  .nuestraHistoria {
+    font-size: 28px;
+  }
 
-    .historiaTexto p {
-        font-size: 16px;
-    }
+  .historiaTexto p {
+    font-size: 16px;
+  }
 }
-
-
 
 /* Misión y Visión */
 
 .goals-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .goal-card {
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /*Valores */
 
 .seccionValores {
-    padding: 60px 20px;
+  padding: 60px 20px;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 3rem;
-    color: #1b144f;
-    margin-bottom: 50px;
-    font-family: Georgia, serif;
+  text-align: center;
+  font-size: 3rem;
+  color: #1b144f;
+  margin-bottom: 50px;
+  font-family: Georgia, serif;
 }
 
 .values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .value-card {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
-    text-align: center;
+  background: white;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 /* Iconos */
 .card-icon-container {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: #ead9ef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #ead9ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .value-card .card-icon-container {
-    margin: 0 auto 20px;
+  margin: 0 auto 20px;
 }
 
 .goal-card .card-icon-container {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .card-title {
-    color: #13004f;
-    font-size: 2rem;
-    font-family: Georgia, serif;
-    margin-bottom: 15px;
+  color: #13004f;
+  font-size: 2rem;
+  font-family: Georgia, serif;
+  margin-bottom: 15px;
 }
 
 .card-description {
-    color: #2e2e5e;
-    line-height: 1.6;
+  color: #2e2e5e;
+  line-height: 1.6;
 }
 
 /**Responsive */
 
 @media (max-width: 992px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .values-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .goals-grid {
-        grid-template-columns: 1fr;
-    }
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 576px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
+  .section-title {
+    font-size: 2.2rem;
+  }
 
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    .card-title {
-        font-size: 1.6rem;
-    }
+  .card-title {
+    font-size: 1.6rem;
+  }
 }
 
 /*Unete a Caliope */
 .cta-section {
-    padding: 60px 40px 80px;
+  padding: 60px 40px 80px;
 }
 
 .cta-card {
-    background: white;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 30px;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  background: white;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cta-title {
-    font-family: Georgia, serif;
-    font-size: 34px;
-    color: #08002e;
-    margin-bottom: 15px;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  color: #08002e;
+  margin-bottom: 15px;
 }
 
 .cta-subtitle {
-    font-size: 18px;
-    color: #1b144f;
-    margin-bottom: 30px;
+  font-size: 18px;
+  color: #1b144f;
+  margin-bottom: 30px;
 }
 
 .cta-buttons-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .btn {
-    padding: 14px 32px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 14px 32px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .btn-primary {
-    background: #431457;
-    color: white;
-    border: 2px solid #431457;
+  background: #431457;
+  color: white;
+  border: 2px solid #431457;
 }
 
 .btn-secondary {
-    background: white;
-    color: #431457;
-    border: 2px solid #431457;
+  background: white;
+  color: #431457;
+  border: 2px solid #431457;
 }
 
 /**Responsive */
 
 @media (max-width: 576px) {
-    .cta-section {
-        padding: 40px 20px 60px;
-    }
+  .cta-section {
+    padding: 40px 20px 60px;
+  }
 
-    .cta-card {
-        padding: 35px 20px;
-    }
+  .cta-card {
+    padding: 35px 20px;
+  }
 
-    .cta-title {
-        font-size: 28px;
-    }
+  .cta-title {
+    font-size: 28px;
+  }
 
-    .cta-subtitle {
-        font-size: 16px;
-    }
+  .cta-subtitle {
+    font-size: 16px;
+  }
 
-    .cta-buttons-container {
-        flex-direction: column;
-    }
+  .cta-buttons-container {
+    flex-direction: column;
+  }
 
-    .btn {
-        width: 100%;
-    }
+  .btn {
+    width: 100%;
+  }
 }
 
 /* *Iconos */
 
 .card-icon-container i {
-    font-size: 32px;
-    color: #4b1d63;
+  font-size: 32px;
+  color: #4b1d63;
 }
 
 .card-icon-container i {
-    font-size: 32px;
-    color: #4b1d63;
+  font-size: 32px;
+  color: #4b1d63;
 }
 
 .card-icon-container i {
-    font-size: 32px;
-    color: #4b1d63;
+  font-size: 32px;
+  color: #4b1d63;
 }
 
 .card-icon-container i {
-    font-size: 32px;
-    color: #4b1d63;
+  font-size: 32px;
+  color: #4b1d63;
 }
 
 .card-icon-container i {
-    font-size: 32px;
-    color: #4b1d63;
+  font-size: 32px;
+  color: #4b1d63;
 }
 
 .card-icon-container i {
-    font-size: 32px;
-    color: #4b1d63;
+  font-size: 32px;
+  color: #4b1d63;
 }
-
