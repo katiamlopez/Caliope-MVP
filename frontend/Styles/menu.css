@@ -1,83 +1,239 @@
-body{
-    margin:0;
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fc;
 }
 
-.img{
-  margin-left: 70px;
-    width:100px; 
-    height:50px;
- justify-content: center;
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 240px;
+  height: 100vh;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 12px;
+
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.3s ease;
+
+  overflow: hidden;
+
+  z-index: 1000;
 }
 
-.sidebar{
-    position:fixed;
-    left:0;
-    top:0;
-    width:220px;
-    height:100vh;
-    background:#FFFFFF;
-    transition:transform .3s ease;
+/* =========================
+   SIDEBAR CERRADO
+========================= */
+
+.sidebar.closed {
+  width: 90px;
 }
 
-.sidebar.closed{
-    transform:translateX(-220px);
+.sidebar.closed span {
+  display: none;
 }
 
-.menu-header{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:10px;
-    color:rgb(122, 9, 9);
+.sidebar.closed li a {
+  justify-content: center;
 }
 
-#toggle-btn{
-    border:none;
-    background:none;
-    color:rgb(62, 8, 52);
-    font-size:22px;
-    cursor:pointer;
+.sidebar.closed .img {
+  width: 50px;
 }
 
-.sidebar ul{
-    list-style:none;
-    padding:0;
+/* =========================
+   LOGO
+========================= */
+
+.menu-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 70px;
+  margin-bottom: 40px;
 }
 
-.sidebar li a{
-    display:block;
-    padding:15px 20px;
-    color:#3b0f4f;
-    text-decoration:none;
+.img {
+  width: 160px;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: all 0.3s ease;
+
+  filter: drop-shadow(0 4px 8px rgba(122, 92, 255, 0.15));
 }
 
-.sidebar li a:hover{
-    background:#f3e7f3;
+.img:hover {
+  transform: scale(1.05);
 }
 
-/* Contenido */
+/* =========================
+   MENÚ
+========================= */
 
-.contenido{
-    margin-left:220px;
-    padding:20px;
-    transition:.3s;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.contenido.expand{
-    margin-left:0px;
+.sidebar li {
+  margin-bottom: 8px;
 }
 
-#toggle-btn{
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 9999;
+/* =========================
+   LINKS
+========================= */
 
-    border: none;
-    background: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
+.sidebar li a {
+  display: flex;
+  align-items: center;
 
-    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  gap: 15px;
+
+  padding: 12px 16px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  color: #5f5872;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+/* =========================
+   ICONOS
+========================= */
+
+.sidebar li a i {
+  width: 30px;
+  text-align: center;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.sidebar li a:hover {
+  background: #f3efff;
+
+  color: #7a5cff;
+
+  transform: translateX(4px);
+}
+
+/* =========================
+   ELEMENTO ACTIVO
+========================= */
+
+.sidebar li.active a {
+  background: #ece5ff;
+
+  color: #7a5cff;
+
+  font-weight: 600;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.contenido {
+  margin-left: 240px;
+
+  min-height: 100vh;
+
+  transition: all 0.3s ease;
+}
+
+/* Cuando el menú está cerrado */
+
+.contenido.expand {
+  margin-left: 90px;
+}
+
+/* =========================
+   BOTÓN HAMBURGUESA
+========================= */
+
+#toggle-btn {
+  position: fixed;
+
+  top: 15px;
+  left: 15px;
+
+  z-index: 9999;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  background: white;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+#toggle-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .contenido {
+    margin-left: 0;
+  }
+
+  .sidebar.closed {
+    transform: translateX(-220px);
+    width: 220px;
+  }
+
+  .sidebar.closed span {
+    display: inline;
+  }
+
+  .sidebar.closed li a {
+    justify-content: flex-start;
+  }
 }
