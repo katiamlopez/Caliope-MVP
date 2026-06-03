@@ -1,10 +1,4 @@
-.navbar {
-    margin-left: 50px;
-}
-
-.form-control {
-    
-}
+/** LAYOUT BASE */
 
 .layout {
     display: flex;
@@ -14,9 +8,9 @@
 .contenido {
     margin-left: 250px;
     flex: 1;
-    transition: 0.3s;
-    background-color: #ffffff;
     min-height: 100vh;
+    background-color: #ffffff;
+    transition: 0.3s;
 }
 
 .contenido.expand {
@@ -24,18 +18,24 @@
 }
 
 
+/** HOME / FEED */
+
 .home-page {
+    padding: 32px 48px;
+    min-height: 100vh;
     background-color: #ffffff;
-    min-height: calc(100vh - 56px);
+    color: #13002f;
 }
 
 .home-title {
     color: #13002f;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
-/* Cards principales */
+
+/** CARDS BASE */
 
 .feed-card,
 .side-card {
@@ -46,7 +46,8 @@
     box-shadow: 0 2px 8px rgba(79, 33, 99, 0.08);
 }
 
-/* Header de publicaciones */
+
+/** HEADER DE PUBLICACIONES */
 
 .feed-card-header {
     display: flex;
@@ -54,6 +55,23 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 20px;
+}
+
+.feed-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feed-user-info p {
+    margin: 0;
+    color: #2f2040;
+    font-size: 16px;
+}
+
+.feed-user-info strong {
+    color: #13002f;
+    font-weight: 700;
 }
 
 .feed-avatar,
@@ -71,7 +89,8 @@
     font-size: 14px;
 }
 
-/* Contenido de historia / reseña en feed */
+
+/** CONTENIDO HISTORIA / RESEÑA */
 
 .story-feed-content {
     display: flex;
@@ -94,15 +113,19 @@
 
 .story-info h2 {
     color: #13002f;
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: 12px;
 }
 
 .story-info p {
     color: #2f2040;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* Géneros */
+
+/** GÉNEROS */
 
 .story-genres {
     display: flex;
@@ -114,12 +137,13 @@
 .story-genres span {
     background-color: #eadcf2;
     color: #6f42c1;
-    padding: 6px 16px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 14px;
 }
 
-/* Acciones de las cards */
+
+/** ACCIONES DE LAS CARDS */
 
 .story-actions {
     display: flex;
@@ -135,57 +159,78 @@
     color: #7b6692;
     font-size: 18px;
     padding: 0;
+    cursor: pointer;
 }
 
 .icon-button:hover {
     color: #45135c;
 }
 
-/* Botones del home */
 
-.home-page .btn-primary,
+/** BOTONES */
+
 .read-button {
+    display: inline-block;
     background-color: #45135c;
-    border-color: #45135c;
+    color: #ffffff;
+    text-decoration: none;
     border-radius: 20px;
     padding: 8px 24px;
+    font-weight: 600;
+    border: none;
 }
 
-.home-page .btn-primary:hover,
 .read-button:hover {
     background-color: #2f0d40;
-    border-color: #2f0d40;
+    color: #ffffff;
 }
 
-/* Reseñas */
+.read-button-small {
+    padding: 6px 20px;
+    font-size: 14px;
+}
+
+.view-all-button {
+    width: 100%;
+    border: none;
+    background-color: #f6f4f8;
+    color: #13002f;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.view-all-button:hover {
+    background-color: #eadcf2;
+}
+
+
+/** RESEÑAS / ESTRELLAS */
 
 .review-rating {
     color: #ffb703;
     font-size: 18px;
     margin-bottom: 12px;
+    letter-spacing: 1px;
 }
 
-/* Panel lateral */
+
+/** PANEL LATERAL */
 
 .side-card h2 {
     color: #13002f;
+    font-size: 26px;
     font-weight: 700;
     margin-bottom: 16px;
 }
 
-.side-card-header {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.side-card-header h2 {
-    margin: 0;
-}
-
 .activity-filter {
     width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #eee7f3;
+    border-radius: 12px;
+    color: #2f2040;
 }
 
 .activity-item {
@@ -198,7 +243,22 @@
 
 .activity-item p {
     margin: 0;
+    color: #2f2040;
+    font-size: 15px;
 }
+
+.activity-item strong {
+    color: #13002f;
+    font-weight: 700;
+}
+
+.activity-item span {
+    color: #8b7ca3;
+    font-size: 14px;
+}
+
+
+/** OBRAS DESTACADAS */
 
 .featured-story {
     display: flex;
@@ -215,21 +275,33 @@
     background-color: #f3e7f3;
 }
 
-.featured-story h3 {
+.featured-info h3 {
+    color: #13002f;
     font-size: 18px;
     font-weight: 700;
-    color: #13002f;
+    margin-bottom: 4px;
 }
 
-/* Responsive */
+.featured-info .review-rating {
+    margin-bottom: 8px;
+}
+
+
+/** RESPONSIVE */
+
+@media (max-width: 992px) {
+    .home-page {
+        padding: 28px;
+    }
+}
 
 @media (max-width: 768px) {
     .contenido {
         margin-left: 0;
     }
 
-    .navbar {
-        margin-left: 0;
+    .home-page {
+        padding: 24px;
     }
 
     .story-feed-content {
@@ -257,4 +329,8 @@
     .activity-item span {
         grid-column: 2;
     }
+}
+
+.home-aside {
+    margin-top: 85px;
 }
