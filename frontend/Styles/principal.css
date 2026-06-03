@@ -22,3 +22,158 @@
 .contenido.expand{
     margin-left:0;
 }
+
+.home-page {
+    background-color: #ffffff;
+}
+
+.home-title {
+    color: #13002f;
+    font-weight: 700;
+}
+
+.feed-card,
+.side-card {
+    background-color: #ffffff;
+    border: 1px solid #eee7f3;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(79, 33, 99, 0.08);
+}
+
+.feed-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.feed-avatar,
+.activity-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feed-time {
+    color: #8b7ca3;
+    font-size: 14px;
+}
+
+.story-feed-content {
+    display: flex;
+    gap: 24px;
+}
+
+.story-cover {
+    width: 150px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.story-info {
+    flex: 1;
+}
+
+.story-info h2 {
+    color: #13002f;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.story-genres {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.story-genres span {
+    background-color: #eadcf2;
+    color: #6f42c1;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.story-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.icon-button {
+    border: none;
+    background: transparent;
+    color: #7b6692;
+    font-size: 18px;
+}
+
+.read-button,
+.btn-primary {
+    background-color: #45135c;
+    border-color: #45135c;
+    border-radius: 20px;
+    padding: 8px 24px;
+}
+
+.read-button:hover,
+.btn-primary:hover {
+    background-color: #2f0d40;
+    border-color: #2f0d40;
+}
+
+.review-rating {
+    color: #ffb703;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.activity-item {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.activity-item p {
+    margin: 0;
+}
+
+.featured-story {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.featured-cover {
+    width: 90px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.featured-story h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #13002f;
+}
+
+@media (max-width: 768px) {
+    .story-feed-content {
+        flex-direction: column;
+    }
+
+    .story-cover {
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+    }
+
+    .story-actions {
+        flex-wrap: wrap;
+    }
+}
