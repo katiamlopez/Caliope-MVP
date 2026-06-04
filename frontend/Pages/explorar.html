@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explora</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../Styles/menu.css">
     <link rel="stylesheet" href="../Styles/explorar.css">
 </head>
@@ -23,15 +26,8 @@
 
             <main class="explore-page">
 
-                <!-- Encabezado de Explora -->
-                <section class="explore-header">
-                    <div>
-                        <h1 class="explore-title">Explora</h1>
-                        <p class="explore-description">
-                            Descubre nuevas historias, autores y lecturas recomendadas por la comunidad.
-                        </p>
-                    </div>
-
+                <!-- Barra superior base -->
+                <header class="page-topbar">
                     <form class="explore-search" role="search">
                         <input 
                             type="search" 
@@ -43,6 +39,35 @@
                             Buscar
                         </button>
                     </form>
+
+                    <div class="page-actions">
+                        <button type="button" class="topbar-icon" aria-label="Configuración">
+                            <i class="bi bi-gear"></i>
+                        </button>
+
+                        <button type="button" class="topbar-icon notification-icon" aria-label="Notificaciones">
+                            <i class="bi bi-bell"></i>
+                            <span></span>
+                        </button>
+
+                        <a href="perfil.html" class="topbar-profile-link" aria-label="Ir a mi perfil">
+                            <img 
+                                src="../assets/users-photos/foto-perfil-usuario.png" 
+                                alt="Foto de perfil del usuario"
+                                class="topbar-avatar"
+                            >
+                        </a>
+                    </div>
+                </header>
+
+                <!-- Encabezado de Explora -->
+                <section class="explore-header">
+                    <div>
+                        <h1 class="explore-title">Explora</h1>
+                        <p class="explore-description">
+                            Descubre nuevas historias, autores y lecturas recomendadas por la comunidad.
+                        </p>
+                    </div>
                 </section>
 
                 <!-- Filtros por género -->
@@ -73,7 +98,7 @@
 
                             <article class="favorite-story-card">
                                 <img 
-                                    src="../assets/img/portada-historia.jpg" 
+                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
                                     alt="Portada de Luz de octubre"
                                     class="favorite-story-cover"
                                 >
@@ -110,7 +135,7 @@
 
                                 <article class="top-story-card">
                                     <img 
-                                        src="../assets/img/portada-historia.jpg" 
+                                        src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
                                         alt="Portada de Luz de octubre"
                                         class="top-story-cover"
                                     >
@@ -128,7 +153,7 @@
 
                                 <article class="top-story-card">
                                     <img 
-                                        src="../assets/img/portada-resena.jpg" 
+                                        src="../assets/history-covers/portada-historia-el-cielo-de-abril.png" 
                                         alt="Portada de El cielo de abril"
                                         class="top-story-cover"
                                     >
@@ -146,7 +171,7 @@
 
                                 <article class="top-story-card">
                                     <img 
-                                        src="../assets/img/portada-tercera.jpg" 
+                                        src="../assets/history-covers/portada-historia-manana-es-otro-dia.png" 
                                         alt="Portada de Mañana es otro"
                                         class="top-story-cover"
                                     >
@@ -172,7 +197,7 @@
                             <article class="explore-review-card">
                                 <header class="explore-review-header">
                                     <img 
-                                        src="../assets/img/avatar-resenista.jpg" 
+                                        src="../assets/users-photos/foto-perfil-diego-n.png" 
                                         alt="Foto de perfil del reseñista"
                                         class="review-avatar"
                                     >
@@ -211,7 +236,7 @@
 
                             <article class="featured-story-card">
                                 <img 
-                                    src="../assets/img/portada-destacada.jpg" 
+                                    src="../assets/history-covers/portada-historia-love-right-next-door.png" 
                                     alt="Portada de la obra destacada"
                                     class="featured-cover"
                                 >
@@ -221,7 +246,7 @@
                                 </h3>
 
                                 <p class="featured-author">
-                                    Olivia Nadal
+                                    Por Olivia Nadal
                                 </p>
 
                                 <p class="featured-status">
@@ -251,5 +276,6 @@
     </div>
 
     <script src="../js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

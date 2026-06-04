@@ -27,6 +27,61 @@
     color: #13002f;
 }
 
+
+/** TOPBAR BASE */
+
+.page-topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-icon {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    color: #8b7ca3;
+    font-size: 20px;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.topbar-icon:hover {
+    color: #45135c;
+}
+
+.notification-icon span {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 8px;
+    height: 8px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+}
+
+.topbar-profile-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.topbar-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f3e7f3;
+}
+
+
 .home-title {
     color: #13002f;
     font-size: 32px;
@@ -287,6 +342,13 @@
 }
 
 
+/** ALINEACIÓN DEL ASIDE */
+
+.home-aside {
+    margin-top: 85px;
+}
+
+
 /** RESPONSIVE */
 
 @media (max-width: 992px) {
@@ -302,6 +364,14 @@
 
     .home-page {
         padding: 24px;
+    }
+
+    .page-topbar {
+        margin-bottom: 20px;
+    }
+
+    .home-aside {
+        margin-top: 0;
     }
 
     .story-feed-content {
@@ -329,8 +399,4 @@
     .activity-item span {
         grid-column: 2;
     }
-}
-
-.home-aside {
-    margin-top: 85px;
 }
