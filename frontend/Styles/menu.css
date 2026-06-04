@@ -216,24 +216,60 @@ body {
 ========================= */
 
 @media (max-width: 768px) {
+  /* 1. El menú por defecto estará oculto fuera de la pantalla (a la izquierda) */
   .sidebar {
-    width: 220px;
+    width: 260px;
+    transform: translateX(-100%); /* Lo saca por completo de la vista */
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
   }
 
-  .contenido {
-    margin-left: 0;
+  /* 2. Cuando el menú NO tenga la clase '.closed' (es decir, esté activo/abierto) se muestra */
+  .sidebar:not(.closed) {
+    transform: translateX(0);
   }
 
+  /* 3. Reutilizamos tu clase '.closed' para mantenerlo oculto en móvil de forma limpia */
   .sidebar.closed {
-    transform: translateX(-220px);
-    width: 220px;
+    transform: translateX(-100%);
+    width: 260px; /* Mantenemos el tamaño fijo para que no se deforme al salir */
   }
 
+  /* 4. Aseguramos que el texto y los enlaces se vean normales en móvil */
   .sidebar.closed span {
     display: inline;
   }
 
   .sidebar.closed li a {
     justify-content: flex-start;
+  }
+
+  /* 5. Ajustamos el margen del logo en móviles para que no quede tan abajo */
+  .menu-header {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .img {
+    width: 130px;
+  }
+
+  /* 6. El contenido principal ahora ocupa TODO el ancho de la pantalla */
+  .contenido {
+    margin-left: 0 !important; /* Eliminamos el espacio del menú en PC */
+    padding: 80px 20px 20px 20px; /* Padding superior para que el botón flotante no tape tu contenido */
+  }
+
+  /* Cancelamos la expansión de PC en móvil */
+  .contenido.expand {
+    margin-left: 0 !important;
+  }
+
+  /* 7. Ajuste opcional para el botón hamburguesa en móviles (un poco más compacto) */
+  #toggle-btn {
+    top: 12px;
+    left: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
