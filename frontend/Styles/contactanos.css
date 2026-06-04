@@ -1,444 +1,278 @@
 /* =========================================
-   IMPORTAR TIPOGRAFIA DESDE GOOGLE FONTS
+   GOOGLE FONTS
 ========================================= */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* =========================================
    VARIABLES GLOBALES
-   Aquí guardamos colores reutilizables
 ========================================= */
-
 :root {
-  /* Color principal oscuro */
-  --primary-dark: #17072b;
+  --primary-dark: #13002f;
+  --primary-medium: #45135c;
+  --primary-light: #8b7ca3;
 
-  /* Color secundario */
-  --primary-medium: #2c124d;
-
-  /* Morado claro */
-  --primary-light: #7d6aa5;
-
-  /* Fondo general de la página */
-  --background-color: white;
-
-  /* Fondo de las cards */
+  --background-color: #ffffff;
   --card-background: #ffffff;
 
-  /* Color de bordes */
-  --border-color: #d8cfee;
+  --border-color: #eee7f3;
 
-  /* Texto principal */
-  --text-dark: #18072d;
-
-  /* Texto secundario */
-  --text-light: #7b6f96;
+  --text-dark: #13002f;
+  --text-medium: #2f2040;
+  --text-light: #8b7ca3;
 }
 
 /* =========================================
    RESET
-   Elimina estilos automáticos del navegador
 ========================================= */
-
 * {
   margin: 0;
   padding: 0;
-
-  /* Hace que los tamaños funcionen correctamente */
   box-sizing: border-box;
 }
 
 /* =========================================
    BODY
-   Configuración general de toda la página
 ========================================= */
-
 body {
-  /* Tipografía principal */
   font-family: "Poppins", sans-serif;
-
-  /* Color de fondo */
   background-color: var(--background-color);
-
-  /* Color de texto general */
   color: var(--text-dark);
-
-  /* Evita scroll horizontal */
   overflow-x: hidden;
 }
 
 /* =========================================
-   IMÁGENES RESPONSIVAS
+   IMÁGENES
 ========================================= */
-
 img {
-  /* La imagen nunca será más grande que su contenedor */
   max-width: 100%;
-
-  /* Mantiene proporción */
   height: auto;
 }
 
 /* =========================================
-   SECCIÓN PRINCIPAL
+   CONTENIDO PRINCIPAL
 ========================================= */
-
 .contact-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding: 70px 0;
 }
 
 /* =========================================
    TÍTULO PRINCIPAL
 ========================================= */
-
 .main-title {
-  font-size: 4rem;
-
+  font-size: 48px;
   font-weight: 700;
-
   color: var(--primary-dark);
-
   margin-bottom: 10px;
-
   line-height: 1.1;
 }
 
 /* =========================================
    SUBTÍTULO
 ========================================= */
-
 .main-subtitle {
-  font-size: 1.1rem;
-
-  color: var(--text-light);
-
+  font-size: 1rem;
+  color: var(--text-medium);
   max-width: 700px;
-
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* =========================================
-   CARDS PRINCIPALES
-   Cuadros blancos de cada sección
+   CARDS
 ========================================= */
-
 .contact-card {
-  /* Fondo blanco */
   background-color: var(--card-background);
-
-  /* Contorno */
-  border: 2px solid var(--border-color);
-
-  /* Bordes redondeados */
-  border-radius: 24px;
-
-  /* Espaciado interno */
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
   padding: 35px;
-
-  /* Sombra */
-  box-shadow: 0 4px 20px rgba(23, 7, 43, 0.05);
-
-  /* Transición suave */
-  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(79, 33, 99, 0.08);
+  transition: all 0.3s ease;
 }
-
-/* =========================================
-   EFECTO HOVER EN LAS CARDS
-   Cuando el mouse pasa encima
-========================================= */
 
 .contact-card:hover {
-  /* Cambia ligeramente el borde */
-  border-color: #bca7e4;
-
-  /* Sombra más fuerte */
-  box-shadow: 0 10px 30px rgba(44, 18, 77, 0.08);
+  border-color: #d8cfee;
+  box-shadow: 0 8px 20px rgba(79, 33, 99, 0.12);
 }
 
 /* =========================================
-   SUBTÍTULOS DE SECCIÓN
+   TÍTULOS DE SECCIÓN
 ========================================= */
-
 .section-title {
-  font-size: 2rem;
-
+  font-size: 1.8rem;
   font-weight: 700;
-
   color: var(--primary-dark);
 }
 
 /* =========================================
-   LABELS DEL FORMULARIO
+   LABELS
 ========================================= */
-
 .form-label {
   font-size: 0.95rem;
-
   font-weight: 500;
-
-  margin-bottom: 10px;
-
   color: var(--primary-dark);
+  margin-bottom: 10px;
 }
 
 /* =========================================
    INPUT GROUP
-   Contenedor que une icono + input
 ========================================= */
-
 .input-group {
-  /* Bordes redondeados */
-  border-radius: 18px;
-
-  /* Recorta elementos internos */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   overflow: hidden;
 }
 
 /* =========================================
-   ICONOS DEL INPUT
+   ICONOS INPUT
 ========================================= */
-
 .input-group-text {
-  background-color: white;
+  border: none;
+  background: white;
+}
 
-  border: 2px solid var(--border-color);
-
-  /* Elimina línea entre icono e input */
-  border-right: none;
-
-  color: var(--primary-light);
-
-  padding-left: 16px;
-  padding-right: 16px;
+.input-group .form-control {
+  border: none;
 }
 
 /* =========================================
    INPUTS Y SELECTS
 ========================================= */
-
 .form-control,
 .form-select {
-  /* Contorno */
-  border: 2px solid var(--border-color);
-
-  /* Espaciado interno */
+  border: 1px solid var(--border-color);
   padding: 14px 16px;
-
-  /* Tamaño de texto */
   font-size: 1rem;
-
-  /* Color del texto */
-  color: var(--text-dark);
-
-  /* Fondo blanco */
+  color: var(--text-medium);
   background-color: white;
-
-  /* Transición suave */
   transition: all 0.3s ease;
 }
-
-/* =========================================
-   ELIMINAR DOBLE BORDE
-========================================= */
 
 .form-control {
   border-left: none;
 }
 
-/* =========================================
-   PLACEHOLDER
-   Texto gris dentro de inputs
-========================================= */
-
 .form-control::placeholder {
-  color: #a295bd;
+  color: var(--text-light);
 }
-
-/* =========================================
-   HOVER EN INPUTS
-========================================= */
 
 .form-control:hover,
 .form-select:hover {
-  border-color: #9f89c9;
+  border-color: #d8cfee;
 }
-
-/* =========================================
-   FOCUS
-   Cuando el usuario selecciona el input
-========================================= */
 
 .form-control:focus,
 .form-select:focus {
-  border-color: #8e6cc7;
-
-  box-shadow: 0 0 0 5px rgba(142, 108, 199, 0.15);
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.15);
 }
 
-/* =========================================
-   TEXTAREA
-========================================= */
-
 textarea {
-  /* Evita que el usuario cambie tamaño */
   resize: none;
 }
 
 /* =========================================
-   BOTÓN
+   BOTÓN PRINCIPAL
 ========================================= */
-
-.send-btn {
-  /* Fondo degradado */
-  background: linear-gradient(135deg, #17072b, #2d1450);
-
-  color: white;
-
+.btn-primary {
+  background-color: var(--primary-medium);
   border: none;
-
-  padding: 15px;
-
-  border-radius: 18px;
-
-  font-size: 1rem;
-
+  border-radius: 20px;
+  padding: 14px 24px;
   font-weight: 600;
-
   transition: all 0.3s ease;
 }
 
-/* =========================================
-   HOVER DEL BOTÓN
-========================================= */
-
-.send-btn:hover {
-  background: linear-gradient(135deg, #2d1450, #43206f);
-
-  /* Eleva ligeramente el botón */
+.btn-primary:hover {
+  background-color: #2f0d40;
   transform: translateY(-2px);
-
-  box-shadow: 0 10px 20px rgba(44, 18, 77, 0.18);
-
-  color: white;
+  box-shadow: 0 8px 18px rgba(69, 19, 92, 0.2);
 }
 
 /* =========================================
    INFORMACIÓN DE CONTACTO
 ========================================= */
-
 .info-item {
   display: flex;
-
   align-items: flex-start;
-
   gap: 16px;
-
   margin-bottom: 28px;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
 }
 
 /* =========================================
    ICONOS DE INFORMACIÓN
 ========================================= */
-
 .info-icon {
-  min-width: 50px;
-
   width: 50px;
   height: 50px;
+  min-width: 50px;
 
   border-radius: 14px;
 
-  background-color: #f3effa;
+  background-color: #f3e7f3;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--primary-dark);
-
+  color: var(--primary-medium);
   font-size: 1.1rem;
 }
 
 /* =========================================
-   TEXTO PEQUEÑO DE INFO
+   TEXTO INFO
 ========================================= */
-
 .info-label {
   display: block;
-
   font-size: 0.9rem;
-
   color: var(--text-light);
-
   margin-bottom: 4px;
 }
 
-/* =========================================
-   TEXTO PRINCIPAL DE INFO
-========================================= */
-
 .info-text {
   margin: 0;
-
   font-size: 1rem;
-
   font-weight: 500;
-
-  color: var(--text-dark);
+  color: var(--text-medium);
 }
 
 /* =========================================
    FAQ
 ========================================= */
-
 .faq-item {
   margin-bottom: 30px;
 }
-
-/* El último elemento no tendrá margen */
 
 .faq-item:last-child {
   margin-bottom: 0;
 }
 
-/* =========================================
-   TITULOS FAQ
-========================================= */
-
 .faq-item h5 {
   font-size: 1.05rem;
-
   font-weight: 600;
-
   color: var(--primary-dark);
-
   margin-bottom: 10px;
 }
 
-/* =========================================
-   TEXTO FAQ
-========================================= */
-
 .faq-item p {
-  color: var(--text-light);
-
-  line-height: 1.7;
-
+  color: var(--text-medium);
+  line-height: 1.6;
   margin: 0;
 }
 
 /* =========================================
    RESPONSIVE TABLET
 ========================================= */
-
 @media (max-width: 992px) {
   .main-title {
-    font-size: 3rem;
+    font-size: 48px;
   }
 
   .section-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .contact-card {
@@ -447,13 +281,11 @@ textarea {
 }
 
 /* =========================================
-   RESPONSIVE MOBILE
+   RESPONSIVE MÓVIL
 ========================================= */
-
 @media (max-width: 768px) {
   .contact-section {
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding: 45px 0;
   }
 
   .main-title {
@@ -470,23 +302,26 @@ textarea {
 
   .contact-card {
     padding: 22px;
-
-    border-radius: 20px;
-  }
-
-  .send-btn {
-    padding: 13px;
+    border-radius: 18px;
   }
 
   .info-item {
     gap: 14px;
   }
+
+  .contenido {
+    margin-left: 0 !important;
+    padding: 80px 20px 20px;
+  }
+
+  .contenido.expand {
+    margin-left: 0 !important;
+  }
 }
 
 /* =========================================
-   RESPONSIVE CELULARES PEQUEÑOS
+   CELULARES PEQUEÑOS
 ========================================= */
-
 @media (max-width: 576px) {
   .main-title {
     font-size: 2rem;
@@ -501,15 +336,14 @@ textarea {
   }
 
   .info-item {
-    /* Apila elementos verticalmente */
     flex-direction: column;
-
     align-items: flex-start;
   }
 
   .info-icon {
     width: 45px;
     height: 45px;
+    min-width: 45px;
   }
 
   .form-control,
@@ -517,30 +351,26 @@ textarea {
     padding: 12px 14px;
   }
 }
-/* =========================
-   RESPONSIVE (Celulares y Tablets)
-========================= */
 
+/* =========================================
+   MENÚ RESPONSIVE
+========================================= */
 @media (max-width: 768px) {
-  /* 1. El menú por defecto estará oculto fuera de la pantalla (a la izquierda) */
   .sidebar {
     width: 260px;
-    transform: translateX(-100%); /* Lo saca por completo de la vista */
+    transform: translateX(-100%);
     box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
   }
 
-  /* 2. Cuando el menú NO tenga la clase '.closed' (es decir, esté activo/abierto) se muestra */
   .sidebar:not(.closed) {
     transform: translateX(0);
   }
 
-  /* 3. Reutilizamos tu clase '.closed' para mantenerlo oculto en móvil de forma limpia */
   .sidebar.closed {
     transform: translateX(-100%);
-    width: 260px; /* Mantenemos el tamaño fijo para que no se deforme al salir */
+    width: 260px;
   }
 
-  /* 4. Aseguramos que el texto y los enlaces se vean normales en móvil */
   .sidebar.closed span {
     display: inline;
   }
@@ -549,7 +379,6 @@ textarea {
     justify-content: flex-start;
   }
 
-  /* 5. Ajustamos el margen del logo en móviles para que no quede tan abajo */
   .menu-header {
     margin-top: 60px;
     margin-bottom: 30px;
@@ -559,18 +388,6 @@ textarea {
     width: 130px;
   }
 
-  /* 6. El contenido principal ahora ocupa TODO el ancho de la pantalla */
-  .contenido {
-    margin-left: 0 !important; /* Eliminamos el espacio del menú en PC */
-    padding: 80px 20px 20px 20px; /* Padding superior para que el botón flotante no tape tu contenido */
-  }
-
-  /* Cancelamos la expansión de PC en móvil */
-  .contenido.expand {
-    margin-left: 0 !important;
-  }
-
-  /* 7. Ajuste opcional para el botón hamburguesa en móviles (un poco más compacto) */
   #toggle-btn {
     top: 12px;
     left: 12px;

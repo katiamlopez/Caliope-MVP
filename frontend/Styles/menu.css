@@ -64,20 +64,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 70px;
   margin-bottom: 40px;
+  flex-shrink: 0;
 }
 
 .img {
-  width: 160px;
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
   height: auto;
-
   object-fit: contain;
-
-  transition: all 0.3s ease;
-
-  filter: drop-shadow(0 4px 8px rgba(122, 92, 255, 0.15));
+  flex-shrink: 0;
 }
 
 .img:hover {
