@@ -1,0 +1,32 @@
+{
+  "Usuario": {
+    "id": "integer",
+    "nombre": "string",
+    "apellidos": "string",
+    "userName": "string",
+    "email": "string",
+    "contrasena": "string",
+    "seguidores": "integer",
+    "rol": "enum",
+    "generoFavorito": "string",
+    "fechaRegistro": "datetime",
+    "seguidos": "integer",
+    "publicaciones": "integer",
+    "librosFavoritos": "array"
+  },
+
+  "Resena": {
+    "id": "integer",
+    "contenido": "string",
+    "calificacion": "float",
+    "fecha": "datetime",
+    "usuarioId": "integer",
+    "publicacionId": "integer"
+  },
+
+  "Favorito": {
+    "id": "integer",
+    "usuarioId": "integer",
+    "publicacionId": "integer"
+  }
+}
