@@ -400,3 +400,18 @@
         grid-column: 2;
     }
 }
+
+/* Corrección de estrellas en Home */
+.story-info p.review-rating {
+    color: #ffb703;
+    font-size: 18px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.featured-info p.review-rating {
+    color: #ffb703;
+    font-size: 18px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,279 @@
+/** LAYOUT BASE */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.contenido {
+    margin-left: 250px;
+    flex: 1;
+    min-height: 100vh;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.contenido.expand {
+    margin-left: 110px;
+}
+
+
+/** BIBLIOTECA */
+
+.library-page {
+    padding: 32px 48px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #13002f;
+}
+
+
+/** TOPBAR BASE */
+
+.page-topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-icon {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    color: #8b7ca3;
+    font-size: 20px;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.topbar-icon:hover {
+    color: #45135c;
+}
+
+.notification-icon span {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 8px;
+    height: 8px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+}
+
+.topbar-profile-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.topbar-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f3e7f3;
+}
+
+
+/** HEADER */
+
+.library-header {
+    margin-bottom: 32px;
+}
+
+.library-header h1 {
+    color: #13002f;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.library-header p {
+    color: #8b7ca3;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+/** SECCIONES */
+
+.library-section {
+    margin-bottom: 40px;
+}
+
+.library-section h2 {
+    color: #13002f;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+/** CARDS BASE */
+
+.reading-list,
+.saved-list {
+    background-color: #ffffff;
+    border: 1px solid #eee7f3;
+    border-radius: 20px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(79, 33, 99, 0.08);
+}
+
+.reading-card,
+.saved-card {
+    display: grid;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.reading-card {
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 420px) auto;
+}
+
+.saved-card {
+    grid-template-columns: 1fr auto;
+}
+
+.reading-card:not(:last-child),
+.saved-card:not(:last-child) {
+    border-bottom: 1px solid #f0e8f5;
+}
+
+
+/** INFO DE HISTORIA */
+
+.reading-story-info,
+.saved-story-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.library-cover {
+    width: 56px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #f3e7f3;
+    flex-shrink: 0;
+}
+
+.reading-story-info h3,
+.saved-story-info h3 {
+    color: #13002f;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.reading-story-info p,
+.saved-story-info p {
+    color: #8b7ca3;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/** PROGRESO */
+
+.reading-progress p {
+    color: #8b7ca3;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.library-progress {
+    height: 8px;
+    background-color: #f0e8f5;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.library-progress .progress-bar {
+    background-color: #45135c;
+    border-radius: 999px;
+}
+
+
+/** BOTONES */
+
+.read-button {
+    display: inline-block;
+    background-color: #45135c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    white-space: nowrap;
+}
+
+.read-button:hover {
+    background-color: #2f0d40;
+    color: #ffffff;
+}
+
+
+/** RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .reading-card {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+
+    .reading-progress {
+        width: 100%;
+    }
+
+    .saved-list {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        margin-left: 0;
+    }
+
+    .contenido.expand {
+        margin-left: 0;
+    }
+
+    .library-page {
+        padding: 24px;
+    }
+
+    .library-header h1 {
+        font-size: 28px;
+    }
+
+    .library-section h2 {
+        font-size: 24px;
+    }
+
+    .reading-list,
+    .saved-list {
+        padding: 16px;
+    }
+
+    .saved-card {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+
+    .read-button {
+        width: 100%;
+    }
+}

@@ -476,3 +476,13 @@
         flex-wrap: wrap;
     }
 }
+
+/* Corrección de estrellas en Perfil */
+.profile-review-info .review-rating,
+.profile-review-info p.review-rating {
+    color: #ffb703;
+    font-size: 18px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
