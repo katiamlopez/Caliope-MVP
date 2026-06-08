@@ -24,137 +24,133 @@
 
   <body>
     <div class="layout">
-      <!-- Menú -->
-      <button id="toggle-btn">☰</button>
-      <div id="menu-container"></div>
 
-      <div class="contenido">
-        <main class="write-page">
-          <!-- Barra superior base -->
-          <header class="page-topbar">
-            <div class="page-actions">
-              <button
-                type="button"
-                class="topbar-icon"
-                aria-label="Configuración"
-              >
-                <i class="bi bi-gear"></i>
-              </button>
+        <!-- Menú -->
+        <button id="toggle-btn">☰</button>
+        <div id="menu-container"></div>
 
-              <button
-                type="button"
-                class="topbar-icon notification-icon"
-                aria-label="Notificaciones"
-              >
-                <i class="bi bi-bell"></i>
-                <span></span>
-              </button>
+        <div class="contenido">
+            <main class="write-page">
 
-              <a
-                href="perfil.html"
-                class="topbar-profile-link"
-                aria-label="Ir a mi perfil"
-              >
-                <img
-                  src="../assets/users-photos/foto-perfil-usuario.png"
-                  alt="Foto de perfil del usuario"
-                  class="topbar-avatar"
-                />
-              </a>
-            </div>
-          </header>
+                <!-- Barra superior base -->
+                <header class="page-topbar">
+                    <div class="page-actions">
+                        <button type="button" class="topbar-icon" aria-label="Configuración">
+                            <i class="bi bi-gear"></i>
+                        </button>
 
-          <!-- Encabezado de página -->
-          <section class="write-header">
-            <h1>Crear obra</h1>
-            <p>
-              Comparte una nueva historia con la comunidad de Caliope. Puedes
-              guardar tu avance como borrador o publicar tu obra cuando esté
-              lista.
-            </p>
-          </section>
+                        <button type="button" class="topbar-icon notification-icon" aria-label="Notificaciones">
+                            <i class="bi bi-bell"></i>
+                            <span></span>
+                        </button>
 
-          <!-- Formulario de publicación -->
-          <section class="write-form-card">
-            <form class="write-form">
-              <!-- Título -->
-              <div class="form-group">
-                <label for="titulo">Título de la obra</label>
-                <input
-                  type="text"
-                  id="titulo"
-                  name="titulo"
-                  placeholder="Escribe el título de tu historia"
-                />
-              </div>
+                        <a href="perfil.html" class="topbar-profile-link" aria-label="Ir a mi perfil">
+                            <img 
+                                src="../assets/users-photos/foto-perfil-usuario.png" 
+                                alt="Foto de perfil del usuario"
+                                class="topbar-avatar"
+                            >
+                        </a>
+                    </div>
+                </header>
 
-              <!-- Descripción -->
-              <div class="form-group">
-                <label for="descripcion">Descripción</label>
-                <textarea
-                  id="descripcion"
-                  name="descripcion"
-                  rows="6"
-                  placeholder="Escribe una breve descripción de tu obra"
-                ></textarea>
+                <!-- Encabezado de página -->
+                <section class="write-header">
+                    <h1>Crear obra</h1>
+                    <p>
+                        Comparte una nueva historia con la comunidad de Caliope.
+                        Puedes guardar tu avance como borrador o publicar tu obra cuando esté lista.
+                    </p>
+                </section>
 
-                <p class="form-helper">
-                  Esta descripción aparecerá en el feed, explorar y el perfil
-                  del autor.
-                </p>
-              </div>
+                <!-- Formulario de publicación -->
+                <section class="write-form-card">
+                    <form class="write-form" id="formulario">
 
-              <!-- Archivos -->
-              <div class="upload-grid">
-                <!-- Portada -->
-                <div class="upload-box">
-                  <label for="portada" class="upload-label">
-                    <i class="bi bi-image"></i>
-                    <span>Agregar portada</span>
-                    <small>PNG, JPG o JPEG</small>
-                  </label>
+                        <!-- Título -->
+                        <div class="form-group">
+                            <label for="titulo">Título de la obra</label>
+                            <input 
+                                type="text" 
+                                id="titulo" 
+                                name="titulo"
+                                placeholder="Escribe el título de tu historia"
+                            >
+                        </div>
 
-                  <input
-                    type="file"
-                    id="portada"
-                    name="portada"
-                    accept="image/png, image/jpeg, image/jpg"
-                  />
-                </div>
+                        <!-- Descripción -->
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea 
+                                id="descripcion" 
+                                name="descripcion"
+                                rows="6"
+                                placeholder="Escribe una breve descripción de tu obra"
+                            ></textarea>
 
-                <!-- PDF -->
-                <div class="upload-box">
-                  <label for="documentoHistoria" class="upload-label">
-                    <i class="bi bi-file-earmark-pdf"></i>
-                    <span>Subir archivo PDF</span>
-                    <small>Archivo provisional de la historia</small>
-                  </label>
+                            <p class="form-helper">
+                                Esta descripción aparecerá en el feed, explorar y el perfil del autor.
+                            </p>
+                        </div>
 
-                  <input
-                    type="file"
-                    id="documentoHistoria"
-                    name="documentoHistoria"
-                    accept="application/pdf"
-                  />
-                </div>
-              </div>
+                        
 
-              <!-- Acciones -->
-              <div class="write-actions">
-                <button type="button" class="draft-button">
-                  <i class="bi bi-save"></i>
-                  Guardar borrador
-                </button>
+                        <!-- Archivos -->
+                        <div class="upload-grid">
 
-                <button type="submit" class="publish-button">
-                  <i class="bi bi-send"></i>
-                  Publicar obra
-                </button>
-              </div>
-            </form>
-          </section>
-        </main>
-      </div>
+                            <!-- Portada -->
+                            <div class="upload-box">
+                                <label for="portada" class="upload-label">
+                                    <i class="bi bi-image"></i>
+                                    <span>Agregar portada</span>
+                                    <small>PNG, JPG o JPEG</small>
+                                </label>
+
+                                <input 
+                                    type="file" 
+                                    id="portada" 
+                                    name="portada"
+                                    accept="image/png, image/jpeg, image/jpg"
+                                >
+                            </div>
+
+                            <!-- PDF -->
+                            <div class="upload-box">
+                                <label for="documentoHistoria" class="upload-label">
+                                    <i class="bi bi-file-earmark-pdf"></i>
+                                    <span>Subir archivo PDF</span>
+                                    <small>Archivo provisional de la historia</small>
+                                </label>
+
+                                <input 
+                                    type="file" 
+                                    id="documentoHistoria" 
+                                    name="documentoHistoria"
+                                    accept="application/pdf"
+                                >
+                            </div>
+
+                        </div>
+
+                        <!-- Acciones -->
+                        <div class="write-actions">
+                            <button type="button" class="draft-button">
+                                <i class="bi bi-save"></i>
+                                Guardar borrador
+                            </button>
+
+                            <button type="submit" class="publish-button">
+                                <i class="bi bi-send"></i>
+                                Publicar obra
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </main>
+        </div>
+ 
     </div>
     <!-- Footer inferior -->
     <footer class="site-footer site-footer--bottom">
@@ -180,6 +176,39 @@
       </div>
     </footer>
 
+    <!--Validacion de formularios-->>
+<script>
+
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const titulo = document.getElementById("titulo").value.trim();
+    const descripcion = document.getElementById("descripcion").value.trim();
+
+    if(titulo === ""){
+        alert("El título no puede estar vacío");
+        return;
+    }
+
+    if(descripcion === ""){
+        alert("La descripción no puede estar vacía");
+        return;
+    }
+
+    if(descripcion.length < 10){
+        alert("La descripción debe tener al menos 10 caracteres");
+        return;
+    }
+
+    alert("Formulario enviado correctamente");
+
+});
+
+</script>
+ <!--Formulario-->
     <script src="../js/menu.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

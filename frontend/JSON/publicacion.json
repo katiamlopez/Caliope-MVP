@@ -1,0 +1,27 @@
+{
+  "idHistoria": null,
+  "titulo": "",
+  "descripcion": "",
+  "generos": [ ],
+  "portada": {
+    "nombreArchivo": "",
+    "rutaArchivo": "",
+    "tipoArchivo": "image/jpeg"
+  },
+  "documentoHistoria": {
+    "nombreArchivo": "*.pdf",
+    "rutaArchivo": "",
+    "tipoArchivo": "pdf"
+  },
+  "autor": {
+    "idUsuario": null,
+    "nombre": "",
+    "pseudonimo": ""
+  },
+  "estado": "publicado",
+  "fechas": {
+    "fechaCreacion": "0000-01-01T00:00:00Z",
+    "fechaActualizacion": "0000-01-01T00:00:00Z",
+    "fechaPublicacion": "0000-01-01T00:00:00Z"
+  }
+}
