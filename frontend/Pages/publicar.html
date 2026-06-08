@@ -1,187 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Escribir</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-    <link rel="stylesheet" href="../Styles/footer.css">
-    <link rel="stylesheet" href="../Styles/menu.css">
-    <link rel="stylesheet" href="../Styles/publicar.css">
-</head>
+    <link rel="stylesheet" href="../Styles/globales.css" />
+    <link rel="stylesheet" href="../Styles/footer.css" />
+    <link rel="stylesheet" href="../Styles/menu.css" />
+    <link rel="stylesheet" href="../Styles/publicar.css" />
+  </head>
 
-<body>
+  <body>
     <div class="layout">
-        <!-- Menú -->
-        <button id="toggle-btn">☰</button>
-        <div id="menu-container"></div>
+      <!-- Menú -->
+      <button id="toggle-btn">☰</button>
+      <div id="menu-container"></div>
 
-        <div class="contenido">
-            <main class="write-page">
+      <div class="contenido">
+        <main class="write-page">
+          <!-- Barra superior base -->
+          <header class="page-topbar">
+            <div class="page-actions">
+              <button
+                type="button"
+                class="topbar-icon"
+                aria-label="Configuración"
+              >
+                <i class="bi bi-gear"></i>
+              </button>
 
-                <!-- Barra superior base -->
-                <header class="page-topbar">
-                    <div class="page-actions">
-                        <button type="button" class="topbar-icon" aria-label="Configuración">
-                            <i class="bi bi-gear"></i>
-                        </button>
+              <button
+                type="button"
+                class="topbar-icon notification-icon"
+                aria-label="Notificaciones"
+              >
+                <i class="bi bi-bell"></i>
+                <span></span>
+              </button>
 
-                        <button type="button" class="topbar-icon notification-icon" aria-label="Notificaciones">
-                            <i class="bi bi-bell"></i>
-                            <span></span>
-                        </button>
+              <a
+                href="perfil.html"
+                class="topbar-profile-link"
+                aria-label="Ir a mi perfil"
+              >
+                <img
+                  src="../assets/users-photos/foto-perfil-usuario.png"
+                  alt="Foto de perfil del usuario"
+                  class="topbar-avatar"
+                />
+              </a>
+            </div>
+          </header>
 
-                        <a href="perfil.html" class="topbar-profile-link" aria-label="Ir a mi perfil">
-                            <img 
-                                src="../assets/users-photos/foto-perfil-usuario.png" 
-                                alt="Foto de perfil del usuario"
-                                class="topbar-avatar"
-                            >
-                        </a>
-                    </div>
-                </header>
+          <!-- Encabezado de página -->
+          <section class="write-header">
+            <h1>Crear obra</h1>
+            <p>
+              Comparte una nueva historia con la comunidad de Caliope. Puedes
+              guardar tu avance como borrador o publicar tu obra cuando esté
+              lista.
+            </p>
+          </section>
 
-                <!-- Encabezado de página -->
-                <section class="write-header">
-                    <h1>Crear obra</h1>
-                    <p>
-                        Comparte una nueva historia con la comunidad de Caliope.
-                        Puedes guardar tu avance como borrador o publicar tu obra cuando esté lista.
-                    </p>
-                </section>
+          <!-- Formulario de publicación -->
+          <section class="write-form-card">
+            <form class="write-form">
+              <!-- Título -->
+              <div class="form-group">
+                <label for="titulo">Título de la obra</label>
+                <input
+                  type="text"
+                  id="titulo"
+                  name="titulo"
+                  placeholder="Escribe el título de tu historia"
+                />
+              </div>
 
-                <!-- Formulario de publicación -->
-                <section class="write-form-card">
-                    <form class="write-form">
+              <!-- Descripción -->
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  id="descripcion"
+                  name="descripcion"
+                  rows="6"
+                  placeholder="Escribe una breve descripción de tu obra"
+                ></textarea>
 
-                        <!-- Título -->
-                        <div class="form-group">
-                            <label for="titulo">Título de la obra</label>
-                            <input 
-                                type="text" 
-                                id="titulo" 
-                                name="titulo"
-                                placeholder="Escribe el título de tu historia"
-                            >
-                        </div>
+                <p class="form-helper">
+                  Esta descripción aparecerá en el feed, explorar y el perfil
+                  del autor.
+                </p>
+              </div>
 
-                        <!-- Descripción -->
-                        <div class="form-group">
-                            <label for="descripcion">Descripción</label>
-                            <textarea 
-                                id="descripcion" 
-                                name="descripcion"
-                                rows="6"
-                                placeholder="Escribe una breve descripción de tu obra"
-                            ></textarea>
+              <!-- Archivos -->
+              <div class="upload-grid">
+                <!-- Portada -->
+                <div class="upload-box">
+                  <label for="portada" class="upload-label">
+                    <i class="bi bi-image"></i>
+                    <span>Agregar portada</span>
+                    <small>PNG, JPG o JPEG</small>
+                  </label>
 
-                            <p class="form-helper">
-                                Esta descripción aparecerá en el feed, explorar y el perfil del autor.
-                            </p>
-                        </div>
-
-                        <!-- Archivos -->
-                        <div class="upload-grid">
-
-                            <!-- Portada -->
-                            <div class="upload-box">
-                                <label for="portada" class="upload-label">
-                                    <i class="bi bi-image"></i>
-                                    <span>Agregar portada</span>
-                                    <small>PNG, JPG o JPEG</small>
-                                </label>
-
-                                <input 
-                                    type="file" 
-                                    id="portada" 
-                                    name="portada"
-                                    accept="image/png, image/jpeg, image/jpg"
-                                >
-                            </div>
-
-                            <!-- PDF -->
-                            <div class="upload-box">
-                                <label for="documentoHistoria" class="upload-label">
-                                    <i class="bi bi-file-earmark-pdf"></i>
-                                    <span>Subir archivo PDF</span>
-                                    <small>Archivo provisional de la historia</small>
-                                </label>
-
-                                <input 
-                                    type="file" 
-                                    id="documentoHistoria" 
-                                    name="documentoHistoria"
-                                    accept="application/pdf"
-                                >
-                            </div>
-
-                        </div>
-
-                        <!-- Acciones -->
-                        <div class="write-actions">
-                            <button type="button" class="draft-button">
-                                <i class="bi bi-save"></i>
-                                Guardar borrador
-                            </button>
-
-                            <button type="submit" class="publish-button">
-                                <i class="bi bi-send"></i>
-                                Publicar obra
-                            </button>
-                        </div>
-
-                    </form>
-                </section>
-
-            </main>
-        </div>
-    </div>
-    <!-- Footer inferior -->
-            <footer class="site-footer site-footer--bottom">
-
-                <nav
-                    class="site-footer-links"
-                    aria-label="Enlaces informativos"
-                >
-                    <a href="nosotrosli.html">
-                        Acerca de
-                    </a>
-
-                    <a href="contactanos.html">
-                        Contáctanos
-                    </a>
-
-                    <a href="aviso-privacidad.html">
-                        Aviso de privacidad
-                    </a>
-                </nav>
-
-                <!-- Logo y copyright en la misma línea -->
-                <div class="site-footer-brand">
-
-                    <a
-                        href="principal.html"
-                        class="site-footer-logo"
-                        aria-label="Ir a la página principal"
-                    >
-                        <img
-                            src="../assets/logo-caliope.svg"
-                            alt="Logo de Calíope"
-                        >
-                    </a>
-
-                    <p class="site-footer-copyright">
-                        Calíope © 2026
-                    </p>
-
+                  <input
+                    type="file"
+                    id="portada"
+                    name="portada"
+                    accept="image/png, image/jpeg, image/jpg"
+                  />
                 </div>
 
-            </footer>
+                <!-- PDF -->
+                <div class="upload-box">
+                  <label for="documentoHistoria" class="upload-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    <span>Subir archivo PDF</span>
+                    <small>Archivo provisional de la historia</small>
+                  </label>
+
+                  <input
+                    type="file"
+                    id="documentoHistoria"
+                    name="documentoHistoria"
+                    accept="application/pdf"
+                  />
+                </div>
+              </div>
+
+              <!-- Acciones -->
+              <div class="write-actions">
+                <button type="button" class="draft-button">
+                  <i class="bi bi-save"></i>
+                  Guardar borrador
+                </button>
+
+                <button type="submit" class="publish-button">
+                  <i class="bi bi-send"></i>
+                  Publicar obra
+                </button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- Footer inferior -->
+    <footer class="site-footer site-footer--bottom">
+      <nav class="site-footer-links" aria-label="Enlaces informativos">
+        <a href="nosotrosli.html"> Acerca de </a>
+
+        <a href="contactanos.html"> Contáctanos </a>
+
+        <a href="aviso-privacidad.html"> Aviso de privacidad </a>
+      </nav>
+
+      <!-- Logo y copyright en la misma línea -->
+      <div class="site-footer-brand">
+        <a
+          href="principal.html"
+          class="site-footer-logo"
+          aria-label="Ir a la página principal"
+        >
+          <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
+        </a>
+
+        <p class="site-footer-copyright">Calíope © 2026</p>
+      </div>
+    </footer>
 
     <script src="../js/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

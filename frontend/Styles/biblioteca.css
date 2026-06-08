@@ -1,279 +1,323 @@
-/** LAYOUT BASE */
+/* ==========================================================================
+   LAYOUT BASE
+   ========================================================================== */
 
 .layout {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
 }
 
 .contenido {
-    margin-left: 250px;
-    flex: 1;
-    min-height: 100vh;
-    background-color: #ffffff;
-    transition: 0.3s;
+  margin-left: 250px;
+  flex: 1;
+  min-height: 100vh;
+  background-color: var(--color-bg-app);
+  transition: var(--transition-smooth);
 }
 
 .contenido.expand {
-    margin-left: 110px;
+  margin-left: 110px;
 }
 
-
-/** BIBLIOTECA */
+/* ==========================================================================
+   BIBLIOTECA
+   ========================================================================== */
 
 .library-page {
-    padding: 32px 48px;
-    min-height: 100vh;
-    background-color: #ffffff;
-    color: #13002f;
+  padding: 32px 48px;
+  min-height: 100vh;
+  background-color: var(--color-bg-app);
+  color: var(--color-text-body);
 }
 
-
-/** TOPBAR BASE */
+/* ==========================================================================
+   TOPBAR
+   ========================================================================== */
 
 .page-topbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
 .page-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .topbar-icon {
-    position: relative;
-    border: none;
-    background-color: transparent;
-    color: #8b7ca3;
-    font-size: 20px;
-    padding: 0;
-    cursor: pointer;
-    line-height: 1;
+  position: relative;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+  transition: var(--transition-smooth);
 }
 
 .topbar-icon:hover {
-    color: #45135c;
+  color: var(--color-primary);
 }
 
 .notification-icon span {
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    width: 8px;
-    height: 8px;
-    background-color: #ff4d6d;
-    border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: #ff4d6d;
+  border-radius: 50%;
 }
 
 .topbar-profile-link {
-    display: inline-block;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .topbar-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #f3e7f3;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--color-secondary);
+  border: 2px solid rgba(99, 59, 188, 0.12);
 }
 
-
-/** HEADER */
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 
 .library-header {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .library-header h1 {
-    color: #13002f;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 32px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-title);
+  margin-bottom: 8px;
 }
 
 .library-header p {
-    color: #8b7ca3;
-    font-size: 16px;
-    margin: 0;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  margin: 0;
 }
 
-
-/** SECCIONES */
+/* ==========================================================================
+   SECCIONES
+   ========================================================================== */
 
 .library-section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .library-section h2 {
-    color: #13002f;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  font-family: var(--font-ui);
+  color: var(--color-text-title);
+  font-size: 26px;
+  font-weight: var(--weight-bold);
+  margin-bottom: 20px;
 }
 
-
-/** CARDS BASE */
+/* ==========================================================================
+   TARJETAS
+   ========================================================================== */
 
 .reading-list,
 .saved-list {
-    background-color: #ffffff;
-    border: 1px solid #eee7f3;
-    border-radius: 20px;
-    padding: 20px 24px;
-    box-shadow: 0 2px 8px rgba(79, 33, 99, 0.08);
+  background-color: var(--color-bg-card);
+  border: 1px solid #e6e1f2;
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 12px rgba(28, 18, 54, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.reading-list:hover,
+.saved-list:hover {
+  transform: translateY(-2px);
 }
 
 .reading-card,
 .saved-card {
-    display: grid;
-    align-items: center;
-    gap: 24px;
-    padding: 20px 0;
+  display: grid;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
 }
 
 .reading-card {
-    grid-template-columns: minmax(260px, 1fr) minmax(260px, 420px) auto;
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 420px) auto;
 }
 
 .saved-card {
-    grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
 }
 
 .reading-card:not(:last-child),
 .saved-card:not(:last-child) {
-    border-bottom: 1px solid #f0e8f5;
+  border-bottom: 1px solid #eee7f5;
 }
 
-
-/** INFO DE HISTORIA */
+/* ==========================================================================
+   INFORMACIÓN DE HISTORIA
+   ========================================================================== */
 
 .reading-story-info,
 .saved-story-info {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .library-cover {
-    width: 56px;
-    height: 72px;
-    object-fit: cover;
-    border-radius: 10px;
-    background-color: #f3e7f3;
-    flex-shrink: 0;
+  width: 56px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: var(--color-secondary);
+  flex-shrink: 0;
 }
 
 .reading-story-info h3,
 .saved-story-info h3 {
-    color: #13002f;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 4px;
+  color: var(--color-text-title);
+  font-size: 18px;
+  font-weight: var(--weight-bold);
+  margin-bottom: 4px;
 }
 
 .reading-story-info p,
 .saved-story-info p {
-    color: #8b7ca3;
-    font-size: 14px;
-    margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin: 0;
 }
 
+/* ==========================================================================
+   PROGRESO
+   ========================================================================== */
 
-/** PROGRESO */
+.reading-progress {
+  width: 100%;
+}
 
 .reading-progress p {
-    color: #8b7ca3;
-    font-size: 14px;
-    margin-bottom: 8px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin-bottom: 8px;
 }
 
 .library-progress {
-    height: 8px;
-    background-color: #f0e8f5;
-    border-radius: 999px;
-    overflow: hidden;
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 .library-progress .progress-bar {
-    background-color: #45135c;
-    border-radius: 999px;
+  height: 100%;
+  background: var(--color-primary) !important;
+  border-radius: 999px;
 }
 
-
-/** BOTONES */
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
 
 .read-button {
-    display: inline-block;
-    background-color: #45135c;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 20px;
-    padding: 8px 24px;
-    font-weight: 600;
-    text-align: center;
-    border: none;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 42px;
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 0 24px;
+  font-family: var(--font-ui);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  transition: var(--transition-smooth);
 }
 
 .read-button:hover {
-    background-color: #2f0d40;
-    color: #ffffff;
+  background-color: var(--color-primary-dark) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
 }
 
-
-/** RESPONSIVE */
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
 
 @media (max-width: 1100px) {
-    .reading-card {
-        grid-template-columns: 1fr;
-        align-items: flex-start;
-    }
+  .reading-card {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
 
-    .reading-progress {
-        width: 100%;
-    }
+  .reading-progress {
+    width: 100%;
+  }
 
-    .saved-list {
-        max-width: 100%;
-    }
+  .saved-list {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .contenido {
-        margin-left: 0;
-    }
+  .contenido,
+  .contenido.expand {
+    margin-left: 0;
+  }
 
-    .contenido.expand {
-        margin-left: 0;
-    }
+  .library-page {
+    padding: 24px;
+  }
 
-    .library-page {
-        padding: 24px;
-    }
+  .library-header h1 {
+    font-size: 28px;
+  }
 
-    .library-header h1 {
-        font-size: 28px;
-    }
+  .library-section h2 {
+    font-size: 24px;
+  }
 
-    .library-section h2 {
-        font-size: 24px;
-    }
+  .reading-list,
+  .saved-list {
+    padding: 16px;
+  }
 
-    .reading-list,
-    .saved-list {
-        padding: 16px;
-    }
+  .saved-card {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
 
-    .saved-card {
-        grid-template-columns: 1fr;
-        align-items: flex-start;
-    }
+  .read-button {
+    width: 100%;
+  }
+}
 
-    .read-button {
-        width: 100%;
-    }
+/* ======================================
+   OVERRIDE BOOTSTRAP PROGRESS BAR
+   ====================================== */
+
+.progress.library-progress {
+  background-color: var(--color-secondary) !important;
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress.library-progress .progress-bar {
+  background-color: var(--color-primary) !important;
+  border-radius: 999px;
 }

@@ -1,26 +1,35 @@
-body {
-  margin: 0;
-  background-color: #f3e7f3;
-  color: #1b144f;
-  font-family: Arial, sans-serif;
-}
+/* ==========================================================================
+   NOSOTROS
+   Adaptado a globales.css
+   ========================================================================== */
 
-/* Acerca de y Nuestra historia */
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
 .acercaDe {
   text-align: center;
   padding: 80px 20px 100px;
 }
 
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
 .header-icon-container {
   width: 80px;
   height: 80px;
-  background: white;
   margin: 0 auto 25px;
+
+  background: var(--color-bg-card);
+
   border-radius: 18px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+
+  box-shadow: var(--shadow-md);
 }
 
 .logo-caliope {
@@ -30,93 +39,99 @@ body {
 }
 
 .title {
-  font-family: Georgia, serif;
-  font-size: 48px;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-title);
   margin: 0;
-  color: #3b0f4f;
 }
 
 .subtitle {
-  font-size: 22px;
   margin-top: 15px;
-  color: #2b174f;
+  font-size: 1.35rem;
+  color: var(--color-text-body);
 }
+
+/* ==========================================================================
+   HISTORIA
+   ========================================================================== */
 
 .aboutContent {
   padding: 0 45px 80px;
 }
 
 .cardHistoria {
-  background: white;
   max-width: 1000px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 60px;
+
   padding: 45px 50px;
-  border-radius: 16px;
+
+  background: var(--color-bg-card);
+
+  border: 1px solid rgba(99, 59, 188, 0.08);
+
+  border-radius: var(--radius-card);
+
+  box-shadow: var(--shadow-sm);
 }
 
 .nuestraHistoria {
   text-align: center;
-  font-family: Georgia, serif;
-  font-size: 32px;
-  color: #08002e;
+
+  font-family: var(--font-heading);
+
+  font-size: 2rem;
+
+  color: var(--color-text-title);
+
+  margin-bottom: 24px;
 }
 
 .historiaTexto p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #1b144f;
   text-align: center;
-}
-/* Acerca de y Nuestra historia */
-/**Diseño Responsivo*/
-@media (max-width: 768px) {
-  .acercaDe {
-    padding: 50px 20px 70px;
-  }
 
-  .title {
-    font-size: 36px;
-  }
+  font-size: 1.05rem;
 
-  .subtitle {
-    font-size: 18px;
-  }
+  line-height: 1.8;
 
-  .aboutContent {
-    padding: 0 20px 60px;
-  }
-
-  .cardHistoria {
-    padding: 30px 25px;
-  }
-
-  .nuestraHistoria {
-    font-size: 28px;
-  }
-
-  .historiaTexto p {
-    font-size: 16px;
-  }
+  color: var(--color-text-body);
 }
 
-/* Misión y Visión */
+/* ==========================================================================
+   MISIÓN Y VISIÓN
+   ========================================================================== */
 
 .goals-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .goal-card {
-  background: white;
+  background: var(--color-bg-card);
+
+  border: 1px solid rgba(99, 59, 188, 0.08);
+
+  border-radius: var(--radius-card);
+
   padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition-smooth);
 }
 
-/*Valores */
+.goal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   VALORES
+   ========================================================================== */
 
 .seccionValores {
   padding: 60px 20px;
@@ -124,37 +139,64 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 3rem;
-  color: #1b144f;
+
   margin-bottom: 50px;
-  font-family: Georgia, serif;
+
+  font-family: var(--font-heading);
+
+  font-size: 2.8rem;
+
+  color: var(--color-text-title);
 }
 
 .values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .value-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+
+  padding: 30px 20px;
+
+  background: var(--color-bg-card);
+
+  border: 1px solid rgba(99, 59, 188, 0.08);
+
+  border-radius: var(--radius-card);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition-smooth);
 }
 
-/* Iconos */
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   ICONOS
+   ========================================================================== */
+
 .card-icon-container {
   width: 65px;
   height: 65px;
-  border-radius: 50%;
-  background: #ead9ef;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  background: var(--color-secondary);
+
+  border-radius: 14px;
+}
+
+.goal-card .card-icon-container {
   margin-bottom: 20px;
 }
 
@@ -162,23 +204,105 @@ body {
   margin: 0 auto 20px;
 }
 
-.goal-card .card-icon-container {
-  margin-bottom: 20px;
+.card-icon-container i {
+  font-size: 32px;
+  color: var(--color-primary);
 }
 
+/* ==========================================================================
+   TARJETAS
+   ========================================================================== */
+
 .card-title {
-  color: #13004f;
-  font-size: 2rem;
-  font-family: Georgia, serif;
+  color: var(--color-text-title);
+
+  font-family: var(--font-heading);
+
+  font-size: 1.8rem;
+
   margin-bottom: 15px;
 }
 
 .card-description {
-  color: #2e2e5e;
-  line-height: 1.6;
+  color: var(--color-text-body);
+
+  line-height: 1.7;
 }
 
-/**Responsive */
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+
+.cta-section {
+  padding: 60px 40px 80px;
+}
+
+.cta-card {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 40px 30px;
+
+  text-align: center;
+
+  background: var(--color-bg-card);
+
+  border: 1px solid rgba(99, 59, 188, 0.08);
+
+  border-radius: var(--radius-card);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.cta-title {
+  font-family: var(--font-heading);
+
+  font-size: 2.2rem;
+
+  color: var(--color-text-title);
+
+  margin-bottom: 15px;
+}
+
+.cta-subtitle {
+  font-size: 1.05rem;
+
+  color: var(--color-text-body);
+
+  margin-bottom: 30px;
+}
+
+.cta-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary);
+}
+
+/* ==========================================================================
+   RESPONSIVE TABLET
+   ========================================================================== */
 
 @media (max-width: 992px) {
   .values-grid {
@@ -190,92 +314,63 @@ body {
   }
 }
 
+/* ==========================================================================
+   RESPONSIVE MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .acercaDe {
+    padding: 50px 20px 70px;
+  }
+
+  .aboutContent {
+    padding: 0 20px 60px;
+  }
+
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cardHistoria,
+  .goal-card,
+  .value-card,
+  .cta-card {
+    padding: 25px;
+  }
+
+  .contenido {
+    margin-left: 0 !important;
+    padding: 80px 20px 20px;
+  }
+
+  .contenido.expand {
+    margin-left: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE PEQUEÑO
+   ========================================================================== */
+
 @media (max-width: 576px) {
   .values-grid {
     grid-template-columns: 1fr;
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .card-title {
-    font-size: 1.6rem;
-  }
-}
-
-/*Unete a Caliope */
-.cta-section {
-  padding: 60px 40px 80px;
-}
-
-.cta-card {
-  background: white;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 30px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cta-title {
-  font-family: Georgia, serif;
-  font-size: 34px;
-  color: #08002e;
-  margin-bottom: 15px;
-}
-
-.cta-subtitle {
-  font-size: 18px;
-  color: #1b144f;
-  margin-bottom: 30px;
-}
-
-.cta-buttons-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 14px 32px;
-  border-radius: 14px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: #431457;
-  color: white;
-  border: 2px solid #431457;
-}
-
-.btn-secondary {
-  background: white;
-  color: #431457;
-  border: 2px solid #431457;
-}
-
-/**Responsive */
-
-@media (max-width: 576px) {
-  .cta-section {
-    padding: 40px 20px 60px;
-  }
-
-  .cta-card {
-    padding: 35px 20px;
+    font-size: 1.5rem;
   }
 
   .cta-title {
-    font-size: 28px;
-  }
-
-  .cta-subtitle {
-    font-size: 16px;
+    font-size: 1.8rem;
   }
 
   .cta-buttons-container {
@@ -287,96 +382,13 @@ body {
   }
 }
 
-/* *Iconos */
+/* ==========================================================================
+   AJUSTE GLOBAL DE REDONDEADO
+   ========================================================================== */
 
-.card-icon-container i {
-  font-size: 32px;
-  color: #4b1d63;
-}
-
-.card-icon-container i {
-  font-size: 32px;
-  color: #4b1d63;
-}
-
-.card-icon-container i {
-  font-size: 32px;
-  color: #4b1d63;
-}
-
-.card-icon-container i {
-  font-size: 32px;
-  color: #4b1d63;
-}
-
-.card-icon-container i {
-  font-size: 32px;
-  color: #4b1d63;
-}
-
-.card-icon-container i {
-  font-size: 32px;
-  color: #4b1d63;
-}
-/* =========================
-   RESPONSIVE (Celulares y Tablets)
-========================= */
-
-@media (max-width: 768px) {
-  /* 1. El menú por defecto estará oculto fuera de la pantalla (a la izquierda) */
-  .sidebar {
-    width: 260px;
-    transform: translateX(-100%); /* Lo saca por completo de la vista */
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
-  }
-
-  /* 2. Cuando el menú NO tenga la clase '.closed' (es decir, esté activo/abierto) se muestra */
-  .sidebar:not(.closed) {
-    transform: translateX(0);
-  }
-
-  /* 3. Reutilizamos tu clase '.closed' para mantenerlo oculto en móvil de forma limpia */
-  .sidebar.closed {
-    transform: translateX(-100%);
-    width: 260px; /* Mantenemos el tamaño fijo para que no se deforme al salir */
-  }
-
-  /* 4. Aseguramos que el texto y los enlaces se vean normales en móvil */
-  .sidebar.closed span {
-    display: inline;
-  }
-
-  .sidebar.closed li a {
-    justify-content: flex-start;
-  }
-
-  /* 5. Ajustamos el margen del logo en móviles para que no quede tan abajo */
-  .menu-header {
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-
-  .img {
-    width: 130px;
-  }
-
-  /* 6. El contenido principal ahora ocupa TODO el ancho de la pantalla */
-  .contenido {
-    margin-left: 0 !important; /* Eliminamos el espacio del menú en PC */
-    padding: 80px 20px 20px 20px; /* Padding superior para que el botón flotante no tape tu contenido */
-  }
-
-  /* Cancelamos la expansión de PC en móvil */
-  .contenido.expand {
-    margin-left: 0 !important;
-  }
-
-  /* 7. Ajuste opcional para el botón hamburguesa en móviles (un poco más compacto) */
-  #toggle-btn {
-    top: 12px;
-    left: 12px;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
+.cardHistoria,
+.goal-card,
+.value-card,
+.cta-card {
+  border-radius: 24px;
 }
