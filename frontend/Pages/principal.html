@@ -3,60 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Principal</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    >
 
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Estilos propios -->
     <link rel="stylesheet" href="../Styles/principal.css">
     <link rel="stylesheet" href="../Styles/menu.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
 </head>
 
 <body>
+
     <div class="layout">
-        <!-- Menú -->
-        <button id="toggle-btn">☰</button>
+
+        <!-- Botón y contenedor del menú lateral -->
+        <button id="toggle-btn" type="button" aria-label="Abrir menú">
+            ☰
+        </button>
+
         <div id="menu-container"></div>
 
+        <!-- Contenido general -->
         <div class="contenido">
-            <!-- Contenido principal del feed -->
+
             <main class="home-page">
 
-                <!-- Barra superior base -->
+                <!-- Barra superior -->
                 <header class="page-topbar">
+
                     <div class="page-actions">
-                        <button type="button" class="topbar-icon" aria-label="Configuración">
+
+                        <button
+                            type="button"
+                            class="topbar-icon"
+                            aria-label="Configuración"
+                        >
                             <i class="bi bi-gear"></i>
                         </button>
 
-                        <button type="button" class="topbar-icon notification-icon" aria-label="Notificaciones">
+                        <button
+                            type="button"
+                            class="topbar-icon notification-icon"
+                            aria-label="Notificaciones"
+                        >
                             <i class="bi bi-bell"></i>
                             <span></span>
                         </button>
 
-                        <a href="perfil.html" class="topbar-profile-link" aria-label="Ir a mi perfil">
-                            <img 
-                                src="../assets/users-photos/foto-perfil-usuario.png" 
+                        <a
+                            href="perfil.html"
+                            class="topbar-profile-link"
+                            aria-label="Ir a mi perfil"
+                        >
+                            <img
+                                src="../assets/users-photos/foto-perfil-usuario.png"
                                 alt="Foto de perfil del usuario"
                                 class="topbar-avatar"
                             >
                         </a>
+
                     </div>
+
                 </header>
 
                 <div class="row g-4">
 
                     <!-- Columna principal del feed -->
                     <section class="col-12 col-lg-8">
-                        <h1 class="home-title">Para ti</h1>
 
-                        <!-- Card de historia publicada desde historias.json -->
+                        <h1 class="home-title">
+                            Para ti
+                        </h1>
+
+                        <!-- Card de historia publicada -->
                         <article class="feed-card story-feed-card mb-4">
+
                             <header class="feed-card-header">
+
                                 <div class="feed-user-info">
-                                    <img 
-                                        src="../assets/users-photos/foto-perfil-valeria-m.png" 
-                                        alt="Foto de perfil del autor"
+
+                                    <img
+                                        src="../assets/users-photos/foto-perfil-valeria-m.png"
+                                        alt="Foto de perfil de Valeria M."
                                         class="feed-avatar"
                                     >
 
@@ -64,20 +106,28 @@
                                         <strong>Valeria M.</strong>
                                         publicó una nueva obra.
                                     </p>
+
                                 </div>
 
-                                <span class="feed-time">2h</span>
+                                <span class="feed-time">
+                                    2h
+                                </span>
+
                             </header>
 
                             <div class="story-feed-content">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
+
+                                <img
+                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
                                     alt="Portada de Luz de octubre"
                                     class="story-cover"
                                 >
 
                                 <div class="story-info">
-                                    <h2>Luz de octubre</h2>
+
+                                    <h2>
+                                        Luz de octubre
+                                    </h2>
 
                                     <div class="story-genres">
                                         <span>Romance</span>
@@ -90,37 +140,66 @@
                                     </p>
 
                                     <div class="story-actions">
-                                        <button type="button" class="icon-button">
-                                            <i class="bi bi-heart"></i> 34
+
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Me gusta"
+                                        >
+                                            <i class="bi bi-heart"></i>
+                                            34
                                         </button>
 
-                                        <button type="button" class="icon-button">
-                                            <i class="bi bi-chat"></i> 9
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Comentarios"
+                                        >
+                                            <i class="bi bi-chat"></i>
+                                            9
                                         </button>
 
-                                        <button type="button" class="icon-button">
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Compartir"
+                                        >
                                             <i class="bi bi-share"></i>
                                         </button>
 
-                                        <button type="button" class="icon-button">
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Guardar"
+                                        >
                                             <i class="bi bi-bookmark"></i>
                                         </button>
 
-                                        <a href="lectura.html" class="read-button">
+                                        <a
+                                            href="lectura.html"
+                                            class="read-button"
+                                        >
                                             Leer
                                         </a>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </article>
 
-                        <!-- Card de reseña publicada desde resenas.json -->
+                        <!-- Card de reseña publicada -->
                         <article class="feed-card review-feed-card mb-4">
+
                             <header class="feed-card-header">
+
                                 <div class="feed-user-info">
-                                    <img 
-                                        src="../assets/users-photos/foto-perfil-diego-n.png" 
-                                        alt="Foto de perfil del reseñista"
+
+                                    <img
+                                        src="../assets/users-photos/foto-perfil-diego-n.png"
+                                        alt="Foto de perfil de Diego N."
                                         class="feed-avatar"
                                     >
 
@@ -128,22 +207,33 @@
                                         <strong>Diego N.</strong>
                                         escribió una reseña.
                                     </p>
+
                                 </div>
 
-                                <span class="feed-time">5h</span>
+                                <span class="feed-time">
+                                    5h
+                                </span>
+
                             </header>
 
                             <div class="story-feed-content">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png" 
+
+                                <img
+                                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
                                     alt="Portada de El cielo de abril"
                                     class="story-cover"
                                 >
 
                                 <div class="story-info">
-                                    <h2>El cielo de abril</h2>
 
-                                    <p class="review-rating">
+                                    <h2>
+                                        El cielo de abril
+                                    </h2>
+
+                                    <p
+                                        class="review-rating"
+                                        aria-label="Calificación de cinco estrellas"
+                                    >
                                         ★★★★★
                                     </p>
 
@@ -153,39 +243,79 @@
                                     </p>
 
                                     <div class="story-actions">
-                                        <button type="button" class="icon-button">
-                                            <i class="bi bi-heart"></i> 5
+
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Me gusta"
+                                        >
+                                            <i class="bi bi-heart"></i>
+                                            5
                                         </button>
 
-                                        <button type="button" class="icon-button">
-                                            <i class="bi bi-chat"></i> 2
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Comentarios"
+                                        >
+                                            <i class="bi bi-chat"></i>
+                                            2
                                         </button>
 
-                                        <button type="button" class="icon-button">
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Compartir"
+                                        >
                                             <i class="bi bi-share"></i>
                                         </button>
 
-                                        <button type="button" class="icon-button">
+                                        <button
+                                            type="button"
+                                            class="icon-button"
+                                            aria-label="Guardar"
+                                        >
                                             <i class="bi bi-bookmark"></i>
                                         </button>
 
-                                        <a href="lectura.html" class="read-button">
+                                        <a
+                                            href="lectura.html"
+                                            class="read-button"
+                                        >
                                             Leer
                                         </a>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </article>
+
                     </section>
 
-                    <!-- Columna lateral -->
+                    <!-- Columna lateral derecha -->
                     <aside class="col-12 col-lg-4 home-aside">
 
                         <!-- Actividad de tus seguidos -->
                         <section class="side-card mb-4">
-                            <h2>Actividad de tus seguidos</h2>
 
-                            <select class="form-select activity-filter">
+                            <h2>
+                                Actividad de tus seguidos
+                            </h2>
+
+                            <label
+                                for="activity-filter"
+                                class="visually-hidden"
+                            >
+                                Filtrar actividad
+                            </label>
+
+                            <select
+                                id="activity-filter"
+                                class="form-select activity-filter"
+                            >
                                 <option>Toda la actividad</option>
                                 <option>Más reciente</option>
                                 <option>Sólo historias</option>
@@ -193,8 +323,9 @@
                             </select>
 
                             <div class="activity-item">
-                                <img 
-                                    src="../assets/users-photos/foto-perfil-valeria-m.png" 
+
+                                <img
+                                    src="../assets/users-photos/foto-perfil-valeria-m.png"
                                     alt="Avatar de Valeria M."
                                     class="activity-avatar"
                                 >
@@ -204,12 +335,16 @@
                                     publicó una nueva obra.
                                 </p>
 
-                                <span>2h</span>
+                                <span>
+                                    2h
+                                </span>
+
                             </div>
 
                             <div class="activity-item">
-                                <img 
-                                    src="../assets/users-photos/foto-perfil-luna.png" 
+
+                                <img
+                                    src="../assets/users-photos/foto-perfil-luna.png"
                                     alt="Avatar de Luna"
                                     class="activity-avatar"
                                 >
@@ -219,46 +354,114 @@
                                     escribió una reseña.
                                 </p>
 
-                                <span>2h</span>
+                                <span>
+                                    2h
+                                </span>
+
                             </div>
 
-                            <button type="button" class="view-all-button">
+                            <button
+                                type="button"
+                                class="view-all-button"
+                            >
                                 Ver todo
                             </button>
+
                         </section>
 
                         <!-- Obras destacadas -->
                         <section class="side-card">
-                            <h2>Obras destacadas</h2>
+
+                            <h2>
+                                Obras destacadas
+                            </h2>
 
                             <article class="featured-story">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
+
+                                <img
+                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
                                     alt="Portada de Luz de octubre"
                                     class="featured-cover"
                                 >
 
                                 <div class="featured-info">
-                                    <h3>Luz de octubre</h3>
 
-                                    <p class="review-rating">
+                                    <h3>
+                                        Luz de octubre
+                                    </h3>
+
+                                    <p
+                                        class="review-rating"
+                                        aria-label="Calificación de cinco estrellas"
+                                    >
                                         ★★★★★
                                     </p>
 
-                                    <a href="lectura.html" class="read-button read-button-small">
+                                    <a
+                                        href="lectura.html"
+                                        class="read-button read-button-small"
+                                    >
                                         Leer
                                     </a>
+
                                 </div>
+
                             </article>
+
                         </section>
+
+                        <!-- Footer lateral -->
+                        <footer class="site-footer site-footer--aside">
+
+    <nav
+        class="site-footer-links"
+        aria-label="Enlaces informativos"
+    >
+        <a href="nosotrosli.html">Acerca de</a>
+        <a href="contactanos.html">Contáctanos</a>
+        <a href="aviso-privacidad.html">Aviso de privacidad</a>
+    </nav>
+
+    <div class="site-footer-brand">
+
+        <a
+            href="principal.html"
+            class="site-footer-logo"
+            aria-label="Ir a la página principal"
+        >
+            <img
+                src="../assets/logo-caliope.svg"
+                alt="Calíope"
+            >
+        </a>
+
+        <p class="site-footer-copyright">
+            Calíope © 2026
+        </p>
+
+    </div>
+
+</footer>
+
                     </aside>
 
                 </div>
+
             </main>
+
         </div>
+
     </div>
 
+    <!-- JavaScript del menú -->
     <script src="../js/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"
+    ></script>
+
 </body>
 </html>
