@@ -1,150 +1,116 @@
-/* =========================================
-   GOOGLE FONTS
-========================================= */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* ==========================================================================
+   CONTACTO
+   Adaptado a globales.css
+   ========================================================================== */
 
-/* =========================================
-   VARIABLES GLOBALES
-========================================= */
-:root {
-  --primary-dark: #13002f;
-  --primary-medium: #45135c;
-  --primary-light: #8b7ca3;
+/* ==========================================================================
+   RESET BÁSICO
+   ========================================================================== */
 
-  --background-color: #ffffff;
-  --card-background: #ffffff;
-
-  --border-color: #eee7f3;
-
-  --text-dark: #13002f;
-  --text-medium: #2f2040;
-  --text-light: #8b7ca3;
-}
-
-/* =========================================
-   RESET
-========================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* =========================================
-   BODY
-========================================= */
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-dark);
-  overflow-x: hidden;
-}
-
-/* =========================================
-   IMÁGENES
-========================================= */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* =========================================
+/* ==========================================================================
    CONTENIDO PRINCIPAL
-========================================= */
+   ========================================================================== */
+
 .contact-section {
   padding: 70px 0;
+  background-color: var(--color-bg-app);
 }
 
-/* =========================================
+/* ==========================================================================
    TÍTULO PRINCIPAL
-========================================= */
+   ========================================================================== */
+
 .main-title {
+  font-family: var(--font-ui);
   font-size: 48px;
-  font-weight: 700;
-  color: var(--primary-dark);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-title);
   margin-bottom: 10px;
   line-height: 1.1;
 }
 
-/* =========================================
-   SUBTÍTULO
-========================================= */
 .main-subtitle {
   font-size: 1rem;
-  color: var(--text-medium);
+  color: var(--color-text-body);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* =========================================
-   CARDS
-========================================= */
+/* ==========================================================================
+   TARJETAS
+   ========================================================================== */
+
 .contact-card {
-  background-color: var(--card-background);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
+  background-color: var(--color-bg-card);
+  border: 1px solid #e8e4f3;
+  border-radius: 16px;
   padding: 35px;
-  box-shadow: 0 2px 8px rgba(79, 33, 99, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(28, 18, 54, 0.04);
+  transition: var(--transition-smooth);
 }
 
 .contact-card:hover {
-  border-color: #d8cfee;
-  box-shadow: 0 8px 20px rgba(79, 33, 99, 0.12);
+  transform: translateY(-3px);
+  border-color: rgba(99, 59, 188, 0.15);
+  box-shadow: 0 8px 20px rgba(28, 18, 54, 0.08);
 }
 
-/* =========================================
+/* ==========================================================================
    TÍTULOS DE SECCIÓN
-========================================= */
+   ========================================================================== */
+
 .section-title {
+  font-family: var(--font-ui);
   font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary-dark);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-title);
 }
 
-/* =========================================
-   LABELS
-========================================= */
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
 .form-label {
   font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--primary-dark);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-title);
   margin-bottom: 10px;
 }
 
-/* =========================================
-   INPUT GROUP
-========================================= */
 .input-group {
-  border: 1px solid var(--border-color);
+  border: 1px solid #e1dfec;
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* =========================================
-   ICONOS INPUT
-========================================= */
 .input-group-text {
   border: none;
-  background: white;
+  background-color: var(--color-bg-input);
+  color: var(--color-primary);
 }
 
 .input-group .form-control {
   border: none;
 }
 
-/* =========================================
+/* ==========================================================================
    INPUTS Y SELECTS
-========================================= */
+   ========================================================================== */
+
 .form-control,
 .form-select {
-  border: 1px solid var(--border-color);
+  border: 1px solid #e1dfec;
   padding: 14px 16px;
   font-size: 1rem;
-  color: var(--text-medium);
-  background-color: white;
-  transition: all 0.3s ease;
+  color: var(--color-text-body);
+  background-color: var(--color-bg-input);
+  transition: var(--transition-smooth);
 }
 
 .form-control {
@@ -152,49 +118,51 @@ img {
 }
 
 .form-control::placeholder {
-  color: var(--text-light);
+  color: var(--color-text-muted);
 }
 
 .form-control:hover,
 .form-select:hover {
-  border-color: #d8cfee;
+  border-color: rgba(99, 59, 188, 0.25);
 }
 
 .form-control:focus,
 .form-select:focus {
-  border-color: #6f42c1;
-  box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(99, 59, 188, 0.12);
 }
 
 textarea {
   resize: none;
 }
 
-/* =========================================
+/* ==========================================================================
    BOTÓN PRINCIPAL
-========================================= */
+   ========================================================================== */
+
 .btn-primary {
-  background-color: var(--primary-medium);
-  border: none;
-  border-radius: 20px;
+  background-color: var(--color-primary) !important;
+  border: none !important;
+  border-radius: var(--radius-btn);
   padding: 14px 24px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: var(--weight-semibold);
+  transition: var(--transition-smooth);
 }
 
 .btn-primary:hover {
-  background-color: #2f0d40;
+  background-color: var(--color-primary-dark) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(69, 19, 92, 0.2);
+  box-shadow: 0 8px 18px rgba(99, 59, 188, 0.2);
 }
 
-/* =========================================
+/* ==========================================================================
    INFORMACIÓN DE CONTACTO
-========================================= */
+   ========================================================================== */
+
 .info-item {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: center;
+  gap: 18px;
   margin-bottom: 28px;
 }
 
@@ -202,46 +170,48 @@ textarea {
   margin-bottom: 0;
 }
 
-/* =========================================
-   ICONOS DE INFORMACIÓN
-========================================= */
+/* ==========================================================================
+   ICONOS DE CONTACTO
+   ========================================================================== */
+
 .info-icon {
   width: 50px;
   height: 50px;
   min-width: 50px;
-
-  border-radius: 14px;
-
-  background-color: #f3e7f3;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: var(--primary-medium);
-  font-size: 1.1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 8px;
 }
 
-/* =========================================
-   TEXTO INFO
-========================================= */
+.info-item:hover .info-icon {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(99, 59, 188, 0.12);
+}
+/* ==========================================================================
+   TEXTO DE CONTACTO
+   ========================================================================== */
+
 .info-label {
   display: block;
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--color-text-muted);
   margin-bottom: 4px;
 }
 
 .info-text {
   margin: 0;
   font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-medium);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-body);
 }
 
-/* =========================================
+/* ==========================================================================
    FAQ
-========================================= */
+   ========================================================================== */
+
 .faq-item {
   margin-bottom: 30px;
 }
@@ -252,23 +222,24 @@ textarea {
 
 .faq-item h5 {
   font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-title);
   margin-bottom: 10px;
 }
 
 .faq-item p {
-  color: var(--text-medium);
+  color: var(--color-text-body);
   line-height: 1.6;
   margin: 0;
 }
 
-/* =========================================
+/* ==========================================================================
    RESPONSIVE TABLET
-========================================= */
+   ========================================================================== */
+
 @media (max-width: 992px) {
   .main-title {
-    font-size: 48px;
+    font-size: 42px;
   }
 
   .section-title {
@@ -280,9 +251,10 @@ textarea {
   }
 }
 
-/* =========================================
+/* ==========================================================================
    RESPONSIVE MÓVIL
-========================================= */
+   ========================================================================== */
+
 @media (max-width: 768px) {
   .contact-section {
     padding: 45px 0;
@@ -302,7 +274,7 @@ textarea {
 
   .contact-card {
     padding: 22px;
-    border-radius: 18px;
+    border-radius: 14px;
   }
 
   .info-item {
@@ -319,9 +291,10 @@ textarea {
   }
 }
 
-/* =========================================
+/* ==========================================================================
    CELULARES PEQUEÑOS
-========================================= */
+   ========================================================================== */
+
 @media (max-width: 576px) {
   .main-title {
     font-size: 2rem;
@@ -352,14 +325,15 @@ textarea {
   }
 }
 
-/* =========================================
+/* ==========================================================================
    MENÚ RESPONSIVE
-========================================= */
+   ========================================================================== */
+
 @media (max-width: 768px) {
   .sidebar {
     width: 260px;
     transform: translateX(-100%);
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 5px 0 25px rgba(28, 18, 54, 0.12);
   }
 
   .sidebar:not(.closed) {
@@ -395,4 +369,37 @@ textarea {
     height: 40px;
     font-size: 18px;
   }
+}
+
+.contact-card .info-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+
+  border-radius: 12px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   CORRECCIÓN DE FONDO GLOBAL
+   ========================================================================== */
+
+html,
+body {
+  background-color: var(--color-bg-app);
+}
+
+.contenido {
+  background-color: var(--color-bg-app) !important;
+  min-height: 100vh;
+}
+
+.contact-section {
+  background-color: transparent;
 }
