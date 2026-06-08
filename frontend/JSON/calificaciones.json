@@ -1,0 +1,19 @@
+{
+  "_nota": "Este objeto es un caché calculado. No es fuente de verdad : se actualiza cada vez que se crea, edita o elimina una reseña. la presente nota esta destinada al programador",
+  "idHistoria": null,
+  "calificacionPromedio": null,
+  "totalResenas": null,
+  "distribucionCalificaciones": {
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null
+  },
+  "totalLecturas": null,
+  "lectoresActivos": null,
+  "meGusta": null,
+  "compartidos": null,
+  "guardados": null,
+  "ultimaActualizacion": "0000-01-01T00:00:00Z"
+}
