@@ -1,32 +1,20 @@
 {
   "Usuario": {
-    "id": "integer",
-    "nombre": "string",
-    "apellidos": "string",
-    "userName": "string",
-    "email": "string",
-    "contrasena": "string",
-    "seguidores": "integer",
-    "rol": "enum",
-    "generoFavorito": "string",
-    "fechaRegistro": "datetime",
-    "seguidos": "integer",
-    "publicaciones": "integer",
-    "librosFavoritos": "array"
-  },
+    "id": 0,
+    "nombre": "",
+    "apellido": "",
+    "email": "",
+    "userName": "",
+    "fechaNacimiento": "",
+    "pronombres": "",
+    "contrasena": "",
+    "fechaRegistro": "",
 
-  "Resena": {
-    "id": "integer",
-    "contenido": "string",
-    "calificacion": "float",
-    "fecha": "datetime",
-    "usuarioId": "integer",
-    "publicacionId": "integer"
-  },
-
-  "Favorito": {
-    "id": "integer",
-    "usuarioId": "integer",
-    "publicacionId": "integer"
+    "rol": "",
+    "generoFavorito": "",
+    "seguidores": 0,
+    "seguidos": 0,
+    "publicaciones": 0,
+    "librosFavoritos": []
   }
 }
