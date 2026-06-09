@@ -1,12 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Lectura | Luz de octubre</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="../Styles/global.css">
+
+    <!-- Estilos del menú -->
+    <link rel="stylesheet" href="../Styles/menu.css">
+
+    <!-- Estilos propios de la pantalla -->
+    <link rel="stylesheet" href="../Styles/lectura.css">
 </head>
+
 <body>
-    <h1> Lectura </h1>
-    <!-- crear una interfaz lo más simple y minimalista posible -->
+
+    <div class="layout">
+
+        <!-- Botón del menú lateral -->
+        <button
+            id="toggle-btn"
+            type="button"
+            aria-label="Abrir menú"
+        >
+            <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Menú lateral cargado desde menu.js -->
+        <div id="menu-container"></div>
+
+        <!-- Contenido de lectura -->
+        <div class="contenido reading-content">
+
+            <main class="reading-page">
+
+                <!-- Encabezado mínimo -->
+                <header class="reading-header">
+
+                    <div class="reading-heading">
+
+                        <a
+                            href="principal.html"
+                            class="reading-back-link"
+                            aria-label="Volver a la página principal"
+                        >
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+
+                        <div>
+                            <p class="reading-work-title">
+                                Luz de octubre
+                            </p>
+
+                            <h1 class="chapter-title">
+                                Capítulo 1: La carta
+                            </h1>
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary review-button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#reviewModal"
+                    >
+                        <i class="bi bi-star"></i>
+                        Escribir reseña
+                    </button>
+
+                </header>
+
+                <!-- Lectura paginada -->
+                <section
+                    id="readingCarousel"
+                    class="carousel slide reading-carousel"
+                    data-bs-interval="false"
+                    data-bs-touch="true"
+                    aria-label="Texto de lectura"
+                >
+
+                    <div class="carousel-inner">
+
+                        <!-- Página 1 -->
+                        <article class="carousel-item active">
+
+                            <div class="reading-sheet literary-text">
+
+                                <p class="reading-page-number">
+                                    Página 1
+                                </p>
+
+                                <p>
+                                    El reloj marcó la medianoche cuando Clara abrió la carta.
+                                    Durante varios minutos permaneció frente a la ventana,
+                                    escuchando la lluvia golpear suavemente los cristales.
+                                </p>
+
+                                <p>
+                                    El sobre había llegado aquella mañana, sin remitente y
+                                    sin más indicación que su nombre escrito con una caligrafía
+                                    que le resultaba inquietantemente familiar.
+                                </p>
+
+                                <p>
+                                    Había esperado todo el día antes de abrirlo. Lo colocó sobre
+                                    la mesa mientras preparaba café, lo llevó consigo a la sala
+                                    y finalmente lo dejó junto a la lámpara, como si ignorarlo
+                                    pudiera hacer que desapareciera.
+                                </p>
+
+                                <p>
+                                    Pero al caer la noche, la curiosidad terminó venciendo al miedo.
+                                </p>
+
+                                <blockquote>
+                                    “Algunas historias no comienzan cuando alguien las escribe,
+                                    sino cuando otra persona decide recordarlas”.
+                                </blockquote>
+
+                                <p>
+                                    Clara leyó aquella frase dos veces. Después continuó.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Página 2 -->
+                        <article class="carousel-item">
+
+                            <div class="reading-sheet literary-text">
+
+                                <p class="reading-page-number">
+                                    Página 2
+                                </p>
+
+                                <p>
+                                    La carta hablaba de una casa ubicada en las afueras del pueblo,
+                                    junto al sendero que conducía al viejo lago. Clara conocía ese
+                                    lugar. Todos lo conocían, aunque casi nadie se acercaba después
+                                    del anochecer.
+                                </p>
+
+                                <p>
+                                    Durante su infancia había escuchado historias sobre sus ventanas
+                                    iluminadas, incluso cuando la casa llevaba décadas abandonada.
+                                    Su madre siempre cambiaba de tema cuando Clara preguntaba por ella.
+                                </p>
+
+                                <p>
+                                    En el centro de la hoja aparecía una fecha:
+                                    el diecisiete de octubre.
+                                </p>
+
+                                <p>
+                                    Faltaban solamente tres días.
+                                </p>
+
+                                <p>
+                                    Debajo de la fecha había una instrucción sencilla:
+                                </p>
+
+                                <blockquote>
+                                    “Ve sola. Lleva la llave que tu madre escondió”.
+                                </blockquote>
+
+                                <p>
+                                    Clara sintió un escalofrío. Nunca había oído hablar de ninguna
+                                    llave, pero supo inmediatamente dónde debía buscarla.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Página 3 -->
+                        <article class="carousel-item">
+
+                            <div class="reading-sheet literary-text">
+
+                                <p class="reading-page-number">
+                                    Página 3
+                                </p>
+
+                                <p>
+                                    Subió las escaleras sin encender las luces. El pasillo estaba
+                                    iluminado únicamente por el resplandor gris que entraba desde
+                                    las ventanas.
+                                </p>
+
+                                <p>
+                                    Entró en la habitación de su madre y abrió el armario.
+                                    Durante años había evitado revisar sus pertenencias. Todavía
+                                    conservaban un aroma tenue a lavanda y papel antiguo.
+                                </p>
+
+                                <p>
+                                    En el fondo encontró una caja de madera, oculta detrás de varias
+                                    mantas. No tenía cerradura.
+                                </p>
+
+                                <p>
+                                    Dentro había fotografías, recortes de periódicos y un pequeño
+                                    cuaderno cubierto de polvo. Bajo el cuaderno descansaba una llave
+                                    oscura, atada con una cinta violeta.
+                                </p>
+
+                                <p>
+                                    Clara la tomó con cuidado.
+                                </p>
+
+                                <p>
+                                    En ese instante escuchó tres golpes en la puerta principal.
+                                </p>
+
+                                <p>
+                                    No esperaba a nadie.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- Navegación y progreso -->
+                <footer class="reading-navigation">
+
+                    <div class="reading-navigation-inner">
+
+                        <button
+                            id="previousPageButton"
+                            class="reading-nav-button"
+                            type="button"
+                            data-bs-target="#readingCarousel"
+                            data-bs-slide="prev"
+                            aria-label="Página anterior"
+                        >
+                            <i class="bi bi-chevron-left"></i>
+                            <span>Anterior</span>
+                        </button>
+
+                        <div class="reading-progress-wrapper">
+
+                            <div
+                                class="progress reading-progress"
+                                role="progressbar"
+                                aria-label="Progreso de lectura"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="33"
+                            >
+                                <div
+                                    id="readingProgressBar"
+                                    class="progress-bar"
+                                    style="width: 33.33%"
+                                ></div>
+                            </div>
+
+                            <p
+                                id="readingProgressText"
+                                class="reading-progress-text"
+                                aria-live="polite"
+                            >
+                                Página 1 de 3 · 33%
+                            </p>
+
+                        </div>
+
+                        <button
+                            id="nextPageButton"
+                            class="reading-nav-button"
+                            type="button"
+                            data-bs-target="#readingCarousel"
+                            data-bs-slide="next"
+                            aria-label="Página siguiente"
+                        >
+                            <span>Siguiente</span>
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Modal para reseña -->
+    <div
+        class="modal fade"
+        id="reviewModal"
+        tabindex="-1"
+        aria-labelledby="reviewModalTitle"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content review-modal">
+
+                <div class="modal-header">
+
+                    <h2
+                        class="modal-title fs-5"
+                        id="reviewModalTitle"
+                    >
+                        Reseñar Luz de octubre
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    ></button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <form class="review-form">
+
+                        <fieldset class="review-rating-fieldset">
+
+                            <legend>
+                                Tu calificación
+                            </legend>
+
+                            <div class="review-stars">
+
+                                <button
+                                    type="button"
+                                    class="review-star"
+                                    aria-label="Una estrella"
+                                >
+                                    <i class="bi bi-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star"
+                                    aria-label="Dos estrellas"
+                                >
+                                    <i class="bi bi-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star"
+                                    aria-label="Tres estrellas"
+                                >
+                                    <i class="bi bi-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star"
+                                    aria-label="Cuatro estrellas"
+                                >
+                                    <i class="bi bi-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star"
+                                    aria-label="Cinco estrellas"
+                                >
+                                    <i class="bi bi-star"></i>
+                                </button>
+
+                            </div>
+
+                        </fieldset>
+
+                        <div class="review-field">
+
+                            <label for="reviewText">
+                                Escribe tu reseña
+                            </label>
+
+                            <textarea
+                                id="reviewText"
+                                rows="5"
+                                placeholder="¿Qué te hizo sentir esta historia?"
+                            ></textarea>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                    >
+                        Publicar reseña
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Menú lateral -->
+    <script src="../js/menu.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript propio -->
+    <script src="../js/lectura.js"></script>
+
 </body>
 </html>

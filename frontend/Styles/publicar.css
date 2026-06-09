@@ -373,3 +373,117 @@
     font-size: 1rem;
   }
 }
+
+/**SELECTOR DE GÉNEROS */
+
+.genre-form-group {
+  width: 100%;
+}
+
+.genre-selector {
+  width: 100%;
+}
+
+/* Selector gris claro */
+.write-form .genre-select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 2.75rem 0.75rem 1rem;
+
+  color: var(--color-text-body, #3a2f5a);
+  background-color: #f1f1f4;
+  border: 1px solid #dedce5;
+  border-radius: 10px;
+
+  font-family: var(--font-ui);
+  font-weight: var(--weight-regular, 400);
+
+  cursor: pointer;
+  transition: var(
+    --transition-smooth,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease
+  );
+}
+
+.write-form .genre-select:hover {
+  border-color: #c9c5d4;
+}
+
+.write-form .genre-select:focus {
+  outline: none;
+  color: var(--color-text-body, #3a2f5a);
+  background-color: #f1f1f4;
+  border-color: var(--color-primary, #633bbc);
+  box-shadow: 0 0 0 3px rgba(99, 59, 188, 0.14);
+}
+
+.write-form .genre-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.genre-helper {
+  margin: 8px 0 0;
+  color: var(--color-text-muted, #82779a);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+}
+
+/* Contenedor de etiquetas */
+.selected-genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 0;
+  margin-top: 18px;
+}
+
+/* Etiqueta lavanda */
+.genre-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 10px 7px 14px;
+
+  color: var(--color-primary, #633bbc);
+  background-color: var(--color-secondary, #efe9f9);
+  border: 1px solid #d9cff1;
+  border-radius: 999px;
+
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: var(--weight-medium, 500);
+}
+
+/* Botón X */
+.genre-tag-remove {
+  width: 24px;
+  height: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: var(--color-primary, #633bbc);
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.genre-tag-remove:hover,
+.genre-tag-remove:focus-visible {
+  color: #4f2f9e;
+  background-color: rgba(99, 59, 188, 0.12);
+  outline: none;
+}
