@@ -1,0 +1,402 @@
+/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTES (Google Fonts)
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   2. TEMA CLARO
+   ========================================================================== */
+:root {
+  /* Paleta de Colores */
+  --color-primary: #633bbc;
+  --color-primary-dark: #7a52e1; /* Para estados oscuros o activos */
+  --color-secondary: #efe9f9;
+  --color-secondary-dark: #2d2354; /* Fondo secundario oscuro */
+  --color-bg-app: #f6f5fa;
+  --color-bg-card: #ffffff;
+  --color-bg-input: #fbfbff;
+  
+  /* Colores de Texto */
+  --color-text-title: #1c1236;
+  --color-text-body: #3a2f5a;
+  --color-text-muted: #82779a;
+
+  /* Tipografías y Pesos */
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-editorial: 'Lora', serif;
+  
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Componentes (Detalles precisos en px) */
+  --radius-btn: 10px; /* Punto medio entre 8px y 12px */
+  --border-width: 1px;
+  
+  /* Interacciones y Animaciones */
+  --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* ===================
+   CONFIGURACIÓN BASE
+   ================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-regular);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =====================
+   4. TIPOGRAFÍA Y TEXTOS
+   ======================*/
+/* Títulos principales del sistema */
+h1, h2, h3, .text-title {
+  font-family: var(--font-ui);
+  color: var(--color-text-title);
+  font-weight: var(--weight-bold);
+}
+
+/* Títulos de obras, capítulos y textos literarios */
+.editorial-title, .literary-text, blockquote {
+  font-family: var(--font-editorial);
+  color: var(--color-text-title);
+}
+
+h4.editorial-title, .chapter-title {
+  font-weight: var(--weight-semibold);
+}
+
+/* Subtítulos y texto secundario */
+.text-secondary, .subtitle {
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+}
+
+/* ===========================
+   5. COMPONENTES E INTERFAZ
+   ==========================*/
+
+/* Tarjetas y Paneles */
+.card, .panel {
+  background-color: var(--color-bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(28, 18, 54, 0.04); /* Sombra sutil con el color de títulos */
+}
+
+/* Formularios e Inputs */
+input, select, textarea {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-regular);
+  background-color: var(--color-bg-input);
+  color: var(--color-text-body);
+  border: var(--border-width) solid #e1dfec;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Navegación */
+.sidebar, .nav-link {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-medium);
+}
+
+/*  Etiquetas */
+.label-system {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-bold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* ==========
+   6. BOTONES
+   ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-weight: var(--weight-medium);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+/* Botón Primario */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+  color: #ffffff;
+}
+/*Iconos circulares*/
+.btn-circle {
+    background-color: var(--bg-tags);   /* Fondo lila suave (#EFE9F9) */
+    color: var(--primary-purple);       /* Icono morado (#633BBC) */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: var(--transition, all 0.3s ease);
+}
+
+
+
+
+
+/* ==========================================================================
+   TEMA OSCURO 
+   ========================================================================== */
+
+
+   
+:root {
+    /* Paleta de colores */
+    --bg-app: #130F26;
+    --bg-surface: #1D183A;
+    --bg-inputs: #252048;
+    --bg-tags: #2D2354;
+    --borders: #2F2958;
+    --primary-purple: #7A52E1;
+    --primary-purple-hover: #936bf5;
+    
+    /* Tipografía y Color de Texto */
+    --text-main: #F4F2FA;
+    --text-base: #C3BCDB;
+    --text-muted: #7E7599;
+    --text-tags: #BDB2FF;
+    --text-placeholder: #5A5278;
+    
+    /* Fuentes */
+    --font-ui: 'Plus Jakarta Sans', sans-serif;
+    --font-editorial: 'Lora', Georgia, serif;
+    
+    /* Configuraciones de Componentes */
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --radius: 12px;
+    --radius-btn: 10px;
+    --transition: all 0.3s ease;
+}
+
+/* ===============
+   2.CONFIGURACIÓN GENERAL (Resets & Base HTML)
+   ============== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-base);
+    font-family: var(--font-ui);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-editorial);
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+/* Botón Base */
+.btn {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 700; 
+    padding: 1rem 2.25rem;
+    border-radius: var(--radius-btn); 
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Botón Primario */
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-purple-hover); 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 82, 225, 0.4);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+    background-color: var(--bg-tags);
+    color: var(--primary-purple);
+    border: 1px solid var(--borders);
+}
+
+.btn-secondary:hover {
+    background-color: #382c66; 
+    color: var(--primary-purple-hover);
+    transform: translateY(-2px);
+}
+
+/* Estructura Base para Tarjetas */
+.card-global-structure {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--borders);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+.card-global-structure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Íconos circulares */
+.info-item .info-icon {
+    background-color: #231B4D;
+    color: #A29BFE;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+
+
+/*! =====================================
+/*!ESPECIFICACIONES AMBOS TEMAS
+!/*!========================================*/
+
+
+
+/*! EFECTO PARA MAUSE AMBOS TEMAS CLARO Y OSCURO */
+.main-logo2:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 16px rgba(122, 82, 225, 0.5)); /* Brillo suave con el color del tema */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+}
+.heartbeat {
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* Contenedores de Logotipos */
+.logo-container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+/* ===============================
+   4. ESTILOS DE FORMULARIOS GLOBALES
+   ================================= */
+.form-label {
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Unificación de estilos para campos de texto */
+.form-control,
+.form-select,
+.input-group-text {
+    background-color: var(--bg-inputs); /* Corregido color estático a tu variable */
+    border: 1px solid var(--borders);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.form-control::placeholder {
+    color: var(--text-placeholder);
+}
+
+.form-control:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(122, 82, 225, 0.2);
+}
+
+/* Tarjetas de formulario */
+.form-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--borders);
+    color: var(--text-base);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+.form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}       
+
+.card-global-structure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+

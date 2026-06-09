@@ -1,131 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Acerca de - Caliope</title>
-        <link rel="stylesheet" href="/frontend/Styles/nosotros.css">
-        <link rel="stylesheet" href="../Styles/menu.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="../Styles/nosotros.css">
-</head> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acerca de - Caliope</title>
+    <link rel="stylesheet" href="../Styles/globales.css" />
+    <link rel="stylesheet" href="../Styles/footer.css" />
+    <link rel="stylesheet" href="/frontend/Styles/nosotros.css" />
+    <link rel="stylesheet" href="../Styles/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../Styles/nosotros.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="layout">
+      <button id="toggle-btn">☰</button>
+      <div id="menu-container"></div>
 
-<div class="layout" >
-<button id="toggle-btn">☰</button>
-    <div id="menu-container"></div>
+      <div class="contenido">
+        <!--? Acerca de-->
 
-    <div class="contenido">
+        <header class="acercaDe" id="about">
+          <div class="header-icon-container">
+            <img
+              src="../Styles/Logo recortado.jpeg"
+              alt="Logo Caliope"
+              class="logo-caliope"
+            />
+          </div>
+          <h1 class="title">Acerca de Caliope</h1>
+          <p class="subtitle">
+            Una plataforma donde escritores y lectores crean historias juntos.
+            <span class="heart-icon">💜</span>
+          </p>
+        </header>
 
- 
-                <!--? Acerca de-->
+        <!--? Nuestra historia-->
 
-    <header class="acercaDe" id="about">
-        <div class="header-icon-container">
-              <img src="../Styles/Logo recortado.jpeg" alt="Logo Caliope" class="logo-caliope">
-        </div>
-        <h1 class="title">Acerca de Caliope</h1>
-        <p class="subtitle">Una plataforma donde escritores y lectores crean historias juntos. <span class="heart-icon">💜</span></p>
-    </header>
-
-                <!--? Nuestra historia-->
-
-
-    <main class="aboutContent">
-        
-        <section class="story-section" id="nuestra-historia">
+        <main class="aboutContent">
+          <section class="story-section" id="nuestra-historia">
             <div class="cardHistoria">
-                <h2 class="nuestraHistoria">Nuestra historia</h2>
-                <div class="historiaTexto">
-                    <p>Caliope nació como una idea para dar voz a escritores que quieren compartir sus historias.</p>
-                    <p>Inspirada en la musa de la poesía, esta plataforma busca unir lectores y creadores.</p>
-                    <p>Hoy es una comunidad en crecimiento donde la creatividad es lo más importante.</p>
-                </div>
+              <h2 class="nuestraHistoria">Nuestra historia</h2>
+              <div class="historiaTexto">
+                <p>
+                  Caliope nació como una idea para dar voz a escritores que
+                  quieren compartir sus historias.
+                </p>
+                <p>
+                  Inspirada en la musa de la poesía, esta plataforma busca unir
+                  lectores y creadores.
+                </p>
+                <p>
+                  Hoy es una comunidad en crecimiento donde la creatividad es lo
+                  más importante.
+                </p>
+              </div>
             </div>
-        </section>
+          </section>
 
-                <!--?Misión / Visión-->
+          <!--?Misión / Visión-->
 
-        <section class="goals-section" id="misionVision">
+          <section class="goals-section" id="misionVision">
             <div class="goals-grid">
-                
-                <div class="goal-card">
-                    <div class="card-icon-container">
-                        <i class="bi bi-bullseye"></i>  </div>
-                    <h3 class="card-title">Misión</h3>
-                    <p class="card-description">Dar a cada escritor un espacio para crear y compartir sus historias.</p>
+              <div class="goal-card">
+                <div class="card-icon-container">
+                  <i class="bi bi-bullseye"></i>
                 </div>
+                <h3 class="card-title">Misión</h3>
+                <p class="card-description">
+                  Dar a cada escritor un espacio para crear y compartir sus
+                  historias.
+                </p>
+              </div>
 
-                <div class="goal-card">
-                    <div class="card-icon-container">
-                        <i class="bi bi-eye"></i> </div>
-                    <h3 class="card-title">Visión</h3>
-                    <p class="card-description">Ser una de las plataformas literarias más importantes en español.</p>
+              <div class="goal-card">
+                <div class="card-icon-container">
+                  <i class="bi bi-eye"></i>
                 </div>
-
+                <h3 class="card-title">Visión</h3>
+                <p class="card-description">
+                  Ser una de las plataformas literarias más importantes en
+                  español.
+                </p>
+              </div>
             </div>
-        </section>
+          </section>
 
-                <!--? Valores-->
+          <!--? Valores-->
 
-        <section class="seccionValores" id="nuestros-valores">
+          <section class="seccionValores" id="nuestros-valores">
             <h2 class="section-title center-text">Nuestros valores</h2>
-            
+
             <div class="values-grid">
-                
-                <div class="value-card">
-                    <div class="card-icon-container">
-                        <i class="bi bi-book"></i>
-                    </div>
-                    <h3 class="card-title">Organización</h3>
-                    <p class="card-description">Mantenemos tu espacio limpio y enfocado.</p>
+              <div class="value-card">
+                <div class="card-icon-container">
+                  <i class="bi bi-book"></i>
                 </div>
+                <h3 class="card-title">Organización</h3>
+                <p class="card-description">
+                  Mantenemos tu espacio limpio y enfocado.
+                </p>
+              </div>
 
-                <div class="value-card">
-                    <div class="card-icon-container">
-                        <i class="bi bi-people"></i> 
-                    </div>
-                    <h3 class="card-title">Comunidad creativa</h3>
-                    <p class="card-description">Un espacio seguro para compartir y crecer.</p>
+              <div class="value-card">
+                <div class="card-icon-container">
+                  <i class="bi bi-people"></i>
                 </div>
+                <h3 class="card-title">Comunidad creativa</h3>
+                <p class="card-description">
+                  Un espacio seguro para compartir y crecer.
+                </p>
+              </div>
 
-                <div class="value-card">
-                    <div class="card-icon-container">
-                        <i class="bi bi-heart"></i>
-                    </div>
-                    <h3 class="card-title">Respeto</h3>
-                    <p class="card-description">Valoramos cada voz y cada historia.</p>
+              <div class="value-card">
+                <div class="card-icon-container">
+                  <i class="bi bi-heart"></i>
                 </div>
+                <h3 class="card-title">Respeto</h3>
+                <p class="card-description">
+                  Valoramos cada voz y cada historia.
+                </p>
+              </div>
 
-                <div class="value-card">
-                    <div class="card-icon-container">
-                        <i class="bi bi-stars"></i>  
-                    </div>
-                    <h3 class="card-title">Accesibilidad</h3>
-                    <p class="card-description">Herramientas fáciles de usar para todos.</p>
+              <div class="value-card">
+                <div class="card-icon-container">
+                  <i class="bi bi-stars"></i>
                 </div>
-
+                <h3 class="card-title">Accesibilidad</h3>
+                <p class="card-description">
+                  Herramientas fáciles de usar para todos.
+                </p>
+              </div>
             </div>
-        </section>
+          </section>
 
-                <!--? Únete -->
+          <!--? Únete -->
 
-        <section class="cta-section" id="unete-caliope">
+          <section class="cta-section" id="unete-caliope">
             <div class="cta-card">
-                <h2 class="cta-title">Únete a Caliope <span class="heart-icon">💜</span></h2>
-                <p class="cta-subtitle">Empieza a escribir y compartir tus historias hoy mismo.</p>
-                
-                <div class="cta-buttons-container">
-                    <a href="publicar.html"><button class="btn btn-primary">Empezar a escribir</button></a>
-                    <a href="explorar.html"><button class="btn btn-secondary">Explorar historias</button></a>
-                </div>
-            </div>
-        </section>
+              <h2 class="cta-title">
+                Únete a Caliope <span class="heart-icon">💜</span>
+              </h2>
+              <p class="cta-subtitle">
+                Empieza a escribir y compartir tus historias hoy mismo.
+              </p>
 
-    </main>
-    <script src="../js/menu.js"></script>
-       </div>
+              <div class="cta-buttons-container">
+                <a href="publicar.html"
+                  ><button class="btn btn-primary">
+                    Empezar a escribir
+                  </button></a
+                >
+                <a href="explorar.html"
+                  ><button class="btn btn-secondary">
+                    Explorar historias
+                  </button></a
+                >
+              </div>
+            </div>
+          </section>
+        </main>
+        <!-- Footer inferior -->
+        <footer class="site-footer site-footer--bottom">
+          <nav class="site-footer-links" aria-label="Enlaces informativos">
+            <a href="nosotrosli.html"> Acerca de </a>
+
+            <a href="contactanos.html"> Contáctanos </a>
+
+            <a href="aviso-privacidad.html"> Aviso de privacidad </a>
+          </nav>
+
+          <!-- Logo y copyright en la misma línea -->
+          <div class="site-footer-brand">
+            <a
+              href="principal.html"
+              class="site-footer-logo"
+              aria-label="Ir a la página principal"
+            >
+              <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
+            </a>
+
+            <p class="site-footer-copyright">Calíope © 2026</p>
+          </div>
+        </footer>
+        <script src="../js/menu.js"></script>
+      </div>
     </div>
-</body>
+  </body>
 </html>

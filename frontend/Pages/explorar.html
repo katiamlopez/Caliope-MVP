@@ -1,281 +1,330 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Explora</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="../Styles/menu.css">
-    <link rel="stylesheet" href="../Styles/explorar.css">
-</head>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-<body>
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="../Styles/globales.css" />
+    <link rel="stylesheet" href="../Styles/footer.css" />
+    <link rel="stylesheet" href="../Styles/menu.css" />
+    <link rel="stylesheet" href="../Styles/explorar.css" />
+  </head>
+
+  <body>
     <div class="layout">
+      <!-- Botón hamburguesa -->
+      <button id="toggle-btn" type="button" aria-label="Abrir menú">☰</button>
 
-        <!-- Botón hamburguesa -->
-        <button id="toggle-btn">☰</button>
+      <!-- Aquí se carga el menú lateral desde menu.js -->
+      <div id="menu-container"></div>
 
-        <!-- Aquí se carga el menú lateral desde menu.js -->
-        <div id="menu-container"></div>
+      <!-- Contenido principal -->
+      <div class="contenido">
+        <main class="explore-page">
+          <!-- Barra superior -->
+          <header class="page-topbar">
+            <form class="explore-search" role="search">
+              <input
+                type="search"
+                placeholder="Buscar obras, autores o géneros..."
+                aria-label="Buscar obras, autores o géneros"
+              />
 
-        <!-- Contenido principal -->
-        <div class="contenido">
+              <button type="submit">Buscar</button>
+            </form>
 
-            <main class="explore-page">
+            <div class="page-actions">
+              <button
+                type="button"
+                class="topbar-icon"
+                aria-label="Configuración"
+              >
+                <i class="bi bi-gear"></i>
+              </button>
 
-                <!-- Barra superior base -->
-                <header class="page-topbar">
-                    <form class="explore-search" role="search">
-                        <input 
-                            type="search" 
-                            placeholder="Buscar obras, autores o géneros..."
-                            aria-label="Buscar obras, autores o géneros"
-                        >
+              <button
+                type="button"
+                class="topbar-icon notification-icon"
+                aria-label="Notificaciones"
+              >
+                <i class="bi bi-bell"></i>
+                <span></span>
+              </button>
 
-                        <button type="submit">
-                            Buscar
-                        </button>
-                    </form>
+              <a
+                href="perfil.html"
+                class="topbar-profile-link"
+                aria-label="Ir a mi perfil"
+              >
+                <img
+                  src="../assets/users-photos/foto-perfil-usuario.png"
+                  alt="Foto de perfil del usuario"
+                  class="topbar-avatar"
+                />
+              </a>
+            </div>
+          </header>
 
-                    <div class="page-actions">
-                        <button type="button" class="topbar-icon" aria-label="Configuración">
-                            <i class="bi bi-gear"></i>
-                        </button>
+          <!-- Encabezado de Explora -->
+          <section class="explore-header">
+            <div>
+              <h1 class="explore-title">Explora</h1>
 
-                        <button type="button" class="topbar-icon notification-icon" aria-label="Notificaciones">
-                            <i class="bi bi-bell"></i>
-                            <span></span>
-                        </button>
+              <p class="explore-description">
+                Descubre nuevas historias, autores y lecturas recomendadas por
+                la comunidad.
+              </p>
+            </div>
+          </section>
 
-                        <a href="perfil.html" class="topbar-profile-link" aria-label="Ir a mi perfil">
-                            <img 
-                                src="../assets/users-photos/foto-perfil-usuario.png" 
-                                alt="Foto de perfil del usuario"
-                                class="topbar-avatar"
-                            >
-                        </a>
+          <!-- Filtros por género -->
+          <section class="explore-section">
+            <h2 class="explore-subtitle">Descubrir por género</h2>
+
+            <div class="genre-tags">
+              <button type="button">Romance</button>
+
+              <button type="button">Misterio</button>
+
+              <button type="button">Fantasía</button>
+
+              <button type="button">Sci-fi</button>
+
+              <button type="button">Realismo mágico</button>
+
+              <button type="button">Terror</button>
+
+              <button type="button">Drama</button>
+
+              <button type="button" class="genre-tag-outline">Ver todas</button>
+            </div>
+          </section>
+
+          <!-- Layout del contenido -->
+          <div class="explore-layout">
+            <!-- Columna principal -->
+            <section class="explore-main">
+              <!-- Historias de autores favoritos -->
+              <section class="explore-section">
+                <h2 class="explore-subtitle">De tus autores favoritos</h2>
+
+                <article class="favorite-story-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
+                    alt="Portada de Luz de octubre"
+                    class="favorite-story-cover"
+                  />
+
+                  <div class="favorite-story-info">
+                    <h3 class="favorite-story-title">Luz de octubre</h3>
+
+                    <p class="story-author">Por Valeria M.</p>
+
+                    <p class="favorite-story-description">
+                      El reloj marcó la medianoche cuando Clara abrió la carta.
+                      No sabía que esas palabras cambiarían su destino para
+                      siempre.
+                    </p>
+
+                    <div class="story-meta">
+                      <span>Romance</span>
+                      <span>Misterio</span>
                     </div>
-                </header>
 
-                <!-- Encabezado de Explora -->
-                <section class="explore-header">
-                    <div>
-                        <h1 class="explore-title">Explora</h1>
-                        <p class="explore-description">
-                            Descubre nuevas historias, autores y lecturas recomendadas por la comunidad.
-                        </p>
-                    </div>
-                </section>
+                    <a href="lectura.html" class="read-button"> Leer </a>
+                  </div>
+                </article>
+              </section>
 
-                <!-- Filtros por género -->
-                <section class="explore-section">
-                    <h2 class="explore-subtitle">Descubrir por género</h2>
+              <!-- Mejor puntuados -->
+              <section class="explore-section">
+                <h2 class="explore-subtitle">Mejor puntuados</h2>
 
-                    <div class="genre-tags">
-                        <button type="button">Romance</button>
-                        <button type="button">Misterio</button>
-                        <button type="button">Fantasía</button>
-                        <button type="button">Sci-fi</button>
-                        <button type="button">Realismo mágico</button>
-                        <button type="button">Terror</button>
-                        <button type="button">Drama</button>
-                        <button type="button" class="genre-tag-outline">Ver todas</button>
-                    </div>
-                </section>
+                <div class="top-rated-grid">
+                  <article class="top-story-card">
+                    <img
+                      src="../assets/history-covers/portada-historia-luz-de-octubre.png"
+                      alt="Portada de Luz de octubre"
+                      class="top-story-cover"
+                    />
 
-                <!-- Layout de contenido -->
-                <div class="explore-layout">
+                    <h3 class="top-story-title">Luz de octubre</h3>
 
-                    <!-- Columna principal -->
-                    <section class="explore-main">
+                    <p class="top-story-author">Valeria M.</p>
 
-                        <!-- Historias de autores favoritos -->
-                        <section class="explore-section">
-                            <h2 class="explore-subtitle">De tus autores favoritos</h2>
+                    <p
+                      class="story-rating"
+                      aria-label="Calificación de cinco estrellas"
+                    >
+                      ★★★★★
+                    </p>
+                  </article>
 
-                            <article class="favorite-story-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
-                                    alt="Portada de Luz de octubre"
-                                    class="favorite-story-cover"
-                                >
+                  <article class="top-story-card">
+                    <img
+                      src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
+                      alt="Portada de El cielo de abril"
+                      class="top-story-cover"
+                    />
 
-                                <div class="favorite-story-info">
-                                    <h3 class="favorite-story-title">Luz de octubre</h3>
+                    <h3 class="top-story-title">El cielo de abril</h3>
 
-                                    <p class="story-author">
-                                        Por Valeria M.
-                                    </p>
+                    <p class="top-story-author">Diego N.</p>
 
-                                    <p class="favorite-story-description">
-                                        El reloj marcó la medianoche cuando Clara abrió la carta.
-                                        No sabía que esas palabras cambiarían su destino para siempre.
-                                    </p>
+                    <p
+                      class="story-rating"
+                      aria-label="Calificación de cinco estrellas"
+                    >
+                      ★★★★★
+                    </p>
+                  </article>
 
-                                    <div class="story-meta">
-                                        <span>Romance</span>
-                                        <span>Misterio</span>
-                                    </div>
+                  <article class="top-story-card">
+                    <img
+                      src="../assets/history-covers/portada-historia-manana-es-otro-dia.png"
+                      alt="Portada de Mañana es otro día"
+                      class="top-story-cover"
+                    />
 
-                                    <a href="lectura.html" class="read-button">
-                                        Leer
-                                    </a>
-                                </div>
-                            </article>
-                        </section>
+                    <h3 class="top-story-title">Mañana es otro...</h3>
 
-                        <!-- Mejor puntuados -->
-                        <section class="explore-section">
-                            <h2 class="explore-subtitle">Mejor puntuados</h2>
+                    <p class="top-story-author">Luna R.</p>
 
-                            <div class="top-rated-grid">
-
-                                <article class="top-story-card">
-                                    <img 
-                                        src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
-                                        alt="Portada de Luz de octubre"
-                                        class="top-story-cover"
-                                    >
-
-                                    <h3 class="top-story-title">Luz de octubre</h3>
-
-                                    <p class="top-story-author">
-                                        Valeria M.
-                                    </p>
-
-                                    <p class="story-rating">
-                                        ★★★★★
-                                    </p>
-                                </article>
-
-                                <article class="top-story-card">
-                                    <img 
-                                        src="../assets/history-covers/portada-historia-el-cielo-de-abril.png" 
-                                        alt="Portada de El cielo de abril"
-                                        class="top-story-cover"
-                                    >
-
-                                    <h3 class="top-story-title">El cielo de abril</h3>
-
-                                    <p class="top-story-author">
-                                        Diego N.
-                                    </p>
-
-                                    <p class="story-rating">
-                                        ★★★★★
-                                    </p>
-                                </article>
-
-                                <article class="top-story-card">
-                                    <img 
-                                        src="../assets/history-covers/portada-historia-manana-es-otro-dia.png" 
-                                        alt="Portada de Mañana es otro"
-                                        class="top-story-cover"
-                                    >
-
-                                    <h3 class="top-story-title">Mañana es otro...</h3>
-
-                                    <p class="top-story-author">
-                                        Luna R.
-                                    </p>
-
-                                    <p class="story-rating">
-                                        ★★★★☆
-                                    </p>
-                                </article>
-
-                            </div>
-                        </section>
-
-                        <!-- Reseñas destacadas -->
-                        <section class="explore-section">
-                            <h2 class="explore-subtitle">Reseñas recientes</h2>
-
-                            <article class="explore-review-card">
-                                <header class="explore-review-header">
-                                    <img 
-                                        src="../assets/users-photos/foto-perfil-diego-n.png" 
-                                        alt="Foto de perfil del reseñista"
-                                        class="review-avatar"
-                                    >
-
-                                    <div>
-                                        <h3 class="review-user">Diego N.</h3>
-                                        <p class="review-context">
-                                            reseñó <strong>El cielo de abril</strong>
-                                        </p>
-                                    </div>
-                                </header>
-
-                                <p class="story-rating">
-                                    ★★★★★
-                                </p>
-
-                                <p class="review-text">
-                                    Una historia hermosa sobre el amor, el tiempo y las decisiones
-                                    que cambian destinos. Me encantó.
-                                </p>
-
-                                <a href="lectura.html" class="review-link">
-                                    Ver historia
-                                </a>
-                            </article>
-                        </section>
-
-                    </section>
-
-                    <!-- Columna lateral -->
-                    <aside class="explore-aside">
-
-                        <!-- Obra destacada -->
-                        <section class="featured-card">
-                            <h2 class="explore-subtitle">Destacado</h2>
-
-                            <article class="featured-story-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-love-right-next-door.png" 
-                                    alt="Portada de la obra destacada"
-                                    class="featured-cover"
-                                >
-
-                                <h3 class="featured-title">
-                                    Love Right Next Door
-                                </h3>
-
-                                <p class="featured-author">
-                                    Por Olivia Nadal
-                                </p>
-
-                                <p class="featured-status">
-                                    Nuevo
-                                </p>
-
-                                <p class="featured-description">
-                                    Una novela que mezcla misterio y romance de forma magistral.
-                                </p>
-
-                                <p class="featured-hint">
-                                    ¡Da click en leer para descubrir más!
-                                </p>
-
-                                <a href="lectura.html" class="read-button read-button-full">
-                                    Leer
-                                </a>
-                            </article>
-                        </section>
-
-                    </aside>
-
+                    <p
+                      class="story-rating"
+                      aria-label="Calificación de cuatro estrellas"
+                    >
+                      ★★★★☆
+                    </p>
+                  </article>
                 </div>
-            </main>
+              </section>
 
-        </div>
+              <!-- Reseñas recientes -->
+              <section class="explore-section">
+                <h2 class="explore-subtitle">Reseñas recientes</h2>
+
+                <article class="explore-review-card">
+                  <header class="explore-review-header">
+                    <img
+                      src="../assets/users-photos/foto-perfil-diego-n.png"
+                      alt="Foto de perfil de Diego N."
+                      class="review-avatar"
+                    />
+
+                    <div>
+                      <h3 class="review-user">Diego N.</h3>
+
+                      <p class="review-context">
+                        reseñó <strong>El cielo de abril</strong>
+                      </p>
+                    </div>
+                  </header>
+
+                  <p
+                    class="story-rating"
+                    aria-label="Calificación de cinco estrellas"
+                  >
+                    ★★★★★
+                  </p>
+
+                  <p class="review-text">
+                    Una historia hermosa sobre el amor, el tiempo y las
+                    decisiones que cambian destinos. Me encantó.
+                  </p>
+
+                  <a href="lectura.html" class="review-link"> Ver historia </a>
+                </article>
+              </section>
+            </section>
+
+            <!-- Columna lateral derecha -->
+            <aside class="explore-aside">
+              <!-- Obra destacada -->
+              <section class="featured-card">
+                <h2 class="explore-subtitle">Destacado</h2>
+
+                <article class="featured-story-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-love-right-next-door.png"
+                    alt="Portada de Love Right Next Door"
+                    class="featured-cover"
+                  />
+
+                  <h3 class="featured-title">Love Right Next Door</h3>
+
+                  <p class="featured-author">Por Olivia Nadal</p>
+
+                  <p class="featured-status">Nuevo</p>
+
+                  <p class="featured-description">
+                    Una novela que mezcla misterio y romance de forma magistral.
+                  </p>
+
+                  <p class="featured-hint">
+                    ¡Da click en leer para descubrir más!
+                  </p>
+
+                  <a href="lectura.html" class="read-button read-button-full">
+                    Leer
+                  </a>
+                </article>
+              </section>
+
+              <!-- Footer lateral -->
+              <footer class="site-footer site-footer--aside">
+                <nav
+                  class="site-footer-links"
+                  aria-label="Enlaces informativos"
+                >
+                  <a href="nosotrosli.html">Acerca de</a>
+                  <a href="contactanos.html">Contáctanos</a>
+                  <a href="aviso-privacidad.html">Aviso de privacidad</a>
+                </nav>
+
+                <div class="site-footer-brand">
+                  <a
+                    href="principal.html"
+                    class="site-footer-logo"
+                    aria-label="Ir a la página principal"
+                  >
+                    <img src="../assets/logo-caliope.svg" alt="Calíope" />
+                  </a>
+
+                  <p class="site-footer-copyright">Calíope © 2026</p>
+                </div>
+              </footer>
+            </aside>
+          </div>
+        </main>
+      </div>
     </div>
 
+    <!-- JavaScript del menú -->
     <script src="../js/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

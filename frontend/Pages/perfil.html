@@ -1,332 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-    <link rel="stylesheet" href="../Styles/menu.css">
-    <link rel="stylesheet" href="../Styles/perfil.css">
-</head>
+    <link rel="stylesheet" href="../Styles/globales.css" />
+    <link rel="stylesheet" href="../Styles/footer.css" />
+    <link rel="stylesheet" href="../Styles/menu.css" />
+    <link rel="stylesheet" href="../Styles/perfil.css" />
+  </head>
 
-<body>
+  <body>
     <div class="layout">
-        <!-- Botón hamburguesa -->
-        <button id="toggle-btn">☰</button>
+      <!-- Botón hamburguesa -->
+      <button id="toggle-btn">☰</button>
 
-        <!-- Menú lateral cargado desde menu.js -->
-        <div id="menu-container"></div>
+      <!-- Menú lateral cargado desde menu.js -->
+      <div id="menu-container"></div>
 
-        <!-- Contenido principal -->
-        <div class="contenido">
-            <main class="profile-page">
+      <!-- Contenido principal -->
+      <div class="contenido">
+        <main class="profile-page">
+          <!-- Acciones superiores -->
+          <header class="profile-topbar">
+            <div class="profile-actions">
+              <button
+                type="button"
+                class="topbar-icon"
+                aria-label="Configuración"
+              >
+                <i class="bi bi-gear"></i>
+              </button>
 
-                <!-- Acciones superiores -->
-                <header class="profile-topbar">
-                    <div class="profile-actions">
-                        <button type="button" class="topbar-icon" aria-label="Configuración">
-                            <i class="bi bi-gear"></i>
-                        </button>
+              <button
+                type="button"
+                class="topbar-icon notification-icon"
+                aria-label="Notificaciones"
+              >
+                <i class="bi bi-bell"></i>
+                <span></span>
+              </button>
 
-                        <button type="button" class="topbar-icon notification-icon" aria-label="Notificaciones">
-                            <i class="bi bi-bell"></i>
-                            <span></span>
-                        </button>
+              <img
+                src="../assets/users-photos/foto-perfil-usuario.png"
+                alt="Foto de perfil de Ana García"
+                class="topbar-avatar"
+              />
+            </div>
+          </header>
 
-                        <img 
-                            src="../assets/users-photos/foto-perfil-usuario.png" 
-                            alt="Foto de perfil de Ana García"
-                            class="topbar-avatar"
-                        >
-                    </div>
-                </header>
+          <!-- Información del perfil desde usuarios.json -->
+          <section class="profile-hero">
+            <div class="profile-avatar-wrapper">
+              <img
+                src="../assets/users-photos/foto-perfil-usuario.png"
+                alt="Foto de perfil de Ana García"
+                class="profile-avatar"
+              />
+            </div>
 
-                <!-- Información del perfil desde usuarios.json -->
-                <section class="profile-hero">
-                    <div class="profile-avatar-wrapper">
-                        <img 
-                            src="../assets/users-photos/foto-perfil-usuario.png" 
-                            alt="Foto de perfil de Ana García"
-                            class="profile-avatar"
-                        >
-                    </div>
+            <div class="profile-main-info">
+              <h1>Ana García</h1>
+              <p class="profile-username">@anag</p>
 
-                    <div class="profile-main-info">
-                        <h1>Ana García</h1>
-                        <p class="profile-username">@anag</p>
+              <div class="profile-bio-card">
+                <p class="profile-bio-label">Sobre mí</p>
 
-                        <div class="profile-bio-card">
-                            <p class="profile-bio-label">Sobre mí</p>
+                <div class="profile-tags">
+                  <span>Escritora</span>
+                  <span>Lectora</span>
+                </div>
 
-                            <div class="profile-tags">
-                                <span>Escritora</span>
-                                <span>Lectora</span>
-                            </div>
+                <p class="profile-bio">
+                  Amo la fantasía, los mundos imaginarios y las historias que te
+                  hacen sentir. Siempre escribiendo, siempre leyendo.
+                </p>
+              </div>
+            </div>
+          </section>
 
-                            <p class="profile-bio">
-                                Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir.
-                                Siempre escribiendo, siempre leyendo.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+          <!-- Estadísticas básicas del usuario -->
+          <section class="profile-stats">
+            <article class="profile-stat-card">
+              <strong>3</strong>
+              <span>Obras</span>
+            </article>
 
-                <!-- Estadísticas básicas del usuario -->
-                <section class="profile-stats">
-                    <article class="profile-stat-card">
-                        <strong>3</strong>
-                        <span>Obras</span>
-                    </article>
+            <article class="profile-stat-card">
+              <strong>2</strong>
+              <span>Reseñas</span>
+            </article>
 
-                    <article class="profile-stat-card">
-                        <strong>2</strong>
-                        <span>Reseñas</span>
-                    </article>
+            <article class="profile-stat-card">
+              <strong>124</strong>
+              <span>Seguidores</span>
+            </article>
 
-                    <article class="profile-stat-card">
-                        <strong>124</strong>
-                        <span>Seguidores</span>
-                    </article>
+            <article class="profile-stat-card">
+              <strong>86</strong>
+              <span>Seguidos</span>
+            </article>
+          </section>
 
-                    <article class="profile-stat-card">
-                        <strong>86</strong>
-                        <span>Seguidos</span>
-                    </article>
-                </section>
+          <!-- Tabs del perfil con Bootstrap -->
+          <section class="profile-tabs-section">
+            <ul class="nav profile-tabs" id="profileTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="profile-tab active"
+                  id="obras-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#obras"
+                  type="button"
+                  role="tab"
+                  aria-controls="obras"
+                  aria-selected="true"
+                >
+                  Mis obras
+                </button>
+              </li>
 
-                <!-- Tabs del perfil con Bootstrap -->
-                <section class="profile-tabs-section">
-                    <ul class="nav profile-tabs" id="profileTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button 
-                                class="profile-tab active" 
-                                id="obras-tab" 
-                                data-bs-toggle="tab" 
-                                data-bs-target="#obras" 
-                                type="button" 
-                                role="tab"
-                                aria-controls="obras"
-                                aria-selected="true"
-                            >
-                                Mis obras
-                            </button>
-                        </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="profile-tab"
+                  id="resenas-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#resenas"
+                  type="button"
+                  role="tab"
+                  aria-controls="resenas"
+                  aria-selected="false"
+                >
+                  Mis reseñas
+                </button>
+              </li>
 
-                        <li class="nav-item" role="presentation">
-                            <button 
-                                class="profile-tab" 
-                                id="resenas-tab" 
-                                data-bs-toggle="tab" 
-                                data-bs-target="#resenas" 
-                                type="button" 
-                                role="tab"
-                                aria-controls="resenas"
-                                aria-selected="false"
-                            >
-                                Mis reseñas
-                            </button>
-                        </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="profile-tab"
+                  id="guardados-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#guardados"
+                  type="button"
+                  role="tab"
+                  aria-controls="guardados"
+                  aria-selected="false"
+                >
+                  Mis guardados
+                </button>
+              </li>
+            </ul>
 
-                        <li class="nav-item" role="presentation">
-                            <button 
-                                class="profile-tab" 
-                                id="guardados-tab" 
-                                data-bs-toggle="tab" 
-                                data-bs-target="#guardados" 
-                                type="button" 
-                                role="tab"
-                                aria-controls="guardados"
-                                aria-selected="false"
-                            >
-                                Mis guardados
-                            </button>
-                        </li>
-                    </ul>
+            <a href="publicar.html" class="create-work-button"> Crear obra </a>
+          </section>
 
-                    <a href="publicar.html" class="create-work-button">
-                        Crear obra
+          <!-- Contenido de tabs -->
+          <section
+            class="tab-content profile-tab-content"
+            id="profileTabsContent"
+          >
+            <!-- Mis obras desde historias.json -->
+            <section
+              class="tab-pane fade show active profile-content-section"
+              id="obras"
+              role="tabpanel"
+              aria-labelledby="obras-tab"
+            >
+              <div class="works-grid">
+                <article class="profile-work-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
+                    alt="Portada de El cielo de abril"
+                    class="profile-work-cover"
+                  />
+
+                  <h3>El cielo de abril</h3>
+                  <p>9 capítulos</p>
+                  <span class="status-badge status-published">Publicado</span>
+                </article>
+
+                <article class="profile-work-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-el-cielo-de-mayo.png"
+                    alt="Portada de El cielo de Mayo"
+                    class="profile-work-cover"
+                  />
+
+                  <h3>El cielo de Mayo</h3>
+                  <p>4 capítulos</p>
+                  <span class="status-badge status-published">Publicado</span>
+                </article>
+
+                <article class="profile-work-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-un-verano-complicado.png"
+                    alt="Portada de Un verano complicado"
+                    class="profile-work-cover"
+                  />
+
+                  <h3>Un verano con...</h3>
+                  <p>1 capítulo</p>
+                  <span class="status-badge status-draft">Borrador</span>
+                </article>
+              </div>
+            </section>
+
+            <!-- Mis reseñas desde resenas.json -->
+            <section
+              class="tab-pane fade profile-content-section"
+              id="resenas"
+              role="tabpanel"
+              aria-labelledby="resenas-tab"
+            >
+              <div class="reviews-list">
+                <article class="profile-review-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
+                    alt="Portada de El cielo de abril"
+                    class="profile-review-cover"
+                  />
+
+                  <div class="profile-review-info">
+                    <p class="reviewed-story">
+                      Reseña de <strong>El cielo de abril</strong>
+                    </p>
+
+                    <p class="review-rating">★★★★★</p>
+
+                    <h3>Una historia luminosa</h3>
+
+                    <p>
+                      Me encantó la atmósfera de la historia y la forma en que
+                      describe las decisiones que cambian el destino de los
+                      personajes.
+                    </p>
+
+                    <a
+                      href="lectura.html"
+                      class="read-button read-button-small"
+                    >
+                      Ver historia
                     </a>
-                </section>
+                  </div>
+                </article>
 
-                <!-- Contenido de tabs -->
-                <section class="tab-content profile-tab-content" id="profileTabsContent">
+                <article class="profile-review-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
+                    alt="Portada de Luz de octubre"
+                    class="profile-review-cover"
+                  />
 
-                    <!-- Mis obras desde historias.json -->
-                    <section 
-                        class="tab-pane fade show active profile-content-section" 
-                        id="obras" 
-                        role="tabpanel" 
-                        aria-labelledby="obras-tab"
+                  <div class="profile-review-info">
+                    <p class="reviewed-story">
+                      Reseña de <strong>Luz de octubre</strong>
+                    </p>
+
+                    <p class="review-rating">★★★★☆</p>
+
+                    <h3>Muy envolvente</h3>
+
+                    <p>
+                      La historia tiene un tono muy acogedor y misterioso. Me
+                      gustó mucho cómo se construye la tensión desde el inicio.
+                    </p>
+
+                    <a
+                      href="lectura.html"
+                      class="read-button read-button-small"
                     >
-                        <div class="works-grid">
+                      Ver historia
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </section>
 
-                            <article class="profile-work-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png" 
-                                    alt="Portada de El cielo de abril"
-                                    class="profile-work-cover"
-                                >
+            <!-- Mis guardados desde historias.json / biblioteca futura -->
+            <section
+              class="tab-pane fade profile-content-section"
+              id="guardados"
+              role="tabpanel"
+              aria-labelledby="guardados-tab"
+            >
+              <div class="works-grid">
+                <article class="profile-work-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-susurros-del-bosque.png"
+                    alt="Portada de Susurros en el bosque"
+                    class="profile-work-cover"
+                  />
 
-                                <h3>El cielo de abril</h3>
-                                <p>9 capítulos</p>
-                                <span class="status-badge status-published">Publicado</span>
-                            </article>
+                  <h3>Susurros en el bosque</h3>
+                  <p>Por Mar C.</p>
+                  <span class="status-badge status-saved">Guardado</span>
+                </article>
 
-                            <article class="profile-work-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-el-cielo-de-mayo.png" 
-                                    alt="Portada de El cielo de Mayo"
-                                    class="profile-work-cover"
-                                >
+                <article class="profile-work-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-la-casa-en-el-lago.png"
+                    alt="Portada de La casa en el lago"
+                    class="profile-work-cover"
+                  />
 
-                                <h3>El cielo de Mayo</h3>
-                                <p>4 capítulos</p>
-                                <span class="status-badge status-published">Publicado</span>
-                            </article>
+                  <h3>La casa en el lago</h3>
+                  <p>Por Valeria M.</p>
+                  <span class="status-badge status-saved">Guardado</span>
+                </article>
 
-                            <article class="profile-work-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-un-verano-complicado.png" 
-                                    alt="Portada de Un verano complicado"
-                                    class="profile-work-cover"
-                                >
+                <article class="profile-work-card">
+                  <img
+                    src="../assets/history-covers/portada-historia-la-noche-violeta.png"
+                    alt="Portada de La noche violeta"
+                    class="profile-work-cover"
+                  />
 
-                                <h3>Un verano con...</h3>
-                                <p>1 capítulo</p>
-                                <span class="status-badge status-draft">Borrador</span>
-                            </article>
-
-                        </div>
-                    </section>
-
-                    <!-- Mis reseñas desde resenas.json -->
-                    <section 
-                        class="tab-pane fade profile-content-section" 
-                        id="resenas" 
-                        role="tabpanel" 
-                        aria-labelledby="resenas-tab"
-                    >
-                        <div class="reviews-list">
-
-                            <article class="profile-review-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png" 
-                                    alt="Portada de El cielo de abril"
-                                    class="profile-review-cover"
-                                >
-
-                                <div class="profile-review-info">
-                                    <p class="reviewed-story">
-                                        Reseña de <strong>El cielo de abril</strong>
-                                    </p>
-
-                                    <p class="review-rating">
-                                        ★★★★★
-                                    </p>
-
-                                    <h3>Una historia luminosa</h3>
-
-                                    <p>
-                                        Me encantó la atmósfera de la historia y la forma en que describe
-                                        las decisiones que cambian el destino de los personajes.
-                                    </p>
-
-                                    <a href="lectura.html" class="read-button read-button-small">
-                                        Ver historia
-                                    </a>
-                                </div>
-                            </article>
-
-                            <article class="profile-review-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-luz-de-octubre.png" 
-                                    alt="Portada de Luz de octubre"
-                                    class="profile-review-cover"
-                                >
-
-                                <div class="profile-review-info">
-                                    <p class="reviewed-story">
-                                        Reseña de <strong>Luz de octubre</strong>
-                                    </p>
-
-                                    <p class="review-rating">
-                                        ★★★★☆
-                                    </p>
-
-                                    <h3>Muy envolvente</h3>
-
-                                    <p>
-                                        La historia tiene un tono muy acogedor y misterioso. Me gustó mucho
-                                        cómo se construye la tensión desde el inicio.
-                                    </p>
-
-                                    <a href="lectura.html" class="read-button read-button-small">
-                                        Ver historia
-                                    </a>
-                                </div>
-                            </article>
-
-                        </div>
-                    </section>
-
-                    <!-- Mis guardados desde historias.json / biblioteca futura -->
-                    <section 
-                        class="tab-pane fade profile-content-section" 
-                        id="guardados" 
-                        role="tabpanel" 
-                        aria-labelledby="guardados-tab"
-                    >
-                        <div class="works-grid">
-
-                            <article class="profile-work-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-susurros-del-bosque.png" 
-                                    alt="Portada de Susurros en el bosque"
-                                    class="profile-work-cover"
-                                >
-
-                                <h3>Susurros en el bosque</h3>
-                                <p>Por Mar C.</p>
-                                <span class="status-badge status-saved">Guardado</span>
-                            </article>
-
-                            <article class="profile-work-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-la-casa-en-el-lago.png" 
-                                    alt="Portada de La casa en el lago"
-                                    class="profile-work-cover"
-                                >
-
-                                <h3>La casa en el lago</h3>
-                                <p>Por Valeria M.</p>
-                                <span class="status-badge status-saved">Guardado</span>
-                            </article>
-
-                            <article class="profile-work-card">
-                                <img 
-                                    src="../assets/history-covers/portada-historia-la-noche-violeta.png" 
-                                    alt="Portada de La noche violeta"
-                                    class="profile-work-cover"
-                                >
-
-                                <h3>La noche violeta</h3>
-                                <p>Por Luna R.</p>
-                                <span class="status-badge status-saved">Guardado</span>
-                            </article>
-
-                        </div>
-                    </section>
-
-                </section>
-
-            </main>
-        </div>
+                  <h3>La noche violeta</h3>
+                  <p>Por Luna R.</p>
+                  <span class="status-badge status-saved">Guardado</span>
+                </article>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
     </div>
+    <!-- Footer inferior -->
+    <footer class="site-footer site-footer--bottom">
+      <nav class="site-footer-links" aria-label="Enlaces informativos">
+        <a href="nosotrosli.html"> Acerca de </a>
+
+        <a href="contactanos.html"> Contáctanos </a>
+
+        <a href="aviso-privacidad.html"> Aviso de privacidad </a>
+      </nav>
+
+      <!-- Logo y copyright en la misma línea -->
+      <div class="site-footer-brand">
+        <a
+          href="principal.html"
+          class="site-footer-logo"
+          aria-label="Ir a la página principal"
+        >
+          <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
+        </a>
+
+        <p class="site-footer-copyright">Calíope © 2026</p>
+      </div>
+    </footer>
 
     <script src="../js/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
