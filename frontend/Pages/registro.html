@@ -10,15 +10,16 @@
 
     <div class="contenedor">
         <h2>Registro</h2>
-        <form>
-            <input type="text" placeholder="Nombre de usuario" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <input type="password" placeholder="Contraseña" required>
+        <form id="registroForm">
+            <input type="text" id="nameUser" name="nameUser" placeholder="Nombre de usuario" required>
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+            <input type="password" id="password" autocomplete="on" name="password" placeholder="Contraseña" required>
             <button type="submit">Registrarse</button>
         </form>
         <br>
         <a href="inicio_sesion.html">Ya tengo cuenta</a>
     </div>
 
+    <script src="../js/registro.js"></script>
 </body>
 </html>
