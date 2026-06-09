@@ -51,18 +51,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    reviewStars.forEach((star, index) => {
-        star.addEventListener("click", () => {
-            reviewStars.forEach((currentStar, currentIndex) => {
-                const icon = currentStar.querySelector("i");
+    //* Interaccion deReseñas
+    //* Interacción de reseñas
 
-                icon.className =
-                    currentIndex <= index
-                        ? "bi bi-star-fill"
-                        : "bi bi-star";
-            });
+const reviewText = document.querySelector("#reviewText");
+const publishReviewButton = document.querySelector("#publishReviewButton");
+
+let selectedStars = 0;
+
+reviewStars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+
+        selectedStars = index + 1;
+
+        reviewStars.forEach((currentStar, currentIndex) => {
+            const icon = currentStar.querySelector("i");
+
+            icon.className =
+                currentIndex < selectedStars
+                    ? "bi bi-star-fill"
+                    : "bi bi-star";
         });
     });
+});
+
+publishReviewButton.addEventListener("click", () => {
+
+    const reviewContent = reviewText.value.trim();
+
+    if (selectedStars === 0) {
+        alert("Debes seleccionar una calificación.");
+        return;
+    }
+
+    if (reviewContent === "") {
+        alert("Debes escribir una reseña.");
+        return;
+    }
+
+    alert("Reseña publicada correctamente.");
+
+    console.log("Estrellas:", selectedStars);
+    console.log("Reseña:", reviewContent);
+});
 
     updateReadingProgress(getCurrentPageIndex());
 });

@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const formulario = document.getElementById("formulario");
 
   const tituloInput = document.getElementById("titulo");
   const descripcionInput = document.getElementById("descripcion");
+
+
+  //* Seleccion de Generos
 
   const genreSelect = document.getElementById("genreSelect");
   const selectedGenresContainer =
@@ -89,6 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   genreSelect.addEventListener("change", addGenre);
+
+
+
+  //*Validacion de envio de formularios
+
 
   formulario.addEventListener("submit", (event) => {
     event.preventDefault();
