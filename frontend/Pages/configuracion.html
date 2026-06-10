@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Escribir</title>
+    <title>Configuración</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../Styles/globales.css" />
     <link rel="stylesheet" href="../Styles/footer.css" />
     <link rel="stylesheet" href="../Styles/menu.css" />
-    <link rel="stylesheet" href="../Styles/publicar.css" />
+    <link rel="stylesheet" href="../Styles/configuracion.css" />
   </head>
 
   <body>
@@ -44,18 +44,17 @@
       <!-- Contenido principal -->
       <div class="contenido">
 
-        <main class="write-page">
+        <main class="settings-page">
 
           <!-- Barra superior -->
           <header class="page-topbar">
-
             <div class="page-actions">
 
-              <!-- Acceso a configuración -->
+              <!-- Configuración -->
               <a
                 href="configuracion.html"
-                class="topbar-icon"
-                aria-label="Ir a configuración"
+                class="topbar-icon active"
+                aria-label="Configuración"
               >
                 <i class="bi bi-gear"></i>
               </a>
@@ -152,7 +151,7 @@
 
               </div>
 
-              <!-- Acceso rápido al perfil -->
+              <!-- Perfil -->
               <a
                 href="perfil.html"
                 class="topbar-profile-link"
@@ -166,194 +165,225 @@
               </a>
 
             </div>
-
           </header>
 
           <!-- Encabezado -->
-          <section class="write-header">
-
-            <h1>Crear obra</h1>
-
-            <p>
-              Comparte una nueva historia con la comunidad de Calíope.
-              Puedes guardar tu avance como borrador o publicar tu obra
-              cuando esté lista.
+          <section class="settings-header">
+            <p class="settings-kicker">
+              Cuenta
             </p>
 
+            <h1>
+              Configuración
+            </h1>
+
+            <p>
+              Personaliza tu experiencia en Calíope, ajusta tus preferencias de
+              privacidad y administra la información visible de tu perfil.
+            </p>
           </section>
 
-          <!-- Formulario -->
-          <section class="write-form-card">
+          <!-- Contenido de configuración -->
+          <section class="settings-layout">
 
-            <form
-              class="write-form"
-              id="formulario"
-            >
+            <!-- Apariencia -->
+            <article class="settings-card">
 
-              <!-- Título -->
-              <div class="form-group">
-
-                <label for="titulo">
-                  Título de la obra
-                </label>
-
-                <input
-                  type="text"
-                  id="titulo"
-                  name="titulo"
-                  placeholder="Escribe el título de tu historia"
-                />
-
-              </div>
-
-              <!-- Descripción -->
-              <div class="form-group">
-
-                <label for="descripcion">
-                  Descripción
-                </label>
-
-                <textarea
-                  id="descripcion"
-                  name="descripcion"
-                  rows="6"
-                  placeholder="Escribe una breve descripción de tu obra"
-                ></textarea>
-
-                <p class="form-helper">
-                  Esta descripción aparecerá en el feed, explorar y el perfil
-                  del autor.
-                </p>
-
-              </div>
-
-              <!-- Géneros -->
-              <div class="form-group genre-form-group">
-
-                <label for="genreSelect">
-                  Géneros de la obra
-                </label>
-
-                <p class="form-helper">
-                  Selecciona los géneros uno por uno. Puedes eliminarlos antes
-                  de publicar.
-                </p>
-
-                <div class="genre-selector">
-
-                  <select
-                    id="genreSelect"
-                    class="genre-select"
-                    aria-describedby="genreHelp"
-                  >
-                    <option value="" selected disabled>
-                      Selecciona un género
-                    </option>
-
-                    <option value="Romance">Romance</option>
-                    <option value="Misterio">Misterio</option>
-                    <option value="Fantasía">Fantasía</option>
-                    <option value="Ciencia ficción">Ciencia ficción</option>
-                    <option value="Realismo mágico">Realismo mágico</option>
-                    <option value="Terror">Terror</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Aventura">Aventura</option>
-                    <option value="Suspenso">Suspenso</option>
-                    <option value="Histórica">Histórica</option>
-                    <option value="Juvenil">Juvenil</option>
-                    <option value="Poesía">Poesía</option>
-                  </select>
-
+              <header class="settings-card-header">
+                <div class="settings-icon">
+                  <i class="bi bi-palette"></i>
                 </div>
 
-                <p
-                  id="genreHelp"
-                  class="genre-helper"
+                <div>
+                  <h2>Apariencia</h2>
+                  <p>
+                    Ajusta la forma en que se ve la plataforma.
+                  </p>
+                </div>
+              </header>
+
+              <div class="settings-option">
+
+                <div class="settings-option-text">
+                  <h3>Tema de la aplicación</h3>
+                  <p>
+                    Elige entre modo claro, oscuro o automático según tu sistema.
+                  </p>
+                </div>
+
+                <select
+                  id="themeSelect"
+                  class="settings-select"
+                  aria-label="Seleccionar tema"
                 >
-                  Puedes agregar hasta 4 géneros.
-                </p>
-
-                <!-- Etiquetas visibles -->
-                <div
-                  id="selectedGenres"
-                  class="selected-genres"
-                  aria-live="polite"
-                ></div>
-
-                <!-- Inputs ocultos para enviar los géneros -->
-                <div id="genreInputs"></div>
+                  <option value="light">Claro</option>
+                  <option value="dark">Oscuro</option>
+                  <option value="system">Sistema</option>
+                </select>
 
               </div>
 
-              <!-- Archivos -->
-              <div class="upload-grid">
+            </article>
 
-                <!-- Portada -->
-                <div class="upload-box">
+            <!-- Privacidad -->
+            <article class="settings-card">
 
-                  <label
-                    for="portada"
-                    class="upload-label"
-                  >
-                    <i class="bi bi-image"></i>
-                    <span>Agregar portada</span>
-                    <small>PNG, JPG o JPEG</small>
-                  </label>
+              <header class="settings-card-header">
+                <div class="settings-icon">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
+
+                <div>
+                  <h2>Privacidad</h2>
+                  <p>
+                    Controla qué información pueden ver otras personas.
+                  </p>
+                </div>
+              </header>
+
+              <div class="settings-list">
+
+                <label class="settings-toggle">
+                  <span>
+                    <strong>Perfil público</strong>
+                    <small>
+                      Permite que otros usuarios encuentren y visiten tu perfil.
+                    </small>
+                  </span>
 
                   <input
-                    type="file"
-                    id="portada"
-                    name="portada"
-                    accept="image/png, image/jpeg, image/jpg"
+                    type="checkbox"
+                    id="publicProfile"
+                    name="publicProfile"
+                    checked
                   />
 
-                </div>
+                  <span class="toggle-slider"></span>
+                </label>
 
-                <!-- PDF -->
-                <div class="upload-box">
-
-                  <label
-                    for="documentoHistoria"
-                    class="upload-label"
-                  >
-                    <i class="bi bi-file-earmark-pdf"></i>
-                    <span>Subir archivo PDF</span>
-                    <small>Archivo provisional de la historia</small>
-                  </label>
+                <label class="settings-toggle">
+                  <span>
+                    <strong>Mostrar obras guardadas</strong>
+                    <small>
+                      Hace visible tu lista de lecturas guardadas en tu perfil.
+                    </small>
+                  </span>
 
                   <input
-                    type="file"
-                    id="documentoHistoria"
-                    name="documentoHistoria"
-                    accept="application/pdf"
+                    type="checkbox"
+                    id="showSavedWorks"
+                    name="showSavedWorks"
                   />
+
+                  <span class="toggle-slider"></span>
+                </label>
+
+                <label class="settings-toggle">
+                  <span>
+                    <strong>Mostrar actividad reciente</strong>
+                    <small>
+                      Comparte reseñas, lecturas y publicaciones recientes.
+                    </small>
+                  </span>
+
+                  <input
+                    type="checkbox"
+                    id="showActivity"
+                    name="showActivity"
+                    checked
+                  />
+
+                  <span class="toggle-slider"></span>
+                </label>
+
+              </div>
+
+            </article>
+
+            <!-- Perfil -->
+            <article class="settings-card">
+
+              <header class="settings-card-header">
+                <div class="settings-icon">
+                  <i class="bi bi-person"></i>
+                </div>
+
+                <div>
+                  <h2>Perfil</h2>
+                  <p>
+                    Edita los datos principales que aparecen en tu cuenta.
+                  </p>
+                </div>
+              </header>
+
+              <form
+                class="settings-form"
+                id="profileSettingsForm"
+              >
+
+                <div class="settings-form-grid">
+
+                  <div class="form-group">
+                    <label for="displayName">
+                      Nombre visible
+                    </label>
+
+                    <input
+                      type="text"
+                      id="displayName"
+                      name="displayName"
+                      value="Ana García"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="username">
+                      Nombre de usuario
+                    </label>
+
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      value="@anag"
+                    />
+                  </div>
 
                 </div>
 
-              </div>
+                <div class="form-group">
+                  <label for="profileBio">
+                    Biografía
+                  </label>
 
-              <!-- Acciones -->
-              <div class="write-actions">
+                  <textarea
+                    id="profileBio"
+                    name="profileBio"
+                    rows="4"
+                  >Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Siempre escribiendo, siempre leyendo.</textarea>
+                </div>
 
-                <button
-                  type="button"
-                  class="draft-button"
-                >
-                  <i class="bi bi-save"></i>
-                  Guardar borrador
-                </button>
+                <div class="settings-actions">
 
-                <button
-                  type="submit"
-                  class="publish-button"
-                >
-                  <i class="bi bi-send"></i>
-                  Publicar obra
-                </button>
+                  <button
+                    type="button"
+                    class="settings-cancel-button"
+                  >
+                    Cancelar
+                  </button>
 
-              </div>
+                  <button
+                    type="submit"
+                    class="settings-save-button"
+                  >
+                    Guardar cambios
+                  </button>
 
-            </form>
+                </div>
+
+              </form>
+
+            </article>
 
           </section>
 
@@ -407,7 +437,7 @@
     <!-- Menú lateral -->
     <script src="../js/menu.js"></script>
 
-    <!-- JavaScript de la ventana de notificaciones -->
+    <!-- Panel de notificaciones -->
     <script src="../js/notificaciones.js"></script>
 
     <!-- Bootstrap JavaScript -->
@@ -417,7 +447,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Formulario -->
-    <script src="../js/publicar.js"></script>
+    <!-- Configuración -->
+    <script src="../js/configuracion.js"></script>
   </body>
 </html>

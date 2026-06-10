@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -38,38 +38,121 @@
       <div class="contenido">
         <main class="home-page">
           <!-- Barra superior -->
-          <header class="page-topbar">
-            <div class="page-actions">
-              <button
-                type="button"
-                class="topbar-icon"
-                aria-label="Configuración"
-              >
-                <i class="bi bi-gear"></i>
-              </button>
+        <header class="page-topbar">
+          <div class="page-actions">
 
-              <button
-                type="button"
-                class="topbar-icon notification-icon"
-                aria-label="Notificaciones"
-              >
-                <i class="bi bi-bell"></i>
-                <span></span>
-              </button>
+           <!-- Acceso a configuración -->
+           <a
+             href="configuracion.html"
+             class="topbar-icon"
+             aria-label="Ir a configuración"
+            >
+              <i class="bi bi-gear"></i>
+            </a>
 
-              <a
-                href="perfil.html"
-                class="topbar-profile-link"
-                aria-label="Ir a mi perfil"
+           <!-- Notificaciones -->
+           <div class="notification-wrapper">
+
+             <button
+               type="button"
+               class="topbar-icon notification-icon"
+               id="notificationButton"
+               aria-label="Ver notificaciones"
+               aria-expanded="false"
+               aria-controls="notificationPanel"
+             >
+               <i class="bi bi-bell"></i>
+               <span></span>
+             </button>
+
+             <section
+                class="notification-panel"
+                id="notificationPanel"
+                aria-label="Panel de notificaciones"
               >
-                <img
-                  src="../assets/users-photos/foto-perfil-usuario.png"
-                  alt="Foto de perfil del usuario"
-                  class="topbar-avatar"
-                />
-              </a>
+              <header class="notification-panel-header">
+          <h2>Notificaciones</h2>
+          <button
+            type="button"
+            class="notification-close"
+            id="notificationClose"
+            aria-label="Cerrar notificaciones"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+               </header>
+
+               <div class="notification-list">
+
+                  <article class="notification-item">
+                    <img
+                      src="../assets/users-photos/foto-perfil-valeria-m.png"
+                      alt="Foto de perfil de Valeria M."
+                      class="notification-avatar"
+                    >
+
+                    <div>
+                      <p>
+                        <strong>Valeria M.</strong> publicó una nueva obra.
+                      </p>
+                      <span>Hace 2 horas</span>
+                    </div>
+                  </article>
+
+                  <article class="notification-item">
+                    <img
+                      src="../assets/users-photos/foto-perfil-luna.png"
+                      alt="Foto de perfil de Luna"
+                      class="notification-avatar"
+                    >
+
+                    <div>
+                      <p>
+                        <strong>Luna</strong> escribió una reseña.
+                      </p>
+                      <span>Hace 3 horas</span>
+                    </div>
+                  </article>
+
+                  <article class="notification-item">
+                    <img
+                      src="../assets/users-photos/foto-perfil-diego-n.png"
+                      alt="Foto de perfil de Diego N."
+                      class="notification-avatar"
+                    >
+
+                    <div>
+                      <p>
+                        <strong>Diego N.</strong> guardó tu historia.
+                      </p>
+                      <span>Ayer</span>
+                    </div>
+                  </article>
+
+                </div>
+
+                <a href="./notificaciones.html" class="notification-view-all">
+                  Ver todas
+                </a>
+              </section>
+
             </div>
-          </header>
+
+            <!-- Acceso rápido al perfil -->
+            <a
+              href="perfil.html"
+              class="topbar-profile-link"
+              aria-label="Ir a mi perfil"
+            >
+              <img
+                src="../assets/users-photos/foto-perfil-usuario.png"
+                alt="Foto de perfil del usuario"
+                class="topbar-avatar"
+              />
+            </a>
+
+          </div>
+        </header>
 
           <div class="row g-4">
             <!-- Columna principal del feed -->
@@ -355,6 +438,7 @@
 
     <!-- JavaScript del menú -->
     <script src="../js/menu.js"></script>
+    <script src="../js/notificaciones.js"></script>
 
     <!-- Bootstrap JavaScript -->
     <script
