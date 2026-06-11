@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class Conexion {
 
     private static final String URL =
-            "jdbc:mysql://192.168.0.7/caliope";
+            "jdbc:mysql://192.168.0.8/caliope";
 
     private static final String USER =
             "caliope";

@@ -17,32 +17,32 @@
     <div class="container mb-5" style="max-width: 600px;">
         <h2 class="text-center mb-4">Crear cuenta</h2>
 
-        <form>
+        <form id="registroForm">
             <!-- Nombre y Apellido -->
             <div class="row mb-3">
                 <div class="col">
                     <h5>Nombre</h5>
-                    <input type="text" class="form-control" placeholder="Ingresa tu nombre" required>
+                    <input type="text" class="form-control" name="nombreU" minlength="2" maxlength="50" placeholder="Ingresa tu nombre" required>
                 </div>
                 <div class="col">
                     <h5>Apellido</h5>
-                    <input type="text" class="form-control" placeholder="Ingresa tu apellido" required>
+                    <input type="text" class="form-control" name="apellidoU" minlength="2" maxlength="50"placeholder="Ingresa tu apellido" required>
                 </div>
             </div>
 
             <!-- Correo -->
             <h5>Dirección de correo electrónico</h5>
-            <input type="email" class="form-control" placeholder="Ingresa el correo electrónico" required>
+            <input type="email" class="form-control" name="correo" placeholder="Ingresa el correo electrónico" required>
 
             <!-- Usuario -->
             <h5 class="mt-4">Nombre de usuario</h5>
-            <input type="text" class="form-control" placeholder="Ingresa tu nombre de usuario" required>
+            <input type="text" class="form-control" autocomplete="additional-name" name="nickname" placeholder="Ingresa tu nombre de usuario" required>
 
             <!-- Cumpleaños -->
             <h5 class="mt-4">Cumpleaños</h5>
             <div class="row">
                 <div class="col">
-                    <select class="form-select" id="mes">
+                    <select class="form-select" name="mes" id="mes">
                         <option selected disabled>Mes</option>
                         <option>Enero</option>
                         <option>Febrero</option>
@@ -59,12 +59,12 @@
                     </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" id="dias">
+                    <select class="form-select" name="dia" id="dias">
                         <option selected disabled>Día</option>
                     </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" id="anio">
+                    <select class="form-select" name="anio" id="anio">
                         <option selected disabled>Año</option>
                     </select>
                 </div>
@@ -72,7 +72,7 @@
 
             <!-- Pronombres -->
             <h5 class="mt-4">Pronombres (opcional)</h5>
-            <select class="form-select">
+            <select class="form-select" name="pronombre">
                 <option selected>Pronombres (opcional)</option>
                 <option>Ella</option>
                 <option>Él</option>
@@ -84,10 +84,10 @@
 
             <!-- Contraseña -->
             <h5 class="mt-4">Contraseña</h5>
-            <input type="password" class="form-control" placeholder="Ingresa tu contraseña" required>
+            <input type="password" class="form-control"   autocomplete="new-password" name="password" placeholder="Ingresa tu contraseña" required>
 
             <h5 class="mt-4">Vuelva a introducir la contraseña</h5>
-            <input type="password" class="form-control" placeholder="Vuelva a introducir la contraseña" required>
+            <input type="password" class="form-control"   autocomplete="new-password" name="confirmPassword" placeholder="Vuelva a introducir la contraseña" required>
 
             <!-- Términos -->
             <div class="form-check mt-3">
