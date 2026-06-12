@@ -380,3 +380,190 @@ body {
     font-size: 18px;
   }
 }
+/* ==================
+   SECCIÓN CREADORES 
+   ================ */
+.creators-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título de la sección */
+.creators-section .section-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #1b144f;
+  margin-bottom: 50px;
+  font-family: Georgia, serif;
+}
+
+/* Cuadrícula rígida de 4 columnas horizontales */
+.creadores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+/* Tarjeta con fondo blanco y bordes redondeados */
+.creador-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Esto hace que la imagen cuadrada respete el redondeado de la esquina de la tarjeta */
+  transition: transform 0.3s ease;
+}
+
+.creador-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contenedor de la foto: Ahora es 100% cuadrado y abarca el ancho de la tarjeta */
+.creador-img-container {
+  width: 100%;
+  height: 220px; /* Altura fija para que todas las fotos se alineen de forma simétrica */
+  overflow: hidden;
+  background-color: #ead9ef;
+}
+
+.creador-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la imagen de forma limpia sin deformarla */
+}
+
+/* Cuerpo interno de la tarjeta */
+.creador-body {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Nombre del creador estilo título */
+.creador-name {
+  color: #13004f;
+  font-size: 1.8rem;
+  font-family: Georgia, serif;
+  margin: 0 0 5px 0;
+}
+
+/* Rol del creador */
+.creador-role {
+  color: #4b1d63;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Descripción de la biografía */
+.creador-bio {
+  color: #2e2e5e;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Empuja los botones hacia la parte inferior de manera uniforme */
+}
+
+/* Contenedor de botones morados */
+.creador-links {
+  display: flex;
+  flex-direction: column; /* Organiza los botones uno debajo de otro para que queden mejor estructurados */
+  gap: 10px;
+  width: 100%;
+}
+
+/* Botón Morado de Perfil (Imita tu .btn-primary) */
+.creador-link-btn {
+  background: #431457;
+  color: white !important;
+  border: 2px solid #431457;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.creador-link-btn:hover {
+  background: #2d0e3b;
+  border-color: #2d0e3b;
+}
+
+/* Botón Blanco Secundario (Imita tu .btn-secondary) */
+.creador-link-sub {
+  background: white;
+  color: #431457 !important;
+  border: 2px solid #431457;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.creador-link-sub:hover {
+  background: #efe9f9;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (Asegura la visualización correcta en cualquier pantalla)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .creadores-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .creadores-grid {
+    grid-template-columns: 1fr; /* 1 columna en celulares */
+  }
+}
+/* Espaciado del contenedor del carrusel */
+#carouselCreadores {
+    position: relative;
+    padding: 0 45px; /* Deja espacio a los lados para que las flechas no queden encima de las tarjetas */
+}
+
+/* Modificar las flechas de Bootstrap para que sean de color morado oscuro y visibles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #431457; /* Tu morado oscuro */
+    border-radius: 50%;
+    padding: 15px;
+    background-size: 50%;
+}
+
+.carousel-control-prev {
+    left: -10px;
+}
+
+.carousel-control-next {
+    right: -10px;
+}
+
+/* Responsive: En pantallas pequeñas modificamos el grid del carrusel */
+@media (max-width: 992px) {
+  .creadores-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Muestra de 2 en 2 en tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .creadores-grid {
+    grid-template-columns: 1fr !important; /* Muestra de 1 en 1 en celulares */
+  }
+}
+
