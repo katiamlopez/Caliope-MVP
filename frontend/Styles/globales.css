@@ -186,7 +186,7 @@ input:focus {
 
 
    
-:root {
+:dark-theme {
     /* Paleta de colores */
     --bg-app: #130F26;
     --bg-surface: #1D183A;

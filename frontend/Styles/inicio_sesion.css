@@ -1,44 +1,222 @@
- body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
 
-        .contenedor {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 350px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+/* Fondo de la pantalla completa (Color extraído del diseño) */
+.login-body {
+    background-color: #e2dafa; /** Este color es local porque es el fondo exclusivo de esta pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
 
-        h2 {
-            text-align: center;
-        }
+/* Tarjeta principal */
+.login-card {
+    background-color: var(--color-bg-card); /* Conectado a Globales */
+    width: 100%;
+    max-width: 440px;
+    padding: 45px 35px;
+    border-radius: 32px; 
+    box-shadow: 0 10px 30px rgba(99, 59, 188, 0.05);
+    display: flex;
+    flex-direction: column;
+}
 
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+/* Encabezado: Logo y Texto */
+.logo-caliope {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.logo-caliope .logo-text {
+    color: var(--color-primary); /* Conectado a Globales */
+    font-family: var(--font-editorial); /* Conectado a Globales */
+    font-size: 2.4rem;
+    margin: 0;
+    font-weight: var(--weight-bold);
+}
 
-        button:hover {
-            background: #0056b3;
-        }
+.text-center {
+    text-align: center;
+}
 
- 
+.title-spacing {
+    font-family: var(--font-ui); /* Conectado a Globales */
+    color: var(--color-text-title);
+    font-size: 1.8rem;
+    font-weight: var(--weight-bold);
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* Contenedores de inputs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-title);
+    margin-bottom: 8px;
+    font-family: var(--font-ui);
+}
+
+/* Cuadros de texto (Inputs) usando variables globales */
+.login-card .form-control {
+    background-color: var(--color-bg-input); /* Conectado a Globales */
+    border: var(--border-width) solid var(--color-secondary); /* Conectado a Globales */
+    color: var(--color-text-body);
+    font-family: var(--font-ui);
+    border-radius: 10px;
+    padding: 14px 16px;
+    width: 100%;
+    font-size: 1rem;
+    transition: var(--transition-smooth); /* Conectado a Globales */
+}
+
+/* Color del texto de ejemplo (placeholder) */
+.login-card .form-control::placeholder {
+    color: var(--color-text-muted); /* Conectado a Globales */
+}
+
+/* Estado Focus */
+.login-card .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary); /* Conectado a Globales */
+    box-shadow: 0 0 0 3px rgba(99, 59, 188, 0.15);
+}
+
+/* Contenedor del campo de contraseña e icono del ojo */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon .form-control {
+    padding-right: 45px; 
+}
+
+/* Icono interactivo del ojo */
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--color-text-muted); /* Conectado a Globales */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+/* Enlaces */
+.forgot-password {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 12px;
+}
+
+.link-secondary {
+    color: var(--color-text-muted); /* Conectado a Globales */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: var(--font-ui);
+    font-weight: var(--weight-medium);
+}
+
+.link-secondary:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Botón Iniciar Sesión (Utiliza la clase base de globales, aquí solo ajustamos ancho y tamaño) */
+.full-width {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: var(--weight-semibold);
+    border-radius: 12px;
+}
+
+/* Enlace de Registro al final */
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    font-family: var(--font-ui);
+}
+
+.register-link .text-secondary {
+    color: var(--color-text-title);
+}
+
+.register-link .link-primary {
+    color: var(--color-primary); /* Conectado a Globales */
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.register-link .link-primary:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de error o éxito del sistema */
+.form-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: var(--weight-semibold);
+    font-family: var(--font-ui);
+}
+
+/* =======================================================
+   CORRECCIONES FINALES (Añadir al final de inicio_sesion.css)
+   ======================================================= */
+
+/* 1. Recuperar el botón "invisible" forzando la variable correcta */
+.login-card .btn-primary {
+    background-color: var(--color-primary); 
+    color: #ffffff;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: var(--weight-bold);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition-smooth);
+}
+
+.login-card .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* 2. Darle el grosor y color exacto a los bordes de los inputs */
+.login-card .form-control {
+    border: 1.5px solid #d1cfe2; 
+}
+
+/* Ajuste para la imagen del logo */
+.logo-image {
+    width: 45px; /* Tamaño ideal para que haga juego con el texto */
+    max-width: 100%; /* Esta línea es la que evita que se salga del contenedor */
+    height: auto; /* Mantiene las proporciones originales para que no se apachurre */
+    object-fit: contain;
+}
