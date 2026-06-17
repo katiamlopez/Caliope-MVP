@@ -1,46 +1,134 @@
-  body {
-            font-family: Arial, sans-serif;
-            background: #eef2f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+body {
+    background-color: #e2dafa; /** Este color es local porque es el fondo exclusivo de esta pantalla */
+    /* background-color: var(--color-second); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font-ui);
+}
 
-        .contenedor {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 350px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+.card-registro {
+    background-color: #ffffff;
+    border-radius: 20px; /* Redondeado de la tarjeta */
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
 
-        h2 {
-            text-align: center;
-        }
+/* Estilo para los campos de entrada */
+.form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
 
-        input {
-            width: 93%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
 
-        button:hover {
-            background: #1e7e34;
-        }
+/* Botón estilo píldora */
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-        a{
-            text-align: center;
-        }
+/* Asegura que el fondo lila ocupe toda la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #efe9f9; /* Fondo lila claro */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Organiza elementos verticalmente */
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+}
+
+/* El footer se mantiene al final de la página */
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    padding: 20px;
+    text-align: center;
+    color: #633bbc;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: #633bbc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+/* Ajuste específico para el logo dentro del footer */
+.site-footer .site-footer-logo img,
+footer .site-footer-logo img {
+    width: 100px;        /* Tamaño fijo recomendado para un footer */
+    max-width: 100px;    /* Asegura que no crezca más */
+    height: auto;        /* Mantiene la proporción original */
+    display: block;      /* Elimina espacios extra debajo */
+    margin: 0 auto;      /* Lo centra si es necesario */
+}
+
+/* Si tienes un contenedor que alinea el logo con el texto */
+.site-footer-brand {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el logo y el texto al centro */
+    gap: 15px;           /* Espacio entre el logo y el texto de copyright */
+    justify-content: center;
+}
+
+/** nuevo cambio Estilos para el logo superior dentro de la tarjeta */
+.logo-registro-superior {
+    text-align: center;
+    margin-bottom: 2rem; /* Espacio entre el logo y el primer campo */
+}
+
+.logo-registro-superior img {
+    max-width: 140px;    /* Ajusta el tamaño de tu logo aquí */
+    height: auto;
+}
+
+/* Estilos para el enlace "Ya tengo cuenta" al final de la tarjeta */
+.link-ya-tengo-cuenta {
+    text-align: center;
+    margin-top: 1.5rem; /* Espacio entre el botón de registro y este enlace */
+}
+
+.link-ya-tengo-cuenta a {
+    color: #633bbc;     /* Usamos el mismo lila de tu footer */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.link-ya-tengo-cuenta a:hover {
+    text-decoration: underline;
+    color: #4a2793;     /* Un tono un poco más oscuro al pasar el cursor */
+}
