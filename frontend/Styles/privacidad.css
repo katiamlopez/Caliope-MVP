@@ -1,0 +1,289 @@
+/* ==========================================================================
+   1. VARIABLES DE COLOR Y FUENTES GLOBALES (SOPORTE CLARO/OSCURO)
+   ========================================================================== */
+:root {
+  /* MODO CLARO ☀️ */
+  --color-primary: #633BBC;          /* Morado Principal */
+  --color-secondary: #EFE9F9;        /* Lila Suave */
+  --color-bg-app: #F6F5FA;           /* Fondo General App */
+  --color-bg-card: #FFFFFF;          /* Fondo Tarjetas */
+  --color-text-title: #1C1236;       /* Texto Títulos Principal */
+  --color-text-body: #3A2F5A;        /* Texto Cuerpo Base */
+  --color-text-muted: #82779A;       /* Texto Secundario/Subtítulos */
+  --color-border: #E1DFEC;           /* Separadores y Bordes */
+  --color-modal-overlay: rgba(28, 18, 54, 0.5);
+
+  /* FUENTES EXACTAS DE TU PALETA */
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-editorial: 'Lora', serif;
+
+  /* PESOS */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* COMPONENTES */
+  --radius-btn: 10px;
+  --radius-card: 12px;
+  --border-width: 1px;
+  --shadow-sm: 0 4px 12px rgba(28, 18, 54, 0.04);
+  --shadow-lg: 0 16px 40px rgba(28, 18, 54, 0.16);
+  --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* SOPORTE DE TU MODO OSCURO AUTOMÁTICO 🌙 */
+body.dark-theme, [data-theme="dark"] {
+  --color-primary: #7A52E1;          /* Morado Modo Oscuro */
+  --color-secondary: #2D2354;        /* Tags Fondo Modo Oscuro */
+  --color-bg-app: #130F26;           /* Fondo General App */
+  --color-bg-card: #1D183A;          /* Superficie Tarjetas */
+  --color-text-title: #F4F2FA;       /* Texto Títulos Principal */
+  --color-text-body: #C3BCDB;        /* Texto Cuerpo Base */
+  --color-text-muted: #7E7599;       /* Texto Secundario/Subtítulos */
+  --color-border: #2F2958;           /* Separadores/Bordes */
+  --color-modal-overlay: rgba(19, 15, 38, 0.6);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   2. CONFIGURACIÓN BASE Y CENTRADO DE LA TARJETA
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-regular);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content.avisoPrivacidad {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 1.25rem;
+}
+
+/* Tarjeta usando tu clase global de estructura */
+.card-global-structure {
+  background-color: var(--color-bg-card);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  padding: 3.5rem 2.5rem;
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.card-global-structure:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* LOGO GIGANTE: Mayor que el h1 de la página */
+.header-icon-container {
+  display: 100% flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.header-icon-container .logo-caliope {
+  width: 100%; /* Forzado a ser visiblemente mayor que el título */
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+/* Fuentes de Interfaz (.title y .subtitle) */
+.title {
+  font-family: var(--font-editorial);
+  font-size: 3rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-title);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   3. CONFIGURACIÓN DEL BOTÓN MORADO
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-weight: var(--weight-bold);
+  padding: 1rem 2.25rem;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary {
+  background-color: var(--color-primary); /* Forzado a tus morados #633BBC / #7A52E1 */
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 82, 225, 0.35);
+}
+
+/* ==========================================================================
+   4. VENTANA MODAL (FUENTES EDITORIALES LITERARIAS EN LORA)
+   ========================================================================== */
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: var(--color-modal-overlay);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.modal-content {
+  background-color: var(--color-bg-card);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 3rem;
+  width: 100%;
+  max-width: 650px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: var(--transition-smooth);
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Títulos del documento legal usando tu fuente editorial (Lora) */
+/* ==========================================================================
+   1. ACTUALIZACIÓN DE VARIABLE TIPOGRÁFICA EDITORIAL
+   ========================================================================== */
+:root {
+  /* Se cambia Lora por tu tipografía alternativa oficial */
+  --font-editorial: 'Playfair Display', Georgia, serif;
+}
+
+body.dark-theme, [data-theme="dark"] {
+  --font-editorial: 'Playfair Display', Georgia, serif;
+}
+
+/* ==========================================================================
+   2. VENTANA MODAL - TIPOGRAFÍA UNIFICADA Y ALINEACIÓN
+   ========================================================================== */
+
+/* Encabezados y títulos editoriales del documento */
+.editorial-title {
+  font-family: var(--font-editorial); /* Playfair Display */
+  color: var(--color-text-title);
+  text-align: left; /* Alineación forzada a la izquierda */
+}
+
+h2.editorial-title {
+  font-size: 2.2rem;
+  font-weight: var(--weight-bold);
+  margin-bottom: 0.5rem;
+}
+
+h3.editorial-title {
+  font-size: 1.4rem;
+  font-weight: var(--weight-semibold);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--color-primary); /* Línea de acento morada */
+  padding-left: 12px;
+  text-align: left;
+}
+
+/* Fecha de actualización */
+.modal-update {
+  font-family: var(--font-editorial); /* Unificado a Playfair Display */
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* TEXTO UNIFICADO PARA PÁRRAFOS Y LISTAS (Misma letra y alineación) */
+.literary-text {
+  font-family: var(--font-editorial); /* Playfair Display */
+  font-weight: var(--weight-regular);
+  color: var(--color-text-body);
+  font-size: 1rem;
+  line-height: 1.7; /* Interlineado elegante para lectura extendida */
+  text-align: left; /* Alineado perfecto a la izquierda */
+  margin-bottom: 1rem;
+}
+
+/* Estilos específicos para ordenar las viñetas sin romper la sangría */
+ul.literary-text {
+  padding-left: 1.5rem; /* Espacio para que los puntos no salgan de la tarjeta */
+  margin-bottom: 1.5rem;
+}
+
+ul.literary-text li {
+  font-family: var(--font-editorial); /* Fuerza a los li a heredar Playfair Display */
+  margin-bottom: 0.5rem; /* Separación sutil entre cada punto de la lista */
+  text-align: left;
+}
+
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .title { font-size: 2.25rem; }
+  .avisoPrivacidad { padding: 3rem 1rem; }
+  .modal-content { padding: 2rem 1.5rem; }
+}

@@ -392,16 +392,19 @@
 .cta-card {
   border-radius: 24px;
 }
-/* ==================
-   SECCIÓN CREADORES 
-   ================ */
+/* =================
+   SECCIÓN CREADORES
+   ==================*/
+/* ==========================================================================
+   SECCIÓN CREADORES - DISEÑO 100% RESPONSIVO
+   ========================================================================== */
 .creators-section {
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Título de la sección */
+/* Título de la sección adaptativo */
 .creators-section .section-title {
   text-align: center;
   font-size: 3rem;
@@ -410,33 +413,37 @@
   font-family: Georgia, serif;
 }
 
-/* Cuadrícula rígida de 4 columnas horizontales */
+/* Cuadrícula responsiva (Por defecto: 4 columnas en pantallas grandes) */
 .creadores-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 25px; 
+  row-gap: 50px; /* Separación entre filas de arriba y abajo */
   width: 100%;
+  padding: 15px 0; 
 }
 
-/* Tarjeta con fondo blanco y bordes redondeados */
+/* Tarjeta elástica */
 .creador-card {
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Esto hace que la imagen cuadrada respete el redondeado de la esquina de la tarjeta */
-  transition: transform 0.3s ease;
+  overflow: hidden; 
+  height: 100%; /* Obliga a todas las tarjetas a medir lo mismo verticalmente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .creador-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Contenedor de la foto: Ahora es 100% cuadrado y abarca el ancho de la tarjeta */
+/* Contenedor de la foto responsivo */
 .creador-img-container {
   width: 100%;
-  height: 220px; /* Altura fija para que todas las fotos se alineen de forma simétrica */
+  height: 220px; 
   overflow: hidden;
   background-color: #ead9ef;
 }
@@ -444,7 +451,7 @@
 .creador-img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Recorta la imagen de forma limpia sin deformarla */
+  object-fit: cover; 
 }
 
 /* Cuerpo interno de la tarjeta */
@@ -452,18 +459,19 @@
   padding: 25px 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 1; /* Rellena el espacio sobrante si una biografía es más corta */
 }
 
-/* Nombre del creador estilo título */
+/* Nombre del creador - CENTRADO */
 .creador-name {
   color: #13004f;
   font-size: 1.8rem;
   font-family: Georgia, serif;
   margin: 0 0 5px 0;
+  text-align: center; 
 }
 
-/* Rol del creador */
+/* Rol del creador - CENTRADO */
 .creador-role {
   color: #4b1d63;
   font-size: 0.85rem;
@@ -471,26 +479,29 @@
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: center; 
 }
 
-/* Descripción de la biografía */
+/* Descripción de la biografía - JUSTIFICADO */
 .creador-bio {
   color: #2e2e5e;
   line-height: 1.6;
   font-size: 0.95rem;
   margin-bottom: 25px;
-  flex-grow: 1; /* Empuja los botones hacia la parte inferior de manera uniforme */
+  flex-grow: 1; 
+  text-align: justify; 
 }
 
-/* Contenedor de botones morados */
+/* Contenedor de botones */
 .creador-links {
   display: flex;
-  flex-direction: column; /* Organiza los botones uno debajo de otro para que queden mejor estructurados */
+  flex-direction: column; 
   gap: 10px;
   width: 100%;
+  margin-top: auto; /* Ancla los botones siempre al fondo de la tarjeta */
 }
 
-/* Botón Morado de Perfil (Imita tu .btn-primary) */
+/* Botón Morado de Perfil */
 .creador-link-btn {
   background: #431457;
   color: white !important;
@@ -510,7 +521,7 @@
   border-color: #2d0e3b;
 }
 
-/* Botón Blanco Secundario (Imita tu .btn-secondary) */
+/* Botón Blanco Secundario */
 .creador-link-sub {
   background: white;
   color: #431457 !important;
@@ -529,6 +540,8 @@
   background: #efe9f9;
 }
 
+
+
 /* ==========================================================================
    DISEÑO RESPONSIVO (Asegura la visualización correcta en cualquier pantalla)
    ========================================================================== */
@@ -542,28 +555,6 @@
   .creadores-grid {
     grid-template-columns: 1fr; /* 1 columna en celulares */
   }
-}
-/* Espaciado del contenedor del carrusel */
-#carouselCreadores {
-    position: relative;
-    padding: 0 45px; /* Deja espacio a los lados para que las flechas no queden encima de las tarjetas */
-}
-
-/* Modificar las flechas de Bootstrap para que sean de color morado oscuro y visibles */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #431457; /* Tu morado oscuro */
-    border-radius: 50%;
-    padding: 15px;
-    background-size: 50%;
-}
-
-.carousel-control-prev {
-    left: -10px;
-}
-
-.carousel-control-next {
-    right: -10px;
 }
 
 /* Responsive: En pantallas pequeñas modificamos el grid del carrusel */
