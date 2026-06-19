@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -29,27 +29,17 @@
 
   <body>
     <div class="layout">
-
       <!-- Menú lateral -->
-      <button
-        id="toggle-btn"
-        type="button"
-        aria-label="Abrir menú"
-      >
-        ☰
-      </button>
+      <button id="toggle-btn" type="button" aria-label="Abrir menú">☰</button>
 
       <div id="menu-container"></div>
 
       <!-- Contenido principal -->
       <div class="contenido">
-
         <main class="settings-page">
-
           <!-- Barra superior -->
           <header class="page-topbar">
             <div class="page-actions">
-
               <!-- Configuración -->
               <a
                 href="configuracion.html"
@@ -61,7 +51,6 @@
 
               <!-- Notificaciones -->
               <div class="notification-wrapper">
-
                 <button
                   type="button"
                   class="topbar-icon notification-icon"
@@ -93,7 +82,6 @@
                   </header>
 
                   <div class="notification-list">
-
                     <article class="notification-item">
                       <img
                         src="../assets/users-photos/foto-perfil-valeria-m.png"
@@ -117,9 +105,7 @@
                       />
 
                       <div>
-                        <p>
-                          <strong>Luna</strong> escribió una reseña.
-                        </p>
+                        <p><strong>Luna</strong> escribió una reseña.</p>
                         <span>Hace 3 horas</span>
                       </div>
                     </article>
@@ -132,23 +118,16 @@
                       />
 
                       <div>
-                        <p>
-                          <strong>Diego N.</strong> guardó tu historia.
-                        </p>
+                        <p><strong>Diego N.</strong> guardó tu historia.</p>
                         <span>Ayer</span>
                       </div>
                     </article>
-
                   </div>
 
-                  <a
-                    href="notificaciones.html"
-                    class="notification-view-all"
-                  >
+                  <a href="notificaciones.html" class="notification-view-all">
                     Ver todas
                   </a>
                 </section>
-
               </div>
 
               <!-- Perfil -->
@@ -163,19 +142,14 @@
                   class="topbar-avatar"
                 />
               </a>
-
             </div>
           </header>
 
           <!-- Encabezado -->
           <section class="settings-header">
-            <p class="settings-kicker">
-              Cuenta
-            </p>
+            <p class="settings-kicker">Cuenta</p>
 
-            <h1>
-              Configuración
-            </h1>
+            <h1>Configuración</h1>
 
             <p>
               Personaliza tu experiencia en Calíope, ajusta tus preferencias de
@@ -185,10 +159,8 @@
 
           <!-- Contenido de configuración -->
           <section class="settings-layout">
-
             <!-- Apariencia -->
             <article class="settings-card">
-
               <header class="settings-card-header">
                 <div class="settings-icon">
                   <i class="bi bi-palette"></i>
@@ -196,18 +168,16 @@
 
                 <div>
                   <h2>Apariencia</h2>
-                  <p>
-                    Ajusta la forma en que se ve la plataforma.
-                  </p>
+                  <p>Ajusta la forma en que se ve la plataforma.</p>
                 </div>
               </header>
 
               <div class="settings-option">
-
                 <div class="settings-option-text">
                   <h3>Tema de la aplicación</h3>
                   <p>
-                    Elige entre modo claro, oscuro o automático según tu sistema.
+                    Elige entre modo claro, oscuro o automático según tu
+                    sistema.
                   </p>
                 </div>
 
@@ -220,14 +190,11 @@
                   <option value="dark">Oscuro</option>
                   <option value="system">Sistema</option>
                 </select>
-
               </div>
-
             </article>
 
             <!-- Privacidad -->
             <article class="settings-card">
-
               <header class="settings-card-header">
                 <div class="settings-icon">
                   <i class="bi bi-shield-lock"></i>
@@ -235,14 +202,11 @@
 
                 <div>
                   <h2>Privacidad</h2>
-                  <p>
-                    Controla qué información pueden ver otras personas.
-                  </p>
+                  <p>Controla qué información pueden ver otras personas.</p>
                 </div>
               </header>
 
               <div class="settings-list">
-
                 <label class="settings-toggle">
                   <span>
                     <strong>Perfil público</strong>
@@ -295,14 +259,11 @@
 
                   <span class="toggle-slider"></span>
                 </label>
-
               </div>
-
             </article>
 
             <!-- Perfil -->
             <article class="settings-card">
-
               <header class="settings-card-header">
                 <div class="settings-icon">
                   <i class="bi bi-person"></i>
@@ -310,23 +271,14 @@
 
                 <div>
                   <h2>Perfil</h2>
-                  <p>
-                    Edita los datos principales que aparecen en tu cuenta.
-                  </p>
+                  <p>Edita los datos principales que aparecen en tu cuenta.</p>
                 </div>
               </header>
 
-              <form
-                class="settings-form"
-                id="profileSettingsForm"
-              >
-
+              <form class="settings-form" id="profileSettingsForm">
                 <div class="settings-form-grid">
-
                   <div class="form-group">
-                    <label for="displayName">
-                      Nombre visible
-                    </label>
+                    <label for="displayName"> Nombre visible </label>
 
                     <input
                       type="text"
@@ -337,9 +289,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="username">
-                      Nombre de usuario
-                    </label>
+                    <label for="username"> Nombre de usuario </label>
 
                     <input
                       type="text"
@@ -348,90 +298,55 @@
                       value="@anag"
                     />
                   </div>
-
                 </div>
 
                 <div class="form-group">
-                  <label for="profileBio">
-                    Biografía
-                  </label>
+                  <label for="profileBio"> Biografía </label>
 
-                  <textarea
-                    id="profileBio"
-                    name="profileBio"
-                    rows="4"
-                  >Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Siempre escribiendo, siempre leyendo.</textarea>
+                  <textarea id="profileBio" name="profileBio" rows="4">
+Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Siempre escribiendo, siempre leyendo.</textarea
+                  >
                 </div>
 
                 <div class="settings-actions">
-
-                  <button
-                    type="button"
-                    class="settings-cancel-button"
-                  >
+                  <button type="button" class="settings-cancel-button">
                     Cancelar
                   </button>
 
-                  <button
-                    type="submit"
-                    class="settings-save-button"
-                  >
+                  <button type="submit" class="settings-save-button">
                     Guardar cambios
                   </button>
-
                 </div>
-
               </form>
-
             </article>
-
           </section>
-
         </main>
 
         <!-- Footer inferior -->
         <footer class="site-footer site-footer--bottom">
+          <nav class="site-footer-links" aria-label="Enlaces informativos">
+            <a href="nosotrosli.html"> Acerca de </a>
 
-          <nav
-            class="site-footer-links"
-            aria-label="Enlaces informativos"
-          >
-            <a href="nosotrosli.html">
-              Acerca de
-            </a>
+            <a href="contactanos.html"> Contáctanos </a>
 
-            <a href="contactanos.html">
-              Contáctanos
-            </a>
+            <a href="aviso-privacidad.html"> Aviso de privacidad </a>
 
-            <a href="aviso-privacidad.html">
-              Aviso de privacidad
-            </a>
+            <a href="terminos.html"> Términos y condiciones </a>
           </nav>
 
           <div class="site-footer-brand">
-
             <a
               href="principal.html"
               class="site-footer-logo"
               aria-label="Ir a la página principal"
             >
-              <img
-                src="../assets/logo-caliope.svg"
-                alt="Logo de Calíope"
-              />
+              <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
             </a>
 
-            <p class="site-footer-copyright">
-              Calíope © 2026
-            </p>
-
+            <p class="site-footer-copyright">Calíope © 2026</p>
           </div>
-
         </footer>
-
       </div>
-
     </div>
 
     <!-- Menú lateral -->

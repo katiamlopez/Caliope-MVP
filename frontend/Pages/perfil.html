@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -29,28 +29,18 @@
 
   <body>
     <div class="layout">
-
       <!-- Botón hamburguesa -->
-      <button
-        id="toggle-btn"
-        type="button"
-        aria-label="Abrir menú"
-      >
-        ☰
-      </button>
+      <button id="toggle-btn" type="button" aria-label="Abrir menú">☰</button>
 
       <!-- Menú lateral cargado desde menu.js -->
       <div id="menu-container"></div>
 
       <!-- Contenido principal -->
       <div class="contenido">
-
         <main class="profile-page">
-
           <!-- Acciones superiores -->
           <header class="profile-topbar">
             <div class="profile-actions">
-
               <!-- Acceso a configuración -->
               <a
                 href="configuracion.html"
@@ -62,7 +52,6 @@
 
               <!-- Notificaciones -->
               <div class="notification-wrapper">
-
                 <button
                   type="button"
                   class="topbar-icon notification-icon"
@@ -94,7 +83,6 @@
                   </header>
 
                   <div class="notification-list">
-
                     <article class="notification-item">
                       <img
                         src="../assets/users-photos/foto-perfil-valeria-m.png"
@@ -118,9 +106,7 @@
                       />
 
                       <div>
-                        <p>
-                          <strong>Luna</strong> escribió una reseña.
-                        </p>
+                        <p><strong>Luna</strong> escribió una reseña.</p>
                         <span>Hace 3 horas</span>
                       </div>
                     </article>
@@ -133,23 +119,16 @@
                       />
 
                       <div>
-                        <p>
-                          <strong>Diego N.</strong> guardó tu historia.
-                        </p>
+                        <p><strong>Diego N.</strong> guardó tu historia.</p>
                         <span>Ayer</span>
                       </div>
                     </article>
-
                   </div>
 
-                  <a
-                    href="notificaciones.html"
-                    class="notification-view-all"
-                  >
+                  <a href="notificaciones.html" class="notification-view-all">
                     Ver todas
                   </a>
                 </section>
-
               </div>
 
               <!-- Acceso rápido al perfil -->
@@ -164,13 +143,11 @@
                   class="topbar-avatar"
                 />
               </a>
-
             </div>
           </header>
 
           <!-- Información del perfil desde usuarios.json -->
           <section class="profile-hero">
-
             <div class="profile-avatar-wrapper">
               <img
                 src="../assets/users-photos/foto-perfil-usuario.png"
@@ -197,12 +174,10 @@
                 </p>
               </div>
             </div>
-
           </section>
 
           <!-- Estadísticas básicas del usuario -->
           <section class="profile-stats">
-
             <article class="profile-stat-card">
               <strong>3</strong>
               <span>Obras</span>
@@ -222,14 +197,11 @@
               <strong>86</strong>
               <span>Seguidos</span>
             </article>
-
           </section>
 
           <!-- Tabs del perfil con Bootstrap -->
           <section class="profile-tabs-section">
-
             <ul class="nav profile-tabs" id="profileTabs" role="tablist">
-
               <li class="nav-item" role="presentation">
                 <button
                   class="profile-tab active"
@@ -274,13 +246,9 @@
                   Mis guardados
                 </button>
               </li>
-
             </ul>
 
-            <a href="publicar.html" class="create-work-button">
-              Crear obra
-            </a>
-
+            <a href="publicar.html" class="create-work-button"> Crear obra </a>
           </section>
 
           <!-- Contenido de tabs -->
@@ -288,7 +256,6 @@
             class="tab-content profile-tab-content"
             id="profileTabsContent"
           >
-
             <!-- Mis obras desde historias.json -->
             <section
               class="tab-pane fade show active profile-content-section"
@@ -297,7 +264,6 @@
               aria-labelledby="obras-tab"
             >
               <div class="works-grid">
-
                 <article class="profile-work-card">
                   <img
                     src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
@@ -307,9 +273,7 @@
 
                   <h3>El cielo de abril</h3>
                   <p>9 capítulos</p>
-                  <span class="status-badge status-published">
-                    Publicado
-                  </span>
+                  <span class="status-badge status-published"> Publicado </span>
                 </article>
 
                 <article class="profile-work-card">
@@ -321,9 +285,7 @@
 
                   <h3>El cielo de Mayo</h3>
                   <p>4 capítulos</p>
-                  <span class="status-badge status-published">
-                    Publicado
-                  </span>
+                  <span class="status-badge status-published"> Publicado </span>
                 </article>
 
                 <article class="profile-work-card">
@@ -335,11 +297,8 @@
 
                   <h3>Un verano con...</h3>
                   <p>1 capítulo</p>
-                  <span class="status-badge status-draft">
-                    Borrador
-                  </span>
+                  <span class="status-badge status-draft"> Borrador </span>
                 </article>
-
               </div>
             </section>
 
@@ -351,7 +310,6 @@
               aria-labelledby="resenas-tab"
             >
               <div class="reviews-list">
-
                 <article class="profile-review-card">
                   <img
                     src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
@@ -364,9 +322,7 @@
                       Reseña de <strong>El cielo de abril</strong>
                     </p>
 
-                    <p class="review-rating">
-                      ★★★★★
-                    </p>
+                    <p class="review-rating">★★★★★</p>
 
                     <h3>Una historia luminosa</h3>
 
@@ -397,9 +353,7 @@
                       Reseña de <strong>Luz de octubre</strong>
                     </p>
 
-                    <p class="review-rating">
-                      ★★★★☆
-                    </p>
+                    <p class="review-rating">★★★★☆</p>
 
                     <h3>Muy envolvente</h3>
 
@@ -416,7 +370,6 @@
                     </a>
                   </div>
                 </article>
-
               </div>
             </section>
 
@@ -428,7 +381,6 @@
               aria-labelledby="guardados-tab"
             >
               <div class="works-grid">
-
                 <article class="profile-work-card">
                   <img
                     src="../assets/history-covers/portada-historia-susurros-del-bosque.png"
@@ -438,9 +390,7 @@
 
                   <h3>Susurros en el bosque</h3>
                   <p>Por Mar C.</p>
-                  <span class="status-badge status-saved">
-                    Guardado
-                  </span>
+                  <span class="status-badge status-saved"> Guardado </span>
                 </article>
 
                 <article class="profile-work-card">
@@ -452,9 +402,7 @@
 
                   <h3>La casa en el lago</h3>
                   <p>Por Valeria M.</p>
-                  <span class="status-badge status-saved">
-                    Guardado
-                  </span>
+                  <span class="status-badge status-saved"> Guardado </span>
                 </article>
 
                 <article class="profile-work-card">
@@ -466,36 +414,23 @@
 
                   <h3>La noche violeta</h3>
                   <p>Por Luna R.</p>
-                  <span class="status-badge status-saved">
-                    Guardado
-                  </span>
+                  <span class="status-badge status-saved"> Guardado </span>
                 </article>
-
               </div>
             </section>
-
           </section>
-
         </main>
 
         <!-- Footer inferior -->
         <footer class="site-footer site-footer--bottom">
+          <nav class="site-footer-links" aria-label="Enlaces informativos">
+            <a href="nosotrosli.html"> Acerca de </a>
 
-          <nav
-            class="site-footer-links"
-            aria-label="Enlaces informativos"
-          >
-            <a href="nosotrosli.html">
-              Acerca de
-            </a>
+            <a href="contactanos.html"> Contáctanos </a>
 
-            <a href="contactanos.html">
-              Contáctanos
-            </a>
+            <a href="aviso-privacidad.html"> Aviso de privacidad </a>
 
-            <a href="aviso-privacidad.html">
-              Aviso de privacidad
-            </a>
+            <a href="terminos.html"> Términos y condiciones </a>
           </nav>
 
           <div class="site-footer-brand">
@@ -504,21 +439,13 @@
               class="site-footer-logo"
               aria-label="Ir a la página principal"
             >
-              <img
-                src="../assets/logo-caliope.svg"
-                alt="Logo de Calíope"
-              />
+              <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
             </a>
 
-            <p class="site-footer-copyright">
-              Calíope © 2026
-            </p>
+            <p class="site-footer-copyright">Calíope © 2026</p>
           </div>
-
         </footer>
-
       </div>
-
     </div>
 
     <!-- Menú lateral -->

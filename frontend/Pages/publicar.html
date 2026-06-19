@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -29,28 +29,17 @@
 
   <body>
     <div class="layout">
-
       <!-- Menú lateral -->
-      <button
-        id="toggle-btn"
-        type="button"
-        aria-label="Abrir menú"
-      >
-        ☰
-      </button>
+      <button id="toggle-btn" type="button" aria-label="Abrir menú">☰</button>
 
       <div id="menu-container"></div>
 
       <!-- Contenido principal -->
       <div class="contenido">
-
         <main class="write-page">
-
           <!-- Barra superior -->
           <header class="page-topbar">
-
             <div class="page-actions">
-
               <!-- Acceso a configuración -->
               <a
                 href="configuracion.html"
@@ -62,7 +51,6 @@
 
               <!-- Notificaciones -->
               <div class="notification-wrapper">
-
                 <button
                   type="button"
                   class="topbar-icon notification-icon"
@@ -94,7 +82,6 @@
                   </header>
 
                   <div class="notification-list">
-
                     <article class="notification-item">
                       <img
                         src="../assets/users-photos/foto-perfil-valeria-m.png"
@@ -118,9 +105,7 @@
                       />
 
                       <div>
-                        <p>
-                          <strong>Luna</strong> escribió una reseña.
-                        </p>
+                        <p><strong>Luna</strong> escribió una reseña.</p>
                         <span>Hace 3 horas</span>
                       </div>
                     </article>
@@ -133,23 +118,16 @@
                       />
 
                       <div>
-                        <p>
-                          <strong>Diego N.</strong> guardó tu historia.
-                        </p>
+                        <p><strong>Diego N.</strong> guardó tu historia.</p>
                         <span>Ayer</span>
                       </div>
                     </article>
-
                   </div>
 
-                  <a
-                    href="notificaciones.html"
-                    class="notification-view-all"
-                  >
+                  <a href="notificaciones.html" class="notification-view-all">
                     Ver todas
                   </a>
                 </section>
-
               </div>
 
               <!-- Acceso rápido al perfil -->
@@ -164,38 +142,26 @@
                   class="topbar-avatar"
                 />
               </a>
-
             </div>
-
           </header>
 
           <!-- Encabezado -->
           <section class="write-header">
-
             <h1>Crear obra</h1>
 
             <p>
-              Comparte una nueva historia con la comunidad de Calíope.
-              Puedes guardar tu avance como borrador o publicar tu obra
-              cuando esté lista.
+              Comparte una nueva historia con la comunidad de Calíope. Puedes
+              guardar tu avance como borrador o publicar tu obra cuando esté
+              lista.
             </p>
-
           </section>
 
           <!-- Formulario -->
           <section class="write-form-card">
-
-            <form
-              class="write-form"
-              id="formulario"
-            >
-
+            <form class="write-form" id="formulario">
               <!-- Título -->
               <div class="form-group">
-
-                <label for="titulo">
-                  Título de la obra
-                </label>
+                <label for="titulo"> Título de la obra </label>
 
                 <input
                   type="text"
@@ -203,15 +169,11 @@
                   name="titulo"
                   placeholder="Escribe el título de tu historia"
                 />
-
               </div>
 
               <!-- Descripción -->
               <div class="form-group">
-
-                <label for="descripcion">
-                  Descripción
-                </label>
+                <label for="descripcion"> Descripción </label>
 
                 <textarea
                   id="descripcion"
@@ -224,15 +186,11 @@
                   Esta descripción aparecerá en el feed, explorar y el perfil
                   del autor.
                 </p>
-
               </div>
 
               <!-- Géneros -->
               <div class="form-group genre-form-group">
-
-                <label for="genreSelect">
-                  Géneros de la obra
-                </label>
+                <label for="genreSelect"> Géneros de la obra </label>
 
                 <p class="form-helper">
                   Selecciona los géneros uno por uno. Puedes eliminarlos antes
@@ -240,7 +198,6 @@
                 </p>
 
                 <div class="genre-selector">
-
                   <select
                     id="genreSelect"
                     class="genre-select"
@@ -263,13 +220,9 @@
                     <option value="Juvenil">Juvenil</option>
                     <option value="Poesía">Poesía</option>
                   </select>
-
                 </div>
 
-                <p
-                  id="genreHelp"
-                  class="genre-helper"
-                >
+                <p id="genreHelp" class="genre-helper">
                   Puedes agregar hasta 4 géneros.
                 </p>
 
@@ -282,19 +235,13 @@
 
                 <!-- Inputs ocultos para enviar los géneros -->
                 <div id="genreInputs"></div>
-
               </div>
 
               <!-- Archivos -->
               <div class="upload-grid">
-
                 <!-- Portada -->
                 <div class="upload-box">
-
-                  <label
-                    for="portada"
-                    class="upload-label"
-                  >
+                  <label for="portada" class="upload-label">
                     <i class="bi bi-image"></i>
                     <span>Agregar portada</span>
                     <small>PNG, JPG o JPEG</small>
@@ -306,16 +253,11 @@
                     name="portada"
                     accept="image/png, image/jpeg, image/jpg"
                   />
-
                 </div>
 
                 <!-- PDF -->
                 <div class="upload-box">
-
-                  <label
-                    for="documentoHistoria"
-                    class="upload-label"
-                  >
+                  <label for="documentoHistoria" class="upload-label">
                     <i class="bi bi-file-earmark-pdf"></i>
                     <span>Subir archivo PDF</span>
                     <small>Archivo provisional de la historia</small>
@@ -327,81 +269,50 @@
                     name="documentoHistoria"
                     accept="application/pdf"
                   />
-
                 </div>
-
               </div>
 
               <!-- Acciones -->
               <div class="write-actions">
-
-                <button
-                  type="button"
-                  class="draft-button"
-                >
+                <button type="button" class="draft-button">
                   <i class="bi bi-save"></i>
                   Guardar borrador
                 </button>
 
-                <button
-                  type="submit"
-                  class="publish-button"
-                >
+                <button type="submit" class="publish-button">
                   <i class="bi bi-send"></i>
                   Publicar obra
                 </button>
-
               </div>
-
             </form>
-
           </section>
-
         </main>
 
         <!-- Footer inferior -->
         <footer class="site-footer site-footer--bottom">
+          <nav class="site-footer-links" aria-label="Enlaces informativos">
+            <a href="nosotrosli.html"> Acerca de </a>
 
-          <nav
-            class="site-footer-links"
-            aria-label="Enlaces informativos"
-          >
-            <a href="nosotrosli.html">
-              Acerca de
-            </a>
+            <a href="contactanos.html"> Contáctanos </a>
 
-            <a href="contactanos.html">
-              Contáctanos
-            </a>
+            <a href="aviso-privacidad.html"> Aviso de privacidad </a>
 
-            <a href="aviso-privacidad.html">
-              Aviso de privacidad
-            </a>
+            <a href="terminos.html"> Términos y condiciones </a>
           </nav>
 
           <div class="site-footer-brand">
-
             <a
               href="principal.html"
               class="site-footer-logo"
               aria-label="Ir a la página principal"
             >
-              <img
-                src="../assets/logo-caliope.svg"
-                alt="Logo de Calíope"
-              />
+              <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
             </a>
 
-            <p class="site-footer-copyright">
-              Calíope © 2026
-            </p>
-
+            <p class="site-footer-copyright">Calíope © 2026</p>
           </div>
-
         </footer>
-
       </div>
-
     </div>
 
     <!-- Menú lateral -->

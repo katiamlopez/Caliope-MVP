@@ -3,19 +3,19 @@
    ========================================================================== */
 :root {
   /* MODO CLARO ☀️ */
-  --color-primary: #633BBC;          /* Morado Principal */
-  --color-secondary: #EFE9F9;        /* Lila Suave */
-  --color-bg-app: #F6F5FA;           /* Fondo General App */
-  --color-bg-card: #FFFFFF;          /* Fondo Tarjetas */
-  --color-text-title: #1C1236;       /* Texto Títulos Principal */
-  --color-text-body: #3A2F5A;        /* Texto Cuerpo Base */
-  --color-text-muted: #82779A;       /* Texto Secundario/Subtítulos */
-  --color-border: #E1DFEC;           /* Separadores y Bordes */
+  --color-primary: #633bbc; /* Morado Principal */
+  --color-secondary: #efe9f9; /* Lila Suave */
+  --color-bg-app: #f6f5fa; /* Fondo General App */
+  --color-bg-card: #ffffff; /* Fondo Tarjetas */
+  --color-text-title: #1c1236; /* Texto Títulos Principal */
+  --color-text-body: #3a2f5a; /* Texto Cuerpo Base */
+  --color-text-muted: #82779a; /* Texto Secundario/Subtítulos */
+  --color-border: #e1dfec; /* Separadores y Bordes */
   --color-modal-overlay: rgba(28, 18, 54, 0.5);
 
   /* FUENTES EXACTAS DE TU PALETA */
-  --font-ui: 'Plus Jakarta Sans', sans-serif;
-  --font-editorial: 'Lora', serif;
+  --font-ui: "Plus Jakarta Sans", sans-serif;
+  --font-editorial: "Lora", serif;
 
   /* PESOS */
   --weight-regular: 400;
@@ -29,19 +29,22 @@
   --border-width: 1px;
   --shadow-sm: 0 4px 12px rgba(28, 18, 54, 0.04);
   --shadow-lg: 0 16px 40px rgba(28, 18, 54, 0.16);
-  --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  --transition-smooth:
+    background-color 0.3s ease, color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 /* SOPORTE DE TU MODO OSCURO AUTOMÁTICO 🌙 */
-body.dark-theme, [data-theme="dark"] {
-  --color-primary: #7A52E1;          /* Morado Modo Oscuro */
-  --color-secondary: #2D2354;        /* Tags Fondo Modo Oscuro */
-  --color-bg-app: #130F26;           /* Fondo General App */
-  --color-bg-card: #1D183A;          /* Superficie Tarjetas */
-  --color-text-title: #F4F2FA;       /* Texto Títulos Principal */
-  --color-text-body: #C3BCDB;        /* Texto Cuerpo Base */
-  --color-text-muted: #7E7599;       /* Texto Secundario/Subtítulos */
-  --color-border: #2F2958;           /* Separadores/Bordes */
+body.dark-theme,
+[data-theme="dark"] {
+  --color-primary: #7a52e1; /* Morado Modo Oscuro */
+  --color-secondary: #2d2354; /* Tags Fondo Modo Oscuro */
+  --color-bg-app: #130f26; /* Fondo General App */
+  --color-bg-card: #1d183a; /* Superficie Tarjetas */
+  --color-text-title: #f4f2fa; /* Texto Títulos Principal */
+  --color-text-body: #c3bcdb; /* Texto Cuerpo Base */
+  --color-text-muted: #7e7599; /* Texto Secundario/Subtítulos */
+  --color-border: #2f2958; /* Separadores/Bordes */
   --color-modal-overlay: rgba(19, 15, 38, 0.6);
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
@@ -50,7 +53,9 @@ body.dark-theme, [data-theme="dark"] {
 /* ==========================================================================
    2. CONFIGURACIÓN BASE Y CENTRADO DE LA TARJETA
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -69,11 +74,12 @@ body {
 }
 
 .content.avisoPrivacidad {
+  min-height: calc(100vh - 150px);
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 4.5rem 1.25rem;
+  align-items: center;
+  padding: 4rem 1.25rem;
 }
 
 /* Tarjeta usando tu clase global de estructura */
@@ -96,7 +102,7 @@ body {
 
 /* LOGO GIGANTE: Mayor que el h1 de la página */
 .header-icon-container {
-  display: 100% flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2.5rem;
@@ -150,8 +156,10 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--color-primary); /* Forzado a tus morados #633BBC / #7A52E1 */
-  color: #FFFFFF;
+  background-color: var(
+    --color-primary
+  ); /* Forzado a tus morados #633BBC / #7A52E1 */
+  color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -163,9 +171,12 @@ body {
    4. VENTANA MODAL (FUENTES EDITORIALES LITERARIAS EN LORA)
    ========================================================================== */
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--color-modal-overlay);
   backdrop-filter: blur(8px);
   z-index: 2000;
@@ -189,13 +200,20 @@ body {
 }
 
 @keyframes modalSlideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .close-btn {
   position: absolute;
-  top: 1.5rem; right: 1.5rem;
+  top: 1.5rem;
+  right: 1.5rem;
   font-size: 2rem;
   cursor: pointer;
   color: var(--color-text-muted);
@@ -213,11 +231,12 @@ body {
    ========================================================================== */
 :root {
   /* Se cambia Lora por tu tipografía alternativa oficial */
-  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-editorial: "Playfair Display", Georgia, serif;
 }
 
-body.dark-theme, [data-theme="dark"] {
-  --font-editorial: 'Playfair Display', Georgia, serif;
+body.dark-theme,
+[data-theme="dark"] {
+  --font-editorial: "Playfair Display", Georgia, serif;
 }
 
 /* ==========================================================================
@@ -274,16 +293,22 @@ ul.literary-text {
 }
 
 ul.literary-text li {
-  font-family: var(--font-editorial); /* Fuerza a los li a heredar Playfair Display */
+  font-family: var(
+    --font-editorial
+  ); /* Fuerza a los li a heredar Playfair Display */
   margin-bottom: 0.5rem; /* Separación sutil entre cada punto de la lista */
   text-align: left;
 }
 
-
-
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .title { font-size: 2.25rem; }
-  .avisoPrivacidad { padding: 3rem 1rem; }
-  .modal-content { padding: 2rem 1.5rem; }
+  .title {
+    font-size: 2.25rem;
+  }
+  .avisoPrivacidad {
+    padding: 3rem 1rem;
+  }
+  .modal-content {
+    padding: 2rem 1.5rem;
+  }
 }

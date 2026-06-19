@@ -1,0 +1,397 @@
+/* ==========================================================================
+TÉRMINOS Y CONDICIONES - CALÍOPE
+========================================================================== */
+
+/* ==========================================================================
+VARIABLES
+========================================================================== */
+
+:root {
+  --color-primary: #633bbc;
+  --color-primary-hover: #7a52e1;
+
+  --color-secondary: #efe9f9;
+
+  --color-bg-app: #f6f5fa;
+  --color-bg-card: #ffffff;
+
+  --color-text-title: #1c1236;
+  --color-text-body: #3a2f5a;
+  --color-text-muted: #82779a;
+
+  --color-border: #e1dfec;
+
+  --color-modal-overlay: rgba(28, 18, 54, 0.55);
+
+  --font-ui: "Plus Jakarta Sans", sans-serif;
+  --font-editorial: "Playfair Display", Georgia, serif;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --radius-btn: 12px;
+  --radius-card: 20px;
+
+  --shadow-sm: 0 8px 25px rgba(28, 18, 54, 0.06);
+  --shadow-lg: 0 20px 50px rgba(28, 18, 54, 0.18);
+
+  --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+CONTENIDO PRINCIPAL
+========================================================================== */
+
+.content.terminosCondiciones {
+  min-height: calc(100vh - 150px);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.25rem;
+}
+
+/* ==========================================================================
+TARJETA PRINCIPAL
+========================================================================== */
+
+.card-global-structure {
+  background-color: var(--color-bg-card);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow-sm);
+
+  padding: 3.5rem 2.5rem;
+
+  width: 100%;
+  max-width: 650px;
+
+  text-align: center;
+
+  margin: 0 auto;
+}
+
+.card-global-structure:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+ICONO PRINCIPAL
+========================================================================== */
+
+.header-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 2.5rem;
+}
+
+.header-icon-container .logo-caliope {
+  width: 100%; /* Forzado a ser visiblemente mayor que el título */
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+.legal-icon {
+  font-size: 4.5rem;
+
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+TÍTULOS
+========================================================================== */
+
+.title {
+  font-family: var(--font-editorial);
+
+  font-size: 3rem;
+
+  color: var(--color-text-title);
+
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+
+  color: var(--color-text-muted);
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+
+  max-width: 650px;
+
+  margin: 0 auto 2rem;
+}
+
+/* ==========================================================================
+BOTÓN
+========================================================================== */
+
+.cta-buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  border: none;
+
+  border-radius: var(--radius-btn);
+
+  cursor: pointer;
+
+  font-weight: var(--weight-semibold);
+
+  font-size: 1rem;
+
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(99, 59, 188, 0.25);
+}
+
+/* ==========================================================================
+MODAL
+========================================================================== */
+
+.modal {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: var(--color-modal-overlay);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 3000;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.5rem;
+}
+
+.modal-content {
+  position: relative;
+
+  background: var(--color-bg-card);
+
+  border-radius: 24px;
+
+  width: 100%;
+  max-width: 850px;
+
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  padding: 3rem;
+
+  box-shadow: var(--shadow-lg);
+
+  animation: modalFade 0.3s ease;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+BOTÓN CERRAR
+========================================================================== */
+
+.close-btn {
+  position: absolute;
+
+  top: 20px;
+  right: 24px;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  color: var(--color-text-muted);
+
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+CONTENIDO LEGAL
+========================================================================== */
+
+.editorial-title {
+  font-family: var(--font-editorial);
+
+  color: var(--color-text-title);
+
+  text-align: left;
+}
+
+h2.editorial-title {
+  font-size: 2.3rem;
+
+  margin-bottom: 0.5rem;
+}
+
+h3.editorial-title {
+  font-size: 1.4rem;
+
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+
+  border-left: 4px solid var(--color-primary);
+
+  padding-left: 12px;
+}
+
+.modal-update {
+  color: var(--color-text-muted);
+
+  margin-bottom: 2rem;
+
+  text-align: left;
+
+  font-size: 0.95rem;
+}
+
+.literary-text {
+  font-family: var(--font-editorial);
+
+  color: var(--color-text-body);
+
+  text-align: left;
+
+  line-height: 1.9;
+
+  margin-bottom: 1rem;
+}
+
+ul.literary-text {
+  padding-left: 1.8rem;
+
+  margin-bottom: 1.5rem;
+}
+
+ul.literary-text li {
+  margin-bottom: 0.7rem;
+}
+
+/* ==========================================================================
+SCROLL DEL MODAL
+========================================================================== */
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+
+  border-radius: 999px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+/* ==========================================================================
+RESPONSIVE TABLET
+========================================================================== */
+
+@media (max-width: 768px) {
+  .card-global-structure {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+
+  h2.editorial-title {
+    font-size: 1.9rem;
+  }
+}
+
+/* ==========================================================================
+RESPONSIVE MÓVIL
+========================================================================== */
+
+@media (max-width: 480px) {
+  .content.terminosCondiciones {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .legal-icon {
+    font-size: 3.5rem;
+  }
+
+  .card-global-structure {
+    padding: 1.5rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  h2.editorial-title {
+    font-size: 1.6rem;
+  }
+
+  h3.editorial-title {
+    font-size: 1.2rem;
+  }
+}

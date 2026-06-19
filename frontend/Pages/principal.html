@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -38,121 +38,111 @@
       <div class="contenido">
         <main class="home-page">
           <!-- Barra superior -->
-        <header class="page-topbar">
-          <div class="page-actions">
-
-           <!-- Acceso a configuración -->
-           <a
-             href="configuracion.html"
-             class="topbar-icon"
-             aria-label="Ir a configuración"
-            >
-              <i class="bi bi-gear"></i>
-            </a>
-
-           <!-- Notificaciones -->
-           <div class="notification-wrapper">
-
-             <button
-               type="button"
-               class="topbar-icon notification-icon"
-               id="notificationButton"
-               aria-label="Ver notificaciones"
-               aria-expanded="false"
-               aria-controls="notificationPanel"
-             >
-               <i class="bi bi-bell"></i>
-               <span></span>
-             </button>
-
-             <section
-                class="notification-panel"
-                id="notificationPanel"
-                aria-label="Panel de notificaciones"
+          <header class="page-topbar">
+            <div class="page-actions">
+              <!-- Acceso a configuración -->
+              <a
+                href="configuracion.html"
+                class="topbar-icon"
+                aria-label="Ir a configuración"
               >
-              <header class="notification-panel-header">
-          <h2>Notificaciones</h2>
-          <button
-            type="button"
-            class="notification-close"
-            id="notificationClose"
-            aria-label="Cerrar notificaciones"
-          >
-            <i class="bi bi-x-lg"></i>
-          </button>
-               </header>
+                <i class="bi bi-gear"></i>
+              </a>
 
-               <div class="notification-list">
+              <!-- Notificaciones -->
+              <div class="notification-wrapper">
+                <button
+                  type="button"
+                  class="topbar-icon notification-icon"
+                  id="notificationButton"
+                  aria-label="Ver notificaciones"
+                  aria-expanded="false"
+                  aria-controls="notificationPanel"
+                >
+                  <i class="bi bi-bell"></i>
+                  <span></span>
+                </button>
 
-                  <article class="notification-item">
-                    <img
-                      src="../assets/users-photos/foto-perfil-valeria-m.png"
-                      alt="Foto de perfil de Valeria M."
-                      class="notification-avatar"
+                <section
+                  class="notification-panel"
+                  id="notificationPanel"
+                  aria-label="Panel de notificaciones"
+                >
+                  <header class="notification-panel-header">
+                    <h2>Notificaciones</h2>
+                    <button
+                      type="button"
+                      class="notification-close"
+                      id="notificationClose"
+                      aria-label="Cerrar notificaciones"
                     >
+                      <i class="bi bi-x-lg"></i>
+                    </button>
+                  </header>
 
-                    <div>
-                      <p>
-                        <strong>Valeria M.</strong> publicó una nueva obra.
-                      </p>
-                      <span>Hace 2 horas</span>
-                    </div>
-                  </article>
+                  <div class="notification-list">
+                    <article class="notification-item">
+                      <img
+                        src="../assets/users-photos/foto-perfil-valeria-m.png"
+                        alt="Foto de perfil de Valeria M."
+                        class="notification-avatar"
+                      />
 
-                  <article class="notification-item">
-                    <img
-                      src="../assets/users-photos/foto-perfil-luna.png"
-                      alt="Foto de perfil de Luna"
-                      class="notification-avatar"
-                    >
+                      <div>
+                        <p>
+                          <strong>Valeria M.</strong> publicó una nueva obra.
+                        </p>
+                        <span>Hace 2 horas</span>
+                      </div>
+                    </article>
 
-                    <div>
-                      <p>
-                        <strong>Luna</strong> escribió una reseña.
-                      </p>
-                      <span>Hace 3 horas</span>
-                    </div>
-                  </article>
+                    <article class="notification-item">
+                      <img
+                        src="../assets/users-photos/foto-perfil-luna.png"
+                        alt="Foto de perfil de Luna"
+                        class="notification-avatar"
+                      />
 
-                  <article class="notification-item">
-                    <img
-                      src="../assets/users-photos/foto-perfil-diego-n.png"
-                      alt="Foto de perfil de Diego N."
-                      class="notification-avatar"
-                    >
+                      <div>
+                        <p><strong>Luna</strong> escribió una reseña.</p>
+                        <span>Hace 3 horas</span>
+                      </div>
+                    </article>
 
-                    <div>
-                      <p>
-                        <strong>Diego N.</strong> guardó tu historia.
-                      </p>
-                      <span>Ayer</span>
-                    </div>
-                  </article>
+                    <article class="notification-item">
+                      <img
+                        src="../assets/users-photos/foto-perfil-diego-n.png"
+                        alt="Foto de perfil de Diego N."
+                        class="notification-avatar"
+                      />
 
-                </div>
+                      <div>
+                        <p><strong>Diego N.</strong> guardó tu historia.</p>
+                        <span>Ayer</span>
+                      </div>
+                    </article>
+                  </div>
 
-                <a href="./notificaciones.html" class="notification-view-all">
-                  Ver todas
-                </a>
-              </section>
+                  <a href="./notificaciones.html" class="notification-view-all">
+                    Ver todas
+                  </a>
+                </section>
+              </div>
 
+              <!-- Acceso rápido al perfil -->
+              <a
+                href="perfil.html"
+                class="topbar-profile-link"
+                aria-label="Ir a mi perfil"
+              >
+                <img
+                  src="../assets/users-photos/foto-perfil-usuario.png"
+                  alt="Foto de perfil del usuario"
+                  class="topbar-avatar"
+                />
+              </a>
             </div>
-
-            <!-- Acceso rápido al perfil -->
-            <a
-              href="perfil.html"
-              class="topbar-profile-link"
-              aria-label="Ir a mi perfil"
-            >
-              <img
-                src="../assets/users-photos/foto-perfil-usuario.png"
-                alt="Foto de perfil del usuario"
-                class="topbar-avatar"
-              />
-            </a>
-
-          </div>
-        </header>
+          </header>
 
           <div class="row g-4">
             <!-- Columna principal del feed -->
@@ -413,9 +403,13 @@
                   class="site-footer-links"
                   aria-label="Enlaces informativos"
                 >
-                  <a href="nosotrosli.html">Acerca de</a>
-                  <a href="contactanos.html">Contáctanos</a>
-                  <a href="aviso-privacidad.html">Aviso de privacidad</a>
+                  <a href="nosotrosli.html"> Acerca de </a>
+
+                  <a href="contactanos.html"> Contáctanos </a>
+
+                  <a href="aviso-privacidad.html"> Aviso de privacidad </a>
+
+                  <a href="terminos.html"> Términos y condiciones </a>
                 </nav>
 
                 <div class="site-footer-brand">

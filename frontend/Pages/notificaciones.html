@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -29,27 +29,17 @@
 
   <body>
     <div class="layout">
-
       <!-- Menú lateral -->
-      <button
-        id="toggle-btn"
-        type="button"
-        aria-label="Abrir menú"
-      >
-        ☰
-      </button>
+      <button id="toggle-btn" type="button" aria-label="Abrir menú">☰</button>
 
       <div id="menu-container"></div>
 
       <!-- Contenido principal -->
       <div class="contenido">
-
         <main class="notifications-page">
-
           <!-- Barra superior -->
           <header class="page-topbar">
             <div class="page-actions">
-
               <!-- Configuración -->
               <a
                 href="configuracion.html"
@@ -71,21 +61,15 @@
                   class="topbar-avatar"
                 />
               </a>
-
             </div>
           </header>
 
           <!-- Encabezado -->
           <section class="notifications-header">
-
             <div>
-              <p class="notifications-kicker">
-                Actividad reciente
-              </p>
+              <p class="notifications-kicker">Actividad reciente</p>
 
-              <h1>
-                Notificaciones
-              </h1>
+              <h1>Notificaciones</h1>
 
               <p>
                 Revisa las novedades de tus lecturas, reseñas, autores favoritos
@@ -93,14 +77,10 @@
               </p>
             </div>
 
-            <button
-              type="button"
-              class="mark-read-button"
-            >
+            <button type="button" class="mark-read-button">
               <i class="bi bi-check2-circle"></i>
               Marcar todo como leído
             </button>
-
           </section>
 
           <!-- Filtros -->
@@ -143,12 +123,8 @@
 
           <!-- Lista completa -->
           <section class="notifications-list">
-
             <!-- Notificación sin leer -->
-            <article
-              class="notification-card unread"
-              data-category="works"
-            >
+            <article class="notification-card unread" data-category="works">
               <div class="notification-status-dot"></div>
 
               <img
@@ -168,23 +144,16 @@
                 </div>
 
                 <p class="notification-card-description">
-                  Una nueva historia de romance y misterio está disponible para leer.
+                  Una nueva historia de romance y misterio está disponible para
+                  leer.
                 </p>
               </div>
 
-              <a
-                href="lectura.html"
-                class="notification-action"
-              >
-                Leer
-              </a>
+              <a href="lectura.html" class="notification-action"> Leer </a>
             </article>
 
             <!-- Notificación sin leer -->
-            <article
-              class="notification-card unread"
-              data-category="reviews"
-            >
+            <article class="notification-card unread" data-category="reviews">
               <div class="notification-status-dot"></div>
 
               <img
@@ -204,23 +173,18 @@
                 </div>
 
                 <p class="notification-card-description">
-                  “Una historia hermosa sobre el amor, el tiempo y las decisiones...”
+                  “Una historia hermosa sobre el amor, el tiempo y las
+                  decisiones...”
                 </p>
               </div>
 
-              <a
-                href="lectura.html"
-                class="notification-action"
-              >
+              <a href="lectura.html" class="notification-action">
                 Ver reseña
               </a>
             </article>
 
             <!-- Notificación -->
-            <article
-              class="notification-card"
-              data-category="activity"
-            >
+            <article class="notification-card" data-category="activity">
               <div class="notification-status-dot"></div>
 
               <img
@@ -231,9 +195,7 @@
 
               <div class="notification-card-content">
                 <div class="notification-card-header">
-                  <p>
-                    <strong>Diego N.</strong> guardó tu historia.
-                  </p>
+                  <p><strong>Diego N.</strong> guardó tu historia.</p>
 
                   <span>Ayer</span>
                 </div>
@@ -243,19 +205,13 @@
                 </p>
               </div>
 
-              <a
-                href="perfil.html"
-                class="notification-action secondary"
-              >
+              <a href="perfil.html" class="notification-action secondary">
                 Ver perfil
               </a>
             </article>
 
             <!-- Notificación -->
-            <article
-              class="notification-card"
-              data-category="activity"
-            >
+            <article class="notification-card" data-category="activity">
               <div class="notification-status-dot"></div>
 
               <img
@@ -267,7 +223,8 @@
               <div class="notification-card-content">
                 <div class="notification-card-header">
                   <p>
-                    Tu borrador <strong>Un verano complicado</strong> fue guardado correctamente.
+                    Tu borrador <strong>Un verano complicado</strong> fue
+                    guardado correctamente.
                   </p>
 
                   <span>Ayer</span>
@@ -278,19 +235,13 @@
                 </p>
               </div>
 
-              <a
-                href="publicar.html"
-                class="notification-action secondary"
-              >
+              <a href="publicar.html" class="notification-action secondary">
                 Continuar
               </a>
             </article>
 
             <!-- Notificación -->
-            <article
-              class="notification-card"
-              data-category="works"
-            >
+            <article class="notification-card" data-category="works">
               <div class="notification-status-dot"></div>
 
               <img
@@ -302,7 +253,8 @@
               <div class="notification-card-content">
                 <div class="notification-card-header">
                   <p>
-                    <strong>Valeria M.</strong> actualizó una obra que tienes guardada.
+                    <strong>Valeria M.</strong> actualizó una obra que tienes
+                    guardada.
                   </p>
 
                   <span>Hace 2 días</span>
@@ -313,61 +265,38 @@
                 </p>
               </div>
 
-              <a
-                href="lectura.html"
-                class="notification-action"
-              >
+              <a href="lectura.html" class="notification-action">
                 Leer capítulo
               </a>
             </article>
-
           </section>
-
         </main>
 
         <!-- Footer inferior -->
         <footer class="site-footer site-footer--bottom">
+          <nav class="site-footer-links" aria-label="Enlaces informativos">
+            <a href="nosotrosli.html"> Acerca de </a>
 
-          <nav
-            class="site-footer-links"
-            aria-label="Enlaces informativos"
-          >
-            <a href="nosotrosli.html">
-              Acerca de
-            </a>
+            <a href="contactanos.html"> Contáctanos </a>
 
-            <a href="contactanos.html">
-              Contáctanos
-            </a>
+            <a href="aviso-privacidad.html"> Aviso de privacidad </a>
 
-            <a href="aviso-privacidad.html">
-              Aviso de privacidad
-            </a>
+            <a href="terminos.html"> Términos y condiciones </a>
           </nav>
 
           <div class="site-footer-brand">
-
             <a
               href="principal.html"
               class="site-footer-logo"
               aria-label="Ir a la página principal"
             >
-              <img
-                src="../assets/logo-caliope.svg"
-                alt="Logo de Calíope"
-              />
+              <img src="../assets/logo-caliope.svg" alt="Logo de Calíope" />
             </a>
 
-            <p class="site-footer-copyright">
-              Calíope © 2026
-            </p>
-
+            <p class="site-footer-copyright">Calíope © 2026</p>
           </div>
-
         </footer>
-
       </div>
-
     </div>
 
     <!-- Menú lateral -->
