@@ -64,27 +64,54 @@
         });
 
         // Lógica de inicio de sesión
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
-            e.preventDefault();
+        // Usuarios de prueba guardados en localStorage
+if (!localStorage.getItem("usuarios")) {
+    const usuariosPrueba = [
+        {
+            correo: "oscar@gmail.com",
+            password: "1234"
+        }
+    ];
 
-            let usuario = document.getElementById("correo").value;
-            let passwordValue = document.getElementById("password").value;
-            let mensajeEl = document.getElementById("mensaje");
+    localStorage.setItem("usuarios", JSON.stringify(usuariosPrueba));
+}
 
-            let usuarioCorrecto = "oscar@gmail.com";
-            let passwordCorrecta = "1234";
+// Si ya hay sesión activa, mandar directo a principal
+const sesionActiva = localStorage.getItem("sesionActiva");
 
-            if (usuario === usuarioCorrecto && passwordValue === passwordCorrecta) {
-                mensajeEl.style.color = "var(--color-primary)";
-                mensajeEl.textContent = "Acceso permitido...";
-                setTimeout(() => {
-                    window.location.href = "principal.html";
-                }, 800); // Pequeño retraso para que se vea el mensaje
-            } else {
-                mensajeEl.style.color = "#d32f2f";
-                mensajeEl.textContent = "Usuario o contraseña incorrectos";
-            }
-        });
+if (sesionActiva) {
+    window.location.href = "principal.html";
+}
+
+/* Lógica de inicio de sesión*/
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let correo = document.getElementById("correo").value.trim();
+    let passwordValue = document.getElementById("password").value.trim();
+    let mensajeEl = document.getElementById("mensaje");
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    let usuarioEncontrado = usuarios.find(function(usuario) {
+        return usuario.correo === correo && usuario.password === passwordValue;
+    });
+
+    if (usuarioEncontrado) {
+        localStorage.setItem("sesionActiva", JSON.stringify(usuarioEncontrado));
+
+        mensajeEl.style.color = "var(--color-primary)";
+        mensajeEl.textContent = "Acceso permitido...";
+
+        setTimeout(() => {
+            window.location.href = "principal.html";
+        }, 800);
+
+    } else {
+        mensajeEl.style.color = "#d32f2f";
+        mensajeEl.textContent = "Usuario o contraseña incorrectos";
+    }
+});
     </script>
 
 </body>
