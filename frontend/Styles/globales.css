@@ -499,8 +499,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Unificación de estilos para campos de texto */
 .form-control,
-.form-select,
-.input-group-text {
+.form-select {
     background-color: var(--bg-inputs); /* Corregido color estático a tu variable */
     border: 1px solid var(--borders);
     color: var(--text-main);
