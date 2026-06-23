@@ -1,17 +1,13 @@
 /* ==========================================================================
    1. IMPORTACIÓN DE FUENTES (Google Fonts)
    ========================================================================== */
-@import url('https://googleapis.com');
+/* @import url('https://googleapis.com'); */
 
-/* ==========================================================================
-   2. TEMA CLARO
-   ========================================================================== */
+/** ─────────── Modo Claro ──────────────────────*/
 :root {
   /* Paleta de Colores */
   --color-primary: #633bbc;
-  --color-primary-dark: #7a52e1; /* Para estados oscuros o activos */
   --color-secondary: #efe9f9;
-  --color-secondary-dark: #2d2354; /* Fondo secundario oscuro */
   --color-bg-app: #f6f5fa;
   --color-bg-card: #ffffff;
   --color-bg-input: #fbfbff;
@@ -20,6 +16,14 @@
   --color-text-title: #1c1236;
   --color-text-body: #3a2f5a;
   --color-text-muted: #82779a;
+  
+  /*Gradiente de perfil */
+  --app-gradient-primary:
+    linear-gradient(
+      135deg,
+      var(--color-bg-card) 0%,
+      var(--color-text-muted) 100%
+    );
 
   /* Tipografías y Pesos */
   --font-ui: 'Plus Jakarta Sans', sans-serif;
@@ -38,6 +42,45 @@
   --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
+/** ─────────── Modo Oscuro ──────────────────────*/
+[data-theme="dark"] {
+	 /* Paleta de Colores */
+  --color-primary:    #7a52e1;
+  --color-secondary:  #2d2354;
+  --color-bg-app:     #130F26;
+  --color-bg-card:    #1D183A;
+  --color-bg-input:   #252048;
+  
+  /* Colores de Texto */
+  --color-text-title: #F4F2FA;
+  --color-text-body:  #C3BCDB;
+  --color-text-muted: #7E7599;
+
+  /* Gradiente  de perfil */
+  --app-gradient-primary:
+    linear-gradient(
+      135deg,
+      var(--color-bg-card) 0%,
+      var(--color-text-muted) 100%
+    );
+
+
+  /* Tipografías y Pesos */
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-editorial: 'Lora', serif;
+  
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Componentes (Detalles precisos en px) */
+  --radius-btn: 10px; /* Punto medio entre 8px y 12px */
+  --border-width: 1px;
+  
+  /* Interacciones y Animaciones */
+  --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
 /* ===================
    CONFIGURACIÓN BASE
    ================== */
@@ -91,7 +134,7 @@ h4.editorial-title, .chapter-title {
   background-color: var(--color-bg-card);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(28, 18, 54, 0.04); /* Sombra sutil con el color de títulos */
+  box-shadow: 0 4px 12px var(--color-text-title); /* Sombra sutil con el color de títulos */
 }
 
 /* Formularios e Inputs */
@@ -149,7 +192,7 @@ input:focus {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
 }
 
 /* Botón Secundario */
@@ -159,13 +202,13 @@ input:focus {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-secondary-dark);
-  color: #ffffff;
+  background-color: var(--color-secondary);
+  color: var(--color-bg-app);
 }
 /*Iconos circulares*/
 .btn-circle {
     background-color: var(--bg-tags);   /* Fondo lila suave (#EFE9F9) */
-    color: var(--primary-purple);       /* Icono morado (#633BBC) */
+    color: var(--color-primary);       /* Icono morado (#633BBC) , color: var(--primary-purple)*/
     width: 44px;
     height: 44px;
     display: flex;
@@ -176,43 +219,6 @@ input:focus {
     transition: var(--transition, all 0.3s ease);
 }
 
-
-
-
-
-/* ==========================================================================
-   TEMA OSCURO 
-   ========================================================================== */
-
-
-   
-:dark-theme {
-    /* Paleta de colores */
-    --bg-app: #130F26;
-    --bg-surface: #1D183A;
-    --bg-inputs: #252048;
-    --bg-tags: #2D2354;
-    --borders: #2F2958;
-    --primary-purple: #7A52E1;
-    --primary-purple-hover: #936bf5;
-    
-    /* Tipografía y Color de Texto */
-    --text-main: #F4F2FA;
-    --text-base: #C3BCDB;
-    --text-muted: #7E7599;
-    --text-tags: #BDB2FF;
-    --text-placeholder: #5A5278;
-    
-    /* Fuentes */
-    --font-ui: 'Plus Jakarta Sans', sans-serif;
-    --font-editorial: 'Lora', Georgia, serif;
-    
-    /* Configuraciones de Componentes */
-    --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    --radius: 12px;
-    --radius-btn: 10px;
-    --transition: all 0.3s ease;
-}
 
 /* ===============
    2.CONFIGURACIÓN GENERAL (Resets & Base HTML)
@@ -261,14 +267,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Botón Primario */
 .btn-primary {
-    background-color: var(--primary-purple);
-    color: #FFFFFF;
+    background-color: var(--color-primary);
+    color: var(--color-bg-app);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-purple-hover); 
+    background-color: var(--color-primary); 
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(122, 82, 225, 0.4);
+    box-shadow: 0 6px 20px var(--color-bg-input);
 }
 
 /* Botón Secundario */
@@ -280,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-secondary:hover {
     background-color: #382c66; 
-    color: var(--primary-purple-hover);
+    color: var(--color-primary);
     transform: translateY(-2px);
 }
 

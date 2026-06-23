@@ -74,7 +74,7 @@
 }
 
 .settings-header h1 {
-  color: #1c1236;
+  color: var(--color-text-title);
   font-size: 3.2rem;
   font-weight: 800;
   line-height: 1.1;
@@ -83,7 +83,7 @@
 
 .settings-header p {
   max-width: 700px;
-  color: #4e446c;
+  color: var(--color-text-body);
   font-size: 1.05rem;
   font-weight: 500;
 }
@@ -102,11 +102,11 @@
 =================================== */
 
 .settings-card {
-  background: #ffffff;
-  border: 1px solid #ece7f7;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-bg-input);
   border-radius: 18px;
   padding: 1.8rem;
-  box-shadow: 0 8px 24px rgba(99, 59, 188, 0.08);
+  box-shadow: 0 8px 24px var(--color-text-muted);
   transition: 0.3s;
 }
 
@@ -122,14 +122,14 @@
 }
 
 .settings-card-header h2 {
-  color: #1c1236;
+  color: var(--color-text-body);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
 .settings-card-header p {
-  color: #4e446c;
+  color: var(--color-text-muted);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -158,14 +158,14 @@
 }
 
 .settings-option-text h3 {
-  color: #1c1236;
+  color: var(--color-text-body);
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
 .settings-option-text p {
-  color: #4e446c;
+  color: var(--color-text-muted);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -191,20 +191,20 @@
   gap: 1rem;
   padding: 1rem;
   border-radius: 14px;
-  background: #f7f3fd;
+  background: var(--color-bg-input);
   cursor: pointer;
 }
 
 .settings-toggle strong {
   display: block;
   margin-bottom: 0.3rem;
-  color: #1c1236;
+  color: var(--color-text-body);
   font-size: 1.1rem;
   font-weight: 700;
 }
 
 .settings-toggle small {
-  color: #4e446c;
+  color: var(--color-text-muted);
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -219,7 +219,7 @@
   position: relative;
   width: 58px;
   height: 30px;
-  background: #d5cfee;
+  background: var(--color-bg-card);
   border-radius: 50px;
   flex-shrink: 0;
   transition: 0.3s;
@@ -233,7 +233,7 @@
   left: 3px;
   top: 3px;
   border-radius: 50%;
-  background: white;
+  background: var(--color-text-title);
   transition: 0.3s;
 }
 
@@ -268,7 +268,7 @@
 
 .form-group label {
   margin-bottom: 0.5rem;
-  color: #1c1236;
+  color: var(--color-text-body);
   font-size: 1rem;
   font-weight: 700;
 }
@@ -276,7 +276,7 @@
 .form-group input,
 .form-group textarea,
 .settings-select {
-  color: #1c1236;
+  color: var(--color-text-body);
   font-weight: 500;
 }
 

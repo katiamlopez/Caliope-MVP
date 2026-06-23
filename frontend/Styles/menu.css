@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fc;
+  background-color: var(--color-bg-app);
 }
 
 /* =========================
@@ -20,14 +20,14 @@ body {
   width: 240px;
   height: 100vh;
 
-  background: #ffffff;
+  background: var(--color-bg-card);
 
   display: flex;
   flex-direction: column;
 
   padding: 20px 12px;
 
-  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 0 15px var(--color-secondary);
 
   transition: all 0.3s ease;
 
@@ -112,7 +112,7 @@ body {
 
   text-decoration: none;
 
-  color: #5f5872;
+  color: var(--color-text-body);
 
   font-size: 16px;
   font-weight: 500;
@@ -138,9 +138,9 @@ body {
 ========================= */
 
 .sidebar li a:hover {
-  background: #f3efff;
+  background: var(--color-bg-app);
 
-  color: #7a5cff;
+  color: var(--color-text-title);
 
   transform: translateX(4px);
 }
@@ -150,9 +150,9 @@ body {
 ========================= */
 
 .sidebar li.active a {
-  background: #ece5ff;
+  background: var(--color-bg-app);
 
-  color: #7a5cff;
+  color: var(--color-secondary);
 
   font-weight: 600;
 }
@@ -192,7 +192,7 @@ body {
 
   border: none;
 
-  background: white;
+  background: var(--color-bg-app);
 
   border-radius: 12px;
 
@@ -200,7 +200,7 @@ body {
 
   cursor: pointer;
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 10px var(--color-text-title);
 
   transition: all 0.3s ease;
 }

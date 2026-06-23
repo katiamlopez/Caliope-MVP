@@ -1,0 +1,67 @@
+.Main-logo {
+
+    width: 320px;
+    aspect-ratio: 2766 / 1488;
+
+    background-color: var(--color-text-body,#3a2f5a);
+
+    mask: url("/frontend/img/CaliopeLogo00.svg") center / contain no-repeat;
+    -webkit-mask: url("/frontend/img/CaliopeLogo00.svg") center / contain no-repeat;
+
+}
+.Login-logo {
+
+    width: 200px;
+    aspect-ratio: 2766 / 1488;
+
+    background-color: var(--color-text-body,#3a2f5a);
+
+    mask: url("/frontend/img/CaliopeLogo00.svg") center / contain no-repeat;
+    -webkit-mask: url("/frontend/img/CaliopeLogo00.svg") center / contain no-repeat;
+
+}
+.footer-logo {
+
+    width: 65px;
+    aspect-ratio: 2766 / 1488;
+
+    background-color: var(--color-text-body,#3a2f5a);
+
+    mask: url("/frontend/img/CaliopeLogo00.svg") center / contain no-repeat;
+    -webkit-mask: url("/frontend/img/CaliopeLogo00.svg") center / contain no-repeat;
+
+}
+.laurel-iso {
+
+    width: 40px;
+    aspect-ratio: 1041 / 759;
+
+    background-color: var(--color-bg-app,#f6f5fa);
+
+    mask: url("/frontend/img/CaliopeLaurel.svg") center / contain no-repeat;
+    -webkit-mask: url("/frontend/img/CaliopeLaurel.svg") center / contain no-repeat;
+
+}
+
+.menu-iso {
+
+    width: 50px;
+    aspect-ratio: 1555 / 1488;
+
+    background-color: var(--color-text-body,#3a2f5a);
+
+    mask: url("/frontend/img/CaliopePergamino.svg") center / contain no-repeat;
+    -webkit-mask: url("/frontend/img/CaliopePergamino.svg") center / contain no-repeat;
+
+}
+.menu-osi {
+
+    width: 50px;
+    aspect-ratio: 1412 / 1162;
+
+    background-color: var(--color-text-body,#3a2f5a);
+
+    mask: url("/frontend/img/aliope.svg") center / contain no-repeat;
+    -webkit-mask: url("/frontend/img/aliope.svg") center / contain no-repeat;
+
+}
