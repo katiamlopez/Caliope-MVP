@@ -250,7 +250,7 @@
 
 .read-button:hover {
   background-color: var(--color-primary-dark) !important;
-  color: #ffffff !important;
+  color: var(--color-bg-card) !important;
   transform: translateY(-2px);
 }
 

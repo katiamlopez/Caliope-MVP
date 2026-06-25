@@ -180,30 +180,27 @@
 
           <!-- Estadísticas básicas del usuario -->
           <section class="profile-stats">
-            <article class="profile-stat-card">
-              <strong>3</strong>
-              <span>Obras</span>
-            </article>
-
-            <article class="profile-stat-card">
-              <strong>2</strong>
-              <span>Reseñas</span>
-            </article>
-
-            <article class="profile-stat-card">
-              <strong>124</strong>
-              <span>Seguidores</span>
-            </article>
-
-            <article class="profile-stat-card">
-              <strong>86</strong>
-              <span>Seguidos</span>
-            </article>
+            
           </section>
 
           <!-- Tabs del perfil con Bootstrap -->
           <section class="profile-tabs-section">
             <ul class="nav profile-tabs" id="profileTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="profile-tab"
+                  id="guardados-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#guardados"
+                  type="button"
+                  role="tab"
+                  aria-controls="guardados"
+                  aria-selected="false"
+                >
+                  Mis borradores
+                </button>
+              </li>
+              
               <li class="nav-item" role="presentation">
                 <button
                   class="profile-tab active"
@@ -234,20 +231,6 @@
                 </button>
               </li>
 
-              <li class="nav-item" role="presentation">
-                <button
-                  class="profile-tab"
-                  id="guardados-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#guardados"
-                  type="button"
-                  role="tab"
-                  aria-controls="guardados"
-                  aria-selected="false"
-                >
-                  Mis guardados
-                </button>
-              </li>
             </ul>
 
             <a href="publicar.html" class="create-work-button"> Crear obra </a>

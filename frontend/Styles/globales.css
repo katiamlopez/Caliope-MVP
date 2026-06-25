@@ -3,10 +3,11 @@
    ========================================================================== */
 /* @import url('https://googleapis.com'); */
 
-/** ─────────── Modo Claro ──────────────────────*/
+/** ────────── Modo Claro ──────────────────────*/
 :root {
   /* Paleta de Colores */
   --color-primary: #633bbc;
+  --color-primary-dark: #4a2896;
   --color-secondary: #efe9f9;
   --color-bg-app: #f6f5fa;
   --color-bg-card: #ffffff;
@@ -35,17 +36,26 @@
   --weight-bold: 700;
 
   /* Componentes (Detalles precisos en px) */
-  --radius-btn: 10px; /* Punto medio entre 8px y 12px */
+  --radius-btn: 10px;
+  --radius: 12px;
   --border-width: 1px;
   
+  /* Legacy surface/borders (para compatibilidad) */
+  --bg-surface: #ffffff;
+  --borders: #e1dfec;
+  --text-base: #3a2f5a;
+  --shadow: 0 4px 12px rgba(28, 18, 54, 0.04);
+
   /* Interacciones y Animaciones */
   --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  --transition: all 0.3s ease;
 }
 
 /** ─────────── Modo Oscuro ──────────────────────*/
 [data-theme="dark"] {
 	 /* Paleta de Colores */
   --color-primary:    #7a52e1;
+  --color-primary-dark: #5a2ea8;
   --color-secondary:  #2d2354;
   --color-bg-app:     #130F26;
   --color-bg-card:    #1D183A;
@@ -75,11 +85,19 @@
   --weight-bold: 700;
 
   /* Componentes (Detalles precisos en px) */
-  --radius-btn: 10px; /* Punto medio entre 8px y 12px */
+  --radius-btn: 10px;
+  --radius: 12px;
   --border-width: 1px;
   
+  /* Legacy surface/borders (para compatibilidad) */
+  --bg-surface: #1D183A;
+  --borders: #3A3170;
+  --text-base: #C3BCDB;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
   /* Interacciones y Animaciones */
   --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  --transition: all 0.3s ease;
 }
 /* ===================
    CONFIGURACIÓN BASE
@@ -195,6 +213,11 @@ input:focus {
   background-color: var(--color-primary);
 }
 
+.btn-primary:active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
 /* Botón Secundario */
 .btn-secondary {
   background-color: var(--color-secondary);
@@ -203,7 +226,12 @@ input:focus {
 
 .btn-secondary:hover {
   background-color: var(--color-secondary);
-  color: var(--color-bg-app);
+  color: var(--color-text-title);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 /*Iconos circulares*/
 .btn-circle {
@@ -217,6 +245,11 @@ input:focus {
     border-radius: 50%;
     flex-shrink: 0;
     transition: var(--transition, all 0.3s ease);
+}
+
+.btn-circle:active {
+  background-color: var(--bg-tags);
+  color: var(--color-primary);
 }
 
 
@@ -277,6 +310,11 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 6px 20px var(--color-bg-input);
 }
 
+.btn-primary:active {
+    background-color: var(--color-primary);
+    color: var(--color-bg-app);
+}
+
 /* Botón Secundario */
 .btn-secondary {
     background-color: var(--bg-tags);
@@ -288,6 +326,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #382c66; 
     color: var(--color-primary);
     transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    background-color: #382c66;
+    color: var(--color-primary);
 }
 
 /* Estructura Base para Tarjetas */

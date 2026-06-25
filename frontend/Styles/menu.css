@@ -181,27 +181,18 @@ body {
 
 #toggle-btn {
   position: fixed;
-
   top: 15px;
   left: 15px;
-
   z-index: 9999;
-
   width: 45px;
   height: 45px;
-
   border: none;
-
   background: var(--color-bg-app);
-
+  color: var(--color-text-title);
   border-radius: 12px;
-
   font-size: 20px;
-
   cursor: pointer;
-
   box-shadow: 0 3px 10px var(--color-text-title);
-
   transition: all 0.3s ease;
 }
 

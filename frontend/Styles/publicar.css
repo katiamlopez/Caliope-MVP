@@ -276,12 +276,13 @@
 }
 
 .draft-button {
-  background: var(--color-secondary);
+  background: #c6b9e1;
   color: var(--color-primary);
 }
 
 .draft-button:hover {
-  background: var(--color-bg-app);
+  background: #d4c5f2;
+  color: var(--color-primary)
   transform: translateY(-2px);
 }
 
@@ -391,8 +392,8 @@
   padding: 0.75rem 2.75rem 0.75rem 1rem;
 
   color: var(--color-text-body, #3a2f5a);
-  background-color: #f1f1f4;
-  border: 1px solid #dedce5;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-text-title);
   border-radius: 10px;
 
   font-family: var(--font-ui);
@@ -413,7 +414,7 @@
 .write-form .genre-select:focus {
   outline: none;
   color: var(--color-text-body, #3a2f5a);
-  background-color: #f1f1f4;
+  background-color: var(--color-bg-input);
   border-color: var(--color-primary, #633bbc);
   box-shadow: 0 0 0 3px rgba(99, 59, 188, 0.14);
 }

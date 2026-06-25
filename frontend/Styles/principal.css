@@ -108,7 +108,7 @@
 .feed-card,
 .side-card {
   background-color: var(--color-bg-card);
-  border: 1px solid #e1dfec;
+  border: 1px solid var(--color-text-muted);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 12px rgba(28, 18, 54, 0.04);
@@ -299,8 +299,8 @@
 .view-all-button {
   width: 100%;
   border: none;
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-bg-card);
 
   border-radius: var(--radius-btn);
   padding: 0.85rem 1rem;
@@ -312,8 +312,8 @@
 }
 
 .view-all-button:hover {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-card);
 }
 
 /* ==========================================================================
@@ -331,7 +331,7 @@
   width: 100%;
   margin-bottom: 20px;
 
-  border: 1px solid #e1dfec;
+  border: 1px solid var(--color-text-muted);
   border-radius: 10px;
 
   background-color: var(--color-bg-input);

@@ -92,7 +92,7 @@
 .profile-hero {
   background: var(--app-gradient-primary);
 
-  border: 1px solid var(--color-text-body);
+  border: 1px solid color-mix(in srgb, var(--color-text-body) 20%, transparent);
 
   border-radius: 20px;
 
@@ -112,11 +112,11 @@
   border-radius: 50%;
   object-fit: cover;
 
-  border: 5px solid var(--color-text-body);
+  border: 5px solid color-mix(in srgb, var(--color-text-body) 15%, transparent);
 
   background: var(--color-secondary);
 
-  box-shadow: 0 8px 20px var(--color-text-title);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-text-title) 10%, transparent);
 }
 
 .profile-main-info h1 {
@@ -134,7 +134,7 @@
 .profile-bio-card {
   background: var(--color-bg-card);
 
-  border: 1px solid var(--color-text-body);
+  border: 1px solid color-mix(in srgb, var(--color-text-body) 15%, transparent);
 
   border-radius: 16px;
 
@@ -142,7 +142,7 @@
 
   max-width: 650px;
 
-  box-shadow: 0 4px 12px var(--color-text-body);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-text-body) 8%, transparent);
 }
 
 .profile-bio-label {
@@ -197,7 +197,7 @@
 .profile-stat-card {
   background: var(--color-bg-card);
 
-  border: 1px solid var(--color-text-title);
+  border: 1px solid color-mix(in srgb, var(--color-text-title) 15%, transparent);
 
   border-radius: 16px;
 
@@ -205,7 +205,7 @@
 
   text-align: center;
 
-  box-shadow: 0 4px 12px var(--color-text-body);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-text-body) 8%, transparent);
 
   transition: var(--transition-smooth);
 }
@@ -213,7 +213,7 @@
 .profile-stat-card:hover {
   transform: translateY(-3px);
 
-  box-shadow: 0 8px 18px var(--color-primary);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .profile-stat-card strong {
@@ -295,7 +295,7 @@
   display: inline-block;
 
   background: var(--color-primary);
-  color: var(--color-text-title);
+  color: var(--color-bg-card);
 
   text-decoration: none;
 
@@ -309,10 +309,15 @@
 }
 
 .create-work-button:hover {
-  background: var(--color-secondary);
-  color: var(--color-text-title);
+  background: var(--color-primary-dark);
+  color: var(--color-bg-card);
 
   transform: translateY(-2px);
+}
+
+.create-work-button:active {
+  background: var(--color-secondary);
+  color: var(--color-text-title);
 }
 
 /* ==========================================================================
@@ -406,16 +411,11 @@
 .profile-review-card {
   display: flex;
   gap: 20px;
-
-  background: white;
-
-  border: 1px solid #e8e4f3;
-
+  background: var(--color-bg-card);
+  border: 1px solid color-mix(in srgb, var(--color-text-muted) 20%, transparent);
   border-radius: 16px;
-
   padding: 20px;
-
-  box-shadow: 0 4px 12px rgba(28, 18, 54, 0.04);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-text-body) 8%, transparent);
 }
 
 .profile-review-cover {
@@ -501,6 +501,11 @@
 }
 
 .read-button:hover {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.read-button:active {
   background: var(--color-primary-dark);
   color: white;
 }
