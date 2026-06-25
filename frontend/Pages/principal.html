@@ -28,7 +28,7 @@
     <script src="/frontend/js/configuracion.js"></script>
     <link rel="stylesheet" href="/frontend/Styles/Logo.css">
   </head>
-
+  
   <body>
     <div class="layout">
       <!-- Botón y contenedor del menú lateral -->
@@ -217,14 +217,18 @@
                       >
                         <i class="bi bi-share"></i>
                       </button>
-
-                      <button
-                        type="button"
-                        class="icon-button"
-                        aria-label="Guardar"
-                      >
-                        <i class="bi bi-bookmark"></i>
-                      </button>
+                      <!--*Funcion de Guardados-->
+       <button
+  type="button"
+  class="icon-button save-button"
+  aria-label="Guardar"
+  data-id="luz-octubre"
+  data-titulo="Luz de octubre"
+  data-autor="Valeria M."
+  data-portada="../assets/history-covers/portada-historia-luz-de-octubre.png"
+>
+  <i class="bi bi-bookmark"></i>
+</button>
 
                       <a href="lectura.html" class="read-button"> Leer </a>
                     </div>
@@ -299,14 +303,18 @@
                       >
                         <i class="bi bi-share"></i>
                       </button>
-
-                      <button
-                        type="button"
-                        class="icon-button"
-                        aria-label="Guardar"
-                      >
-                        <i class="bi bi-bookmark"></i>
-                      </button>
+            <!--*Boton de guardado 2-->
+     <button
+  type="button"
+  class="icon-button save-button"
+  aria-label="Guardar"
+  data-id="cielo-abril"
+  data-titulo="El cielo de abril"
+  data-autor="Diego N."
+  data-portada="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
+>
+  <i class="bi bi-bookmark"></i>
+</button>
 
                       <a href="lectura.html" class="read-button"> Leer </a>
                     </div>
@@ -442,5 +450,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <!--Script guardados-->
+    <script src="../js/guardados.js"></script>
   </body>
 </html>
