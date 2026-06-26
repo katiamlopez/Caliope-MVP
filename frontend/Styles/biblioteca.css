@@ -321,3 +321,43 @@
   background-color: var(--color-primary) !important;
   border-radius: 999px;
 }
+
+/**Eliminar*/
+.library-buttons{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.read-button{
+    background:#6b3cc9;
+    color:white;
+}
+
+.delete-button{
+
+    width:100px;
+    height:38px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#d9cef5;
+
+    color:#5c2fb2;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.delete-button:hover{
+
+    background:#c8b5f2;
+
+    transform:translateY(-2px);
+
+}
+
