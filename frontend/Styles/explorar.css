@@ -609,3 +609,10 @@
   color: var(--color-primary);
   transform: translateY(-2px);
 }
+
+
+.genre-tags button.active {
+  background-color: #fdfdfd;
+  color: #1b144f;
+  transform: scale(1.05);
+}
