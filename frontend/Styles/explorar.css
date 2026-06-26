@@ -588,3 +588,24 @@
     font-size: 1.3rem;
   }
 }
+
+/** Formato para botones de interaccion*/
+.story-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.icon-button {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+.icon-button:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
