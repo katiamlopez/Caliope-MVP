@@ -236,8 +236,9 @@
                     </div>
 
                     <div class="story-actions">
-  <button type="button" class="icon-button" aria-label="Me gusta">
-    <i class="bi bi-heart"></i> 34
+  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="luz-octubre">
+    <i class="bi bi-heart"></i> 
+    <span class="like-count">34</span>
   </button>
   <button type="button" class="icon-button" aria-label="Comentarios">
     <i class="bi bi-chat"></i> 9
@@ -285,8 +286,9 @@
                     </div>
 
                                     <div class="story-actions">
-  <button type="button" class="icon-button" aria-label="Me gusta">
-    <i class="bi bi-heart"></i> 25
+  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="ecos-ayer">
+    <i class="bi bi-heart"></i> 
+    <span class="like-count">25</span>
   </button>
   <button type="button" class="icon-button" aria-label="Comentarios">
     <i class="bi bi-chat"></i> 7
@@ -331,8 +333,9 @@ data-portada="../assets/history-covers/portada-historia-ecos-del-ayer.png">
                       <span>Terror</span>
                     </div>
                     <div class="story-actions">
-  <button type="button" class="icon-button" aria-label="Me gusta">
-    <i class="bi bi-heart"></i> 6
+  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="casa-lago">
+    <i class="bi bi-heart"></i> 
+    <span class="like-count">6</span>
   </button>
   <button type="button" class="icon-button" aria-label="Comentarios">
     <i class="bi bi-chat"></i> 7
@@ -381,8 +384,9 @@ data-portada="../assets/history-covers/portada-historia-la-casa-en-el-lago.png">
                     </div>
 
                                     <div class="story-actions">
-  <button type="button" class="icon-button" aria-label="Me gusta">
-    <i class="bi bi-heart"></i> 666
+  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="noche-violeta">
+    <i class="bi bi-heart"></i> 
+    <span class="like-count">666</span>
   </button>
   <button type="button" class="icon-button" aria-label="Comentarios">
     <i class="bi bi-chat"></i> 89
@@ -427,8 +431,9 @@ data-portada="../assets/history-covers/portada-historia-la-noche-violeta.png">
                     </div>
 
                                       <div class="story-actions">
-  <button type="button" class="icon-button" aria-label="Me gusta">
-    <i class="bi bi-heart"></i> 91
+  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="love-next-door">
+    <i class="bi bi-heart"></i> 
+    <span class="like-count">91</span>
   </button>
   <button type="button" class="icon-button" aria-label="Comentarios">
     <i class="bi bi-chat"></i> 11
@@ -473,25 +478,25 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
                     </div>
 
                                        <div class="story-actions">
-
-                              <button type="button" class="icon-button" aria-label="Me gusta">
-                                <i class="bi bi-heart"></i> 81
-                              </button>
-                              <button type="button" class="icon-button" aria-label="Comentarios">
-                                <i class="bi bi-chat"></i> 27
-                              </button>
-                              <button type="button" class="icon-button" aria-label="Compartir">
-                                <i class="bi bi-share"></i>
-                              </button>
-                              <button type="button" class="icon-button save-button" aria-label="Guardar"
-                                data-id="luz-octubre"
-                                data-titulo="Luz de octubre"
-                                data-autor="Valeria M."
-                                data-portada="../assets/history-covers/portada-historia-luz-de-octubre.png">
-                                <i class="bi bi-bookmark"></i>
-                              </button>
-                              <a href="lectura.html" class="read-button">Leer</a>
-                            </div>
+  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="susurros-bosque">
+    <i class="bi bi-heart"></i>
+    <span class="like-count">81</span>
+  </button>
+  <button type="button" class="icon-button" aria-label="Comentarios">
+    <i class="bi bi-chat"></i> 27
+  </button>
+  <button type="button" class="icon-button" aria-label="Compartir">
+    <i class="bi bi-share"></i>
+  </button>
+  <button type="button" class="icon-button save-button" aria-label="Guardar"
+    data-id="luz-octubre"
+    data-titulo="Luz de octubre"
+    data-autor="Valeria M."
+    data-portada="../assets/history-covers/portada-historia-luz-de-octubre.png">
+    <i class="bi bi-bookmark"></i>
+  </button>
+  <a href="lectura.html" class="read-button">Leer</a>
+</div>
                   </div>
                 </article>
               </section>
@@ -679,6 +684,9 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <!-- JavaScript de likes-->
+     <script type="module" src="../js/principal.js"></script>
     <script src="../js/guardados.js"></script>
   </body>
 </html>

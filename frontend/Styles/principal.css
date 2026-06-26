@@ -316,6 +316,19 @@
   color: var(--color-bg-card);
 }
 
+.like-button.active {
+  color: #ff4d6d;
+}
+
+.like-button i {
+  transition: transform 0.2s ease;
+}
+
+.like-button.active i {
+  animation: like-pop 0.25s ease;
+  color: #ff4d6d;
+}
+
 /* ==========================================================================
    PANEL LATERAL
    ========================================================================== */
@@ -447,5 +460,17 @@
 
   .activity-item span {
     grid-column: 2;
+  }
+}
+
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
   }
 }
