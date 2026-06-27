@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -22,25 +22,20 @@
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="../Styles/globales.css" />
-    <link rel="stylesheet" href="../Styles/footer.css" />
     <link rel="stylesheet" href="../Styles/menu.css" />
     <link rel="stylesheet" href="../Styles/explorar.css" />
     <script src="/frontend/js/configuracion.js"></script>
-    <link rel="stylesheet" href="/frontend/Styles/Logo.css">
+    <link rel="stylesheet" href="/frontend/Styles/Logo.css" />
   </head>
 
   <body>
     <div class="layout">
-      <!-- Botón hamburguesa -->
       <button id="toggle-btn" type="button" aria-label="Abrir menú">☰</button>
 
-      <!-- Aquí se carga el menú lateral desde menu.js -->
       <div id="menu-container"></div>
 
-      <!-- Contenido principal -->
       <div class="contenido">
         <main class="explore-page">
-          <!-- Barra superior -->
           <header class="page-topbar">
             <form class="explore-search" role="search">
               <input
@@ -53,7 +48,6 @@
             </form>
 
             <div class="page-actions">
-              <!-- Acceso a configuración -->
               <a
                 href="configuracion.html"
                 class="topbar-icon"
@@ -62,88 +56,6 @@
                 <i class="bi bi-gear"></i>
               </a>
 
-              <!-- Notificaciones -->
-              <!-- <div class="notification-wrapper">
-                <button
-                  type="button"
-                  class="topbar-icon notification-icon"
-                  id="notificationButton"
-                  aria-label="Ver notificaciones"
-                  aria-expanded="false"
-                  aria-controls="notificationPanel"
-                >
-                  <i class="bi bi-bell"></i>
-                  <span></span>
-                </button>
-
-                <section
-                  class="notification-panel"
-                  id="notificationPanel"
-                  aria-label="Panel de notificaciones"
-                >
-                  <header class="notification-panel-header">
-                    <h2>Notificaciones</h2>
-
-                    <button
-                      type="button"
-                      class="notification-close"
-                      id="notificationClose"
-                      aria-label="Cerrar notificaciones"
-                    >
-                      <i class="bi bi-x-lg"></i>
-                    </button>
-                  </header>
-
-                  <div class="notification-list">
-                    <article class="notification-item">
-                      <img
-                        src="../assets/users-photos/foto-perfil-valeria-m.png"
-                        alt="Foto de perfil de Valeria M."
-                        class="notification-avatar"
-                      />
-
-                      <div>
-                        <p>
-                          <strong>Valeria M.</strong> publicó una nueva obra.
-                        </p>
-                        <span>Hace 2 horas</span>
-                      </div>
-                    </article>
-
-                    <article class="notification-item">
-                      <img
-                        src="../assets/users-photos/foto-perfil-luna.png"
-                        alt="Foto de perfil de Luna"
-                        class="notification-avatar"
-                      />
-
-                      <div>
-                        <p><strong>Luna</strong> escribió una reseña.</p>
-                        <span>Hace 3 horas</span>
-                      </div>
-                    </article>
-
-                    <article class="notification-item">
-                      <img
-                        src="../assets/users-photos/foto-perfil-diego-n.png"
-                        alt="Foto de perfil de Diego N."
-                        class="notification-avatar"
-                      />
-
-                      <div>
-                        <p><strong>Diego N.</strong> guardó tu historia.</p>
-                        <span>Ayer</span>
-                      </div>
-                    </article>
-                  </div>
-
-                  <a href="notificaciones.html" class="notification-view-all">
-                    Ver todas
-                  </a>
-                </section>
-              </div> -->
-
-              <!-- Acceso rápido al perfil -->
               <a
                 href="perfil.html"
                 class="topbar-profile-link"
@@ -158,7 +70,6 @@
             </div>
           </header>
 
-          <!-- Encabezado de Explora -->
           <section class="explore-header">
             <div>
               <h1 class="explore-title">Explora</h1>
@@ -170,58 +81,44 @@
             </div>
           </section>
 
-          <!-- Filtros por género -->
           <section class="explore-section">
             <h2 class="explore-subtitle">Descubrir por género</h2>
 
             <div class="genre-tags">
               <button type="button">Romance</button>
-
               <button type="button">Misterio</button>
-
               <button type="button">Fantasía</button>
-
               <button type="button">Ciencia ficción</button>
-
               <button type="button">Realismo mágico</button>
-
               <button type="button">Terror</button>
-
               <button type="button">Drama</button>
-
               <button type="button">Aventura</button>
-
               <button type="button">Suspenso</button>
-              
               <button type="button">Histórica</button>
-
               <button type="button">Juvenil</button>
-
               <button type="button">Poesía</button>
 
-              <button type="button" class="genre-tag-outline">Ver todas</button>
+              <button type="button" class="genre-toggle-button">
+                Ver todas
+              </button>
             </div>
           </section>
 
-          <!-- Layout del contenido -->
           <div class="explore-layout">
-            <!-- Columna principal -->
             <section class="explore-main">
-              <!-- Historias de autores favoritos -->
               <section class="explore-section">
                 <h2 class="explore-subtitle">De tus autores favoritos</h2>
 
-                   <!-- *Primer libro -->
+                <!-- *Primer libro -->
                 <article class="favorite-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
+                    src="../assets/stories-covers/portada-historia-luz-de-octubre.png"
                     alt="Portada de Luz de octubre"
                     class="favorite-story-cover"
                   />
 
                   <div class="favorite-story-info">
                     <h3 class="favorite-story-title">Luz de octubre</h3>
-
                     <p class="story-author">Por Valeria M.</p>
 
                     <p class="favorite-story-description">
@@ -236,48 +133,61 @@
                     </div>
 
                     <div class="story-actions">
-  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="luz-octubre">
-    <i class="bi bi-heart"></i> 
-    <span class="like-count">34</span>
-  </button>
-  <button type="button" class="icon-button" aria-label="Comentarios">
-    <i class="bi bi-chat"></i> 9
-  </button>
-  <button type="button" class="icon-button" aria-label="Compartir">
-    <i class="bi bi-share"></i>
-  </button>
-  <button type="button" class="icon-button save-button" aria-label="Guardar"
-    data-id="luz-octubre"
-    data-titulo="Luz de octubre"
-    data-autor="Valeria M."
-    data-portada="../assets/history-covers/portada-historia-luz-de-octubre.png">
-    <i class="bi bi-bookmark"></i>
-  </button>
-  <a href="lectura.html" class="read-button">Leer</a>
-</div>
-                    <!--  -->
+                      <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="luz-octubre">
+                        <i class="bi bi-heart"></i>
+                        <span class="like-count">34</span>
+                      </button>
 
+                      <button type="button" class="icon-button" aria-label="Comentarios">
+                        <i class="bi bi-chat"></i> 9
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Compartir">
+                        <i class="bi bi-share"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="icon-button save-button"
+                        aria-label="Guardar"
+                        data-id="luz-octubre"
+                        data-titulo="Luz de octubre"
+                        data-autor="Valeria M."
+                        data-portada="../assets/stories-covers/portada-historia-luz-de-octubre.png"
+                      >
+                        <i class="bi bi-bookmark"></i>
+                      </button>
+
+                      <a
+                        href="lectura.html?id=luz-octubre"
+                        class="read-button"
+                        data-id="luz-octubre"
+                        data-titulo="Luz de octubre"
+                        data-autor="Valeria M."
+                        data-portada="../assets/stories-covers/portada-historia-luz-de-octubre.png"
+                        data-total-pages="3"
+                      >
+                        Leer
+                      </a>
+                    </div>
                   </div>
                 </article>
-              </section>
-              
-               <!-- *Segundo libro -->
-      
+
+                <!-- *Segundo libro -->
                 <article class="favorite-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-ecos-del-ayer.png"
+                    src="../assets/stories-covers/portada-historia-ecos-del-ayer.png"
                     alt="Portada ecos del ayer"
                     class="favorite-story-cover"
                   />
 
                   <div class="favorite-story-info">
                     <h3 class="favorite-story-title">Ecos del ayer</h3>
-
                     <p class="story-author">Por Alejandro B.</p>
 
                     <p class="favorite-story-description">
-                      Un pasado tormentoso no solo se queda ahi,
-                      te persigue hasta tus ultimos dias.
+                      Un pasado tormentoso no solo se queda ahi, te persigue
+                      hasta tus ultimos dias.
                     </p>
 
                     <div class="story-meta">
@@ -285,97 +195,127 @@
                       <span>Poesia</span>
                     </div>
 
-                                    <div class="story-actions">
-  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="ecos-ayer">
-    <i class="bi bi-heart"></i> 
-    <span class="like-count">25</span>
-  </button>
-  <button type="button" class="icon-button" aria-label="Comentarios">
-    <i class="bi bi-chat"></i> 7
-  </button>
-  <button type="button" class="icon-button" aria-label="Compartir">
-    <i class="bi bi-share"></i>
-  </button>
-  <button type="button" class="icon-button save-button" aria-label="Guardar"
-   data-id="ecos-del-ayer"
-data-titulo="Ecos del ayer"
-data-autor="Alejandro B."
-data-portada="../assets/history-covers/portada-historia-ecos-del-ayer.png">
-    <i class="bi bi-bookmark"></i>
-  </button>
-  <a href="lectura.html" class="read-button">Leer</a>
-</div>
+                    <div class="story-actions">
+                      <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="ecos-ayer">
+                        <i class="bi bi-heart"></i>
+                        <span class="like-count">25</span>
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Comentarios">
+                        <i class="bi bi-chat"></i> 7
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Compartir">
+                        <i class="bi bi-share"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="icon-button save-button"
+                        aria-label="Guardar"
+                        data-id="ecos-del-ayer"
+                        data-titulo="Ecos del ayer"
+                        data-autor="Alejandro B."
+                        data-portada="../assets/stories-covers/portada-historia-ecos-del-ayer.png"
+                      >
+                        <i class="bi bi-bookmark"></i>
+                      </button>
+
+                      <a
+                        href="lectura.html?id=ecos-del-ayer"
+                        class="read-button"
+                        data-id="ecos-del-ayer"
+                        data-titulo="Ecos del ayer"
+                        data-autor="Alejandro B."
+                        data-portada="../assets/stories-covers/portada-historia-ecos-del-ayer.png"
+                        data-total-pages="3"
+                      >
+                        Leer
+                      </a>
+                    </div>
                   </div>
                 </article>
-              </section>
 
-                             <!-- *Trceer libro -->
-      
+                <!-- *Tercer libro -->
                 <article class="favorite-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-la-casa-en-el-lago.png"
+                    src="../assets/stories-covers/portada-historia-la-casa-en-el-lago.png"
                     alt="Portada de la casa en el lago"
                     class="favorite-story-cover"
                   />
 
                   <div class="favorite-story-info">
                     <h3 class="favorite-story-title">La casa en el lago</h3>
-
                     <p class="story-author">Por Peter P.</p>
 
                     <p class="favorite-story-description">
                       Tras heredar una antigua casa junto a un lago olvidado,
-                      una joven descubre que las aguas esconden secretos capaces de alterar la realidad. Entre sucesos inexplicables y presencias que emergen al caer la noche.
+                      una joven descubre que las aguas esconden secretos capaces
+                      de alterar la realidad...
                     </p>
 
                     <div class="story-meta">
                       <span>Realismo Magico</span>
                       <span>Terror</span>
                     </div>
+
                     <div class="story-actions">
-  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="casa-lago">
-    <i class="bi bi-heart"></i> 
-    <span class="like-count">6</span>
-  </button>
-  <button type="button" class="icon-button" aria-label="Comentarios">
-    <i class="bi bi-chat"></i> 7
-  </button>
-  <button type="button" class="icon-button" aria-label="Compartir">
-    <i class="bi bi-share"></i>
-  </button>
-  <button type="button" class="icon-button save-button" aria-label="Guardar"
-   data-id="la-casa-en-el-lago"
-data-titulo="La casa en el lago"
-data-autor="Peter P."
-data-portada="../assets/history-covers/portada-historia-la-casa-en-el-lago.png">
-    <i class="bi bi-bookmark"></i>
-  </button>
-  <a href="lectura.html" class="read-button">Leer</a>
-</div>
-                    
-                  
+                      <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="casa-lago">
+                        <i class="bi bi-heart"></i>
+                        <span class="like-count">6</span>
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Comentarios">
+                        <i class="bi bi-chat"></i> 7
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Compartir">
+                        <i class="bi bi-share"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="icon-button save-button"
+                        aria-label="Guardar"
+                        data-id="la-casa-en-el-lago"
+                        data-titulo="La casa en el lago"
+                        data-autor="Peter P."
+                        data-portada="../assets/stories-covers/portada-historia-la-casa-en-el-lago.png"
+                      >
+                        <i class="bi bi-bookmark"></i>
+                      </button>
+
+                      <a
+                        href="lectura.html?id=la-casa-en-el-lago"
+                        class="read-button"
+                        data-id="la-casa-en-el-lago"
+                        data-titulo="La casa en el lago"
+                        data-autor="Peter P."
+                        data-portada="../assets/stories-covers/portada-historia-la-casa-en-el-lago.png"
+                        data-total-pages="3"
+                      >
+                        Leer
+                      </a>
+                    </div>
                   </div>
                 </article>
-              </section>
 
-                             <!-- *SCuarto libro -->
-      
+                <!-- *Cuarto libro -->
                 <article class="favorite-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-la-noche-violeta.png"
+                    src="../assets/stories-covers/portada-historia-la-noche-violeta.png"
                     alt="Portada de La noche violeta"
                     class="favorite-story-cover"
                   />
 
                   <div class="favorite-story-info">
                     <h3 class="favorite-story-title">La noche violeta</h3>
-
                     <p class="story-author">Por Steven S.</p>
 
                     <p class="favorite-story-description">
-                     Una extraña tormenta tiñe el cielo de violeta y cambia el destino de la humanidad.
-                    Un grupo de jóvenes emprende un viaje a través de un mundo transformado por una 
-                    misteriosa energía, donde cada respuesta revela un peligro aún mayor.
+                      Una extraña tormenta tiñe el cielo de violeta y cambia el
+                      destino de la humanidad. Un grupo de jóvenes emprende un
+                      viaje a través...
                     </p>
 
                     <div class="story-meta">
@@ -383,46 +323,63 @@ data-portada="../assets/history-covers/portada-historia-la-casa-en-el-lago.png">
                       <span>Aventura</span>
                     </div>
 
-                                    <div class="story-actions">
-  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="noche-violeta">
-    <i class="bi bi-heart"></i> 
-    <span class="like-count">666</span>
-  </button>
-  <button type="button" class="icon-button" aria-label="Comentarios">
-    <i class="bi bi-chat"></i> 89
-  </button>
-  <button type="button" class="icon-button" aria-label="Compartir">
-    <i class="bi bi-share"></i>
-  </button>
-  <button type="button" class="icon-button save-button" aria-label="Guardar"
-data-id="la-noche-violeta"
-data-titulo="La noche violeta"
-data-autor="Steven S."
-data-portada="../assets/history-covers/portada-historia-la-noche-violeta.png">
-    <i class="bi bi-bookmark"></i>
-  </button>
-  <a href="lectura.html" class="read-button">Leer</a>
-</div>
+                    <div class="story-actions">
+                      <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="noche-violeta">
+                        <i class="bi bi-heart"></i>
+                        <span class="like-count">666</span>
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Comentarios">
+                        <i class="bi bi-chat"></i> 89
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Compartir">
+                        <i class="bi bi-share"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="icon-button save-button"
+                        aria-label="Guardar"
+                        data-id="la-noche-violeta"
+                        data-titulo="La noche violeta"
+                        data-autor="Steven S."
+                        data-portada="../assets/stories-covers/portada-historia-la-noche-violeta.png"
+                      >
+                        <i class="bi bi-bookmark"></i>
+                      </button>
+
+                      <a
+                        href="lectura.html?id=la-noche-violeta"
+                        class="read-button"
+                        data-id="la-noche-violeta"
+                        data-titulo="La noche violeta"
+                        data-autor="Steven S."
+                        data-portada="../assets/stories-covers/portada-historia-la-noche-violeta.png"
+                        data-total-pages="3"
+                      >
+                        Leer
+                      </a>
+                    </div>
                   </div>
                 </article>
-              </section>
 
-                             <!-- *Quinto libro -->
-      
+                <!-- *Quinto libro -->
                 <article class="favorite-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-love-right-next-door.png"
+                    src="../assets/stories-covers/portada-historia-love-right-next-door.png"
                     alt="Portada de Love right next door"
                     class="favorite-story-cover"
                   />
 
                   <div class="favorite-story-info">
                     <h3 class="favorite-story-title">Love right next door</h3>
-
                     <p class="story-author">Por Samantha M.</p>
 
                     <p class="favorite-story-description">
-                     En un pequeño vecindario marcado por los cambios de una época inolvidable, dos adolescentes descubren que el amor puede florecer incluso en tiempos de incertidumbre. Entre sueños, tradiciones y decisiones difíciles, aprenderán que crecer también significa aprender a despedirse.
+                      En un pequeño vecindario marcado por los cambios de una
+                      época inolvidable, dos adolescentes descubren que el amor
+                      puede florecer...
                     </p>
 
                     <div class="story-meta">
@@ -430,46 +387,63 @@ data-portada="../assets/history-covers/portada-historia-la-noche-violeta.png">
                       <span>Historica</span>
                     </div>
 
-                                      <div class="story-actions">
-  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="love-next-door">
-    <i class="bi bi-heart"></i> 
-    <span class="like-count">91</span>
-  </button>
-  <button type="button" class="icon-button" aria-label="Comentarios">
-    <i class="bi bi-chat"></i> 11
-  </button>
-  <button type="button" class="icon-button" aria-label="Compartir">
-    <i class="bi bi-share"></i>
-  </button>
-  <button type="button" class="icon-button save-button" aria-label="Guardar"
-  data-id="love-right-next-door"
-data-titulo="Love right next-door"
-data-autor="Samantha M."
-data-portada="../assets/history-covers/portada-historia-love-right-next-door.png">
-<i class="bi bi-bookmark"></i>
-  </button>
-  <a href="lectura.html" class="read-button">Leer</a>
-</div>
+                    <div class="story-actions">
+                      <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="love-next-door">
+                        <i class="bi bi-heart"></i>
+                        <span class="like-count">91</span>
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Comentarios">
+                        <i class="bi bi-chat"></i> 11
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Compartir">
+                        <i class="bi bi-share"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="icon-button save-button"
+                        aria-label="Guardar"
+                        data-id="love-right-next-door"
+                        data-titulo="Love right next-door"
+                        data-autor="Samantha M."
+                        data-portada="../assets/stories-covers/portada-historia-love-right-next-door.png"
+                      >
+                        <i class="bi bi-bookmark"></i>
+                      </button>
+
+                      <a
+                        href="lectura.html?id=love-right-next-door"
+                        class="read-button"
+                        data-id="love-right-next-door"
+                        data-titulo="Love right next-door"
+                        data-autor="Samantha M."
+                        data-portada="../assets/stories-covers/portada-historia-love-right-next-door.png"
+                        data-total-pages="3"
+                      >
+                        Leer
+                      </a>
+                    </div>
                   </div>
                 </article>
-              </section>
 
-                             <!-- *Sexto libro -->
-      
+                <!-- *Sexto libro -->
                 <article class="favorite-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-susurros-del-bosque.png"
+                    src="../assets/stories-covers/portada-historia-susurros-del-bosque.png"
                     alt="Portada de Susurros del bosque"
                     class="favorite-story-cover"
                   />
 
                   <div class="favorite-story-info">
                     <h3 class="favorite-story-title">Susurros del bosque</h3>
-
                     <p class="story-author">Por Stephen K.</p>
 
                     <p class="favorite-story-description">
-                      Los habitantes del pueblo siempre evitaron internarse en el antiguo bosque. Cuando una serie de desapariciones rompe la tranquilidad del lugar, una joven deberá adentrarse entre árboles que parecen tener vida propia y descubrir qué se oculta detrás de los misteriosos susurros que nadie se atreve a escuchar.
+                      Los habitantes del pueblo siempre evitaron internarse en
+                      el antiguo bosque. Cuando una serie de desapariciones
+                      rompe la tranquilidad...
                     </p>
 
                     <div class="story-meta">
@@ -477,26 +451,44 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
                       <span>Suspenso</span>
                     </div>
 
-                                       <div class="story-actions">
-  <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="susurros-bosque">
-    <i class="bi bi-heart"></i>
-    <span class="like-count">81</span>
-  </button>
-  <button type="button" class="icon-button" aria-label="Comentarios">
-    <i class="bi bi-chat"></i> 27
-  </button>
-  <button type="button" class="icon-button" aria-label="Compartir">
-    <i class="bi bi-share"></i>
-  </button>
-  <button type="button" class="icon-button save-button" aria-label="Guardar"
-    data-id="luz-octubre"
-    data-titulo="Luz de octubre"
-    data-autor="Valeria M."
-    data-portada="../assets/history-covers/portada-historia-luz-de-octubre.png">
-    <i class="bi bi-bookmark"></i>
-  </button>
-  <a href="lectura.html" class="read-button">Leer</a>
-</div>
+                    <div class="story-actions">
+                      <button type="button" class="icon-button like-button" aria-label="Me gusta" data-id="susurros-bosque">
+                        <i class="bi bi-heart"></i>
+                        <span class="like-count">81</span>
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Comentarios">
+                        <i class="bi bi-chat"></i> 27
+                      </button>
+
+                      <button type="button" class="icon-button" aria-label="Compartir">
+                        <i class="bi bi-share"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="icon-button save-button"
+                        aria-label="Guardar"
+                        data-id="susurros-del-bosque"
+                        data-titulo="Susurros del bosque"
+                        data-autor="Stephen K."
+                        data-portada="../assets/stories-covers/portada-historia-susurros-del-bosque.png"
+                      >
+                        <i class="bi bi-bookmark"></i>
+                      </button>
+
+                      <a
+                        href="lectura.html?id=susurros-del-bosque"
+                        class="read-button"
+                        data-id="susurros-del-bosque"
+                        data-titulo="Susurros del bosque"
+                        data-autor="Stephen K."
+                        data-portada="../assets/stories-covers/portada-historia-susurros-del-bosque.png"
+                        data-total-pages="3"
+                      >
+                        Leer
+                      </a>
+                    </div>
                   </div>
                 </article>
               </section>
@@ -508,118 +500,66 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
                 <div class="top-rated-grid">
                   <article class="top-story-card">
                     <img
-                      src="../assets/history-covers/portada-historia-luz-de-octubre.png"
+                      src="../assets/stories-covers/portada-historia-luz-de-octubre.png"
                       alt="Portada de Luz de octubre"
                       class="top-story-cover"
                     />
 
                     <h3 class="top-story-title">Luz de octubre</h3>
-
                     <p class="top-story-author">Valeria M.</p>
 
-                    <p
-                      class="story-rating"
-                      aria-label="Calificación de cinco estrellas"
-                    >
+                    <p class="story-rating" aria-label="Calificación de cinco estrellas">
                       ★★★★★
                     </p>
                   </article>
 
                   <article class="top-story-card">
                     <img
-                      src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
+                      src="../assets/stories-covers/portada-historia-el-cielo-de-abril.png"
                       alt="Portada de El cielo de abril"
                       class="top-story-cover"
                     />
 
                     <h3 class="top-story-title">El cielo de abril</h3>
+                    <p class="top-story-author">Ana G.</p>
 
-                    <p class="top-story-author">Diego N.</p>
-
-                    <p
-                      class="story-rating"
-                      aria-label="Calificación de cinco estrellas"
-                    >
+                    <p class="story-rating" aria-label="Calificación de cinco estrellas">
                       ★★★★★
                     </p>
                   </article>
 
                   <article class="top-story-card">
                     <img
-                      src="../assets/history-covers/portada-historia-manana-es-otro-dia.png"
+                      src="../assets/stories-covers/portada-historia-manana-es-otro-dia.png"
                       alt="Portada de Mañana es otro día"
                       class="top-story-cover"
                     />
 
                     <h3 class="top-story-title">Mañana es otro...</h3>
-
                     <p class="top-story-author">Luna R.</p>
 
-                    <p
-                      class="story-rating"
-                      aria-label="Calificación de cuatro estrellas"
-                    >
+                    <p class="story-rating" aria-label="Calificación de cuatro estrellas">
                       ★★★★☆
                     </p>
                   </article>
                 </div>
               </section>
-
-              <!-- Reseñas recientes
-              <section class="explore-section">
-                <h2 class="explore-subtitle">Reseñas recientes</h2>
-
-                <article class="explore-review-card">
-                  <header class="explore-review-header">
-                    <img
-                      src="../assets/users-photos/foto-perfil-diego-n.png"
-                      alt="Foto de perfil de Diego N."
-                      class="review-avatar"
-                    />
-
-                    <div>
-                      <h3 class="review-user">Diego N.</h3>
-
-                      <p class="review-context">
-                        reseñó <strong>El cielo de abril</strong>
-                      </p>
-                    </div>
-                  </header>
-
-                  <p
-                    class="story-rating"
-                    aria-label="Calificación de cinco estrellas"
-                  >
-                    ★★★★★
-                  </p>
-
-                  <p class="review-text">
-                    Una historia hermosa sobre el amor, el tiempo y las
-                    decisiones que cambian destinos. Me encantó.
-                  </p>
-
-                  <a href="lectura.html" class="review-link">Ver historia</a>
-                </article>
-              </section> -->
             </section>
 
             <!-- Columna lateral derecha -->
             <aside class="explore-aside">
-              <!-- Obra destacada -->
               <section class="featured-card">
                 <h2 class="explore-subtitle">Destacado</h2>
 
                 <article class="featured-story-card">
                   <img
-                    src="../assets/history-covers/portada-historia-love-right-next-door.png"
+                    src="../assets/stories-covers/portada-historia-love-right-next-door.png"
                     alt="Portada de Love Right Next Door"
                     class="featured-cover"
                   />
 
                   <h3 class="featured-title">Love Right Next Door</h3>
-
-                  <p class="featured-author">Por Olivia Nadal</p>
-
+                  <p class="featured-author">Por Samantha M.</p>
                   <p class="featured-status">Nuevo</p>
 
                   <p class="featured-description">
@@ -630,24 +570,28 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
                     ¡Da click en leer para descubrir más!
                   </p>
 
-                  <a href="lectura.html" class="read-button read-button-full">
+                  <a
+                    href="lectura.html?id=love-right-next-door"
+                    class="read-button read-button-full"
+                    data-id="love-right-next-door"
+                    data-titulo="Love Right Next Door"
+                    data-autor="Olivia Nadal"
+                    data-portada="../assets/stories-covers/portada-historia-love-right-next-door.png"
+                    data-total-pages="3"
+                  >
                     Leer
                   </a>
                 </article>
               </section>
 
-              <!-- Footer lateral -->
               <footer class="site-footer site-footer--aside">
                 <nav
                   class="site-footer-links"
                   aria-label="Enlaces informativos"
                 >
                   <a href="nosotrosli.html"> Acerca de </a>
-
                   <a href="contactanos.html"> Contáctanos </a>
-
                   <a href="aviso-privacidad.html"> Aviso de privacidad </a>
-
                   <a href="terminos.html"> Términos y condiciones </a>
                 </nav>
 
@@ -672,7 +616,7 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
     <!-- JavaScript del menú -->
     <script src="../js/menu.js"></script>
 
-        <!-- JavaScript del menú -->
+    <!-- JavaScript de explorar -->
     <script src="../js/explorar.js"></script>
 
     <!-- JavaScript de la ventana de notificaciones -->
@@ -689,7 +633,12 @@ data-portada="../assets/history-covers/portada-historia-love-right-next-door.png
     ></script>
 
     <!-- JavaScript de likes-->
-     <script type="module" src="../js/principal.js"></script>
+    <script type="module" src="../js/principal.js"></script>
     <script src="../js/guardados.js"></script>
+
+    <!-- JavaScript para agregar obras a Leyendo -->
+    <script src="../js/lectura-botones.js"></script>
   </body>
 </html>
+
+

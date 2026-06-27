@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -22,10 +22,8 @@
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="../Styles/globales.css" />
-    <link rel="stylesheet" href="../Styles/footer.css" />
     <link rel="stylesheet" href="../Styles/menu.css" />
     <link rel="stylesheet" href="../Styles/perfil.css" />
-    <script src="/frontend/js/configuracion.js"></script>
     <link rel="stylesheet" href="/frontend/Styles/Logo.css">
   </head>
 
@@ -159,18 +157,19 @@
             </div>
 
             <div class="profile-main-info">
-              <h1>Ana García</h1>
-              <p class="profile-username">@anag</p>
+              <h1 id="profileDisplayName">Ana García</h1>
+              <p class="profile-username" id="profileUsername">@anag</p>
+              <p class="profile-pronouns" id="profilePronouns">ella/she</p>
 
               <div class="profile-bio-card">
                 <p class="profile-bio-label">Sobre mí</p>
 
-                <div class="profile-tags">
+                <div class="profile-tags" id="profileRoles">
                   <span>Escritora</span>
                   <span>Lectora</span>
                 </div>
 
-                <p class="profile-bio">
+                <p class="profile-bio" id="profileBio">
                   Amo la fantasía, los mundos imaginarios y las historias que te
                   hacen sentir. Siempre escribiendo, siempre leyendo.
                 </p>
@@ -251,38 +250,24 @@
               <div class="works-grid">
                 <article class="profile-work-card">
                   <img
-                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
+                    src="../assets/stories-covers/portada-historia-el-cielo-de-abril.png"
                     alt="Portada de El cielo de abril"
                     class="profile-work-cover"
                   />
 
                   <h3>El cielo de abril</h3>
-                  <p>9 capítulos</p>
                   <span class="status-badge status-published"> Publicado </span>
                 </article>
 
                 <article class="profile-work-card">
                   <img
-                    src="../assets/history-covers/portada-historia-el-cielo-de-mayo.png"
+                    src="../assets/stories-covers/portada-historia-el-cielo-de-mayo.png"
                     alt="Portada de El cielo de Mayo"
                     class="profile-work-cover"
                   />
 
                   <h3>El cielo de Mayo</h3>
-                  <p>4 capítulos</p>
                   <span class="status-badge status-published"> Publicado </span>
-                </article>
-
-                <article class="profile-work-card">
-                  <img
-                    src="../assets/history-covers/portada-historia-un-verano-complicado.png"
-                    alt="Portada de Un verano complicado"
-                    class="profile-work-cover"
-                  />
-
-                  <h3>Un verano con...</h3>
-                  <p>1 capítulo</p>
-                  <span class="status-badge status-draft"> Borrador </span>
                 </article>
               </div>
             </section>
@@ -297,14 +282,14 @@
               <div class="reviews-list">
                 <article class="profile-review-card">
                   <img
-                    src="../assets/history-covers/portada-historia-el-cielo-de-abril.png"
-                    alt="Portada de El cielo de abril"
+                    src="../assets/stories-covers/portada-historia-la-noche-violeta.png"
+                    alt="Portada de La noche violeta"
                     class="profile-review-cover"
                   />
 
                   <div class="profile-review-info">
                     <p class="reviewed-story">
-                      Reseña de <strong>El cielo de abril</strong>
+                      Reseña de <strong>La noche violeta</strong>
                     </p>
 
                     <p class="review-rating">★★★★★</p>
@@ -318,17 +303,22 @@
                     </p>
 
                     <a
-                      href="lectura.html"
-                      class="read-button read-button-small"
+                    href="lectura.html?id=la-noche-violeta"
+                    class="read-button"
+                    data-id="la-noche-violeta"
+                    data-titulo="La noche violeta"
+                    data-autor="Steven S."
+                    data-portada="../assets/stories-covers/portada-historia-la-noche-violeta.png"
+                    data-total-pages="3"
                     >
-                      Ver historia
-                    </a>
+                    Leer
+                  </a>
                   </div>
                 </article>
 
                 <article class="profile-review-card">
                   <img
-                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
+                    src="../assets/stories-covers/portada-historia-luz-de-octubre.png"
                     alt="Portada de Luz de octubre"
                     class="profile-review-cover"
                   />
@@ -348,10 +338,15 @@
                     </p>
 
                     <a
-                      href="lectura.html"
+                      href="lectura.html?id=luz-octubre"
                       class="read-button read-button-small"
+                      data-id="luz-octubre"
+                      data-titulo="Luz de octubre"
+                      data-autor="Valeria M."
+                      data-portada="../assets/stories-covers/portada-historia-luz-de-octubre.png"
+                      data-total-pages="3"
                     >
-                      Ver historia
+                      Leer
                     </a>
                   </div>
                 </article>
@@ -368,39 +363,15 @@
               <div class="works-grid">
                 <article class="profile-work-card">
                   <img
-                    src="../assets/history-covers/portada-historia-susurros-del-bosque.png"
-                    alt="Portada de Susurros en el bosque"
+                    src="../assets/stories-covers/portada-historia-un-verano-complicado.png"
+                    alt="Portada de Un verano complicado"
                     class="profile-work-cover"
                   />
 
-                  <h3>Susurros en el bosque</h3>
-                  <p>Por Mar C.</p>
-                  <span class="status-badge status-saved"> Guardado </span>
+                  <h3>Un verano complicado</h3>
+                  <span class="status-badge status-saved"> Borrador </span>
                 </article>
 
-                <article class="profile-work-card">
-                  <img
-                    src="../assets/history-covers/portada-historia-la-casa-en-el-lago.png"
-                    alt="Portada de La casa en el lago"
-                    class="profile-work-cover"
-                  />
-
-                  <h3>La casa en el lago</h3>
-                  <p>Por Valeria M.</p>
-                  <span class="status-badge status-saved"> Guardado </span>
-                </article>
-
-                <article class="profile-work-card">
-                  <img
-                    src="../assets/history-covers/portada-historia-la-noche-violeta.png"
-                    alt="Portada de La noche violeta"
-                    class="profile-work-cover"
-                  />
-
-                  <h3>La noche violeta</h3>
-                  <p>Por Luna R.</p>
-                  <span class="status-badge status-saved"> Guardado </span>
-                </article>
               </div>
             </section>
           </section>
@@ -445,5 +416,14 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+
+    <!-- JavaScript de perfil -->
+    <script src="../js/perfil.js"></script>
+    <!-- JavaScript para agregar obras a Leyendo -->
+    <script src="../js/lectura-botones.js"></script>
+    <!-- JavaScript para configuraciones -->
+    <script src="/frontend/js/configuracion.js"></script>
   </body>
 </html>
+

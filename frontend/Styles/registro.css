@@ -129,43 +129,7 @@ body {
   border-color: var(--color-primary-dark, #4a2793) !important;
 }
 
-/* ==========================================
-   FOOTER (SISTEMA INTEGRADO)
-   ========================================== */
-footer {
-  padding: 24px;
-  text-align: center;
-  font-size: 0.95rem;
-  font-family: var(--font-ui);
-}
-
-footer a {
-  color: var(--color-primary) !important;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: var(--weight-medium, 500);
-  transition: color 0.2s ease;
-}
-
-footer a:hover {
-  color: var(--color-primary-dark, #4a2793) !important;
-  text-decoration: underline;
-}
-
-.site-footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-}
-
-.site-footer-logo img {
-  width: 100px;
-  height: auto;
-  display: block;
-}
-
-.site-footer-copyright {
-  color: var(--color-primary);
-  font-weight: var(--weight-semibold, 600);
+/* Logo de la pantalla de registro */
+.logo-caliope{
+    margin-bottom: 2rem;
 }

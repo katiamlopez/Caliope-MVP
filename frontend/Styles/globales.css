@@ -502,7 +502,84 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-primary, #633bbc);
 }
 
+/** FOOTER GLOBAL */
 
+.site-footer {
+    width: 100%;
+    color: #6f6a73;
+    text-align: center;
+}
+
+.site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 22px;
+    margin-bottom: 18px;
+}
+
+.site-footer-links a {
+    color: #6f6a73;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer-links a:hover,
+.site-footer-links a:focus-visible {
+    color: #5b176d;
+}
+
+.site-footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.site-footer-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-footer-logo img {
+    display: block;
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+}
+
+.site-footer-copyright {
+    margin: 0;
+    color: #6f6a73;
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+/* Footer ubicado en la columna derecha */
+.site-footer--aside {
+    margin-top: 28px;
+    padding: 18px 8px 28px;
+}
+
+/* Footer ubicado al final de la página */
+.site-footer--bottom {
+    margin-top: 56px;
+    padding: 28px 0;
+    border-top: 1px solid #eee8f2;
+}
+
+@media (max-width: 991.98px) {
+    .site-footer--aside,
+    .site-footer--bottom {
+        padding: 24px 16px;
+    }
+}
 
 
 /*! =====================================

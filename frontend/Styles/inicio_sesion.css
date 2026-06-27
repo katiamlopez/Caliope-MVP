@@ -2,12 +2,13 @@
 /* Fondo de la pantalla completa (Color extraído del diseño) */
 .login-body {
     background-color: #e2dafa; /** Este color es local porque es el fondo exclusivo de esta pantalla */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+   min-height: 100vh;
     margin: 0;
     padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Tarjeta principal */

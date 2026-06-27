@@ -10,13 +10,68 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.querySelector("#nextPageButton");
 
     const reviewStars = document.querySelectorAll(".review-star");
+    const reviewText = document.querySelector("#reviewText");
+    const publishReviewButton = document.querySelector("#publishReviewButton");
 
     const totalPages = carouselItems.length;
+
+    const params = new URLSearchParams(window.location.search);
+    const storyId = params.get("id");
+
+    function getStoryFromLibrary() {
+        if (!storyId) return null;
+
+        const library =
+            JSON.parse(localStorage.getItem("caliopeLibrary")) || [];
+
+        return library.find((item) => item.storyId === storyId);
+    }
+
+    function updateReadingHeader() {
+        const story = getStoryFromLibrary();
+
+        if (!story) return;
+
+        const workTitle = document.querySelector(".reading-work-title");
+        const chapterTitle = document.querySelector(".chapter-title");
+        const reviewTitle = document.querySelector("#reviewModalTitle");
+
+        if (workTitle) {
+            workTitle.textContent = story.title;
+        }
+
+        if (chapterTitle) {
+            chapterTitle.textContent = `Capítulo 1: ${story.title}`;
+        }
+
+        if (reviewTitle) {
+            reviewTitle.textContent = `Reseñar ${story.title}`;
+        }
+
+        document.title = `Lectura | ${story.title}`;
+    }
 
     function getCurrentPageIndex() {
         return Array.from(carouselItems).findIndex((item) =>
             item.classList.contains("active")
         );
+    }
+
+    function saveReadingProgress(currentPage, percentage) {
+        if (!storyId) return;
+
+        const library =
+            JSON.parse(localStorage.getItem("caliopeLibrary")) || [];
+
+        const story = library.find((item) => item.storyId === storyId);
+
+        if (!story) return;
+
+        story.currentPage = currentPage;
+        story.progress = percentage;
+        story.status = percentage >= 100 ? "completed" : "reading";
+
+        localStorage.setItem("caliopeLibrary", JSON.stringify(library));
     }
 
     function updateReadingProgress(pageIndex) {
@@ -32,6 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         previousButton.disabled = currentPage === 1;
         nextButton.disabled = currentPage === totalPages;
+
+        saveReadingProgress(currentPage, percentage);
     }
 
     carouselElement.addEventListener("slid.bs.carousel", (event) => {
@@ -54,46 +111,54 @@ document.addEventListener("DOMContentLoaded", () => {
     //* Interaccion deReseñas
     //* Interacción de reseñas
 
-const reviewText = document.querySelector("#reviewText");
-const publishReviewButton = document.querySelector("#publishReviewButton");
+    let selectedStars = 0;
 
-let selectedStars = 0;
+    reviewStars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+            selectedStars = index + 1;
 
-reviewStars.forEach((star, index) => {
-    star.addEventListener("click", () => {
+            reviewStars.forEach((currentStar, currentIndex) => {
+                const icon = currentStar.querySelector("i");
 
-        selectedStars = index + 1;
-
-        reviewStars.forEach((currentStar, currentIndex) => {
-            const icon = currentStar.querySelector("i");
-
-            icon.className =
-                currentIndex < selectedStars
-                    ? "bi bi-star-fill"
-                    : "bi bi-star";
+                icon.className =
+                    currentIndex < selectedStars
+                        ? "bi bi-star-fill"
+                        : "bi bi-star";
+            });
         });
     });
-});
 
-publishReviewButton.addEventListener("click", () => {
+    publishReviewButton.addEventListener("click", () => {
+        const reviewContent = reviewText.value.trim();
 
-    const reviewContent = reviewText.value.trim();
+        if (selectedStars === 0) {
+            alert("Debes seleccionar una calificación.");
+            return;
+        }
 
-    if (selectedStars === 0) {
-        alert("Debes seleccionar una calificación.");
-        return;
+        if (reviewContent === "") {
+            alert("Debes escribir una reseña.");
+            return;
+        }
+
+        alert("Reseña publicada correctamente.");
+
+        console.log("Estrellas:", selectedStars);
+        console.log("Reseña:", reviewContent);
+    });
+
+    updateReadingHeader();
+
+    const story = getStoryFromLibrary();
+
+    if (story && story.currentPage > 1 && story.status === "reading") {
+        const savedPageIndex = story.currentPage - 1;
+        const carousel =
+            bootstrap.Carousel.getOrCreateInstance(carouselElement);
+
+        carousel.to(savedPageIndex);
+        updateReadingProgress(savedPageIndex);
+    } else {
+        updateReadingProgress(getCurrentPageIndex());
     }
-
-    if (reviewContent === "") {
-        alert("Debes escribir una reseña.");
-        return;
-    }
-
-    alert("Reseña publicada correctamente.");
-
-    console.log("Estrellas:", selectedStars);
-    console.log("Reseña:", reviewContent);
-});
-
-    updateReadingProgress(getCurrentPageIndex());
 });

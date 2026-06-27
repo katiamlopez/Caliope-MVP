@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -163,78 +163,12 @@
           <section class="library-section">
             <h2>Leyendo</h2>
 
-            <div class="reading-list">
-              <!-- Lectura 1 -->
-              <article class="reading-card">
-                <div class="reading-story-info">
-                  <img
-                    src="../assets/history-covers/portada-historia-luz-de-octubre.png"
-                    alt="Portada de Luz de octubre"
-                    class="library-cover"
-                  />
-
-                  <div>
-                    <h3>Luz de octubre</h3>
-                    <p>Por Valeria M.</p>
-                  </div>
-                </div>
-
-                <div class="reading-progress">
-                  <p>Capítulo 10 de 14</p>
-
-                  <div
-                    class="progress library-progress"
-                    role="progressbar"
-                    aria-label="Progreso de lectura de Luz de octubre"
-                    aria-valuenow="70"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div class="progress-bar" style="width: 70%"></div>
-                  </div>
-                </div>
-
-                <a href="lectura.html" class="read-button"> Continuar </a>
-              </article>
-
-              <!-- Lectura 2 -->
-              <article class="reading-card">
-                <div class="reading-story-info">
-                  <img
-                    src="../assets/history-covers/portada-historia-ecos-del-ayer.png"
-                    alt="Portada de Ecos del ayer"
-                    class="library-cover"
-                  />
-
-                  <div>
-                    <h3>Ecos del ayer</h3>
-                    <p>Por Diego N.</p>
-                  </div>
-                </div>
-
-                <div class="reading-progress">
-                  <p>Capítulo 9 de 12</p>
-
-                  <div
-                    class="progress library-progress"
-                    role="progressbar"
-                    aria-label="Progreso de lectura de Ecos del ayer"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div class="progress-bar" style="width: 75%"></div>
-                  </div>
-                </div>
-
-                <a href="lectura.html" class="read-button"> Continuar </a>
-              </article>
-            </div>
+            <div class="reading-list" id="readingList"></div>
           </section>
 
           <!-- Sección Guardados -->
           <section class="library-section">
-            <h2>Guardados</h2>
+            <h2>Quiero leer</h2>
 
             <div class="saved-list" id="savedList">
 
@@ -283,6 +217,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/biblioteca.js"></script>
+    <script src="../js/lectura-botones.js"></script>
   </body>
 </html>
-```
+
+
