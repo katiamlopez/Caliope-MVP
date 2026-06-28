@@ -26,7 +26,6 @@ img {
    ========================================================================== */
 
 .main-title {
-  font-family: var(--font-ui);
   font-size: 48px;
   font-weight: var(--weight-bold);
   color: var(--color-text-title);
@@ -66,7 +65,6 @@ img {
    ========================================================================== */
 
 .section-title {
-  font-family: var(--font-ui);
   font-size: 1.8rem;
   font-weight: var(--weight-bold);
   color: var(--color-text-title);
@@ -134,25 +132,6 @@ img {
 
 textarea {
   resize: none;
-}
-
-/* ==========================================================================
-   BOTÓN PRINCIPAL
-   ========================================================================== */
-
-.btn-primary {
-  background-color: var(--color-primary) !important;
-  border: none !important;
-  border-radius: var(--radius-btn);
-  padding: 14px 24px;
-  font-weight: var(--weight-semibold);
-  transition: var(--transition-smooth);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-primary-dark) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(99, 59, 188, 0.2);
 }
 
 /* ==========================================================================

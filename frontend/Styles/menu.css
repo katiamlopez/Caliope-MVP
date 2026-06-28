@@ -192,7 +192,6 @@ body {
   border-radius: 12px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 3px 10px var(--color-text-title);
   transition: all 0.3s ease;
 }
 

@@ -90,23 +90,7 @@
    HEADER
    ========================================================================== */
 
-.library-header {
-  margin-bottom: 32px;
-}
 
-.library-header h1 {
-  font-family: var(--font-ui);
-  font-size: 32px;
-  font-weight: var(--weight-bold);
-  color: var(--color-text-title);
-  margin-bottom: 8px;
-}
-
-.library-header p {
-  color: var(--color-text-muted);
-  font-size: 16px;
-  margin: 0;
-}
 
 /* ==========================================================================
    SECCIONES
@@ -117,10 +101,7 @@
 }
 
 .library-section h2 {
-  font-family: var(--font-ui);
-  color: var(--color-text-title);
   font-size: 26px;
-  font-weight: var(--weight-bold);
   margin-bottom: 20px;
 }
 

@@ -73,14 +73,6 @@
   margin-bottom: 0.5rem;
 }
 
-.settings-header h1 {
-  color: var(--color-text-title);
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
 .settings-header p {
   max-width: 700px;
   color: var(--color-text-body);
@@ -102,12 +94,11 @@
 =================================== */
 
 .settings-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-bg-input);
-  border-radius: 18px;
-  padding: 1.8rem;
-  box-shadow: 0 8px 24px var(--color-text-muted);
-  transition: 0.3s;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-bg-input);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: 0.3s;
 }
 
 .settings-card:hover {

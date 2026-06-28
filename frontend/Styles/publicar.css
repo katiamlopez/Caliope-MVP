@@ -97,10 +97,6 @@
 }
 
 .write-header h1 {
-  font-family: var(--font-ui);
-  font-size: 2.2rem;
-  font-weight: var(--weight-bold);
-  color: var(--color-text-title);
   margin-bottom: 10px;
 }
 
@@ -175,7 +171,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px var(--color-text-muted);
+  box-shadow: 0 0 0 3px rgba(99, 59, 188, 0.18);
 }
 
 .form-helper {
@@ -292,9 +288,9 @@
 }
 
 .publish-button:hover {
-  background: var(--color-text-body);
+  background: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px var(--color-text-title);
+  opacity: 0.9;
 }
 
 /* ==========================================================================

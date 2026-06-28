@@ -1,111 +1,110 @@
 /* ==========================================================================
-   1. IMPORTACIÓN DE FUENTES (Google Fonts)
+   GLOBALES.CSS — CALIOPE
    ========================================================================== */
-/* @import url('https://googleapis.com'); */
 
-/** ────────── Modo Claro ──────────────────────*/
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
 :root {
-  /* Paleta de Colores */
   --color-primary: #633bbc;
   --color-primary-dark: #4a2896;
   --color-secondary: #efe9f9;
+
   --color-bg-app: #f6f5fa;
   --color-bg-card: #ffffff;
   --color-bg-input: #fbfbff;
-  
-  /* Colores de Texto */
+
   --color-text-title: #1c1236;
   --color-text-body: #3a2f5a;
   --color-text-muted: #82779a;
-  
-  /*Gradiente de perfil */
-  --app-gradient-primary:
-    linear-gradient(
-      135deg,
-      var(--color-bg-card) 0%,
-      var(--color-text-muted) 100%
-    );
 
-  /* Tipografías y Pesos */
-  --font-ui: 'Plus Jakarta Sans', sans-serif;
-  --font-editorial: 'Lora', serif;
-  
+  --app-gradient-primary: linear-gradient(
+    135deg,
+    var(--color-bg-card) 0%,
+    var(--color-text-muted) 100%
+  );
+
+  --font-ui: "Plus Jakarta Sans", sans-serif;
+  --font-editorial: "Lora", serif;
+
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
 
-  /* Componentes (Detalles precisos en px) */
   --radius-btn: 10px;
   --radius: 12px;
   --border-width: 1px;
-  
-  /* Legacy surface/borders (para compatibilidad) */
-  --bg-surface: #ffffff;
+
   --borders: #e1dfec;
-  --text-base: #3a2f5a;
   --shadow: 0 4px 12px rgba(28, 18, 54, 0.04);
 
-  /* Interacciones y Animaciones */
-  --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  --transition-smooth: background-color 0.3s ease, color 0.3s ease,
+    transform 0.2s ease, border-color 0.3s ease;
   --transition: all 0.3s ease;
+
+  /* Compatibilidad con CSS anteriores */
+  --bg-app: var(--color-bg-app);
+  --bg-surface: var(--color-bg-card);
+  --bg-inputs: var(--color-bg-input);
+  --bg-tags: var(--color-secondary);
+  --text-base: var(--color-text-body);
+  --text-main: var(--color-text-title);
+  --text-placeholder: var(--color-text-muted);
+  --primary-purple: var(--color-primary);
 }
 
-/** ─────────── Modo Oscuro ──────────────────────*/
+/* ==========================================================================
+   TEMA OSCURO
+   ========================================================================== */
+
 [data-theme="dark"] {
-	 /* Paleta de Colores */
-  --color-primary:    #7a52e1;
+  --color-primary: #7a52e1;
   --color-primary-dark: #5a2ea8;
-  --color-secondary:  #2d2354;
-  --color-bg-app:     #130F26;
-  --color-bg-card:    #1D183A;
-  --color-bg-input:   #252048;
-  
-  /* Colores de Texto */
-  --color-text-title: #F4F2FA;
-  --color-text-body:  #C3BCDB;
-  --color-text-muted: #7E7599;
+  --color-secondary: #2d2354;
 
-  /* Gradiente  de perfil */
-  --app-gradient-primary:
-    linear-gradient(
-      135deg,
-      var(--color-bg-card) 0%,
-      var(--color-text-muted) 100%
-    );
+  --color-bg-app: #130f26;
+  --color-bg-card: #1d183a;
+  --color-bg-input: #252048;
 
+  --color-text-title: #f4f2fa;
+  --color-text-body: #c3bcdb;
+  --color-text-muted: #7e7599;
 
-  /* Tipografías y Pesos */
-  --font-ui: 'Plus Jakarta Sans', sans-serif;
-  --font-editorial: 'Lora', serif;
-  
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
+  --app-gradient-primary: linear-gradient(
+    135deg,
+    var(--color-bg-card) 0%,
+    var(--color-text-muted) 100%
+  );
 
-  /* Componentes (Detalles precisos en px) */
-  --radius-btn: 10px;
-  --radius: 12px;
-  --border-width: 1px;
-  
-  /* Legacy surface/borders (para compatibilidad) */
-  --bg-surface: #1D183A;
-  --borders: #3A3170;
-  --text-base: #C3BCDB;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --borders: #3a3170;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 
-  /* Interacciones y Animaciones */
-  --transition-smooth: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  --transition: all 0.3s ease;
+  --bg-app: var(--color-bg-app);
+  --bg-surface: var(--color-bg-card);
+  --bg-inputs: var(--color-bg-input);
+  --bg-tags: var(--color-secondary);
+  --text-base: var(--color-text-body);
+  --text-main: var(--color-text-title);
+  --text-placeholder: var(--color-text-muted);
+  --primary-purple: var(--color-primary);
 }
-/* ===================
-   CONFIGURACIÓN BASE
-   ================== */
-*, *::before, *::after {
+
+/* ==========================================================================
+   RESET Y BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -117,84 +116,122 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* =====================
-   4. TIPOGRAFÍA Y TEXTOS
-   ======================*/
-/* Títulos principales del sistema */
-h1, h2, h3, .text-title {
-  font-family: var(--font-ui);
+/* ==========================================================================
+   TIPOGRAFÍA
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-title {
+  font-family: var(--font-editorial);
   color: var(--color-text-title);
   font-weight: var(--weight-bold);
 }
 
-/* Títulos de obras, capítulos y textos literarios */
-.editorial-title, .literary-text, blockquote {
+button,
+input,
+select,
+textarea,
+.btn,
+.nav-link,
+.form-label {
+  font-family: var(--font-ui);
+}
+
+.editorial-title,
+.literary-text,
+blockquote,
+.chapter-title {
   font-family: var(--font-editorial);
   color: var(--color-text-title);
 }
 
-h4.editorial-title, .chapter-title {
+h4.editorial-title,
+.chapter-title {
   font-weight: var(--weight-semibold);
 }
 
-/* Subtítulos y texto secundario */
-.text-secondary, .subtitle {
+.text-secondary,
+.subtitle {
   color: var(--color-text-muted);
   font-weight: var(--weight-medium);
 }
 
-/* ===========================
-   5. COMPONENTES E INTERFAZ
-   ==========================*/
+/* ==========================================================================
+   TARJETAS Y PANELES
+   ========================================================================== */
 
-/* Tarjetas y Paneles */
-.card, .panel {
+.card,
+.panel,
+.form-card,
+.card-global-structure {
   background-color: var(--color-bg-card);
+  color: var(--color-text-body);
+  border: 1px solid var(--borders);
+  border-radius: var(--radius);
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--color-text-title); /* Sombra sutil con el color de títulos */
+  box-shadow: var(--shadow);
+  transition: var(--transition-smooth);
 }
 
-/* Formularios e Inputs */
-input, select, textarea {
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
+input,
+select,
+textarea,
+.form-control,
+.form-select {
+  width: 100%;
   font-family: var(--font-ui);
   font-weight: var(--weight-regular);
   background-color: var(--color-bg-input);
   color: var(--color-text-body);
-  border: var(--border-width) solid #e1dfec;
+  border: var(--border-width) solid var(--borders);
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  width: 100%;
+  transition: var(--transition-smooth);
 }
 
-input:focus {
+input::placeholder,
+textarea::placeholder,
+.form-control::placeholder {
+  color: var(--color-text-muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus {
   outline: none;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(122, 82, 225, 0.18);
 }
 
-/* Navegación */
-.sidebar, .nav-link {
+.form-label {
+  color: var(--color-text-title);
   font-family: var(--font-ui);
-  font-weight: var(--weight-medium);
+  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
-/*  Etiquetas */
-.label-system {
-  font-family: var(--font-ui);
-  font-weight: var(--weight-bold);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-}
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
 
-/* ==========
-   6. BOTONES
-   ========== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-ui);
-  font-weight: var(--weight-medium);
+  font-size: 1rem;
+  font-weight: var(--weight-bold);
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-btn);
   border: none;
@@ -203,165 +240,66 @@ input:focus {
   transition: var(--transition-smooth);
 }
 
-/* Botón Primario */
 .btn-primary {
   background-color: var(--color-primary);
   color: #ffffff;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-primary);
-}
-
+.btn-primary:hover,
 .btn-primary:active {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: none;
 }
 
-/* Botón Secundario */
 .btn-secondary {
   background-color: var(--color-secondary);
   color: var(--color-primary);
+  border: 1px solid var(--borders);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:active {
   background-color: var(--color-secondary);
   color: var(--color-text-title);
+  transform: translateY(-2px);
+  box-shadow: none;
 }
 
-.btn-secondary:active {
+.btn-circle {
   background-color: var(--color-secondary);
   color: var(--color-primary);
-}
-/*Iconos circulares*/
-.btn-circle {
-    background-color: var(--bg-tags);   /* Fondo lila suave (#EFE9F9) */
-    color: var(--color-primary);       /* Icono morado (#633BBC) , color: var(--primary-purple)*/
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
-    transition: var(--transition, all 0.3s ease);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
 }
 
-.btn-circle:active {
-  background-color: var(--bg-tags);
-  color: var(--color-primary);
+/* ==========================================================================
+   NAVEGACIÓN Y ETIQUETAS
+   ========================================================================== */
+
+.sidebar,
+.nav-link {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-medium);
 }
 
-
-/* ===============
-   2.CONFIGURACIÓN GENERAL (Resets & Base HTML)
-   ============== */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.label-system {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-bold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--bg-app);
-    color: var(--text-base);
-    font-family: var(--font-ui);
-    font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Títulos */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-editorial);
-    color: var(--text-main);
-    font-weight: 700;
-}
-
-/* Botón Base */
-.btn {
-    font-family: var(--font-ui);
-    font-size: 1rem;
-    font-weight: 700; 
-    padding: 1rem 2.25rem;
-    border-radius: var(--radius-btn); 
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-/* Botón Primario */
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-bg-app);
-}
-
-.btn-primary:hover {
-    background-color: var(--color-primary); 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--color-bg-input);
-}
-
-.btn-primary:active {
-    background-color: var(--color-primary);
-    color: var(--color-bg-app);
-}
-
-/* Botón Secundario */
-.btn-secondary {
-    background-color: var(--bg-tags);
-    color: var(--primary-purple);
-    border: 1px solid var(--borders);
-}
-
-.btn-secondary:hover {
-    background-color: #382c66; 
-    color: var(--color-primary);
-    transform: translateY(-2px);
-}
-
-.btn-secondary:active {
-    background-color: #382c66;
-    color: var(--color-primary);
-}
-
-/* Estructura Base para Tarjetas */
-.card-global-structure {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--borders);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-.card-global-structure:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* Íconos circulares */
-.info-item .info-icon {
-    background-color: #231B4D;
-    color: #A29BFE;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-/* =========================
+/* ==========================================================================
    PANEL DE NOTIFICACIONES
-========================= */
+   ========================================================================== */
 
 .notification-wrapper {
   position: relative;
@@ -376,8 +314,8 @@ h1, h2, h3, h4, h5, h6 {
   width: min(360px, 90vw);
   padding: 18px;
 
-  background-color: var(--color-bg-card, #ffffff);
-  border: 1px solid #eee8f5;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--borders);
   border-radius: 18px;
   box-shadow: 0 16px 40px rgba(28, 18, 54, 0.16);
 
@@ -386,10 +324,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-8px);
   pointer-events: none;
 
-  transition:
-    opacity 0.2s ease,
-    visibility 0.2s ease,
-    transform 0.2s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
 }
 
 .notification-panel.is-open {
@@ -404,27 +339,25 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-
   margin-bottom: 14px;
 }
 
 .notification-panel-header h2 {
   margin: 0;
-  color: var(--color-text-title, #1c1236);
+  color: var(--color-text-title);
   font-family: var(--font-ui);
   font-size: 1.1rem;
-  font-weight: var(--weight-bold, 700);
+  font-weight: var(--weight-bold);
 }
 
 .notification-close {
   width: 32px;
   height: 32px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--color-text-muted, #82779a);
+  color: var(--color-text-muted);
   background-color: transparent;
   border: 0;
   border-radius: 50%;
@@ -433,8 +366,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notification-close:hover {
-  color: var(--color-primary, #633bbc);
-  background-color: var(--color-secondary, #efe9f9);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
 }
 
 .notification-list {
@@ -446,39 +379,36 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-
   padding: 12px;
   border-radius: 14px;
-
   transition: background-color 0.2s ease;
 }
 
 .notification-item:hover {
-  background-color: var(--color-secondary, #efe9f9);
+  background-color: var(--color-secondary);
 }
 
 .notification-avatar {
   width: 42px;
   height: 42px;
   flex-shrink: 0;
-
   border-radius: 50%;
   object-fit: cover;
 }
 
 .notification-item p {
   margin: 0 0 4px;
-  color: var(--color-text-body, #3a2f5a);
+  color: var(--color-text-body);
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .notification-item strong {
-  color: var(--color-text-title, #1c1236);
+  color: var(--color-text-title);
 }
 
 .notification-item span {
-  color: var(--color-text-muted, #82779a);
+  color: var(--color-text-muted);
   font-size: 0.78rem;
 }
 
@@ -487,184 +417,137 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 14px;
   padding: 10px 14px;
 
-  color: var(--color-primary, #633bbc);
-  background-color: var(--color-secondary, #efe9f9);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
   border-radius: 12px;
 
   font-size: 0.88rem;
-  font-weight: var(--weight-semibold, 600);
+  font-weight: var(--weight-semibold);
   text-align: center;
   text-decoration: none;
 }
 
 .notification-view-all:hover {
   color: #ffffff;
-  background-color: var(--color-primary, #633bbc);
+  background-color: var(--color-primary);
 }
 
-/** FOOTER GLOBAL */
+/* ==========================================================================
+   FOOTER GLOBAL
+   ========================================================================== */
 
 .site-footer {
-    width: 100%;
-    color: #6f6a73;
-    text-align: center;
+  width: 100%;
+  color: #6f6a73;
+  text-align: center;
 }
 
 .site-footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px 22px;
-    margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 22px;
+  margin-bottom: 18px;
 }
 
 .site-footer-links a {
-    color: #6f6a73;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: #6f6a73;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .site-footer-links a:hover,
 .site-footer-links a:focus-visible {
-    color: #5b176d;
+  color: var(--color-primary);
 }
 
 .site-footer-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .site-footer-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
 .site-footer-logo img {
-    display: block;
-    width: auto;
-    height: 40px;
-    object-fit: contain;
+  display: block;
+  width: auto;
+  height: 40px;
+  object-fit: contain;
 }
 
 .site-footer-copyright {
-    margin: 0;
-    color: #6f6a73;
-    font-size: 0.8rem;
-    line-height: 1;
+  margin: 0;
+  color: #6f6a73;
+  font-size: 0.8rem;
+  line-height: 1;
 }
 
-/* Footer ubicado en la columna derecha */
 .site-footer--aside {
-    margin-top: 28px;
-    padding: 18px 8px 28px;
+  margin-top: 28px;
+  padding: 18px 8px 28px;
 }
 
-/* Footer ubicado al final de la página */
 .site-footer--bottom {
-    margin-top: 56px;
-    padding: 28px 0;
-    border-top: 1px solid #eee8f2;
+  margin-top: 56px;
+  padding: 28px 0;
+  border-top: 1px solid var(--borders);
 }
 
-@media (max-width: 991.98px) {
-    .site-footer--aside,
-    .site-footer--bottom {
-        padding: 24px 16px;
-    }
+/* ==========================================================================
+   LOGOS Y EFECTOS
+   ========================================================================== */
+
+.logo-container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-smooth);
 }
 
-
-/*! =====================================
-/*!ESPECIFICACIONES AMBOS TEMAS
-!/*!========================================*/
-
-
-
-/*! EFECTO PARA MAUSE AMBOS TEMAS CLARO Y OSCURO */
 .main-logo2:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 16px rgba(122, 82, 225, 0.5)); /* Brillo suave con el color del tema */
-    transition: transform 0.3s ease, filter 0.3s ease;
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 16px rgba(122, 82, 225, 0.5));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 @keyframes heartbeat {
-    0% { transform: scale(1); }
-    20% { transform: scale(1.1); }
-    40% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.1);
+  }
+
+  40% {
+    transform: scale(1);
+  }
 }
+
 .heartbeat {
-    animation: heartbeat 1.5s infinite;
+  animation: heartbeat 1.5s infinite;
 }
 
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
 
-/* Contenedores de Logotipos */
-.logo-container-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition);
+@media (max-width: 991.98px) {
+  .site-footer--aside,
+  .site-footer--bottom {
+    padding: 24px 16px;
+  }
 }
-
-/* ===============================
-   4. ESTILOS DE FORMULARIOS GLOBALES
-   ================================= */
-.form-label {
-    color: var(--text-main);
-    font-family: var(--font-ui);
-    margin-bottom: 0.5rem;
-    display: inline-block;
-}
-
-/* Unificación de estilos para campos de texto */
-.form-control,
-.form-select {
-    background-color: var(--bg-inputs); /* Corregido color estático a tu variable */
-    border: 1px solid var(--borders);
-    color: var(--text-main);
-    font-family: var(--font-ui);
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    width: 100%;
-    transition: var(--transition);
-}
-
-.form-control::placeholder {
-    color: var(--text-placeholder);
-}
-
-.form-control:focus, .form-select:focus {
-    outline: none;
-    border-color: var(--primary-purple);
-    box-shadow: 0 0 0 3px rgba(122, 82, 225, 0.2);
-}
-
-/* Tarjetas de formulario */
-.form-card {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--borders);
-    color: var(--text-base);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-.form-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}       
-
-.card-global-structure:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
 
 
