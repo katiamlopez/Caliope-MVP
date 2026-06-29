@@ -145,6 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Estrellas:", selectedStars);
         console.log("Reseña:", reviewContent);
+        reviewText.value = "";
+        
     });
 
     updateReadingHeader();

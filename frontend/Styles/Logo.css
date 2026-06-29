@@ -36,7 +36,7 @@
     width: 40px;
     aspect-ratio: 1041 / 759;
 
-    background-color: var(--color-bg-app,#f6f5fa);
+    background-color: var(--color-text-title);
 
     mask: url("/frontend/img/CaliopeLaurel.svg") center / contain no-repeat;
     -webkit-mask: url("/frontend/img/CaliopeLaurel.svg") center / contain no-repeat;
