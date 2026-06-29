@@ -130,7 +130,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     alert("Formulario enviado correctamente.");
+    formulario.reset();           // Limpia el texto del formulario
   });
 
   renderGenres();
+
 });

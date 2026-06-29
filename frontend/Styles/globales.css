@@ -7,17 +7,17 @@
    ========================================================================== */
 
 :root {
-  --color-primary: #633bbc;
+  --color-primary:      #633bbc;
   --color-primary-dark: #4a2896;
-  --color-secondary: #efe9f9;
+  --color-secondary:    #efe9f9;
 
-  --color-bg-app: #f6f5fa;
-  --color-bg-card: #ffffff;
-  --color-bg-input: #fbfbff;
+  --color-bg-app:       #f6f5fa;
+  --color-bg-card:      #ffffff;
+  --color-bg-input:     #fbfbff;
 
-  --color-text-title: #1c1236;
-  --color-text-body: #3a2f5a;
-  --color-text-muted: #82779a;
+  --color-text-title:   #1c1236;
+  --color-text-body:    #3a2f5a;
+  --color-text-muted:   #82779a;
 
   --app-gradient-primary: linear-gradient(
     135deg,
