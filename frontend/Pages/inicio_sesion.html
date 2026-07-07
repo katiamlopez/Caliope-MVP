@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="../Styles/globales.css">
     <link rel="stylesheet" href="../Styles/inicio_sesion.css">
-    <link rel="stylesheet" href="/frontend/Styles/Logo.css">
+    <!-- <link rel="stylesheet" href="/frontend/Styles/Logo.css"> -->
 </head>
 <body class="login-body">
 
@@ -89,53 +89,40 @@
             this.style.opacity = type === "text" ? "1" : "0.5";
         });
 
-        // Lógica de inicio de sesión
-        // Usuarios de prueba guardados en localStorage
-if (!localStorage.getItem("usuarios")) {
-    const usuariosPrueba = [
-        {
-            correo: "oscar@gmail.com",
-            password: "1234"
-        }
-    ];
-
-    localStorage.setItem("usuarios", JSON.stringify(usuariosPrueba));
-}
-
-// Si ya hay sesión activa, mandar directo a principal
-const sesionActiva = localStorage.getItem("sesionActiva");
-
-if (sesionActiva) {
-    window.location.href = "principal.html";
-}
-
 /* Lógica de inicio de sesión*/
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    let correo = document.getElementById("correo").value.trim();
-    let passwordValue = document.getElementById("password").value.trim();
-    let mensajeEl = document.getElementById("mensaje");
+    const email = document.getElementById("correo").value.trim();
+    const password = document.getElementById("password").value;
 
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    try {
 
-    let usuarioEncontrado = usuarios.find(function(usuario) {
-        return usuario.correo === correo && usuario.password === passwordValue;
-    });
+        const respuesta = await fetch("http://localhost:8080/api/users/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        });
 
-    if (usuarioEncontrado) {
-        localStorage.setItem("sesionActiva", JSON.stringify(usuarioEncontrado));
+        const loginCorrecto = await respuesta.json();
 
-        mensajeEl.style.color = "var(--color-primary)";
-        mensajeEl.textContent = "Acceso permitido...";
+        console.log(loginCorrecto);
 
-        setTimeout(() => {
+        if (loginCorrecto) {
+            alert("Inicio de sesión exitoso");
             window.location.href = "principal.html";
-        }, 800);
+        } else {
+            alert("Correo o contraseña incorrectoss");
+        }
 
-    } else {
-        mensajeEl.style.color = "#d32f2f";
-        mensajeEl.textContent = "Usuario o contraseña incorrectos";
+    } catch (error) {
+        console.error(error);
+        alert("Error al conectar con el servidor");
     }
 });
     </script>
