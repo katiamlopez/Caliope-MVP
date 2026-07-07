@@ -196,6 +196,16 @@ const birthday =
                 }
             );
 
+            if (respuesta.ok) {
+            alert("Usuario registrado correctamente");
+
+            registroForm.reset();
+
+            window.location.href = "inicio_sesion.html";
+        } else {
+            alert(resultado.message || "Error al registrar usuario");
+        }
+
 
     } catch(error){
 
