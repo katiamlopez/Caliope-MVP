@@ -151,27 +151,51 @@ if(datos.password !== datos.confirmPassword){
         return;
     }
 
-    console.log(datos);
+    const meses = {
+    Enero: "01",
+    Febrero: "02",
+    Marzo: "03",
+    Abril: "04",
+    Mayo: "05",
+    Junio: "06",
+    Julio: "07",
+    Agosto: "08",
+    Septiembre: "09",
+    Octubre: "10",
+    Noviembre: "11",
+    Diciembre: "12"
+};
+
+const birthday =
+    `${datos.anio}-${meses[datos.mes]}-${String(datos.dia).padStart(2,"0")}`;
+
+    
+
+    const usuario = {
+    firstName: datos.nombreU.trim(),
+    lastName: datos.apellidoU.trim(),
+    email: datos.correo.trim(),
+    user_name: datos.nickname.trim(),
+    password: datos.password,
+    birthday: birthday
+    };
+    console.log(usuario);
 
     try {
 
         const respuesta =
             await fetch(
-                "http://localhost:8080/registro",
+                "http://localhost:8080/api/users",
                 {
                     method: "POST",
                     headers: {
                         "Content-Type":
                             "application/json"
                     },
-                    body: JSON.stringify(datos)
+                    body: JSON.stringify(usuario)
                 }
             );
 
-        const mensaje =
-            await respuesta.text();
-
-        alert(mensaje);
 
     } catch(error){
 
