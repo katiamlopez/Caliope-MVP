@@ -1,41 +1,57 @@
 import { getToken } from "./auth.js";
+import { api } from "./api.js";
 
 console.log("Token:", getToken());
 
-document.addEventListener("DOMContentLoaded", () => {
-    const defaultProfile = {
-        displayName: "Ana García",
-        username: "@anag",
-        pronouns: "ella/she",
-        bio: "Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Siempre escribiendo, siempre leyendo.",
-        roles: ["Escritora", "Lectora"],
-    };
+document.addEventListener("DOMContentLoaded", async () => {
 
-    const profile =
-        JSON.parse(localStorage.getItem("caliopeUserProfile")) || defaultProfile;
+    try {
 
-    const displayName = document.querySelector("#profileDisplayName");
-    const username = document.querySelector("#profileUsername");
-    const pronouns = document.querySelector("#profilePronouns");
-    const bio = document.querySelector("#profileBio");
-    const roles = document.querySelector("#profileRoles");
+        const response = await api("/api/users/me");
 
-    displayName.textContent = profile.displayName;
-    username.textContent = profile.username;
-    bio.textContent = profile.bio;
+        if (!response.ok) {
+            throw new Error("No se pudo obtener el perfil");
+        }
 
-    if (profile.pronouns) {
-        pronouns.textContent = profile.pronouns;
-        pronouns.style.display = "block";
-    } else {
-        pronouns.style.display = "none";
+        const user = await response.json();
+
+        console.log(user);
+
+        mostrarPerfil(user);
+
+    } catch (error) {
+
+        console.error("Error:", error);
+
     }
 
-    roles.innerHTML = "";
-
-    if (profile.roles && profile.roles.length > 0) {
-        profile.roles.forEach((role) => {
-            roles.innerHTML += `<span>${role}</span>`;
-        });
-    }
 });
+
+function mostrarPerfil(user) {
+
+    document.getElementById("profileDisplayName").textContent =
+        `${user.firstName} ${user.lastName}`;
+
+    document.getElementById("profileUsername").textContent =
+        `@${user.user_name}`;
+
+    document.getElementById("profileBio").textContent =
+        user.bio || "Este usuario aún no tiene biografía.";
+
+    // Si no manejas pronombres por ahora
+    document.getElementById("profilePronouns").style.display = "none";
+
+    // Roles (si aún no existen en tu BD)
+    const roles = document.getElementById("profileRoles");
+    roles.innerHTML = "<span>Escritor</span>";
+
+    // Avatar
+    const avatar = document.querySelector(".profile-avatar");
+
+    if (user.picture_avatar) {
+        avatar.src = user.picture_avatar;
+    } else {
+        avatar.src = "../assets/users-photos/foto-perfil-usuario.png";
+    }
+
+}
