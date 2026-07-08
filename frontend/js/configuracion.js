@@ -1,6 +1,11 @@
 /*
 * ═══════ CONFIGURACION ═══════
  */
+
+import { getToken } from "./auth.js";
+
+console.log("Token:", getToken());
+
 fetch("configuracion.html");
 console.log("conectao :) ");
 

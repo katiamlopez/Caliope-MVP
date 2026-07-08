@@ -1,3 +1,7 @@
+import { getToken } from "./auth.js";
+
+console.log("Token:", getToken());
+
 function normalize(text) {
   return text
     .toLowerCase()
