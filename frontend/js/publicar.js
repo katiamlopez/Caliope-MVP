@@ -102,6 +102,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //*Validacion de envio de formularios
 
+  document.addEventListener('DOMContentLoaded', () => {
+  cargarGeneros();
+});
+
+async function cargarGeneros() {
+  const selectElement = document.getElementById('genreSelect');
+  
+  try {
+    // Reemplaza esta URL con la ruta real de tu API o backend
+    const respuesta = await fetch('http://localhost:8080/api/genres'); 
+    const generos = await respuesta.json();
+    console.log(respuesta)
+
+    // Validamos que existan datos
+    if (!generos || generos.length === 0) return;
+
+    // Creamos un fragmento para mejorar el rendimiento al insertar nodos
+    const fragmento = document.createDocumentFragment();
+
+    generos.forEach(genero => {
+      const option = document.createElement('option');
+      // Supongamos que tu BD tiene columnas 'id' (o nombre) y 'nombre'
+      option.value = genero.id || genero.nombre; 
+      option.textContent = genero.nombre;
+      fragmento.appendChild(option);
+    });
+
+    // Insertamos todas las opciones juntas al select
+    selectElement.appendChild(fragmento);
+
+  } catch (error) {
+    console.error('Error al cargar los géneros desde la base de datos:', error);
+  }
+}
+
+
+////////////////////////////////////////////////
 
 
 
