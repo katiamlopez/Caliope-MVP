@@ -1,25 +1,65 @@
+
 import { getToken } from "./auth.js";
 
 console.log("Token:", getToken());
 
+// 1. Cargar géneros desde el backend
+async function cargarGeneros() {
+  const selectElement = document.getElementById('genreSelect');
+  if (!selectElement) return;
+  
+  try {
+    const respuesta = await fetch('http://localhost:8080/api/genres', {
+      headers: {
+        "Authorization": `Bearer ${getToken()}`
+      }
+    }); 
+    
+    if (!respuesta.ok) {
+      throw new Error(`Error en el servidor: ${respuesta.status}`);
+    }
+
+    const genres = await respuesta.json();
+    console.log("Genres received from backend:", genres);
+
+    if (!genres || genres.length === 0) return;
+
+    const fragmento = document.createDocumentFragment();
+
+    genres.forEach(genre => {
+      const option = document.createElement('option');
+      
+      // El backend usa .id y .genre
+      option.value = genre.id;   
+      option.textContent = genre.genre; 
+      
+      fragmento.appendChild(option);
+    });
+
+    selectElement.appendChild(fragmento);
+
+  } catch (error) {
+    console.error('Error loading genres from database:', error);
+  }
+}
+
+// 2. Lógica del Formulario y las etiquetas
 document.addEventListener("DOMContentLoaded", () => {
 
   const formulario = document.getElementById("formulario");
-
   const tituloInput = document.getElementById("titulo");
   const descripcionInput = document.getElementById("descripcion");
 
-
-  //* Seleccion de Generos
-
+  //* Selección de Géneros (Tags)
   const genreSelect = document.getElementById("genreSelect");
-  const selectedGenresContainer =
-    document.getElementById("selectedGenres");
-  const genreInputsContainer =
-    document.getElementById("genreInputs");
+  const selectedGenresContainer = document.getElementById("selectedGenres");
+  const genreInputsContainer = document.getElementById("genreInputs");
 
-  const selectedGenres = [];
+  const selectedGenres = []; 
   const maximumGenres = 4;
+
+  // Ejecutamos la carga dinámica inmediatamente
+  cargarGeneros();
 
   function renderGenres() {
     selectedGenresContainer.innerHTML = "";
@@ -30,16 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
       genreTag.className = "genre-tag";
 
       const genreText = document.createElement("span");
-      genreText.textContent = genre;
+      // Usa los generos guardaos en la base de datos
+      genreText.textContent = genre.genre || genre;
 
       const removeButton = document.createElement("button");
       removeButton.type = "button";
       removeButton.className = "genre-tag-remove";
-      removeButton.setAttribute(
-        "aria-label",
-        `Eliminar género ${genre}`
-      );
-
+      removeButton.setAttribute("aria-label", `Eliminar género`);
       removeButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
       removeButton.addEventListener("click", () => {
@@ -49,26 +86,31 @@ document.addEventListener("DOMContentLoaded", () => {
       genreTag.append(genreText, removeButton);
       selectedGenresContainer.appendChild(genreTag);
 
+      // Enviamos el ID al input oculto
       const hiddenInput = document.createElement("input");
       hiddenInput.type = "hidden";
-      hiddenInput.name = "generos[]";
-      hiddenInput.value = genre;
+      hiddenInput.name = "genres[]"; 
+      hiddenInput.value = genre.id || genre;
 
       genreInputsContainer.appendChild(hiddenInput);
     });
 
-    genreSelect.disabled =
-      selectedGenres.length >= maximumGenres;
+    genreSelect.disabled = selectedGenres.length >= maximumGenres;
   }
 
   function addGenre() {
-    const selectedGenre = genreSelect.value;
+    const selectedOption = genreSelect.options[genreSelect.selectedIndex];
+    if (!genreSelect.value) return;
 
-    if (!selectedGenre) {
-      return;
-    }
+    // Guardamos el objeto respetando la estructura de tu BD
+    const genreObject = {
+      id: Number(genreSelect.value) || genreSelect.value,
+      genre: selectedOption.text
+    };
 
-    if (selectedGenres.includes(selectedGenre)) {
+    // Validar si ya fue agregado comparando los IDs
+    const yaExiste = selectedGenres.some(g => g.id === genreObject.id);
+    if (yaExiste) {
       alert("Ese género ya fue agregado.");
       genreSelect.value = "";
       return;
@@ -80,105 +122,44 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    selectedGenres.push(selectedGenre);
+    selectedGenres.push(genreObject);
     genreSelect.value = "";
 
     renderGenres();
   }
 
   function removeGenre(genre) {
-    const genreIndex = selectedGenres.indexOf(genre);
-
-    if (genreIndex !== -1) {
-      selectedGenres.splice(genreIndex, 1);
+    const index = selectedGenres.findIndex(g => g.id === genre.id);
+    if (index !== -1) {
+      selectedGenres.splice(index, 1);
     }
-
     renderGenres();
   }
 
   genreSelect.addEventListener("change", addGenre);
 
-
-
-  //*Validacion de envio de formularios
-
-  document.addEventListener('DOMContentLoaded', () => {
-  cargarGeneros();
-});
-
-async function cargarGeneros() {
-  const selectElement = document.getElementById('genreSelect');
-  
-  try {
-    // Reemplaza esta URL con la ruta real de tu API o backend
-    const respuesta = await fetch('http://localhost:8080/api/genres'); 
-    const generos = await respuesta.json();
-    console.log(respuesta)
-
-    // Validamos que existan datos
-    if (!generos || generos.length === 0) return;
-
-    // Creamos un fragmento para mejorar el rendimiento al insertar nodos
-    const fragmento = document.createDocumentFragment();
-
-    generos.forEach(genero => {
-      const option = document.createElement('option');
-      // Supongamos que tu BD tiene columnas 'id' (o nombre) y 'nombre'
-      option.value = genero.id || genero.nombre; 
-      option.textContent = genero.nombre;
-      fragmento.appendChild(option);
-    });
-
-    // Insertamos todas las opciones juntas al select
-    selectElement.appendChild(fragmento);
-
-  } catch (error) {
-    console.error('Error al cargar los géneros desde la base de datos:', error);
-  }
-}
-
-
-////////////////////////////////////////////////
-
-
-
-
-
-
-
-
+  //* Envío del formulario al backend
   formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const titulo = tituloInput.value.trim();
     const descripcion = descripcionInput.value.trim();
 
-    if (titulo === "") {
-      alert("El título no puede estar vacío.");
-      tituloInput.focus();
-      return;
-    }
-
-    if (descripcion === "") {
-      alert("La descripción no puede estar vacía.");
-      descripcionInput.focus();
-      return;
-    }
-
-    if (descripcion.length < 10) {
-      alert("La descripción debe tener al menos 10 caracteres.");
-      descripcionInput.focus();
+    if (titulo === "" || descripcion === "") {
+      alert("Por favor completa los campos requeridos.");
       return;
     }
 
     if (selectedGenres.length === 0) {
-      alert("Selecciona al menos un género para la obra.");
+      alert("Selecciona al menos un género.");
       genreSelect.focus();
       return;
     }
 
     const portada = document.getElementById("portada").files[0];
     const pdf = document.getElementById("documentoHistoria").files[0];
+    
+    // Construcción del objeto final estructurado en inglés para tu API
     const story = {
       idUsers: Number(localStorage.getItem("userId")),
       title: titulo,
@@ -187,11 +168,14 @@ async function cargarGeneros() {
       file_pdf: pdf ? pdf.name : "",
       status: "PUBLICADA",
       created_date: new Date().toISOString().split("T")[0],
-      published_date: new Date().toISOString().split("T")[0]
+      published_date: new Date().toISOString().split("T")[0],
+      // CORRECCIÓN: Enviamos un arreglo limpio de números [1, 2, 3] al backend
+      genres: selectedGenres.map(g => g.id) 
     };
-    console.log("Historia enviada:", story);
+    
+    console.log("Sending story to backend:", story);
+    
     try {
-
       const response = await fetch("http://localhost:8080/api/stories", {
         method: "POST",
         headers: {
@@ -206,26 +190,18 @@ async function cargarGeneros() {
       }
 
       const historia = await response.json();
-
-      console.log(historia);
-
+      console.log("Server response:", historia);
       
-
+      alert("Formulario enviado correctamente.");
       formulario.reset();
+      selectedGenres.length = 0; 
+      renderGenres();             
 
     } catch (error) {
-
       console.error(error);
-
       alert("No fue posible publicar");
-
     }
-
-    alert("Formulario enviado correctamente.");
-
-    formulario.reset();           // Limpia el texto del formulario
   });
 
   renderGenres();
-
 });
