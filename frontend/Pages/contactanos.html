@@ -1,248 +1,238 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
 
-    <!-- RESPONSIVE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
 
-    <title>Contáctanos | Caliope</title>
+  <!-- RESPONSIVE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- BOOTSTRAP -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <title>Contáctanos | Caliope</title>
 
-    <!-- ICONOS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../Styles/globales.css" />
-    <link rel="stylesheet" href="../Styles/menu.css" />
-    <link rel="stylesheet" href="../Styles/footer.css" />
-    <link rel="stylesheet" href="/frontend/Styles/contactanos.css" />
-    <script src="/frontend/js/configuracion.js"></script>
-    <link rel="stylesheet" href="/frontend/Styles/Logo.css">
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 
-    
-  </head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../Styles/globales.css" />
+  <link rel="stylesheet" href="../Styles/menu.css" />
+  <link rel="stylesheet" href="../Styles/footer.css" />
+  <link rel="stylesheet" href="/frontend/Styles/contactanos.css" />
+  <script src="/frontend/js/configuracion.js"></script>
+  <link rel="stylesheet" href="/frontend/Styles/Logo.css">
 
-  <body>
-    <div>
-      <button id="toggle-btn">☰</button>
-      <div id="menu-container"></div>
-      <!--?El nagevador menu -->
-      <!-- =========================
+
+</head>
+
+<body>
+  <div>
+    <button id="toggle-btn">☰</button>
+    <div id="menu-container"></div>
+    <!--?El nagevador menu -->
+    <!-- =========================
        SECCIÓN DEL CONTACTO
       ========================== -->
-      <div class="contenido">
-        <section class="contact-section container">
-          <!-- TITULO -->
-          <div class="text-center mb-5">
-            <h1 class="main-title">Contáctanos</h1>
+    <div class="contenido">
+      <section class="contact-section container">
+        <!-- TITULO -->
+        <div class="text-center mb-5">
+          <h1 class="main-title">Contáctanos</h1>
 
-            <p class="main-subtitle">
-              ¿Tienes alguna pregunta o sugerencia? Estamos aquí para ayudarte
-            </p>
-          </div>
+          <p class="main-subtitle">
+            ¿Tienes alguna pregunta o sugerencia? Estamos aquí para ayudarte
+          </p>
+        </div>
 
-          <!-- GRID -->
-          <div class="row g-4">
-            <!-- FORMULARIO DE ENVIAR UN MENSAJE-->
-            <div class="col-12 col-lg-8">
-              <div class="contact-card">
-                <h2 class="section-title mb-4">Envíanos un mensaje</h2>
+        <!-- GRID -->
+        <div class="row g-4">
+          <!-- FORMULARIO DE ENVIAR UN MENSAJE-->
+          <div class="col-12 col-lg-8">
+            <div class="contact-card">
+              <h2 class="section-title mb-4">Envíanos un mensaje</h2>
 
-                <form action="" id="Cntc">
-                  <!--?  SIRR 26/05/2026 22:46 hrs  -->
-                  <!-- ESPACIO DE NOMBRE -->
+              <form action="" id="Cntc">
+                <!--?  SIRR 26/05/2026 22:46 hrs  -->
+                <!-- ESPACIO DE NOMBRE -->
 
-                  <div class="row g-3 mb-4">
-                    <!-- NOMBRE -->
-                    <div class="col-12 col-md-6">
-                      <label class="form-label"> Nombre completo </label>
-
-                      <div class="input-group">
-                        <span class="input-group-text">
-                          <i class="bi bi-person"></i>
-                        </span>
-
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Tu nombre"
-                          name="CommentaryName"
-                        /><!--?  SIRR 26/05/2026 22:46 hrs  -->
-                      </div>
-                    </div>
-
-                    <!-- ESPACIO DE EMAIL -->
-
-                    <div class="col-12 col-md-6">
-                      <label class="form-label"> Correo electrónico </label>
-
-                      <div class="input-group">
-                        <span class="input-group-text">
-                          <i class="bi bi-envelope"></i>
-                        </span>
-
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="tu@email.com"
-                          name="CommentaryEMil"
-                        /><!--?  SIRR 26/05/2026 22:46 hrs  -->
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- ESPACIO DE ASUNTO -->
-
-                  <div class="mb-4">
-                    <label class="form-label"> Asunto </label>
-
-                    <select class="form-select" name="CommentaryTpic">
-                      <!--?  SIRR 26/05/2026 22:46 hrs  -->
-                      <option selected>Selecciona un asunto</option>
-
-                      <option>Soporte técnico</option>
-
-                      <option>Publicación de obra</option>
-
-                      <option>Reportar usuario</option>
-
-                      <option>Otro</option>
-                    </select>
-                  </div>
-
-                  <!-- ESPACIO DE MENSAJE -->
-
-                  <div class="mb-4">
-                    <label class="form-label"> Mensaje </label>
+                <div class="row g-3 mb-4">
+                  <!-- NOMBRE -->
+                  <div class="col-12 col-md-6">
+                    <label class="form-label"> Nombre completo </label>
 
                     <div class="input-group">
-                      <span class="input-group-text align-items-start pt-3">
-                        <i class="bi bi-chat-left"></i>
+                      <span class="input-group-text">
+                        <i class="bi bi-person"></i>
                       </span>
 
-                      <textarea
-                        class="form-control"
-                        rows="7"
-                        placeholder="Escribe tu mensaje aquí..."
-                        name="Commentary"
-                      ></textarea>
+                      <input type="text" class="form-control" placeholder="Tu nombre"
+                        name="CommentaryName" /><!--?  SIRR 26/05/2026 22:46 hrs  -->
                     </div>
                   </div>
 
-                  <!-- BOTON DE ENVIAR MENSAJE -->
-                  <!--? link to forms.js | SIRR 26/05/2026 22:46 hrs  -->
-                  <button class="btn btn-primary w-100" type="submit">
-                    <i class="bi bi-send me-2"></i>
+                  <!-- ESPACIO DE EMAIL -->
 
-                    Enviar mensaje
-                  </button>
-                </form>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label"> Correo electrónico </label>
+
+                    <div class="input-group">
+                      <span class="input-group-text">
+                        <i class="bi bi-envelope"></i>
+                      </span>
+
+                      <input type="email" class="form-control" placeholder="tu@email.com"
+                        name="CommentaryEMil" /><!--?  SIRR 26/05/2026 22:46 hrs  -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ESPACIO DE ASUNTO -->
+
+                <div class="mb-4">
+                  <label class="form-label"> Asunto </label>
+
+                  <select class="form-select" name="CommentaryTpic">
+                    <!--?  SIRR 26/05/2026 22:46 hrs  -->
+                    <option value="" selected disabled>
+                      Selecciona un asunto
+                    </option>
+
+                    <option value="Soporte técnico">
+                      Soporte técnico
+                    </option>
+
+                    <option value="Publicación de obra">
+                      Publicación de obra
+                    </option>
+
+                    <option value="Reportar usuario">
+                      Reportar usuario
+                    </option>
+
+                    <option value="Otro">
+                      Otro
+                    </option>
+                  </select>
+                </div>
+
+                <!-- ESPACIO DE MENSAJE -->
+
+                <div class="mb-4">
+                  <label class="form-label"> Mensaje </label>
+
+                  <div class="input-group">
+                    <span class="input-group-text align-items-start pt-3">
+                      <i class="bi bi-chat-left"></i>
+                    </span>
+
+                    <textarea class="form-control" rows="7" placeholder="Escribe tu mensaje aquí..."
+                      name="Commentary"></textarea>
+                  </div>
+                </div>
+
+                <!-- BOTON DE ENVIAR MENSAJE -->
+                <!--? link to forms.js | SIRR 26/05/2026 22:46 hrs  -->
+                <button class="btn btn-primary w-100" type="submit">
+                  <i class="bi bi-send me-2"></i>
+
+                  Enviar mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- BARRA LATERAL DE INFO DE CONTACTO -->
+          <div class="col-12 col-lg-4">
+            <!-- INFO -->
+            <div class="contact-card mb-4">
+              <h2 class="section-title mb-4">Información de contacto</h2>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-envelope"></i>
+                </div>
+
+                <div>
+                  <span class="info-label"> Correo electrónico </span>
+
+                  <p class="info-text">contacto@caliope.com</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-telephone"></i>
+                </div>
+
+                <div>
+                  <span class="info-label"> Teléfono </span>
+
+                  <p class="info-text">+52 (55) 1234-5678</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+
+                <div>
+                  <span class="info-label"> Ubicación </span>
+
+                  <p class="info-text">Ciudad de México, México</p>
+                </div>
               </div>
             </div>
 
-            <!-- BARRA LATERAL DE INFO DE CONTACTO -->
-            <div class="col-12 col-lg-4">
-              <!-- INFO -->
-              <div class="contact-card mb-4">
-                <h2 class="section-title mb-4">Información de contacto</h2>
+            <!-- BARRA LATERAL DE PREGUNTAS FRECUENTES -->
+            <div class="contact-card">
+              <h2 class="section-title mb-4">Preguntas frecuentes</h2>
 
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-envelope"></i>
-                  </div>
+              <div class="faq-item">
+                <h5>¿Cómo puedo publicar una obra?</h5>
 
-                  <div>
-                    <span class="info-label"> Correo electrónico </span>
-
-                    <p class="info-text">contacto@caliope.com</p>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-telephone"></i>
-                  </div>
-
-                  <div>
-                    <span class="info-label"> Teléfono </span>
-
-                    <p class="info-text">+52 (55) 1234-5678</p>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-geo-alt"></i>
-                  </div>
-
-                  <div>
-                    <span class="info-label"> Ubicación </span>
-
-                    <p class="info-text">Ciudad de México, México</p>
-                  </div>
-                </div>
+                <p>Ve a la sección "Escribir" y crea tu primera obra.</p>
               </div>
 
-              <!-- BARRA LATERAL DE PREGUNTAS FRECUENTES -->
-              <div class="contact-card">
-                <h2 class="section-title mb-4">Preguntas frecuentes</h2>
+              <div class="faq-item">
+                <h5>¿Es gratuito usar Caliope?</h5>
 
-                <div class="faq-item">
-                  <h5>¿Cómo puedo publicar una obra?</h5>
-
-                  <p>Ve a la sección "Escribir" y crea tu primera obra.</p>
-                </div>
-
-                <div class="faq-item">
-                  <h5>¿Es gratuito usar Caliope?</h5>
-
-                  <p>Sí, Caliope es completamente gratuito.</p>
-                </div>
+                <p>Sí, Caliope es completamente gratuito.</p>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
+  </div>
 
-    <!-- Footer inferior -->
-    <footer class="site-footer site-footer--bottom">
-      <nav class="site-footer-links" aria-label="Enlaces informativos">
-        <a href="nosotrosli.html"> Acerca de </a>
+  <!-- Footer inferior -->
+  <footer class="site-footer site-footer--bottom">
+    <nav class="site-footer-links" aria-label="Enlaces informativos">
+      <a href="nosotrosli.html"> Acerca de </a>
 
-        <a href="contactanos.html"> Contáctanos </a>
+      <a href="contactanos.html"> Contáctanos </a>
 
-        <a href="aviso-privacidad.html"> Aviso de privacidad </a>
+      <a href="aviso-privacidad.html"> Aviso de privacidad </a>
 
-        <a href="terminos.html"> Términos y condiciones </a>
-      </nav>
+      <a href="terminos.html"> Términos y condiciones </a>
+    </nav>
 
-      <!-- Logo y copyright en la misma línea -->
-      <div class="site-footer-brand">
-        <a
-          href="principal.html"
-          class="site-footer-logo"
-          aria-label="Ir a la página principal"
-        >
-          <div class="footer-logo"></div>
-        </a>
+    <!-- Logo y copyright en la misma línea -->
+    <div class="site-footer-brand">
+      <a href="principal.html" class="site-footer-logo" aria-label="Ir a la página principal">
+        <div class="footer-logo"></div>
+      </a>
 
-        <p class="site-footer-copyright">Calíope © 2026</p>
-      </div>
-    </footer>
+      <p class="site-footer-copyright">Calíope © 2026</p>
+    </div>
+  </footer>
 
-    <!-- Aquí se vincula la hoja de estilos modo oscuro -->
-    <script src="../js/menu.js"></script>
-    <link rel="stylesheet" href="/frontend/Styles/contactanos.css" />
-    <script type="module" src="../js/componentes/forms.js"></script>
-  </body>
+  <!-- Aquí se vincula la hoja de estilos modo oscuro -->
+  <script src="../js/menu.js"></script>
+  <link rel="stylesheet" href="/frontend/Styles/contactanos.css" />
+  <script type="module" src="../js/componentes/forms.js"></script>
+</body>
+
 </html>
