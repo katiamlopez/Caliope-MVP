@@ -1,3 +1,8 @@
+import { getToken } from "./auth.js";
+
+console.log("Token:", getToken());
+
+
 const savedList = document.getElementById("savedList");
 const readingList = document.getElementById("readingList");
 

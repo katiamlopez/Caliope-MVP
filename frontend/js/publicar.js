@@ -1,3 +1,7 @@
+import { getToken } from "./auth.js";
+
+console.log("Token:", getToken());
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const formulario = document.getElementById("formulario");
