@@ -91,6 +91,31 @@ document.addEventListener("DOMContentLoaded", () => {
         saveReadingProgress(currentPage, percentage);
     }
 
+    updateReadingHeader();
+
+    const story = getStoryFromLibrary();
+    let pdfDataUrl = story?.pdfDataUrl || "";
+    if (!pdfDataUrl && storyId) {
+        const pdfs = JSON.parse(sessionStorage.getItem("caliopePdfs") || "{}");
+        pdfDataUrl = pdfs[storyId] || "";
+    }
+
+    if (pdfDataUrl) {
+        const carouselSection = document.querySelector("#readingCarousel");
+        const navSection = document.querySelector(".reading-navigation");
+        if (carouselSection) carouselSection.style.display = "none";
+        if (navSection) navSection.style.display = "none";
+
+        const mainContent = document.querySelector(".reading-page");
+        if (mainContent) {
+            const viewer = document.createElement("div");
+            viewer.className = "pdf-viewer-wrapper";
+            viewer.innerHTML = `<embed src="${pdfDataUrl}" type="application/pdf" class="pdf-embed" />`;
+            mainContent.appendChild(viewer);
+        }
+        return;
+    }
+
     carouselElement.addEventListener("slid.bs.carousel", (event) => {
         updateReadingProgress(event.to);
     });
@@ -107,9 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
             carousel.next();
         }
     });
-
-    //* Interaccion deReseñas
-    //* Interacción de reseñas
 
     let selectedStars = 0;
 
@@ -148,10 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
         reviewText.value = "";
         
     });
-
-    updateReadingHeader();
-
-    const story = getStoryFromLibrary();
 
     if (story && story.currentPage > 1 && story.status === "reading") {
         const savedPageIndex = story.currentPage - 1;

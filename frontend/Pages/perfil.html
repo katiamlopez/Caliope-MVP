@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../Styles/perfil.css" />
     <link rel="stylesheet" href="/frontend/Styles/Logo.css">
     <!-- JavaScript para configuraciones (Debe estar al principio)-->
-    <script src="/frontend/js/configuracion.js"></script>
+    <script type="module" src="/frontend/js/configuracion.js"></script>
   </head>
 
   <body>
@@ -161,6 +161,7 @@
             <div class="profile-main-info">
               <h1 id="profileDisplayName">Ana García</h1>
               <p class="profile-username" id="profileUsername">@anag</p>
+              <p class="profile-email" id="profileEmail"></p>
               <p class="profile-pronouns" id="profilePronouns">Ella</p>
 
               <div class="profile-bio-card">
@@ -189,21 +190,6 @@
             <ul class="nav profile-tabs" id="profileTabs" role="tablist">
               <li class="nav-item" role="presentation">
                 <button
-                  class="profile-tab"
-                  id="guardados-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#guardados"
-                  type="button"
-                  role="tab"
-                  aria-controls="guardados"
-                  aria-selected="false"
-                >
-                  Mis borradores
-                </button>
-              </li>
-              
-              <li class="nav-item" role="presentation">
-                <button
                   class="profile-tab active"
                   id="obras-tab"
                   data-bs-toggle="tab"
@@ -213,25 +199,24 @@
                   aria-controls="obras"
                   aria-selected="true"
                 >
-                  Mis obras
+                  Obra Publicada
                 </button>
               </li>
 
               <li class="nav-item" role="presentation">
                 <button
                   class="profile-tab"
-                  id="resenas-tab"
+                  id="borrador-tab"
                   data-bs-toggle="tab"
-                  data-bs-target="#resenas"
+                  data-bs-target="#borrador"
                   type="button"
                   role="tab"
-                  aria-controls="resenas"
+                  aria-controls="borrador"
                   aria-selected="false"
                 >
-                  Mis reseñas
+                  Borrador
                 </button>
               </li>
-
             </ul>
 
             <a href="publicar.html" class="create-work-button"> Crear obra </a>
@@ -242,139 +227,22 @@
             class="tab-content profile-tab-content"
             id="profileTabsContent"
           >
-            <!-- Mis obras desde historias.json -->
             <section
               class="tab-pane fade show active profile-content-section"
               id="obras"
               role="tabpanel"
               aria-labelledby="obras-tab"
             >
-              <div class="works-grid">
-                <article class="profile-work-card">
-                  <img
-                    src="../assets/stories-covers/portada-historia-el-cielo-de-abril.png"
-                    alt="Portada de El cielo de abril"
-                    class="profile-work-cover"
-                  />
-
-                  <h3>El cielo de abril</h3>
-                  <span class="status-badge status-published"> Publicado </span>
-                </article>
-
-                <article class="profile-work-card">
-                  <img
-                    src="../assets/stories-covers/portada-historia-el-cielo-de-mayo.png"
-                    alt="Portada de El cielo de Mayo"
-                    class="profile-work-cover"
-                  />
-
-                  <h3>El cielo de Mayo</h3>
-                  <span class="status-badge status-published"> Publicado </span>
-                </article>
-              </div>
+              <div class="works-grid" id="obrasContainer"></div>
             </section>
 
-            <!-- Mis reseñas desde resenas.json -->
             <section
               class="tab-pane fade profile-content-section"
-              id="resenas"
+              id="borrador"
               role="tabpanel"
-              aria-labelledby="resenas-tab"
+              aria-labelledby="borrador-tab"
             >
-              <div class="reviews-list">
-                <article class="profile-review-card">
-                  <img
-                    src="../assets/stories-covers/portada-historia-la-noche-violeta.png"
-                    alt="Portada de La noche violeta"
-                    class="profile-review-cover"
-                  />
-
-                  <div class="profile-review-info">
-                    <p class="reviewed-story">
-                      Reseña de <strong>La noche violeta</strong>
-                    </p>
-
-                    <p class="review-rating">★★★★★</p>
-
-                    <h3>Una historia luminosa</h3>
-
-                    <p>
-                      Me encantó la atmósfera de la historia y la forma en que
-                      describe las decisiones que cambian el destino de los
-                      personajes.
-                    </p>
-
-                    <a
-                    href="lectura.html?id=la-noche-violeta"
-                    class="read-button"
-                    data-id="la-noche-violeta"
-                    data-titulo="La noche violeta"
-                    data-autor="Steven S."
-                    data-portada="../assets/stories-covers/portada-historia-la-noche-violeta.png"
-                    data-total-pages="3"
-                    >
-                    Leer
-                  </a>
-                  </div>
-                </article>
-
-                <article class="profile-review-card">
-                  <img
-                    src="../assets/stories-covers/portada-historia-luz-de-octubre.png"
-                    alt="Portada de Luz de octubre"
-                    class="profile-review-cover"
-                  />
-
-                  <div class="profile-review-info">
-                    <p class="reviewed-story">
-                      Reseña de <strong>Luz de octubre</strong>
-                    </p>
-
-                    <p class="review-rating">★★★★☆</p>
-
-                    <h3>Muy envolvente</h3>
-
-                    <p>
-                      La historia tiene un tono muy acogedor y misterioso. Me
-                      gustó mucho cómo se construye la tensión desde el inicio.
-                    </p>
-
-                    <a
-                      href="lectura.html?id=luz-octubre"
-                      class="read-button read-button-small"
-                      data-id="luz-octubre"
-                      data-titulo="Luz de octubre"
-                      data-autor="Valeria M."
-                      data-portada="../assets/stories-covers/portada-historia-luz-de-octubre.png"
-                      data-total-pages="3"
-                    >
-                      Leer
-                    </a>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <!-- Mis guardados desde historias.json / biblioteca futura -->
-            <section
-              class="tab-pane fade profile-content-section"
-              id="guardados"
-              role="tabpanel"
-              aria-labelledby="guardados-tab"
-            >
-              <div class="works-grid">
-                <article class="profile-work-card">
-                  <img
-                    src="../assets/stories-covers/portada-historia-un-verano-complicado.png"
-                    alt="Portada de Un verano complicado"
-                    class="profile-work-cover"
-                  />
-
-                  <h3>Un verano complicado</h3>
-                  <span class="status-badge status-saved"> Borrador </span>
-                </article>
-
-              </div>
+              <div class="works-grid" id="borradorContainer"></div>
             </section>
           </section>
         </main>

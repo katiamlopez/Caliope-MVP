@@ -213,6 +213,21 @@
     text-align: center;
 }
 
+/** VISOR PDF */
+
+.pdf-viewer-wrapper {
+    width: 100%;
+    height: calc(100vh - 200px);
+    margin: 0 auto;
+}
+
+.pdf-embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius, 12px);
+}
+
 /** MODAL DE RESEÑA */
 
 .review-modal {

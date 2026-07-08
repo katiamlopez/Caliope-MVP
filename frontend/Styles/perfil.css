@@ -128,7 +128,17 @@
 
 .profile-username {
   color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
   margin-bottom: 12px;
+}
+
+#profilePronouns {
+  display: none;
 }
 
 .profile-bio-card {
@@ -344,20 +354,21 @@
   transform: translateY(-4px);
 }
 
+.profile-work-cover-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  background: var(--color-secondary);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(28, 18, 54, 0.12);
+}
+
 .profile-work-cover {
   width: 100%;
-
-  aspect-ratio: 2 / 3;
-
-  height: auto;
-
+  height: 100%;
   object-fit: cover;
-
-  border-radius: 20px;
-
-  margin-bottom: 14px;
-
-  box-shadow: 0 12px 30px rgba(28, 18, 54, 0.12);
+  display: block;
 }
 
 .profile-work-card h3 {
@@ -370,6 +381,11 @@
 .profile-work-card p {
   color: var(--color-text-muted);
   margin-bottom: 8px;
+}
+
+.profile-work-date {
+  font-size: 0.8rem;
+  margin-top: 8px;
 }
 /* ==========================================================================
    BADGES

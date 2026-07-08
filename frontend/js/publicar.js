@@ -138,14 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   genreSelect.addEventListener("change", addGenre);
 
-  //* Envío del formulario al backend
-  formulario.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
+  async function enviarHistoria(status) {
     const titulo = tituloInput.value.trim();
     const descripcion = descripcionInput.value.trim();
 
-    if (titulo === "" || descripcion === "") {
+    if (!titulo || !descripcion) {
       alert("Por favor completa los campos requeridos.");
       return;
     }
@@ -158,23 +155,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const portada = document.getElementById("portada").files[0];
     const pdf = document.getElementById("documentoHistoria").files[0];
-    
-    // Construcción del objeto final estructurado en inglés para tu API
+
     const story = {
-      idUsers: Number(localStorage.getItem("userId")),
       title: titulo,
       description: descripcion,
       picture_front_pages: portada ? portada.name : "",
       file_pdf: pdf ? pdf.name : "",
-      status: "PUBLICADA",
-      created_date: new Date().toISOString().split("T")[0],
-      published_date: new Date().toISOString().split("T")[0],
-      // CORRECCIÓN: Enviamos un arreglo limpio de números [1, 2, 3] al backend
-      genres: selectedGenres.map(g => g.id) 
+      status: status,
+      genres: selectedGenres.map(g => g.id)
     };
-    
-    console.log("Sending story to backend:", story);
-    
+
     try {
       const response = await fetch("http://localhost:8080/api/stories", {
         method: "POST",
@@ -185,22 +175,39 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(story)
       });
 
-      if (!response.ok) {
-        throw new Error("Error al publicar");
+      if (!response.ok) throw new Error("Error al guardar");
+
+      const created = await response.json();
+      const storyId = created.id || created.title || titulo;
+
+      if (pdf) {
+        const pdfDataUrl = await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = (e) => resolve(e.target.result);
+          reader.readAsDataURL(pdf);
+        });
+        const pdfs = JSON.parse(sessionStorage.getItem("caliopePdfs") || "{}");
+        pdfs[storyId] = pdfDataUrl;
+        sessionStorage.setItem("caliopePdfs", JSON.stringify(pdfs));
       }
 
-      const historia = await response.json();
-      console.log("Server response:", historia);
-      
-      alert("Formulario enviado correctamente.");
       formulario.reset();
-      selectedGenres.length = 0; 
-      renderGenres();             
-
+      selectedGenres.length = 0;
+      renderGenres();
+      window.location.href = "principal.html";
     } catch (error) {
       console.error(error);
-      alert("No fue posible publicar");
+      alert("No fue posible guardar la obra.");
     }
+  }
+
+  document.querySelector(".draft-button").addEventListener("click", () => {
+    enviarHistoria("BORRADOR");
+  });
+
+  formulario.addEventListener("submit", (event) => {
+    event.preventDefault();
+    enviarHistoria("PUBLICADO");
   });
 
   renderGenres();

@@ -1,57 +1,135 @@
-import { getToken } from "./auth.js";
 import { api } from "./api.js";
 
-console.log("Token:", getToken());
+let allStories = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
-
-    try {
-
-        const response = await api("/api/users/me");
-
-        if (!response.ok) {
-            throw new Error("No se pudo obtener el perfil");
-        }
-
-        const user = await response.json();
-
-        console.log(user);
-
-        mostrarPerfil(user);
-
-    } catch (error) {
-
-        console.error("Error:", error);
-
-    }
-
+    await loadProfile();
+    setupTabs();
 });
 
-function mostrarPerfil(user) {
+async function loadProfile() {
+    try {
+        const res = await api("/api/users/me");
+        if (!res.ok) throw new Error("Error al cargar perfil");
+        const data = await res.json();
+        allStories = data.stories || [];
+        renderProfile(data);
+        renderStoriesByStatus("PUBLICADO", "#obrasContainer");
+        localStorage.setItem("caliopeUserProfile", JSON.stringify({
+            displayName: `${data.firstName || ""} ${data.lastName || ""}`.trim(),
+            username: data.user_name ? `@${data.user_name}` : "",
+            pronouns: "",
+            roles: [],
+            bio: data.bio || ""
+        }));
+    } catch (e) {
+        console.warn("No se pudo cargar perfil desde API");
+        const fallback = JSON.parse(localStorage.getItem("caliopeUserProfile"));
+        if (fallback) renderProfile(fallback);
+    }
+}
 
-    document.getElementById("profileDisplayName").textContent =
-        `${user.firstName} ${user.lastName}`;
+function renderProfile(data) {
+    const fullName = data.firstName && data.lastName
+        ? `${data.firstName} ${data.lastName}`
+        : data.displayName || "Usuario";
 
-    document.getElementById("profileUsername").textContent =
-        `@${user.user_name}`;
+    setText("#profileDisplayName", fullName);
+    setText("#profileUsername", data.user_name ? `@${data.user_name}` : data.username || "");
+    setText("#profileBio", data.bio || "");
+    setText("#profileEmail", data.email || "");
 
-    document.getElementById("profileBio").textContent =
-        user.bio || "Este usuario aún no tiene biografía.";
-
-    // Si no manejas pronombres por ahora
-    document.getElementById("profilePronouns").style.display = "none";
-
-    // Roles (si aún no existen en tu BD)
-    const roles = document.getElementById("profileRoles");
-    roles.innerHTML = "<span>Escritor</span>";
-
-    // Avatar
-    const avatar = document.querySelector(".profile-avatar");
-
-    if (user.picture_avatar) {
-        avatar.src = user.picture_avatar;
-    } else {
-        avatar.src = "../assets/users-photos/foto-perfil-usuario.png";
+    if (data.picture_avatar) {
+        const avatar = document.querySelector(".profile-avatar");
+        if (avatar) avatar.src = data.picture_avatar;
     }
 
+    if (data.pronouns) {
+        const el = document.querySelector("#profilePronouns");
+        if (el) {
+            el.textContent = data.pronouns;
+            el.style.display = "block";
+        }
+    }
+
+    const rolesContainer = document.querySelector("#profileRoles");
+    if (rolesContainer && data.roles && data.roles.length) {
+        rolesContainer.innerHTML = "";
+        data.roles.forEach(r => {
+            rolesContainer.innerHTML += `<span>${escapeHtml(r)}</span>`;
+        });
+    }
+}
+
+function setText(selector, text) {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = text;
+}
+
+function setupTabs() {
+    document.querySelectorAll('#profileTabs [data-bs-toggle="tab"]').forEach(tab => {
+        tab.addEventListener("shown.bs.tab", (e) => {
+            const target = e.target.getAttribute("data-bs-target");
+            if (target === "#obras") {
+                renderStoriesByStatus("PUBLICADO", "#obrasContainer");
+            } else if (target === "#borrador") {
+                renderStoriesByStatus("BORRADOR", "#borradorContainer");
+            }
+        });
+    });
+}
+
+function renderStoriesByStatus(status, containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    const filtered = allStories.filter(s => s.status === status);
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<p class="text-muted">No hay obras disponibles.</p>';
+        return;
+    }
+
+    container.innerHTML = "";
+    filtered.forEach(story => {
+        const card = document.createElement("article");
+        card.className = "profile-work-card";
+
+        const coverSrc = story.picture_front_pages || "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
+        const statusLabel = story.status === "PUBLICADO" ? "Publicado" : "Borrador";
+        const statusClass = story.status === "PUBLICADO" ? "status-published" : "status-draft";
+        const dateLabel = story.status === "PUBLICADO"
+            ? `Publicado: ${formatDate(story.published_date)}`
+            : `Creado: ${formatDate(story.created_date)}`;
+
+        card.innerHTML = `
+            <div class="profile-work-cover-wrapper">
+                <img src="${coverSrc}" alt="${escapeHtml(story.title)}" class="profile-work-cover"
+                     onerror="this.style.display='none'" />
+            </div>
+            <h3>${escapeHtml(story.title)}</h3>
+            <p>${escapeHtml(story.description || "")}</p>
+            <span class="status-badge ${statusClass}">${statusLabel}</span>
+            <p class="profile-work-date">${dateLabel}</p>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function formatDate(dateStr) {
+    if (!dateStr) return "";
+    try {
+        return new Date(dateStr).toLocaleDateString("es-MX", {
+            year: "numeric", month: "long", day: "numeric"
+        });
+    } catch {
+        return dateStr;
+    }
+}
+
+function escapeHtml(text) {
+    if (!text) return "";
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
 }

@@ -203,7 +203,8 @@ const birthday =
 
             window.location.href = "inicio_sesion.html";
         } else {
-            alert(resultado.message || "Error al registrar usuario");
+            const errorData = await respuesta.json();
+            alert(errorData.message || "Error al registrar usuario");
         }
 
 
