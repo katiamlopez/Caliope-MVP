@@ -11,34 +11,67 @@
  * Nombres para el evento de captura de datos:
  * Commentary / CommentaryTpic / CommentaryEMil / CommentaryName
  */
+console.log("forms.js cargado");
 
-const formCntc      = document.getElementById("Cntc");
-let   formArry      = [];  // <--- Aquí se guardan los comentarios como lista de objetos.
-/**************************************************
- * ? formCntc ::: Capturador de evento: formulario
- *************************************************/
-formCntc.addEventListener("submit",(event)=>{
+const formCntc = document.getElementById("Cntc");
+
+formCntc.addEventListener("submit", async (event) => {
+
     event.preventDefault();
-    const formName = event.target.elements["CommentaryName"].value;
-    const formTpic = event.target.elements["CommentaryTpic"].value;
-    const formEMil = event.target.elements["CommentaryEMil"].value;
-    const formText = event.target.elements["Commentary"].value;
 
-    const formDATA = new FormData(formCntc);    
-    const ArryData = [...formDATA];
-    const CmntObjt = Object.fromEntries(ArryData);
-    formArry.push(CmntObjt);
-    
-    /**
-     * ? Colocar función para guardar datos almacenados, por el momento en la memoria local,
-     * ? despues en la base de datos , SIRR 27/05/2026 12:01 hrs.
-     */
-    saveLcal(formArry);
-    formCntc.reset();
+    console.log("Evento submit");
+
+    const contact = {
+
+        name: event.target.elements["CommentaryName"].value,
+
+        email: event.target.elements["CommentaryEMil"].value,
+
+        subject: event.target.elements["CommentaryTpic"].value,
+
+        message: event.target.elements["Commentary"].value
+
+    };
+
+    console.log(contact);
+
+    try{
+
+        const response = await fetch("http://localhost:8080/api/contacts",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body: JSON.stringify(contact)
+
+        });
+
+        if(!response.ok){
+            throw new Error("Error al enviar el mensaje");
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        alert("Mensaje enviado correctamente.");
+
+        formCntc.reset();
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("No fue posible enviar el mensaje.");
+
+    }
+
 });
-
 // Función de testeo: guarda información en memoria local
-const saveLcal = (Arrayform) =>{
-      const Textform = JSON.stringify(Arrayform);
-      localStorage.setItem("Comment", Textform );
-  };
+// const saveLcal = (Arrayform) =>{
+//       const Textform = JSON.stringify(Arrayform);
+//       localStorage.setItem("Comment", Textform );
+//   };

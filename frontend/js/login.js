@@ -33,8 +33,12 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         }
 
         const datos = await respuesta.json();
+        
+        console.log("Respuesta completa del login:", datos);
 
         saveToken(datos.token);
+        localStorage.setItem("userId", datos.id);
+        
 
         window.location.href = "principal.html";
 

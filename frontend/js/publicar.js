@@ -103,7 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //*Validacion de envio de formularios
 
 
-  formulario.addEventListener("submit", (event) => {
+
+
+
+
+
+
+
+  formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const titulo = tituloInput.value.trim();
@@ -133,7 +140,52 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const portada = document.getElementById("portada").files[0];
+    const pdf = document.getElementById("documentoHistoria").files[0];
+    const story = {
+      idUsers: Number(localStorage.getItem("userId")),
+      title: titulo,
+      description: descripcion,
+      picture_front_pages: portada ? portada.name : "",
+      file_pdf: pdf ? pdf.name : "",
+      status: "PUBLICADA",
+      created_date: new Date().toISOString().split("T")[0],
+      published_date: new Date().toISOString().split("T")[0]
+    };
+    console.log("Historia enviada:", story);
+    try {
+
+      const response = await fetch("http://localhost:8080/api/stories", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${getToken()}`
+        },
+        body: JSON.stringify(story)
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al publicar");
+      }
+
+      const historia = await response.json();
+
+      console.log(historia);
+
+      
+
+      formulario.reset();
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("No fue posible publicar");
+
+    }
+
     alert("Formulario enviado correctamente.");
+
     formulario.reset();           // Limpia el texto del formulario
   });
 
