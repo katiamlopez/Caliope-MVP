@@ -1,6 +1,7 @@
 import { api } from "./api.js";
 import { getToken } from "./auth.js";
 
+// Cuando la pagina carga, traigo las obras y los botones
 document.addEventListener("DOMContentLoaded", async () => {
     await loadStories();
     const { LikeManager } = await import("./likeManager.js");
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupSaveButtons();
 });
 
+// Trae las obras desde el backend
 async function loadStories() {
     const container = document.getElementById("feedContainer");
     if (!container) return;
@@ -23,6 +25,7 @@ async function loadStories() {
     }
 }
 
+// Crea una tarjeta por cada obra, ordenadas de la mas nueva a la mas vieja
 function renderStories(stories, container) {
     if (!stories || stories.length === 0) {
         container.innerHTML = '<p class="text-muted">No hay obras publicadas aún.</p>';

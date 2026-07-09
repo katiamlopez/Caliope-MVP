@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pdfDataUrl = pdfs[storyId] || "";
     }
 
+    // Si la obra tiene PDF, lo muestro y oculto el carrusel
     if (pdfDataUrl) {
         const carouselSection = document.querySelector("#readingCarousel");
         const navSection = document.querySelector(".reading-navigation");

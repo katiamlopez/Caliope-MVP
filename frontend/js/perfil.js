@@ -2,6 +2,7 @@ import { api } from "./api.js";
 
 let allStories = [];
 
+// Cargo mis datos y mis obras al iniciar
 document.addEventListener("DOMContentLoaded", async () => {
     await loadProfile();
     setupTabs();
@@ -79,6 +80,7 @@ function setupTabs() {
     });
 }
 
+// Filtra obras por publicadas o borradores
 function renderStoriesByStatus(status, containerSelector) {
     const container = document.querySelector(containerSelector);
     if (!container) return;

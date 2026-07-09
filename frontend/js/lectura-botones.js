@@ -1,8 +1,10 @@
+// Escucha cualquier clic en "Leer"
 document.addEventListener("click", (event) => {
     const button = event.target.closest(".read-button");
     if (!button) return;
     event.preventDefault();
 
+    // Busco el PDF guardado en sessionStorage
     const storyId = button.dataset.id;
     const pdfs = JSON.parse(sessionStorage.getItem("caliopePdfs") || "{}");
 
@@ -23,6 +25,7 @@ document.addEventListener("click", (event) => {
         return;
     }
 
+    // Guardo la obra en mi biblioteca
     const library =
         JSON.parse(localStorage.getItem("caliopeLibrary")) || [];
 

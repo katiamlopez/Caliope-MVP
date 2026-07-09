@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const created = await response.json();
       const storyId = created.id || created.title || titulo;
 
+      // Guardo el PDF en sessionStorage para leerlo despues
       if (pdf) {
         const pdfDataUrl = await new Promise((resolve) => {
           const reader = new FileReader();
