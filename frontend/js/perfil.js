@@ -97,7 +97,10 @@ function renderStoriesByStatus(status, containerSelector) {
         const card = document.createElement("article");
         card.className = "profile-work-card";
 
-        const coverSrc = story.picture_front_pages || "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
+        // 🔥 SOLO ESTA LÍNEA CAMBIA
+        const coverSrc = story.picture_front_pages 
+            ? `http://localhost:8080/api/files/${story.picture_front_pages}`;
+            
         const statusLabel = story.status === "PUBLICADO" ? "Publicado" : "Borrador";
         const statusClass = story.status === "PUBLICADO" ? "status-published" : "status-draft";
         const dateLabel = story.status === "PUBLICADO"

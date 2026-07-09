@@ -42,7 +42,12 @@ function renderStories(stories, container) {
             : "Usuario";
 
         const authorAvatar = story.user?.picture_avatar || "../assets/users-photos/foto-perfil-usuario.png";
-        const coverSrc = story.picture_front_pages || "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
+        
+      
+        const coverSrc = story.picture_front_pages 
+            ? `http://localhost:8080/api/files/${story.picture_front_pages}` 
+            : "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
+            
         const timeAgo = getTimeAgo(story.published_date || story.created_date);
         const storyId = story.id || story.title;
 

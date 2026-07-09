@@ -143,64 +143,64 @@ document.addEventListener("DOMContentLoaded", () => {
     const descripcion = descripcionInput.value.trim();
 
     if (!titulo || !descripcion) {
-      alert("Por favor completa los campos requeridos.");
-      return;
+        alert("Por favor completa los campos requeridos.");
+        return;
     }
 
     if (selectedGenres.length === 0) {
-      alert("Selecciona al menos un género.");
-      genreSelect.focus();
-      return;
+        alert("Selecciona al menos un género.");
+        genreSelect.focus();
+        return;
     }
 
-    const portada = document.getElementById("portada").files[0];
-    const pdf = document.getElementById("documentoHistoria").files[0];
+    const portadaFile = document.getElementById("portada").files[0];
+    const pdfFile = document.getElementById("documentoHistoria").files[0];
 
-    const story = {
-      title: titulo,
-      description: descripcion,
-      picture_front_pages: portada ? portada.name : "",
-      file_pdf: pdf ? pdf.name : "",
-      status: status,
-      genres: selectedGenres.map(g => g.id)
-    };
+    // Crear FormData para enviar archivos
+    const formData = new FormData();
+    formData.append("title", titulo);
+    formData.append("description", descripcion);
+    formData.append("status", status);
+    
+    // Agregar géneros como strings
+    selectedGenres.forEach(g => formData.append("genres", g.id.toString()));
+    
+    // Agregar archivos
+    if (portadaFile) {
+        formData.append("picture_front_pages", portadaFile);
+    }
+    if (pdfFile) {
+        formData.append("file_pdf", pdfFile);
+    }
 
     try {
-      const response = await fetch("http://localhost:8080/api/stories", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${getToken()}`
-        },
-        body: JSON.stringify(story)
-      });
-
-      if (!response.ok) throw new Error("Error al guardar");
-
-      const created = await response.json();
-      const storyId = created.id || created.title || titulo;
-
-      // Guardo el PDF en sessionStorage para leerlo despues
-      if (pdf) {
-        const pdfDataUrl = await new Promise((resolve) => {
-          const reader = new FileReader();
-          reader.onload = (e) => resolve(e.target.result);
-          reader.readAsDataURL(pdf);
+        const response = await fetch("http://localhost:8080/api/stories", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${getToken()}`
+                // NO incluyas Content-Type aquí, el navegador lo pondrá automáticamente con el boundary
+            },
+            body: formData
         });
-        const pdfs = JSON.parse(sessionStorage.getItem("caliopePdfs") || "{}");
-        pdfs[storyId] = pdfDataUrl;
-        sessionStorage.setItem("caliopePdfs", JSON.stringify(pdfs));
-      }
 
-      formulario.reset();
-      selectedGenres.length = 0;
-      renderGenres();
-      window.location.href = "principal.html";
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Error al guardar: ${response.status} - ${errorText}`);
+        }
+
+        const created = await response.json();
+        console.log("Historia creada:", created);
+        
+        formulario.reset();
+        selectedGenres.length = 0;
+        renderGenres();
+        window.location.href = "principal.html";
+        
     } catch (error) {
-      console.error(error);
-      alert("No fue posible guardar la obra.");
+        console.error("Error:", error);
+        alert("No fue posible guardar la obra: " + error.message);
     }
-  }
+}
 
   document.querySelector(".draft-button").addEventListener("click", () => {
     enviarHistoria("BORRADOR");
