@@ -52,94 +52,14 @@
                 <i class="bi bi-gear"></i>
               </a>
 
-              <!-- Notificaciones -->
-              <!-- <div class="notification-wrapper">
-                <button
-                  type="button"
-                  class="topbar-icon notification-icon"
-                  id="notificationButton"
-                  aria-label="Ver notificaciones"
-                  aria-expanded="false"
-                  aria-controls="notificationPanel"
-                >
-                  <i class="bi bi-bell"></i>
-                  <span></span>
-                </button>
-
-                <section
-                  class="notification-panel"
-                  id="notificationPanel"
-                  aria-label="Panel de notificaciones"
-                >
-                  <header class="notification-panel-header">
-                    <h2>Notificaciones</h2>
-
-                    <button
-                      type="button"
-                      class="notification-close"
-                      id="notificationClose"
-                      aria-label="Cerrar notificaciones"
-                    >
-                      <i class="bi bi-x-lg"></i>
-                    </button>
-                  </header>
-
-                  <div class="notification-list">
-                    <article class="notification-item">
-                      <img
-                        src="../assets/users-photos/foto-perfil-valeria-m.png"
-                        alt="Foto de perfil de Valeria M."
-                        class="notification-avatar"
-                      />
-
-                      <div>
-                        <p>
-                          <strong>Valeria M.</strong> publicó una nueva obra.
-                        </p>
-                        <span>Hace 2 horas</span>
-                      </div>
-                    </article>
-
-                    <article class="notification-item">
-                      <img
-                        src="../assets/users-photos/foto-perfil-luna.png"
-                        alt="Foto de perfil de Luna"
-                        class="notification-avatar"
-                      />
-
-                      <div>
-                        <p><strong>Luna</strong> escribió una reseña.</p>
-                        <span>Hace 3 horas</span>
-                      </div>
-                    </article>
-
-                    <article class="notification-item">
-                      <img
-                        src="../assets/users-photos/foto-perfil-diego-n.png"
-                        alt="Foto de perfil de Diego N."
-                        class="notification-avatar"
-                      />
-
-                      <div>
-                        <p><strong>Diego N.</strong> guardó tu historia.</p>
-                        <span>Ayer</span>
-                      </div>
-                    </article>
-                  </div>
-
-                  <a href="notificaciones.html" class="notification-view-all">
-                    Ver todas
-                  </a>
-                </section>
-              </div> -->
-
+             
               <!-- Perfil -->
               <a
                 href="perfil.html"
                 class="topbar-profile-link"
                 aria-label="Ir a mi perfil"
               >
-                <img
+                <img id="topbarAvatar"
                   src="../assets/users-photos/foto-perfil-usuario.png"
                   alt="Foto de perfil del usuario"
                   class="topbar-avatar"
@@ -260,8 +180,58 @@
                   <p>Edita los datos principales que aparecen en tu cuenta.</p>
                 </div>
               </header>
+<form class="settings-form" id="profileSettingsForm">
+    <div class="form-group">
+        <label for="displayName">Nombre completo</label>
+        <input type="text" id="displayName" name="displayName" required>
+    </div>
 
-              <form class="settings-form" id="profileSettingsForm">
+    <div class="form-group">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" id="username" name="username">
+    </div>
+
+    <div class="form-group">
+        <label for="profileBio">Biografía</label>
+        <textarea id="profileBio" name="bio" rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="profileEmail">Email</label>
+        <input type="email" id="profileEmail" disabled>
+    </div>
+
+    <div class="form-group">
+        <label for="profileAvatar">Avatar</label>
+        <input type="file" id="profileAvatar" accept="image/*">
+        <img id="avatarPreview" style="display:none; max-width:100px; margin-top:10px;">
+    </div>
+
+    <div class="form-group">
+        <label>Pronombres</label>
+        <select id="pronounSelect">
+            <option value="">Seleccionar</option>
+            <option value="Ella">Ella</option>
+            <option value="Él">Él</option>
+            <option value="Elle">Elle</option>
+        </select>
+        <div id="selectedPronouns"></div>
+    </div>
+
+    <div class="form-group">
+        <label>Roles</label>
+        <select id="roleSelect">
+            <option value="">Seleccionar</option>
+            <option value="Escritor">Escritor</option>
+            <option value="Lector">Lector</option>
+            <option value="Editor">Editor</option>
+        </select>
+        <div id="selectedRoles"></div>
+    </div>
+
+    <button  class="settings-save-button"type="submit">Guardar cambios</button>
+</form>
+              <!-- <form class="settings-form" id="profileSettingsForm">
                 <div class="settings-form-grid">
                   <div class="form-group">
                     <label for="displayName"> Nombre visible </label>
@@ -339,7 +309,7 @@ Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Si
                     Guardar cambios
                   </button>
                 </div>
-              </form>
+              </form> -->
             </article>
           </section>
         </main>
@@ -376,6 +346,7 @@ Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Si
 
     <!-- Panel de notificaciones -->
     <script src="../js/notificaciones.js"></script>
+    <script src="../js/avatarUpdate.js"></script>
 
     <!-- Bootstrap JavaScript -->
     <script

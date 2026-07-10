@@ -16,13 +16,18 @@ async function loadProfile() {
         allStories = data.stories || [];
         renderProfile(data);
         renderStoriesByStatus("PUBLICADO", "#obrasContainer");
+
         localStorage.setItem("caliopeUserProfile", JSON.stringify({
             displayName: `${data.firstName || ""} ${data.lastName || ""}`.trim(),
             username: data.user_name ? `@${data.user_name}` : "",
             pronouns: "",
             roles: [],
-            bio: data.bio || ""
+            bio: data.bio || "",
+            picture_avatar: data.picture_avatar || ""
         }));
+
+        updateTopbarAvatar();
+        
     } catch (e) {
         console.warn("No se pudo cargar perfil desde API");
         const fallback = JSON.parse(localStorage.getItem("caliopeUserProfile"));
@@ -40,9 +45,16 @@ function renderProfile(data) {
     setText("#profileBio", data.bio || "");
     setText("#profileEmail", data.email || "");
 
-    if (data.picture_avatar) {
+   if (data.picture_avatar) {
         const avatar = document.querySelector(".profile-avatar");
-        if (avatar) avatar.src = data.picture_avatar;
+        if (avatar) {
+            // Si la imagen ya tiene URL completa o es un archivo del servidor
+            if (data.picture_avatar.startsWith('http')) {
+                avatar.src = data.picture_avatar;
+            } else {
+                avatar.src = `http://localhost:8080/api/files/${data.picture_avatar}`;
+            }
+        }
     }
 
     if (data.pronouns) {
@@ -52,7 +64,7 @@ function renderProfile(data) {
             el.style.display = "block";
         }
     }
-
+    
     const rolesContainer = document.querySelector("#profileRoles");
     if (rolesContainer && data.roles && data.roles.length) {
         rolesContainer.innerHTML = "";
@@ -80,6 +92,7 @@ function setupTabs() {
     });
 }
 
+
 // Filtra obras por publicadas o borradores
 function renderStoriesByStatus(status, containerSelector) {
     const container = document.querySelector(containerSelector);
@@ -97,9 +110,10 @@ function renderStoriesByStatus(status, containerSelector) {
         const card = document.createElement("article");
         card.className = "profile-work-card";
 
-        // 🔥 SOLO ESTA LÍNEA CAMBIA
+  
         const coverSrc = story.picture_front_pages 
-            ? `http://localhost:8080/api/files/${story.picture_front_pages}`;
+            ? `http://localhost:8080/api/files/${story.picture_front_pages}`
+            : "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
             
         const statusLabel = story.status === "PUBLICADO" ? "Publicado" : "Borrador";
         const statusClass = story.status === "PUBLICADO" ? "status-published" : "status-draft";
