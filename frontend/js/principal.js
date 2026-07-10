@@ -18,6 +18,7 @@ async function loadStories() {
         const res = await api("/api/stories");
         if (!res.ok) throw new Error("Error al cargar obras");
         const stories = await res.json();
+        console.log("Datos de las historias:", stories); 
         renderStories(stories, container);
     } catch (e) {
         console.error("Error cargado obras:", e);
@@ -37,12 +38,22 @@ function renderStories(stories, container) {
         .slice()
         .sort((a, b) => new Date(b.published_date || b.created_date) - new Date(a.published_date || a.created_date))
         .forEach(story => {
-        const authorName = story.user
-            ? `${story.user.firstName || ""} ${story.user.lastName || ""}`.trim() || story.user.username || "Usuario"
+       const authorName = story.user 
+            ? `${story.user.firstName || ""} ${story.user.lastName || ""}`.trim() || story.user.username || story.user.user_name || "Usuario"
             : "Usuario";
 
-        const authorAvatar = story.user?.picture_avatar || "../assets/users-photos/foto-perfil-usuario.png";
-        const coverSrc = story.picture_front_pages || "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
+        let authorAvatar = "../assets/users-photos/foto-perfil-usuario.png";
+if (story.user?.picture_avatar) {
+    if (story.user.picture_avatar.startsWith('http')) {
+        authorAvatar = story.user.picture_avatar;
+    } else {
+        authorAvatar = `http://localhost:8080/api/files/${story.user.picture_avatar}`;
+    }
+}
+        const coverSrc = story.picture_front_pages 
+            ? `http://localhost:8080/api/files/${story.picture_front_pages}` 
+            : "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
+            
         const timeAgo = getTimeAgo(story.published_date || story.created_date);
         const storyId = story.id || story.title;
 
@@ -143,3 +154,45 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+
+// Actualizar avatar en la barra superior
+async function updateTopbarAvatar() {
+    const avatarImg = document.getElementById("topbarAvatar");
+    if (!avatarImg) return;
+    
+    try {
+        // 1. Intentar desde localStorage (rápido)
+        const profile = JSON.parse(localStorage.getItem("caliopeUserProfile"));
+        if (profile?.picture_avatar) {
+            avatarImg.src = profile.picture_avatar.startsWith('http') 
+                ? profile.picture_avatar 
+                : `http://localhost:8080/api/files/${profile.picture_avatar}`;
+            return;
+        }
+        
+        // 2. Si no está en localStorage, consultar al backend
+        const res = await api("/api/users/me");
+        if (!res.ok) throw new Error("Error al cargar perfil");
+        const data = await res.json();
+        
+        if (data.picture_avatar) {
+            avatarImg.src = data.picture_avatar.startsWith('http')
+                ? data.picture_avatar
+                : `http://localhost:8080/api/files/${data.picture_avatar}`;
+        }
+        
+        // 3. Manejar error de carga de imagen
+        avatarImg.onerror = () => {
+            avatarImg.src = "../assets/users-photos/foto-perfil-usuario.png";
+        };
+        
+    } catch (e) {
+        console.warn("No se pudo cargar el avatar");
+        avatarImg.src = "../assets/users-photos/foto-perfil-usuario.png";
+    }
+}
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    updateTopbarAvatar();
+});

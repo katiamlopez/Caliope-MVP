@@ -2,12 +2,13 @@
 * ═══════ CONFIGURACION ═══════
  */
 
+
 import { getToken } from "./auth.js";
+import { api } from "./api.js";
 
 console.log("Token:", getToken());
-
 fetch("configuracion.html");
-console.log("conectao :) ");
+
 
 const htmlElement = document.documentElement;
 const STORAGE_KEY = "theme-preference";
@@ -76,16 +77,12 @@ window
  * * ═══════ PERFIL DE USUARIO ═══════
  */
 
-const defaultProfile = {
-    displayName: "Ana García",
-    username: "@anag",
-    pronouns: [],
-    roles: ["Escritor", "Lector"],
-    bio: "Amo la fantasía, los mundos imaginarios y las historias que te hacen sentir. Siempre escribiendo, siempre leyendo.",
-};
-
 const selectedPronouns = [];
 const selectedRoles = [];
+
+// Variables para almacenar el perfil actual
+let currentUserProfile = null;
+let currentUserId = null;
 
 function renderTags(containerId, values, removeCallback) {
     const container = document.getElementById(containerId);
@@ -145,10 +142,78 @@ function removeRole(value) {
     renderTags("selectedRoles", selectedRoles, removeRole);
 }
 
-function loadProfileSettings() {
-    const savedProfile =
-        JSON.parse(localStorage.getItem(PROFILE_STORAGE_KEY)) || defaultProfile;
+// 🔥 NUEVA FUNCIÓN: Cargar perfil desde el backend
+async function loadProfileFromBackend() {
+    try {
+        const res = await api("/api/users/me");
+        if (!res.ok) throw new Error("Error al cargar perfil");
+        
+        const data = await res.json();
+        currentUserProfile = data;
+        currentUserId = data.id;
+        
+        // Cargar los datos en el formulario
+        const displayNameInput = document.getElementById("displayName");
+        const usernameInput = document.getElementById("username");
+        const bioInput = document.getElementById("profileBio");
+        const avatarInput = document.getElementById("profileAvatar");
+        const emailInput = document.getElementById("profileEmail");
 
+        if (displayNameInput) {
+            displayNameInput.value = `${data.firstName || ""} ${data.lastName || ""}`.trim();
+        }
+
+        if (usernameInput) {
+            usernameInput.value = data.user_name || data.username || "";
+        }
+
+        if (bioInput) {
+            bioInput.value = data.bio || "";
+        }
+
+        if (emailInput) {
+            emailInput.value = data.email || "";
+        }
+
+        // Cargar pronombres y roles (si existen en el backend)
+        if (data.pronouns && Array.isArray(data.pronouns)) {
+            selectedPronouns.length = 0;
+            selectedPronouns.push(...data.pronouns);
+        }
+
+        if (data.roles && Array.isArray(data.roles)) {
+            selectedRoles.length = 0;
+            selectedRoles.push(...data.roles);
+        }
+
+        renderTags("selectedPronouns", selectedPronouns, removePronoun);
+        renderTags("selectedRoles", selectedRoles, removeRole);
+
+        // Mostrar avatar si existe
+        if (data.picture_avatar) {
+            const avatarPreview = document.getElementById("avatarPreview");
+            if (avatarPreview) {
+                avatarPreview.src = data.picture_avatar.startsWith('http') 
+                    ? data.picture_avatar 
+                    : `http://localhost:8080/api/files/${data.picture_avatar}`;
+                avatarPreview.style.display = "block";
+            }
+        }
+
+        return data;
+    } catch (e) {
+        console.warn("No se pudo cargar perfil desde API, usando localStorage", e);
+        // Fallback a localStorage
+        const fallback = JSON.parse(localStorage.getItem(PROFILE_STORAGE_KEY));
+        if (fallback) {
+            loadProfileFromLocalStorage(fallback);
+        }
+        return null;
+    }
+}
+
+// Cargar perfil desde localStorage (fallback)
+function loadProfileFromLocalStorage(savedProfile) {
     const displayNameInput = document.getElementById("displayName");
     const usernameInput = document.getElementById("username");
     const bioInput = document.getElementById("profileBio");
@@ -180,58 +245,183 @@ function loadProfileSettings() {
     renderTags("selectedRoles", selectedRoles, removeRole);
 }
 
-function saveProfileSettings() {
+// 🔥 NUEVA FUNCIÓN: Guardar perfil en el backend
+async function saveProfileToBackend(formData) {
+    try {
+        console.log("currentUserId:", currentUserId); // 🔥 VERIFICAR
+        console.log("Token:", getToken()); // 🔥 VERIFICAR
+        const userId = currentUserId;
+        if (!userId) {
+            throw new Error("No hay usuario autenticado");
+        }
+
+        // Construir el objeto de usuario para enviar
+        const userData = {
+            firstName: formData.displayName.split(' ')[0] || "",
+            lastName: formData.displayName.split(' ').slice(1).join(' ') || "",
+            user_name: formData.username || "",
+            bio: formData.bio || "",
+            // No enviamos campos que no queremos actualizar (password, email, etc.)
+        };
+
+        console.log("Enviando al backend:", userData);
+
+        const response = await fetch(`http://localhost:8080/api/users/${userId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${getToken()}`
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Error al actualizar: ${response.status} - ${errorText}`);
+        }
+
+        const updatedUser = await response.json();
+        console.log("Usuario actualizado:", updatedUser);
+
+        // Actualizar localStorage
+        const profile = {
+            displayName: `${updatedUser.firstName || ""} ${updatedUser.lastName || ""}`.trim(),
+            username: updatedUser.user_name ? `@${updatedUser.user_name}` : "",
+            pronouns: selectedPronouns,
+            roles: selectedRoles,
+            bio: updatedUser.bio || "",
+            picture_avatar: updatedUser.picture_avatar
+        };
+
+        localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(profile));
+        localStorage.setItem("caliopeUserProfile", JSON.stringify(profile));
+
+        alert("Perfil actualizado correctamente.");
+        return updatedUser;
+    } catch (e) {
+        console.error("Error al guardar perfil:", e);
+        alert(`Error al guardar: ${e.message}`);
+        throw e;
+    }
+}
+
+// 🔥 NUEVA FUNCIÓN: Manejar la subida de avatar
+async function uploadAvatar(file) {
+    if (!file) return null;
+
+    const formData = new FormData();
+    formData.append("avatar", file);
+
+    try {
+        const response = await fetch(`http://localhost:8080/api/users/${currentUserId}/avatar`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${getToken()}`
+            },
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error("Error al subir avatar");
+        }
+
+        const result = await response.json();
+        return result.picture_avatar;
+    } catch (e) {
+        console.error("Error al subir avatar:", e);
+        alert("No se pudo subir el avatar");
+        return null;
+    }
+}
+
+// 🔥 NUEVA FUNCIÓN: Guardar perfil completo
+async function saveProfileSettings(event) {
+    event.preventDefault();
+
     const displayNameInput = document.getElementById("displayName");
     const usernameInput = document.getElementById("username");
     const bioInput = document.getElementById("profileBio");
+    const avatarInput = document.getElementById("profileAvatar");
 
-    const profile = {
+    // Validar campos requeridos
+    if (!displayNameInput.value.trim()) {
+        alert("El nombre es obligatorio");
+        displayNameInput.focus();
+        return;
+    }
+
+    const formData = {
         displayName: displayNameInput.value.trim(),
-        username: usernameInput.value.trim(),
-        pronouns: selectedPronouns,
-        roles: selectedRoles,
+        username: usernameInput.value.trim().replace('@', ''),
         bio: bioInput.value.trim(),
+        pronouns: selectedPronouns,
+        roles: selectedRoles
     };
 
-    localStorage.setItem(
-        PROFILE_STORAGE_KEY,
-        JSON.stringify(profile)
-    );
+    // Primero guardar el perfil
+    await saveProfileToBackend(formData);
 
-    alert("Perfil actualizado correctamente.");
+    // Luego subir el avatar si hay uno nuevo
+    if (avatarInput && avatarInput.files && avatarInput.files[0]) {
+        await uploadAvatar(avatarInput.files[0]);
+    }
+
+    // Recargar el perfil para actualizar todo
+    await loadProfileFromBackend();
 }
 
-document.getElementById("pronounSelect")?.addEventListener("change", (event) => {
-    addValue(
-        event.target.value,
-        selectedPronouns,
-        3,
-        "selectedPronouns",
-        removePronoun
-    );
+// Configurar eventos
+document.addEventListener("DOMContentLoaded", async () => {
+    // Cargar perfil del backend
+    await loadProfileFromBackend();
 
-    event.target.value = "";
-});
-
-document.getElementById("roleSelect")?.addEventListener("change", (event) => {
-    addValue(
-        event.target.value,
-        selectedRoles,
-        3,
-        "selectedRoles",
-        removeRole
-    );
-
-    event.target.value = "";
-});
-
-const profileSettingsForm = document.getElementById("profileSettingsForm");
-
-if (profileSettingsForm) {
-    loadProfileSettings();
-
-    profileSettingsForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        saveProfileSettings();
+    // Configurar eventos de pronombres y roles
+    document.getElementById("pronounSelect")?.addEventListener("change", (event) => {
+        addValue(
+            event.target.value,
+            selectedPronouns,
+            3,
+            "selectedPronouns",
+            removePronoun
+        );
+        event.target.value = "";
     });
+
+    document.getElementById("roleSelect")?.addEventListener("change", (event) => {
+        addValue(
+            event.target.value,
+            selectedRoles,
+            3,
+            "selectedRoles",
+            removeRole
+        );
+        event.target.value = "";
+    });
+
+    // Configurar el formulario
+    const profileSettingsForm = document.getElementById("profileSettingsForm");
+    if (profileSettingsForm) {
+        profileSettingsForm.addEventListener("submit", saveProfileSettings);
+    }
+
+    // Previsualización del avatar
+    document.getElementById("profileAvatar")?.addEventListener("change", function(e) {
+        const preview = document.getElementById("avatarPreview");
+        if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                preview.src = event.target.result;
+                preview.style.display = "block";
+            };
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+// Función auxiliar de escape (si no la tienes)
+function escapeHtml(text) {
+    if (!text) return "";
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
 }
