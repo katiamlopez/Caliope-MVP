@@ -37,7 +37,7 @@ formCntc.addEventListener("submit", async (event) => {
 
     try{
 
-        const response = await fetch("http://localhost:8080/api/contacts",{
+        const response = await fetch("/api/contacts",{
 
             method:"POST",
 

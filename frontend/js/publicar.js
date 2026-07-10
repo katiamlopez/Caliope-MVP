@@ -9,7 +9,7 @@ async function cargarGeneros() {
   if (!selectElement) return;
   
   try {
-    const respuesta = await fetch('http://localhost:8080/api/genres', {
+    const respuesta = await fetch('api/genres', {
       headers: {
         "Authorization": `Bearer ${getToken()}`
       }
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/api/stories", {
+        const response = await fetch("/api/stories", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${getToken()}`

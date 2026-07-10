@@ -9,7 +9,7 @@ async function updateTopbarAvatar() {
         if (profile?.picture_avatar) {
             avatarImg.src = profile.picture_avatar.startsWith('http') 
                 ? profile.picture_avatar 
-                : `http://localhost:8080/api/files/${profile.picture_avatar}`;
+                : `/api/files/${profile.picture_avatar}`;
             return;
         }
         
@@ -21,7 +21,7 @@ async function updateTopbarAvatar() {
         if (data.picture_avatar) {
             avatarImg.src = data.picture_avatar.startsWith('http')
                 ? data.picture_avatar
-                : `http://localhost:8080/api/files/${data.picture_avatar}`;
+                : `/api/files/${data.picture_avatar}`;
         }
         
         // 3. Manejar error de carga de imagen

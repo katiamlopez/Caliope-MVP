@@ -52,7 +52,7 @@ function renderProfile(data) {
             if (data.picture_avatar.startsWith('http')) {
                 avatar.src = data.picture_avatar;
             } else {
-                avatar.src = `http://localhost:8080/api/files/${data.picture_avatar}`;
+                avatar.src = `/api/files/${data.picture_avatar}`;
             }
         }
     }
@@ -112,7 +112,7 @@ function renderStoriesByStatus(status, containerSelector) {
 
   
         const coverSrc = story.picture_front_pages 
-            ? `http://localhost:8080/api/files/${story.picture_front_pages}`
+            ? `/api/files/${story.picture_front_pages}`
             : "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
             
         const statusLabel = story.status === "PUBLICADO" ? "Publicado" : "Borrador";
