@@ -266,7 +266,7 @@ async function saveProfileToBackend(formData) {
 
         console.log("Enviando al backend:", userData);
 
-        const response = await fetch(`api/users/${userId}`, {
+        const response = await fetch(`http://localhost:8080/api/users/${userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -313,7 +313,7 @@ async function uploadAvatar(file) {
     formData.append("avatar", file);
 
     try {
-        const response = await fetch(`api/users/${currentUserId}/avatar`, {
+        const response = await fetch(`http://localhost:8080/api/users/${currentUserId}/avatar`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${getToken()}`

@@ -185,7 +185,7 @@ const birthday =
 
         const respuesta =
             await fetch(
-                "/api/users",
+                "http://localhost:8080/api/users",
                 {
                     method: "POST",
                     headers: {

@@ -47,11 +47,11 @@ if (story.user?.picture_avatar) {
     if (story.user.picture_avatar.startsWith('http')) {
         authorAvatar = story.user.picture_avatar;
     } else {
-        authorAvatar = `/api/files/${story.user.picture_avatar}`;
+        authorAvatar = `http://localhost:8080/api/files/${story.user.picture_avatar}`;
     }
 }
         const coverSrc = story.picture_front_pages 
-            ? `/api/files/${story.picture_front_pages}` 
+            ? `http://localhost:8080/api/files/${story.picture_front_pages}` 
             : "../assets/stories-covers/portada-historia-el-cielo-de-abril.png";
             
         const timeAgo = getTimeAgo(story.published_date || story.created_date);
@@ -166,7 +166,7 @@ async function updateTopbarAvatar() {
         if (profile?.picture_avatar) {
             avatarImg.src = profile.picture_avatar.startsWith('http') 
                 ? profile.picture_avatar 
-                : `/api/files/${profile.picture_avatar}`;
+                : `http://localhost:8080/api/files/${profile.picture_avatar}`;
             return;
         }
         
@@ -178,7 +178,7 @@ async function updateTopbarAvatar() {
         if (data.picture_avatar) {
             avatarImg.src = data.picture_avatar.startsWith('http')
                 ? data.picture_avatar
-                : `/api/files/${data.picture_avatar}`;
+                : `http://localhost:8080/api/files/${data.picture_avatar}`;
         }
         
         // 3. Manejar error de carga de imagen

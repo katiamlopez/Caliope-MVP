@@ -16,7 +16,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     try {
 
-        const respuesta = await fetch("/api/users/login", {
+        const respuesta = await fetch("http://localhost:8080/api/users/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
